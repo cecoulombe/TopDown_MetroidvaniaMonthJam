@@ -12,6 +12,10 @@ public class Enemy_TopDown : MonoBehaviour
     private Transform target;
     private Vector2 moveDirection;
 
+    [SerializeField]
+    private float health = 3f;
+    [SerializeField]
+    private float maxHealth = 3f;
     #endregion
 
     private void Awake()
@@ -22,6 +26,7 @@ public class Enemy_TopDown : MonoBehaviour
     void Start()
     {
         target = GameObject.Find("Player").transform;
+        health = maxHealth;
     }
 
     void Update()
@@ -38,6 +43,15 @@ public class Enemy_TopDown : MonoBehaviour
         if(target)
         {
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }

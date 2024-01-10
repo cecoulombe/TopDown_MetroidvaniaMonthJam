@@ -48,7 +48,8 @@ public class Attack_TopDown : MonoBehaviour
     {
         if(isAttacking)
         {
-            attackTimer -= Time.deltaTime;
+            attackTimer += Time.deltaTime;
+
             if(attackTimer >= attackDuration)
             {
                 attackTimer = 0;

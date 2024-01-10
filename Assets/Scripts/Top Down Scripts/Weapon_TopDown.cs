@@ -11,6 +11,10 @@ public class Weapon_TopDown : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Enemy enemy
+        Enemy_TopDown enemy = collision.GetComponent<Enemy_TopDown>();
+        if(enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
     }
 }
