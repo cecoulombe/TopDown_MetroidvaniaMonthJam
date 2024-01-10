@@ -1,0 +1,1218 @@
+fileFormatVersion: 2
+guid: 625a94547218d4bcea3b7950d5c23e41
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Basic48TilePattern_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a79c5aa0ece48edb1c0b644a22e1c1
+      internalID: 944275316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9930fa204c9b4c28b9c6b596e543036
+      internalID: 1309344466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82fd4f909831424faaba78715ab410f
+      internalID: -304798445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69406250f182f4847b22911e60145955
+      internalID: -451324044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54241861efff42209321bd6834e97ab
+      internalID: -1300745360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94d58f9e17094d7a96262453ff0c059
+      internalID: -1114403895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f9512bcd159409b820cb04fbe0ff9f
+      internalID: -2122574384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3861c9b36642049a489f73bfdcc1d5d9
+      internalID: -404518408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44f56053c2624f93a000cbb5aeca65a
+      internalID: 563786959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d70f8e2e44e44ef922493545988959
+      internalID: -1873451676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149216ad5acc142bf965ed71127ba8aa
+      internalID: 1275442762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e4da1397fb34a67bf4b97e68424689
+      internalID: 1541989418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e88887448e31a4c12ab82ddb1b22d8eb
+      internalID: 462105381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 153e058210e0e4b17b8b442648a5901c
+      internalID: -1866103141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9879a145755452db751b69728b3a91
+      internalID: 421932964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_15
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43de749a659224ce0ac97a4fc47421ac
+      internalID: 593276590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 066736c09027c487b93dc935274853db
+      internalID: -491907836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a76c21db272249ae867a3d58b8895a8
+      internalID: -136715909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74cb4769882f2492b9ed81264c2dd4f4
+      internalID: -649565512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_19
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1615d8e0f57984e50beed4747e973265
+      internalID: -455760619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160151c1b963b43df93c00838cd81376
+      internalID: -336732379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6740e1fa25a024fde9aa4e22c1135734
+      internalID: 462603686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_22
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3281174cd0834d869fcc66fe6dcdffe
+      internalID: 1513942560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_23
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ec694b94ab84bc7a4824915dfbbb92
+      internalID: 108868941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_24
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1c041c8c5824635aeafe243854c963
+      internalID: 1885294555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c9aa02578ab4e4681865f1806e3a57
+      internalID: -1676767318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb2faaac6c5249aca1b74465e46d1e2
+      internalID: 963990225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64234fbbdba6a4813a2826ecff942a26
+      internalID: 2020914651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7910a520e72634f7f86cf4ace37223dd
+      internalID: -1650516744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_29
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b968e28f3b3ad4e32ba70920f0884676
+      internalID: -1750045447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_30
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d37ce83ab584bc0938f2a1af91f9cb
+      internalID: 86958546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_31
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6acb3e6f7cd248b185f788e0f54c27b
+      internalID: 34761987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_32
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b0360fbf9fe43b08ab21fc21c60f3c
+      internalID: -1260672275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_33
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adec6eec700f64d1683f8008e84b28f0
+      internalID: -1167227355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_34
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64.85715
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707c082ec587c4a5b803edfc0696b2db
+      internalID: 221634032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32.857143
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac56e461b0bd4714ab84715ddb5c51c
+      internalID: 622229327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_36
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32.857143
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd76aa88300f4fdeb61d442e4e3e306
+      internalID: 1244461960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_37
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32.857143
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a525a95449544532b8cd40ae0f9ecc3
+      internalID: -610614987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_38
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32.857143
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b151e8f9947ac4d99aba92a70b6c5126
+      internalID: -1882926597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_39
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32.857143
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a63c70a0cb6f4012bd4300ef7d0a562
+      internalID: -775760490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_40
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32.857143
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91fb0685397104869b038989c3b442bc
+      internalID: -1501626873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_41
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32.857143
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e576307587544f3a8f42d8fdeeb770f
+      internalID: -1932169238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.8571434
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a8c0eb6551345e8912c42262460462
+      internalID: -1615298819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_43
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0.8571434
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847e82bb3a70e4c1baec5b9d1b79fb9d
+      internalID: -2129390107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_44
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0.8571434
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e8f958f829f14341bbb5ce62f8befc5
+      internalID: -1682464004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_45
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0.8571434
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cba56735f5b14bd5a53ba2560e6e466
+      internalID: -1674376086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0.8571434
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac4db68d1f1d4999a373bd75d04d392
+      internalID: -1395216257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_47
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0.8571434
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a794b396a4924ab2bccc98f64ef9c32
+      internalID: 1736630282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic48TilePattern_48
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0.8571434
+        width: 32.142857
+        height: 32.142857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91fd49b2bbb64511a715f6d9e37cce2
+      internalID: -872414337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Basic48TilePattern_0: 944275316
+      Basic48TilePattern_1: 1309344466
+      Basic48TilePattern_10: 1275442762
+      Basic48TilePattern_11: 1541989418
+      Basic48TilePattern_12: 462105381
+      Basic48TilePattern_13: -1866103141
+      Basic48TilePattern_14: 421932964
+      Basic48TilePattern_15: 593276590
+      Basic48TilePattern_16: -491907836
+      Basic48TilePattern_17: -136715909
+      Basic48TilePattern_18: -649565512
+      Basic48TilePattern_19: -455760619
+      Basic48TilePattern_2: -304798445
+      Basic48TilePattern_20: -336732379
+      Basic48TilePattern_21: 462603686
+      Basic48TilePattern_22: 1513942560
+      Basic48TilePattern_23: 108868941
+      Basic48TilePattern_24: 1885294555
+      Basic48TilePattern_25: -1676767318
+      Basic48TilePattern_26: 963990225
+      Basic48TilePattern_27: 2020914651
+      Basic48TilePattern_28: -1650516744
+      Basic48TilePattern_29: -1750045447
+      Basic48TilePattern_3: -451324044
+      Basic48TilePattern_30: 86958546
+      Basic48TilePattern_31: 34761987
+      Basic48TilePattern_32: -1260672275
+      Basic48TilePattern_33: -1167227355
+      Basic48TilePattern_34: 221634032
+      Basic48TilePattern_35: 622229327
+      Basic48TilePattern_36: 1244461960
+      Basic48TilePattern_37: -610614987
+      Basic48TilePattern_38: -1882926597
+      Basic48TilePattern_39: -775760490
+      Basic48TilePattern_4: -1300745360
+      Basic48TilePattern_40: -1501626873
+      Basic48TilePattern_41: -1932169238
+      Basic48TilePattern_42: -1615298819
+      Basic48TilePattern_43: -2129390107
+      Basic48TilePattern_44: -1682464004
+      Basic48TilePattern_45: -1674376086
+      Basic48TilePattern_46: -1395216257
+      Basic48TilePattern_47: 1736630282
+      Basic48TilePattern_48: -872414337
+      Basic48TilePattern_5: -1114403895
+      Basic48TilePattern_6: -2122574384
+      Basic48TilePattern_7: -404518408
+      Basic48TilePattern_8: 563786959
+      Basic48TilePattern_9: -1873451676
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
