@@ -29,9 +29,6 @@ public class Enemy_TopDown : MonoBehaviour
     [SerializeField]
     private float contactDamage;
 
-    [SerializeField]
-    private float knockbackForce;
-
     public PlayerController_TopDown playerController;
     //public PlayerHealth_TopDown playerHealth;
 
@@ -126,7 +123,7 @@ public class Enemy_TopDown : MonoBehaviour
             {
                 playerController.knockFromRight = false;
             }
-            //playerHealth.TakeDamage(contactDamage);
+            playerController.TakeDamage(contactDamage);
         }
     }
 }

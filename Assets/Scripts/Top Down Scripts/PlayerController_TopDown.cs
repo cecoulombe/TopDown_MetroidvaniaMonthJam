@@ -115,6 +115,7 @@ public class PlayerController_TopDown : MonoBehaviour
             {
                 rb.velocity = new Vector2(knockBackForce, 0f);
             }
+
             knockBackCounter -= Time.deltaTime;
         }
     }
@@ -191,30 +192,15 @@ public class PlayerController_TopDown : MonoBehaviour
     }
     #endregion
 
-    #region Movement controller
-    //private void Movement()
-    //{
-    //    if (knockBackCounter <= 0)
-    //    {
-    //        if (input.x != 0 && input.y != 0)
-    //        {
-    //            input *= 0.7f;
-    //        }
-    //        rb.velocity = input * activeMoveSpeed;
-    //    }
-    //    else    // will need to update this to be from any direction, so make it knockback force equal to the opposite direction of the enemy
-    //    {
-    //        if(knockFromRight)
-    //        {
-    //            rb.velocity = new Vector2(-knockBackForce, 0f);
-    //        }
-    //        if(!knockFromRight)
-    //        {
-    //            rb.velocity = new Vector2(knockBackForce, 0f);
-    //        }
-    //        knockBackCounter -= Time.deltaTime;
-    //    }
-    //}
+    #region Take Damage
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     #endregion
 
     #region Initialize

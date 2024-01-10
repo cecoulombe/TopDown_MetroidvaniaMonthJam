@@ -162,3 +162,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  isAwake: 0
+  health: 0
+  maxHealth: 3
+  rangeFromTarget: 6
+  loseAggroRange: 10
+  contactDamage: 1
+  playerController: {fileID: 0}
+  knockBackForce: 4
+  knockBackCounter: 0
+  knockBackTotalTime: 0.2
+  knockFromRight: 0
