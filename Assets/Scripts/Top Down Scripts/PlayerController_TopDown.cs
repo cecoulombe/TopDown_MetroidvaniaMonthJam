@@ -12,10 +12,11 @@ public class PlayerController_TopDown : MonoBehaviour
 
     [Header("Player state bools")]
     [SerializeField]
-    protected bool isDashing;
+    private bool isWalking;
+    [SerializeField]
+    private bool isDashing;
 
     public bool isFacingRight = true;
-
     #endregion
 
     #region Movement Variables
@@ -25,10 +26,9 @@ public class PlayerController_TopDown : MonoBehaviour
     // how fast the player should move
     [SerializeField]
     protected float walkSpeed;
-    
+
     // float that checks how much value in the horizontal direction the input is receiving to better calculate speed
-    private float horizontalInput;
-    private float verticalInput;
+    private Vector2 input;
 
     [Header("Dash Variables")]
     [SerializeField]
@@ -43,6 +43,12 @@ public class PlayerController_TopDown : MonoBehaviour
     private float dashCounter;
 
     private float dashCoolCounter;
+    #endregion
+
+    #region Attack Variables
+    [Header("Attack Variables")]
+    [SerializeField]
+    private Transform Aim;
 
     #endregion
 
@@ -69,6 +75,11 @@ public class PlayerController_TopDown : MonoBehaviour
         Flip();
         Movement();
         Dash();
+
+        // dash with i-frames that lets them go through thin walls/enemies/projectiles
+        // melee attack
+        // ranged attack
+        // sneak (slow down movement but dont get detected by enemy ai?)
     }
 
     #region Inputs
@@ -76,39 +87,21 @@ public class PlayerController_TopDown : MonoBehaviour
     {
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
-            horizontalInput = Input.GetAxisRaw("Horizontal");
+              input.x = Input.GetAxisRaw("Horizontal");
         }
         // if no input or taking damage, horizontalInput = 0
         else
         {
-            horizontalInput = 0;
+            input.x = 0;
         }
         if (Input.GetAxisRaw("Vertical") != 0)
         {
-            verticalInput = Input.GetAxisRaw("Vertical");
+            input.y = Input.GetAxisRaw("Vertical");
         }
         // if no input or taking damage, horizontalInput = 0
         else
         {
-            verticalInput = 0;
-        }
-
-        // Determine the last input direction
-        if (horizontalInput > 0)
-        {
-            lastInputDirection = Direction.Right;
-        }
-        else if (horizontalInput < 0)
-        {
-            lastInputDirection = Direction.Left;
-        }
-        else if (verticalInput > 0)
-        {
-            lastInputDirection = Direction.Up;
-        }
-        else if (verticalInput < 0)
-        {
-            lastInputDirection = Direction.Down;
+            input.y = 0;
         }
     }
     #endregion
@@ -117,7 +110,7 @@ public class PlayerController_TopDown : MonoBehaviour
     // flip where the player is facing
     private void Flip()
     {
-        if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
+        if (isFacingRight && input.x < 0f || !isFacingRight && input.x > 0f)
         {
             Vector3 localScale = transform.localScale;
             isFacingRight = !isFacingRight;
@@ -134,6 +127,7 @@ public class PlayerController_TopDown : MonoBehaviour
         {
             if (dashCoolCounter <= 0 && dashCounter <= 0)
             {
+                isDashing = true;
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
             }
@@ -145,6 +139,7 @@ public class PlayerController_TopDown : MonoBehaviour
 
             if (dashCounter <= 0)
             {
+                isDashing = false;
                 activeMoveSpeed = walkSpeed;
                 dashCoolCounter = dashCooldown;
             }
@@ -160,12 +155,11 @@ public class PlayerController_TopDown : MonoBehaviour
     #region Movement controller
     private void Movement()
     {
-        if(horizontalInput != 0 && verticalInput != 0) 
+        if(input.x != 0 && input.y != 0) 
         {
-            horizontalInput *= 0.7f;
-            verticalInput *= 0.7f;
+            input *= 0.7f;
         }
-        rb.velocity = new Vector2(horizontalInput * activeMoveSpeed, verticalInput * activeMoveSpeed);
+        rb.velocity = input * activeMoveSpeed;
     }
     #endregion
 
