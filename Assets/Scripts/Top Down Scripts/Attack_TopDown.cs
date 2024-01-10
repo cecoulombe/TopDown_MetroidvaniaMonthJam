@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Attack_TopDown : MonoBehaviour
 {
-    #region Variables
+    #region Melee Variables
+    [Header("Melee Variables")]
     public GameObject Melee;
 
     [SerializeField]
@@ -18,19 +19,41 @@ public class Attack_TopDown : MonoBehaviour
 
     [SerializeField]
     private float attackTimer = 0f;
-
-
     #endregion
 
+    #region Ranged Variables
+    [Header("Ranged Variables")]
+
+    [SerializeField]
+    private Transform Aim;
+
+    [SerializeField]
+    private GameObject bullet;
+
+    [SerializeField]
+    private float fireForce = 10f;
+
+    [SerializeField]
+    private float shootCoolDown = 0.25f;
+
+    [SerializeField]
+    private float shootTimer = 0.5f;
+
+    #endregion
 
     // Update is called once per frame
     void Update()
     {
         CheckMeleeTimer();
+        shootTimer += Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.K))
         {
             OnAttack();
+        }
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            OnShoot();
         }
     }
 
@@ -56,6 +79,17 @@ public class Attack_TopDown : MonoBehaviour
                 isAttacking = false;
                 Melee.SetActive(false);
             }
+        }
+    }
+
+    private void OnShoot()
+    {
+        if(shootTimer > shootCoolDown)
+        {
+            shootTimer = 0;
+            GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation);
+            intBullet.GetComponent<Rigidbody2D>().AddForce(-Aim.up * fireForce, ForceMode2D.Impulse);
+            Destroy(intBullet, 2f);
         }
     }
 }

@@ -914,6 +914,11 @@ MonoBehaviour:
   timeToAttack: 0.3
   attackDuration: 0.3
   attackTimer: 0
+  Aim: {fileID: 0}
+  bullet: {fileID: 2609964779410368697, guid: 66b4ed7c004ca41a396c94556583f4fa, type: 3}
+  fireForce: 10
+  shootCoolDown: 0.25
+  shootTimer: 0.5
 --- !u!1001 &474815337
 PrefabInstance:
   m_ObjectHideFlags: 0
