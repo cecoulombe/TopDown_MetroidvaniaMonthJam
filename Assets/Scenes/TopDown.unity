@@ -818,9 +818,9 @@ MonoBehaviour:
   isDashing: 0
   isFacingRight: 1
   walkSpeed: 6
-  dashSpeed: 15
-  dashLength: 0.35
-  dashCooldown: 0.2
+  dashSpeed: 20
+  dashLength: 0.3
+  dashCooldown: 0.15
 --- !u!61 &420503068
 BoxCollider2D:
   m_ObjectHideFlags: 0

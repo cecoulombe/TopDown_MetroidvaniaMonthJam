@@ -68,30 +68,7 @@ public class PlayerController_TopDown : MonoBehaviour
         Inputs();
         Flip();
         Movement();
-        if(Input.GetKeyDown(KeyCode.J))
-        {
-            if (dashCoolCounter <= 0 && dashCounter <= 0)
-            {
-                activeMoveSpeed = dashSpeed;
-                dashCounter = dashLength;
-            }
-        }
-
-        if (dashCounter > 0)
-        {
-            dashCounter -= Time.deltaTime;
-
-            if (dashCounter <= 0)
-            {
-                activeMoveSpeed = walkSpeed;
-                dashCoolCounter = dashCooldown;
-            }
-        }
-
-        if (dashCoolCounter > 0)
-        {
-            dashCoolCounter -= Time.deltaTime;
-        }
+        Dash();
     }
 
     #region Inputs
@@ -146,6 +123,36 @@ public class PlayerController_TopDown : MonoBehaviour
             isFacingRight = !isFacingRight;
             localScale.x *= -1f;
             transform.localScale = localScale;
+        }
+    }
+    #endregion
+
+    #region Dash
+    private void Dash()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            if (dashCoolCounter <= 0 && dashCounter <= 0)
+            {
+                activeMoveSpeed = dashSpeed;
+                dashCounter = dashLength;
+            }
+        }
+
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+
+            if (dashCounter <= 0)
+            {
+                activeMoveSpeed = walkSpeed;
+                dashCoolCounter = dashCooldown;
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
         }
     }
     #endregion
