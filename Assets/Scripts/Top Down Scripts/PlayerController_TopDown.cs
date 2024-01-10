@@ -17,6 +17,7 @@ public class PlayerController_TopDown : MonoBehaviour
     private bool isDashing;
 
     public bool isFacingRight = true;
+    private Vector2 lastMoveDirection;
     #endregion
 
     #region Movement Variables
@@ -51,17 +52,7 @@ public class PlayerController_TopDown : MonoBehaviour
     private Transform Aim;
 
     #endregion
-
-    private enum Direction
-    {
-        Up,
-        Down,
-        Left,
-        Right
-    }
-
-    private Direction lastInputDirection = Direction.Right;
-
+ 
     void Start()
     {
         Initialization();
@@ -82,27 +73,38 @@ public class PlayerController_TopDown : MonoBehaviour
         // sneak (slow down movement but dont get detected by enemy ai?)
     }
 
+    private void FixedUpdate()
+    {
+        if (isWalking)
+        {
+            Vector3 vector3 = Vector3.left * input.x + Vector3.down * input.y;
+            Aim.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
+        }
+    }
+
     #region Inputs
     private void Inputs()
     {
-        if (Input.GetAxisRaw("Horizontal") != 0)
+        //store the last move direction
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        if(moveX == 0 && moveY == 0 && (input.x != 0 || input.y != 0))
         {
-              input.x = Input.GetAxisRaw("Horizontal");
+            isWalking = false;
+            lastMoveDirection = input;
+            Vector3 vector3 = Vector3.left * lastMoveDirection.x + Vector3.down * lastMoveDirection.y;
+            Aim.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
         }
-        // if no input or taking damage, horizontalInput = 0
-        else
+        else if(moveX != 0 || moveY != 0)
         {
-            input.x = 0;
+            isWalking = true;
         }
-        if (Input.GetAxisRaw("Vertical") != 0)
-        {
-            input.y = Input.GetAxisRaw("Vertical");
-        }
-        // if no input or taking damage, horizontalInput = 0
-        else
-        {
-            input.y = 0;
-        }
+
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
+
+
     }
     #endregion
 
