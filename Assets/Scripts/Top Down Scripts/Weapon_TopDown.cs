@@ -27,6 +27,7 @@ public class Weapon_TopDown : MonoBehaviour
             }
 
             enemy.TakeDamage(damage);
+
             if(weaponType == WeaponType.Bullet)
             {
                 Destroy(gameObject);
