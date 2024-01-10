@@ -28,6 +28,9 @@ public class Enemy_TopDown : MonoBehaviour
 
     [SerializeField]
     private float contactDamage;
+
+    [SerializeField]
+    private float knockbackForce;
     #endregion
 
     private void Awake()
@@ -77,5 +80,22 @@ public class Enemy_TopDown : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    #region Contact Damage
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Collider2D collider = collision.collider;
+        IDamagable damagable = collider.GetComponent<IDamagable>();
+
+        if(damagable != null)
+        {
+            Vector2 direction = (collider.transform.position - transform.position).normalized;
+
+            Vector2 knockback = direction * knockbackForce;
+
+            damagable.OnHit(contactDamage, knockback);
+        }
+    }
+    #endregion
 }
 

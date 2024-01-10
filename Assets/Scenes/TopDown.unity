@@ -820,6 +820,8 @@ MonoBehaviour:
   isWalking: 0
   isDashing: 0
   isFacingRight: 1
+  health: 0
+  maxHealth: 0
   walkSpeed: 6
   dashSpeed: 20
   dashLength: 0.3
@@ -827,7 +829,6 @@ MonoBehaviour:
   Aim: {fileID: 1182502788}
   knockBackForce: 5
   knockBackCounter: 0.2
-  knockBackTotalTime: 0
   knockFromRight: 0
 --- !u!61 &420503068
 BoxCollider2D:
@@ -3112,6 +3113,14 @@ PrefabInstance:
     - target: {fileID: 5134701059709482958, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943605748984597968, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
+      propertyPath: contactDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943605748984597968, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
+      propertyPath: knockbackForce
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7943605748984597968, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: loseAggroRange
