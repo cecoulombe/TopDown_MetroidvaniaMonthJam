@@ -6,16 +6,28 @@ public class Enemy_TopDown : MonoBehaviour
 {
     #region Varaibles
     [SerializeField]
-    private float moveSpeed = 2f;
+    private float moveSpeed;
+
+    [SerializeField]
+    private bool isAwake;
 
     private Rigidbody2D rb;
     private Transform target;
     private Vector2 moveDirection;
 
     [SerializeField]
-    private float health = 3f;
+    private float health;
     [SerializeField]
-    private float maxHealth = 3f;
+    private float maxHealth;
+
+    [SerializeField]
+    private float rangeFromTarget;
+
+    [SerializeField]
+    private float loseAggroRange;
+
+    [SerializeField]
+    private float contactDamage;
     #endregion
 
     private void Awake()
@@ -31,10 +43,21 @@ public class Enemy_TopDown : MonoBehaviour
 
     void Update()
     {
-        if(target)
+        if(Vector3.Distance(target.position, transform.position) <= rangeFromTarget)
+        {
+            isAwake = true;
+        }
+
+        if (target && isAwake)
         {
             Vector3 direction = (target.position - transform.position).normalized;
             moveDirection = direction;
+        }
+
+        if(Vector3.Distance(target.position, transform.position) >= loseAggroRange)
+        {
+            isAwake = false;
+            moveDirection = new Vector3(0f, 0f, 0f);
         }
     }
 
@@ -55,3 +78,4 @@ public class Enemy_TopDown : MonoBehaviour
         }
     }
 }
+

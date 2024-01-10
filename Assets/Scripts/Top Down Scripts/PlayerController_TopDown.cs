@@ -18,6 +18,11 @@ public class PlayerController_TopDown : MonoBehaviour
 
     public bool isFacingRight = true;
     private Vector2 lastMoveDirection;
+
+    [SerializeField]
+    private float health;
+    [SerializeField]
+    private float maxHealth;
     #endregion
 
     #region Movement Variables
@@ -50,12 +55,25 @@ public class PlayerController_TopDown : MonoBehaviour
     [Header("Attack Variables")]
     [SerializeField]
     private Transform Aim;
-
     #endregion
- 
+
+    #region Damage and Health Variables
+    [SerializeField]
+    private float knockBackForce;
+
+    [SerializeField]
+    private float knockBackCounter;
+
+    private float knockBackTotalTime;
+
+    [SerializeField]
+    private bool knockFromRight;
+    #endregion
+
     void Start()
     {
         Initialization();
+        maxHealth = health;
         activeMoveSpeed = walkSpeed;
     }
 
@@ -68,8 +86,6 @@ public class PlayerController_TopDown : MonoBehaviour
         Dash();
 
         // dash with i-frames that lets them go through thin walls/enemies/projectiles
-        // melee attack
-        // ranged attack
         // sneak (slow down movement but dont get detected by enemy ai?)
     }
 
@@ -157,11 +173,26 @@ public class PlayerController_TopDown : MonoBehaviour
     #region Movement controller
     private void Movement()
     {
-        if(input.x != 0 && input.y != 0) 
+        if (knockBackCounter <= 0)
         {
-            input *= 0.7f;
+            if (input.x != 0 && input.y != 0)
+            {
+                input *= 0.7f;
+            }
+            rb.velocity = input * activeMoveSpeed;
         }
-        rb.velocity = input * activeMoveSpeed;
+        else
+        {
+            if(knockFromRight)
+            {
+                rb.velocity = new Vector2(-knockBackForce, knockBackForce);
+            }
+            if(!knockFromRight)
+            {
+                rb.velocity = new Vector2(knockBackForce, knockBackForce);
+            }
+            knockBackCounter -= Time.deltaTime;
+        }
     }
     #endregion
 

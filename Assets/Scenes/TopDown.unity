@@ -825,6 +825,10 @@ MonoBehaviour:
   dashLength: 0.3
   dashCooldown: 0.15
   Aim: {fileID: 1182502788}
+  knockBackForce: 5
+  knockBackCounter: 0.2
+  knockBackTotalTime: 0
+  knockFromRight: 0
 --- !u!61 &420503068
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3067,11 +3071,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1624224465659347987, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.68
+      value: 5.91
       objectReference: {fileID: 0}
     - target: {fileID: 1624224465659347987, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 1624224465659347987, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3108,6 +3112,14 @@ PrefabInstance:
     - target: {fileID: 5134701059709482958, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943605748984597968, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
+      propertyPath: loseAggroRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7943605748984597968, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
+      propertyPath: rangeFromTarget
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

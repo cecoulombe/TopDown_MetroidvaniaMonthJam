@@ -7,7 +7,7 @@ public class Weapon_TopDown : MonoBehaviour
     #region Variables
     public float damage = 1;
 
-    public enum WeaponType { Melee, Bullet}
+    public enum WeaponType {Melee, Bullet}
     public WeaponType weaponType;
     #endregion
 
