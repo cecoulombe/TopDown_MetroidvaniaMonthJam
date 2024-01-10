@@ -16,6 +16,16 @@ public class Weapon_TopDown : MonoBehaviour
         Enemy_TopDown enemy = collision.GetComponent<Enemy_TopDown>();
         if(enemy != null)
         {
+            enemy.knockBackCounter = enemy.knockBackTotalTime;
+            if (collision.transform.position.x <= transform.position.x)
+            {
+                enemy.knockFromRight = true;
+            }
+            if (collision.transform.position.x >= transform.position.x)
+            {
+                enemy.knockFromRight = false;
+            }
+
             enemy.TakeDamage(damage);
             if(weaponType == WeaponType.Bullet)
             {

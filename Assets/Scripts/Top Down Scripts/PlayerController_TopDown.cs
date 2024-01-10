@@ -29,7 +29,7 @@ public class PlayerController_TopDown : MonoBehaviour
     [Header("Movement Variables")]
     private float activeMoveSpeed;
 
-    // how fast the player should move
+    // how fast thel player should move
     [SerializeField]
     protected float walkSpeed;
 
@@ -59,15 +59,15 @@ public class PlayerController_TopDown : MonoBehaviour
 
     #region Damage and Health Variables
     [SerializeField]
-    private float knockBackForce;
+    public float knockBackForce;
 
     [SerializeField]
-    private float knockBackCounter;
+    public float knockBackCounter;
 
-    private float knockBackTotalTime;
+    public float knockBackTotalTime;
 
     [SerializeField]
-    private bool knockFromRight;
+    public bool knockFromRight;
     #endregion
 
     void Start()
@@ -82,7 +82,7 @@ public class PlayerController_TopDown : MonoBehaviour
     {
         Inputs();
         Flip();
-        Movement();
+        //Movement();
         Dash();
 
         // dash with i-frames that lets them go through thin walls/enemies/projectiles
@@ -95,6 +95,27 @@ public class PlayerController_TopDown : MonoBehaviour
         {
             Vector3 vector3 = Vector3.left * input.x + Vector3.down * input.y;
             Aim.rotation = Quaternion.LookRotation(Vector3.forward, vector3);
+        }
+
+        if (knockBackCounter <= 0)  // not being knocked back so you can move
+        {
+            if (input.x != 0 && input.y != 0)
+            {
+                input *= 0.7f;
+            }
+            rb.velocity = input * activeMoveSpeed;
+        }
+        else    // will need to update this to be from any direction, so make it knockback force equal to the opposite direction of the enemy
+        {
+            if (knockFromRight)
+            {
+                rb.velocity = new Vector2(-knockBackForce, 0f);
+            }
+            if (!knockFromRight)
+            {
+                rb.velocity = new Vector2(knockBackForce, 0f);
+            }
+            knockBackCounter -= Time.deltaTime;
         }
     }
 
@@ -171,29 +192,29 @@ public class PlayerController_TopDown : MonoBehaviour
     #endregion
 
     #region Movement controller
-    private void Movement()
-    {
-        if (knockBackCounter <= 0)
-        {
-            if (input.x != 0 && input.y != 0)
-            {
-                input *= 0.7f;
-            }
-            rb.velocity = input * activeMoveSpeed;
-        }
-        else
-        {
-            if(knockFromRight)
-            {
-                rb.velocity = new Vector2(-knockBackForce, knockBackForce);
-            }
-            if(!knockFromRight)
-            {
-                rb.velocity = new Vector2(knockBackForce, knockBackForce);
-            }
-            knockBackCounter -= Time.deltaTime;
-        }
-    }
+    //private void Movement()
+    //{
+    //    if (knockBackCounter <= 0)
+    //    {
+    //        if (input.x != 0 && input.y != 0)
+    //        {
+    //            input *= 0.7f;
+    //        }
+    //        rb.velocity = input * activeMoveSpeed;
+    //    }
+    //    else    // will need to update this to be from any direction, so make it knockback force equal to the opposite direction of the enemy
+    //    {
+    //        if(knockFromRight)
+    //        {
+    //            rb.velocity = new Vector2(-knockBackForce, 0f);
+    //        }
+    //        if(!knockFromRight)
+    //        {
+    //            rb.velocity = new Vector2(knockBackForce, 0f);
+    //        }
+    //        knockBackCounter -= Time.deltaTime;
+    //    }
+    //}
     #endregion
 
     #region Initialize

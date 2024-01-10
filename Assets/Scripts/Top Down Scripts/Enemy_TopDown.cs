@@ -31,6 +31,20 @@ public class Enemy_TopDown : MonoBehaviour
 
     [SerializeField]
     private float knockbackForce;
+
+    public PlayerController_TopDown playerController;
+    //public PlayerHealth_TopDown playerHealth;
+
+    [SerializeField]
+    public float knockBackForce;
+
+    [SerializeField]
+    public float knockBackCounter;
+
+    public float knockBackTotalTime;
+
+    [SerializeField]
+    public bool knockFromRight;
     #endregion
 
     private void Awake()
@@ -68,7 +82,25 @@ public class Enemy_TopDown : MonoBehaviour
     {
         if(target)
         {
-            rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+            if (knockBackCounter <= 0)  // not being knocked back so you can move
+            {
+                rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+            }
+            else    // will need to update this to be from any direction, so make it knockback force equal to the opposite direction of the enemy
+            {
+                if (knockFromRight)
+                {
+                    rb.velocity = new Vector2(-knockBackForce, 0f);
+                }
+                if (!knockFromRight)
+                {
+                    rb.velocity = new Vector2(knockBackForce, 0f);
+                }
+
+                knockBackCounter -= Time.deltaTime;
+            }
+
+            
         }
     }
 
@@ -81,21 +113,21 @@ public class Enemy_TopDown : MonoBehaviour
         }
     }
 
-    #region Contact Damage
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Collider2D collider = collision.collider;
-        IDamagable damagable = collider.GetComponent<IDamagable>();
-
-        if(damagable != null)
+        if(collision.gameObject.tag == "Player")
         {
-            Vector2 direction = (collider.transform.position - transform.position).normalized;
-
-            Vector2 knockback = direction * knockbackForce;
-
-            damagable.OnHit(contactDamage, knockback);
+            playerController.knockBackCounter = playerController.knockBackTotalTime;
+            if(collision.transform.position.x <= transform.position.x)
+            {
+                playerController.knockFromRight = true;
+            }
+            if (collision.transform.position.x >= transform.position.x)
+            {
+                playerController.knockFromRight = false;
+            }
+            //playerHealth.TakeDamage(contactDamage);
         }
     }
-    #endregion
 }
 
