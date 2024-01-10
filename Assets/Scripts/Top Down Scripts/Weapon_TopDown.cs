@@ -5,8 +5,10 @@ using UnityEngine;
 public class Weapon_TopDown : MonoBehaviour
 {
     #region Variables
-
     public float damage = 1;
+
+    public enum WeaponType { Melee, Bullet}
+    public WeaponType weaponType;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -15,6 +17,10 @@ public class Weapon_TopDown : MonoBehaviour
         if(enemy != null)
         {
             enemy.TakeDamage(damage);
+            if(weaponType == WeaponType.Bullet)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
