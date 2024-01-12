@@ -85,8 +85,19 @@ public class PlayerController_TopDown : MonoBehaviour
         //Movement();
         Dash();
 
+        // Posisble ideas of abilities and mechanics that could be added? not necessarily for the jam but just in general in case this is an idea I want to role with beyond Feb.
         // dash with i-frames that lets them go through thin walls/enemies/projectiles
         // sneak (slow down movement but dont get detected by enemy ai?)
+        // dash attacks - you dash towards enemies to close the gap and it increases the size of the attack
+        // elemental attacks that you have to use to break elemental barriers (i.e. flame thrower vs an ice wall)
+        // charge attacks
+        // area attakcs/spread shot rather than just a single bullet?
+        // reflect projectiles back at the enemy? (like a parry maneuver?)
+        // teleportors? maybe for a quick travel idea but idk in general
+        // destroyable walls locked behind a specific ability
+        // ice melt
+        // locks and keys, bridges that get triggered by switches but block off other areas, elevators,
+        // interactive map would be ideal, could have a day/night cycle depending on the upgrades or game progress, which could open up certain paths or hidden areas?
     }
 
     private void FixedUpdate()
