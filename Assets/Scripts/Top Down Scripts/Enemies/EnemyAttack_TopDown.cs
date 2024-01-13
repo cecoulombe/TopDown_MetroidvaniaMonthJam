@@ -21,7 +21,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
     [SerializeField]
     private float maxHealth;
 
-    [SerializeField]
     private float rangeFromTarget;
 
     [SerializeField]
@@ -63,7 +62,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
     [SerializeField]
     private float attackTimer = 0f;
 
-    [SerializeField]
     private float meleeAttackRange;
 
     [SerializeField]
@@ -88,8 +86,8 @@ public class EnemyAttack_TopDown : MonoBehaviour
     [SerializeField]
     private float shootTimer = 0.5f;
 
-    [SerializeField]
-    private float rangedAttackRange;
+    private float rangedAttackRangeMin;
+    private float rangedAttackRangeMax;
     #endregion
 
     public enum EnemyType { chaser, melee, ranged, mixed}
@@ -104,6 +102,10 @@ public class EnemyAttack_TopDown : MonoBehaviour
     {
         target = GameObject.Find("Player").transform;
         health = maxHealth;
+        rangeFromTarget = 0.7f * loseAggroRange;
+        meleeAttackRange = 0.3f * rangeFromTarget;
+        rangedAttackRangeMin = 0.68f * loseAggroRange;
+        rangedAttackRangeMin = 0.9f * loseAggroRange;
     }
 
     void Update()
@@ -126,6 +128,16 @@ public class EnemyAttack_TopDown : MonoBehaviour
                     OnAttack();
                     return;
                 }
+            }
+        }
+
+        if (enemyType == EnemyType.ranged || enemyType == EnemyType.mixed)
+        {
+            if (Vector3.Distance(target.position, transform.position) >= rangedAttackRangeMin && Vector3.Distance(target.position, transform.position) <= rangedAttackRangeMax)
+            {
+                moveDirection = new Vector3(0f, 0f, 0f);
+                OnShoot();
+                return;
             }
         }
 
@@ -206,16 +218,16 @@ public class EnemyAttack_TopDown : MonoBehaviour
         }
     }
 
-    //private void OnShoot()
-    //{
-    //    if (shootTimer > shootCoolDown)
-    //    {
-    //        shootTimer = 0;
-    //        GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation);
-    //        intBullet.GetComponent<Rigidbody2D>().AddForce(-Aim.up * fireForce, ForceMode2D.Impulse);
-    //        Destroy(intBullet, 2f);
-    //    }
-    //}
+    private void OnShoot()
+    {
+        if (shootTimer > shootCoolDown)
+        {
+            shootTimer = 0;
+            GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation);
+            intBullet.GetComponent<Rigidbody2D>().AddForce(-Aim.up * fireForce, ForceMode2D.Impulse);
+            Destroy(intBullet, 4f);
+        }
+    }
     #endregion
 
     public void TakeDamage(float damage)
