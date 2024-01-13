@@ -44,6 +44,9 @@ public class EnemyAttack_TopDown : MonoBehaviour
     public bool knockFromRight;
 
     private bool isWalking;
+
+    [SerializeField]
+    private GameObject healthDrop;
     #endregion
 
     #region Melee Variables
@@ -265,6 +268,10 @@ public class EnemyAttack_TopDown : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            if(Random.Range(0f, 3f) >= 2f)
+            {
+                Instantiate(healthDrop, Aim.position, Aim.rotation);
+            }
         }
     }
 
