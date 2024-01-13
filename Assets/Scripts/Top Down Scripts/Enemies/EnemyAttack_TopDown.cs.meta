@@ -3,7 +3,11 @@ guid: 9a20e30f32037408aab2eeeaef8c8683
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerController: {instanceID: 0}
+  - Melee: {instanceID: 0}
+  - Aim: {instanceID: 0}
+  - bullet: {fileID: 2609964779410368697, guid: 0d81a5adc69054da39e0f592da93e4f1, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

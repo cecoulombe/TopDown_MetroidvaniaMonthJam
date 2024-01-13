@@ -346,6 +346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  meleeDamage: 1
+  bulletDamage: 1
   weaponType: 0
 --- !u!1 &9202758940845667350
 GameObject:

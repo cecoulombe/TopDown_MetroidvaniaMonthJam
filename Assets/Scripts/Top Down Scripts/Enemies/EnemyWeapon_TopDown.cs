@@ -7,10 +7,30 @@ public class EnemyWeapon_TopDown : MonoBehaviour
     #region Variables
     public float damage = 1;
 
+    private float damangeMultiplier;
+
+    [SerializeField]
+    private float meleeDamage = 1f;
+    [SerializeField]
+    private float bulletDamage = 1f;
+
+
     public enum WeaponType { Melee, Bullet }
     public WeaponType weaponType;
     #endregion
 
+
+    private void Update()
+    {
+        if(weaponType == WeaponType.Melee)
+        {
+            damangeMultiplier = meleeDamage;
+        }
+        else if (weaponType == WeaponType.Bullet)
+        {
+            damangeMultiplier = bulletDamage;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerController_TopDown player = collision.GetComponent<PlayerController_TopDown>();
@@ -26,7 +46,7 @@ public class EnemyWeapon_TopDown : MonoBehaviour
                 player.knockFromRight = false;
             }
 
-            player.TakeDamage(damage);
+            player.TakeDamage(damage * damangeMultiplier);
 
             if (weaponType == WeaponType.Bullet)
             {

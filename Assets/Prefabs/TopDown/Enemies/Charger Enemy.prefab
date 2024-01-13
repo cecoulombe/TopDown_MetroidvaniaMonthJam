@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1624224465659347987
 Transform:
   m_ObjectHideFlags: 0
@@ -352,6 +352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  meleeDamage: 1
+  bulletDamage: 1
   weaponType: 0
 --- !u!1 &9202758940845667350
 GameObject:
@@ -368,7 +370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &38192990922292354
 Transform:
   m_ObjectHideFlags: 0
