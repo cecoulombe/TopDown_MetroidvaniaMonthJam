@@ -86,6 +86,9 @@ public class EnemyAttack_TopDown : MonoBehaviour
     [SerializeField]
     private float shootTimer = 0.5f;
 
+    [SerializeField]
+    private float rotationSpeed = 180f;
+
     private float rangedAttackRangeMin;
     private float rangedAttackRangeMax;
     #endregion
@@ -136,6 +139,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
             if (Vector3.Distance(target.position, transform.position) >= rangedAttackRangeMin) //&& Vector3.Distance(target.position, transform.position) <= rangedAttackRangeMax)
             {
                 moveDirection = new Vector3(0f, 0f, 0f);
+                RotateTowardsPlayer();
                 OnShoot();
                 return;
             }
@@ -163,6 +167,8 @@ public class EnemyAttack_TopDown : MonoBehaviour
         {
             //Vector3 vector3 = Vector3.left * moveDirection.x + Vector3.down * moveDirection.y;
             Aim.rotation = Quaternion.LookRotation(Vector3.forward, -lastMoveDirection);
+            Aim.rotation = target.rotation;
+
         }
 
         if (target)
@@ -218,15 +224,53 @@ public class EnemyAttack_TopDown : MonoBehaviour
         }
     }
 
+    //private void OnShoot()
+    //{
+    //    if (shootTimer > shootCoolDown)
+    //    {
+    //        shootTimer = 0;
+    //        GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
+    //        intBullet.GetComponent<Rigidbody2D>().AddForce(-Aim.up * fireForce, ForceMode2D.Impulse);
+    //        Destroy(intBullet, 4f);
+    //    }
+    //}
+
     private void OnShoot()
     {
         if (shootTimer > shootCoolDown)
         {
             shootTimer = 0;
+
+            // Instantiate the bullet
             GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
-            intBullet.GetComponent<Rigidbody2D>().AddForce(-Aim.up * fireForce, ForceMode2D.Impulse);
+
+            // Calculate the direction towards the player
+            Vector2 direction = (target.position - intBullet.transform.position).normalized;
+
+            // Set the bullet's velocity towards the player
+            intBullet.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
+
+            // Optionally, you can set the rotation of the bullet based on the direction
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            intBullet.transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
+
             Destroy(intBullet, 4f);
         }
+    }
+
+    void RotateTowardsPlayer()
+    {
+        Vector2 direction = target.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Adjust the angle to match the sprite's orientation
+        angle -= 90f;
+
+        // Create a rotation quaternion
+        Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        // Smoothly rotate the enemy towards the player
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
     #endregion
 

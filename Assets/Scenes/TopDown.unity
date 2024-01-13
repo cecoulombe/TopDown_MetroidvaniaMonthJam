@@ -3537,12 +3537,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1167321709506856792, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 2609964779410368697, guid: 0d81a5adc69054da39e0f592da93e4f1, type: 3}
-    - target: {fileID: 1167321709506856792, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
-      propertyPath: shootTimer
-      value: 2
+      propertyPath: fireForce
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1167321709506856792, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: playerController
