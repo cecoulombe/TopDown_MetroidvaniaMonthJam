@@ -173,7 +173,10 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
-  healthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  bigHealthDrop: {fileID: 1985900085209205504, guid: 007c60bee184a45509c45868d7967808, type: 3}
+  bigHealthChance: 12
+  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  smallHealthChance: 24
   Melee: {fileID: 7028290374932615096}
   isAttacking: 0
   timeToAttack: 0.3

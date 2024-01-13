@@ -15,7 +15,14 @@ public class PlayerController_TopDown : MonoBehaviour
     [SerializeField]
     private bool isWalking;
     [SerializeField]
+    private bool hasDashing;
+    [SerializeField]
     private bool isDashing;
+    [SerializeField]
+    public bool canMelee;
+    [SerializeField]
+    public bool canRanged;
+
 
     public bool isFacingRight = true;
     private Vector2 lastMoveDirection;
@@ -86,11 +93,6 @@ public class PlayerController_TopDown : MonoBehaviour
         Flip();
         //Movement();
         Dash();
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Heal(1);
-        }
 
         // Posisble ideas of abilities and mechanics that could be added? not necessarily for the jam but just in general in case this is an idea I want to role with beyond Feb.
         // dash with i-frames that lets them go through thin walls/enemies/projectiles
@@ -181,31 +183,34 @@ public class PlayerController_TopDown : MonoBehaviour
     #region Dash
     private void Dash()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (hasDashing)
         {
-            if (dashCoolCounter <= 0 && dashCounter <= 0)
+            if (Input.GetKeyDown(KeyCode.J))
             {
-                isDashing = true;
-                activeMoveSpeed = dashSpeed;
-                dashCounter = dashLength;
+                if (dashCoolCounter <= 0 && dashCounter <= 0)
+                {
+                    isDashing = true;
+                    activeMoveSpeed = dashSpeed;
+                    dashCounter = dashLength;
+                }
             }
-        }
 
-        if (dashCounter > 0)
-        {
-            dashCounter -= Time.deltaTime;
-
-            if (dashCounter <= 0)
+            if (dashCounter > 0)
             {
-                isDashing = false;
-                activeMoveSpeed = walkSpeed;
-                dashCoolCounter = dashCooldown;
-            }
-        }
+                dashCounter -= Time.deltaTime;
 
-        if (dashCoolCounter > 0)
-        {
-            dashCoolCounter -= Time.deltaTime;
+                if (dashCounter <= 0)
+                {
+                    isDashing = false;
+                    activeMoveSpeed = walkSpeed;
+                    dashCoolCounter = dashCooldown;
+                }
+            }
+
+            if (dashCoolCounter > 0)
+            {
+                dashCoolCounter -= Time.deltaTime;
+            }
         }
     }
     #endregion

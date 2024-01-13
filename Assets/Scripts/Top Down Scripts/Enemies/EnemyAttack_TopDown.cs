@@ -46,7 +46,13 @@ public class EnemyAttack_TopDown : MonoBehaviour
     private bool isWalking;
 
     [SerializeField]
-    private GameObject healthDrop;
+    private GameObject bigHealthDrop;
+    [SerializeField]
+    private float bigHealthChance;
+    [SerializeField]
+    private GameObject smallHealthDrop;
+    [SerializeField]
+    private float smallHealthChance;
     #endregion
 
     #region Melee Variables
@@ -268,9 +274,14 @@ public class EnemyAttack_TopDown : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            if(Random.Range(0f, 3f) >= 2f)
+            float randNum = Random.Range(0f, 10f) / 10f * 100f;
+            if(randNum <= bigHealthChance)
             {
-                Instantiate(healthDrop, Aim.position, Aim.rotation);
+                Instantiate(bigHealthDrop, Aim.position, Aim.rotation);
+            }
+            else if (randNum > bigHealthChance && randNum <= smallHealthChance)
+            {
+                Instantiate(smallHealthDrop, Aim.position, Aim.rotation);
             }
         }
     }

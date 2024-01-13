@@ -886,7 +886,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isWalking: 0
+  hasDashing: 1
   isDashing: 0
+  canMelee: 1
+  canRanged: 1
   isFacingRight: 1
   health: 10
   maxHealth: 0
@@ -989,6 +992,7 @@ MonoBehaviour:
   timeToAttack: 0.3
   attackDuration: 0.3
   attackTimer: 0
+  playerController: {fileID: 420503067}
   Aim: {fileID: 1182502788}
   bullet: {fileID: 2609964779410368697, guid: 66b4ed7c004ca41a396c94556583f4fa, type: 3}
   fireForce: 10

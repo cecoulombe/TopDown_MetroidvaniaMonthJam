@@ -19,6 +19,8 @@ public class Attack_TopDown : MonoBehaviour
 
     [SerializeField]
     private float attackTimer = 0f;
+
+    public PlayerController_TopDown playerController;
     #endregion
 
     #region Ranged Variables
@@ -38,7 +40,6 @@ public class Attack_TopDown : MonoBehaviour
 
     [SerializeField]
     private float shootTimer = 0.5f;
-
     #endregion
 
     // Update is called once per frame
@@ -47,11 +48,11 @@ public class Attack_TopDown : MonoBehaviour
         CheckMeleeTimer();
         shootTimer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K) && playerController.canMelee)
         {
             OnAttack();
         }
-        if(Input.GetKeyDown(KeyCode.L))
+        if(Input.GetKeyDown(KeyCode.L) && playerController.canRanged)
         {
             OnShoot();
         }
