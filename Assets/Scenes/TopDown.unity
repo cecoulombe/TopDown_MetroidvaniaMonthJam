@@ -1438,6 +1438,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5134701059709482958, guid: 314e23d21de9641eeb4f255f0a82aeff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1685,6 +1689,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ranged Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5134701059709482958, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202758940845667350, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1869,6 +1881,14 @@ PrefabInstance:
     - target: {fileID: 5134701059709482958, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
       propertyPath: m_Name
       value: Charger Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5134701059709482958, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202758940845667350, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -114,7 +114,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
         rangeFromTarget = wakeUpPercent * loseAggroRange;
         meleeAttackRange = meleePercent * rangeFromTarget;
         rangedAttackRangeMin = minRangePercent * loseAggroRange;
-        rangedAttackRangeMin = maxRangePercent * loseAggroRange;
+        rangedAttackRangeMax = maxRangePercent * loseAggroRange;
     }
 
     void Update()
