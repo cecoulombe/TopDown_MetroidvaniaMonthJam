@@ -86,11 +86,17 @@ public class EnemyAttack_TopDown : MonoBehaviour
     [SerializeField]
     private float shootTimer = 0.5f;
 
-    [SerializeField]
-    private float rotationSpeed = 180f;
-
     private float rangedAttackRangeMin;
     private float rangedAttackRangeMax;
+
+    [SerializeField]
+    private float wakeUpPercent;
+    [SerializeField]
+    private float meleePercent;
+    [SerializeField]
+    private float minRangePercent;
+    [SerializeField]
+    private float maxRangePercent;
     #endregion
 
     public enum EnemyType { chaser, melee, ranged, mixed}
@@ -105,10 +111,10 @@ public class EnemyAttack_TopDown : MonoBehaviour
     {
         target = GameObject.Find("Player").transform;
         health = maxHealth;
-        rangeFromTarget = 0.7f * loseAggroRange;
-        meleeAttackRange = 0.3f * rangeFromTarget;
-        rangedAttackRangeMin = 0.5f * loseAggroRange;
-        rangedAttackRangeMin = 0.9f * loseAggroRange;
+        rangeFromTarget = wakeUpPercent * loseAggroRange;
+        meleeAttackRange = meleePercent * rangeFromTarget;
+        rangedAttackRangeMin = minRangePercent * loseAggroRange;
+        rangedAttackRangeMin = maxRangePercent * loseAggroRange;
     }
 
     void Update()
@@ -134,18 +140,23 @@ public class EnemyAttack_TopDown : MonoBehaviour
             }
         }
 
-        if (isAwake && (enemyType == EnemyType.ranged || enemyType == EnemyType.mixed))
+        if (isAwake && enemyType == EnemyType.ranged)
         {
-            if (Vector3.Distance(target.position, transform.position) >= rangedAttackRangeMin) //&& Vector3.Distance(target.position, transform.position) <= rangedAttackRangeMax)
+            OnShoot();
+            return;
+        }
+
+        if (isAwake && enemyType == EnemyType.mixed)
+        {
+            if (Vector3.Distance(target.position, transform.position) >= rangedAttackRangeMin && Vector3.Distance(target.position, transform.position) <= rangedAttackRangeMax)
             {
-                moveDirection = new Vector3(0f, 0f, 0f);
-                RotateTowardsPlayer();
                 OnShoot();
                 return;
             }
+
         }
 
-        if (target && isAwake && attackCoolDown <= 100f)
+        if (target && isAwake && attackCoolDown <= 100f && (enemyType != EnemyType.ranged))
         {
             Vector3 direction = (target.position - transform.position).normalized;
             moveDirection = direction;
@@ -224,17 +235,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
         }
     }
 
-    //private void OnShoot()
-    //{
-    //    if (shootTimer > shootCoolDown)
-    //    {
-    //        shootTimer = 0;
-    //        GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
-    //        intBullet.GetComponent<Rigidbody2D>().AddForce(-Aim.up * fireForce, ForceMode2D.Impulse);
-    //        Destroy(intBullet, 4f);
-    //    }
-    //}
-
     private void OnShoot()
     {
         if (shootTimer > shootCoolDown)
@@ -256,21 +256,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
 
             Destroy(intBullet, 4f);
         }
-    }
-
-    void RotateTowardsPlayer()
-    {
-        Vector2 direction = target.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        // Adjust the angle to match the sprite's orientation
-        angle -= 90f;
-
-        // Create a rotation quaternion
-        Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        // Smoothly rotate the enemy towards the player
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
     #endregion
 
