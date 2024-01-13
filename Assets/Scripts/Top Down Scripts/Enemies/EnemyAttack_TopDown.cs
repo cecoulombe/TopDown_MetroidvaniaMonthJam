@@ -131,7 +131,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
             }
         }
 
-        if (enemyType == EnemyType.ranged || enemyType == EnemyType.mixed)
+        if (isAwake && (enemyType == EnemyType.ranged || enemyType == EnemyType.mixed))
         {
             if (Vector3.Distance(target.position, transform.position) >= rangedAttackRangeMin) //&& Vector3.Distance(target.position, transform.position) <= rangedAttackRangeMax)
             {
@@ -223,7 +223,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
         if (shootTimer > shootCoolDown)
         {
             shootTimer = 0;
-            GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation);
+            GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
             intBullet.GetComponent<Rigidbody2D>().AddForce(-Aim.up * fireForce, ForceMode2D.Impulse);
             Destroy(intBullet, 4f);
         }
