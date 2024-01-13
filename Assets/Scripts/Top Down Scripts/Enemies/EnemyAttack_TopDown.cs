@@ -104,7 +104,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
         health = maxHealth;
         rangeFromTarget = 0.7f * loseAggroRange;
         meleeAttackRange = 0.3f * rangeFromTarget;
-        rangedAttackRangeMin = 0.68f * loseAggroRange;
+        rangedAttackRangeMin = 0.5f * loseAggroRange;
         rangedAttackRangeMin = 0.9f * loseAggroRange;
     }
 
@@ -133,7 +133,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
 
         if (enemyType == EnemyType.ranged || enemyType == EnemyType.mixed)
         {
-            if (Vector3.Distance(target.position, transform.position) >= rangedAttackRangeMin && Vector3.Distance(target.position, transform.position) <= rangedAttackRangeMax)
+            if (Vector3.Distance(target.position, transform.position) >= rangedAttackRangeMin) //&& Vector3.Distance(target.position, transform.position) <= rangedAttackRangeMax)
             {
                 moveDirection = new Vector3(0f, 0f, 0f);
                 OnShoot();
@@ -255,13 +255,5 @@ public class EnemyAttack_TopDown : MonoBehaviour
             playerController.TakeDamage(contactDamage);
         }
     }
-
-    //private void PlayerKnockback()
-    //{
-    //    if(playerKnockback = true)
-    //    {
-
-    //    }
-    //}
 }
 
