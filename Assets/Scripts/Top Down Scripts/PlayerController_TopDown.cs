@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController_TopDown : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayerController_TopDown : MonoBehaviour
     private float health;
     [SerializeField]
     private float maxHealth;
+    public Image healthBar;
     #endregion
 
     #region Movement Variables
@@ -84,6 +86,11 @@ public class PlayerController_TopDown : MonoBehaviour
         Flip();
         //Movement();
         Dash();
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Heal(1);
+        }
 
         // Posisble ideas of abilities and mechanics that could be added? not necessarily for the jam but just in general in case this is an idea I want to role with beyond Feb.
         // dash with i-frames that lets them go through thin walls/enemies/projectiles
@@ -207,10 +214,21 @@ public class PlayerController_TopDown : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        healthBar.fillAmount = health / maxHealth;
         if (health <= 0)
         {
             Destroy(gameObject);
         }
+    }
+    #endregion
+
+    #region Heal
+    public void Heal(float healAmount)
+    {
+        health += healAmount;
+        health = Mathf.Clamp(health, 0, maxHealth);
+        healthBar.fillAmount = health / maxHealth;
+
     }
     #endregion
 
