@@ -23,6 +23,7 @@ public class PlayerController_TopDown : MonoBehaviour
     public bool canRanged;
 
     public GameManager_TopDown gameManager;
+    public EnemyAttack_TopDown enemy;
 
     public bool isFacingRight = true;
     private Vector2 lastMoveDirection;
@@ -223,6 +224,8 @@ public class PlayerController_TopDown : MonoBehaviour
         if (health <= 0)
         {
             //Destroy(gameObject);
+            Heal(maxHealth);
+            enemy.ResetEnemyOnDeath();
             gameManager.Death();
         }
     }

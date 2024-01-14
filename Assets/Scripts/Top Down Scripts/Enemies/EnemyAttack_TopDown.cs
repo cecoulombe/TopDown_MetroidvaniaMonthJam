@@ -16,6 +16,8 @@ public class EnemyAttack_TopDown : MonoBehaviour
     private Vector2 moveDirection;
     private Vector2 lastMoveDirection;
 
+    private Vector3 startPosition;
+
     [SerializeField]
     private float health = 3f;
     [SerializeField]
@@ -124,6 +126,8 @@ public class EnemyAttack_TopDown : MonoBehaviour
         meleeAttackRange = meleePercent * rangeFromTarget;
         rangedAttackRangeMin = minRangePercent * loseAggroRange;
         rangedAttackRangeMax = maxRangePercent * loseAggroRange;
+
+        startPosition = gameObject.transform.position;
     }
 
     void Update()
@@ -301,6 +305,14 @@ public class EnemyAttack_TopDown : MonoBehaviour
             }
             playerController.TakeDamage(contactDamage);
         }
+    }
+
+    public void ResetEnemyOnDeath()
+    {
+        // reset the position of the enemy when the player dies
+        gameObject.transform.position = startPosition;
+        isAwake = false;
+
     }
 }
 
