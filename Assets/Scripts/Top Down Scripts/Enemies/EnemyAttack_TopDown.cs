@@ -9,6 +9,9 @@ public class EnemyAttack_TopDown : MonoBehaviour
     private float moveSpeed;
 
     [SerializeField]
+    private bool isDead;
+
+    [SerializeField]
     private bool isAwake;
 
     private Rigidbody2D rb;
@@ -134,7 +137,12 @@ public class EnemyAttack_TopDown : MonoBehaviour
     {
         if (playerController.health <= 0)
         {
-            ResetEnemyOnDeath();
+            ResetEnemyOnPlayerDeath();
+            return;
+        }
+
+        if (isDead)
+        {
             return;
         }
 
@@ -283,7 +291,9 @@ public class EnemyAttack_TopDown : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            isDead = true;
+            gameObject.SetActive(false);
             float randNum = Random.Range(0f, 10f) / 10f * 100f;
             if(randNum <= bigHealthChance)
             {
@@ -313,11 +323,13 @@ public class EnemyAttack_TopDown : MonoBehaviour
         }
     }
 
-    public void ResetEnemyOnDeath()
+    public void ResetEnemyOnPlayerDeath()
     {
         // reset the position of the enemy when the player dies
-        gameObject.transform.position = startPosition;
         isAwake = false;
+        gameObject.transform.position = startPosition;
+        gameObject.SetActive(true);
+        isDead = false;
         health = maxHealth;
     }
 }
