@@ -217,12 +217,13 @@ public class PlayerController_TopDown : MonoBehaviour
     #endregion
 
     #region Take Damage
-    public void TakeDamage(float damage)
+    public IEnumerator TakeDamage(float damage)
     {
         health -= damage;
         healthBar.fillAmount = health / maxHealth;
         if (health <= 0)
         {
+            yield return new WaitForSeconds(0.25f);
             //Destroy(gameObject);
             gameManager.Death();
         }

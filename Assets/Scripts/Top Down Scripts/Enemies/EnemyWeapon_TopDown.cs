@@ -46,7 +46,7 @@ public class EnemyWeapon_TopDown : MonoBehaviour
                 player.knockFromRight = false;
             }
 
-            player.TakeDamage(damage * damangeMultiplier);
+            StartCoroutine(player.TakeDamage(damage * damangeMultiplier));
 
             if (weaponType == WeaponType.Bullet)
             {
