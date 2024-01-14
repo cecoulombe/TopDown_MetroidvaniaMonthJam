@@ -6,7 +6,7 @@ public class GameManager_TopDown : MonoBehaviour
 {
     #region Variables
 
-    public PlayerController player;
+    public PlayerController_TopDown player;
     private Vector3 playerStartPoint;
 
     public DeathMenu_TopDown deathScreen;
@@ -17,27 +17,27 @@ public class GameManager_TopDown : MonoBehaviour
         playerStartPoint = player.transform.position;
     }
 
-    public void ReloadLevel()
+    public void Death()
     {
         player.gameObject.SetActive(false);
 
         deathScreen.gameObject.SetActive(true);
 
-        StartCoroutine("RestartGameCo");
+        //StartCoroutine("RestartGameCo");
     }
 
-    public void Reset()
+    public void ReloadLevel()
     {
         deathScreen.gameObject.SetActive(false);
         player.transform.position = playerStartPoint;
         player.gameObject.SetActive(true);
     }
 
-    public IEnumerator RestartGameCo()
-    {
-        yield return new WaitForSeconds(0.5f);
+    //public IEnumerator RestartGameCo()
+    //{
+    //    yield return new WaitForSeconds(0.5f);
 
-        player.transform.position = playerStartPoint;
-        player.gameObject.SetActive(true);
-    }
+    //    player.transform.position = playerStartPoint;
+    //    player.gameObject.SetActive(true);
+    //}
 }

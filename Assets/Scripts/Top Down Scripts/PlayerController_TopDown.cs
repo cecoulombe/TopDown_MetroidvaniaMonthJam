@@ -9,7 +9,6 @@ public class PlayerController_TopDown : MonoBehaviour
     // reference to the rigidbody, collider, and player scripts
     protected Rigidbody2D rb;
     protected Collider2D col;
-    protected Player player;
 
     [Header("Player state bools")]
     [SerializeField]
@@ -23,6 +22,7 @@ public class PlayerController_TopDown : MonoBehaviour
     [SerializeField]
     public bool canRanged;
 
+    public GameManager_TopDown gameManager;
 
     public bool isFacingRight = true;
     private Vector2 lastMoveDirection;
@@ -222,7 +222,8 @@ public class PlayerController_TopDown : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameManager.Death();
         }
     }
     #endregion
@@ -243,7 +244,6 @@ public class PlayerController_TopDown : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
-        player = GetComponent<Player>();
     }
     #endregion
 }

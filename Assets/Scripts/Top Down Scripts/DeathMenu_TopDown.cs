@@ -9,7 +9,7 @@ public class DeathMenu_TopDown : MonoBehaviour
 
     public void ReloadLevel()
     {
-        FindObjectOfType<GameManager_TopDown>().Reset();
+        FindObjectOfType<GameManager_TopDown>().ReloadLevel();
     }
 
     public void QuitToMainMenu()
