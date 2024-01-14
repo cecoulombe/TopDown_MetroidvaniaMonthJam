@@ -319,7 +319,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
         gameObject.transform.position = startPosition;
         isAwake = false;
         health = maxHealth;
-
     }
 }
 
