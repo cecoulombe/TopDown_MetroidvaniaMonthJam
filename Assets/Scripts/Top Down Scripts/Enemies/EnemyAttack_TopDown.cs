@@ -132,6 +132,12 @@ public class EnemyAttack_TopDown : MonoBehaviour
 
     void Update()
     {
+        if (playerController.health <= 0)
+        {
+            ResetEnemyOnDeath();
+            return;
+        }
+
         CheckMeleeTimer();
         shootTimer += Time.deltaTime;
 
@@ -312,6 +318,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
         // reset the position of the enemy when the player dies
         gameObject.transform.position = startPosition;
         isAwake = false;
+        health = maxHealth;
 
     }
 }

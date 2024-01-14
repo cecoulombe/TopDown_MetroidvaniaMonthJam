@@ -31,6 +31,8 @@ public class GameManager_TopDown : MonoBehaviour
         deathScreen.gameObject.SetActive(false);
         player.transform.position = playerStartPoint;
         player.gameObject.SetActive(true);
+        player.Heal(player.maxHealth);
+
     }
 
     //public IEnumerator RestartGameCo()

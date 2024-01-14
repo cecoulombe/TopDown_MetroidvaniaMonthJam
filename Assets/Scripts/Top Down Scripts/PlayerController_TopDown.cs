@@ -29,9 +29,9 @@ public class PlayerController_TopDown : MonoBehaviour
     private Vector2 lastMoveDirection;
 
     [SerializeField]
-    private float health;
+    public float health;
     [SerializeField]
-    private float maxHealth;
+    public float maxHealth;
     public Image healthBar;
     #endregion
 
@@ -224,8 +224,6 @@ public class PlayerController_TopDown : MonoBehaviour
         if (health <= 0)
         {
             //Destroy(gameObject);
-            Heal(maxHealth);
-            enemy.ResetEnemyOnDeath();
             gameManager.Death();
         }
     }
