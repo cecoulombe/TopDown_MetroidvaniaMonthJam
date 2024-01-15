@@ -9,7 +9,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
     private float moveSpeed;
 
     [SerializeField]
-    private bool isDead;
+    public bool isDead;
 
     [SerializeField]
     private bool isAwake;

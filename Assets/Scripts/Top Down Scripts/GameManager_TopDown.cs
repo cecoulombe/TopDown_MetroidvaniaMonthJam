@@ -13,12 +13,34 @@ public class GameManager_TopDown : MonoBehaviour
     public DeathMenu_TopDown deathScreen;
     public string currentLevel;
 
+    public EnemyAttack_TopDown[] enemyList;
 
+    public GameObject enemyGate;
+    public GameObject roomAfterGate;
+
+    private float deathCounter;
     #endregion
 
     void Start()
     {
         playerStartPoint = player.transform.position;
+    }
+
+    private void Update()
+    {
+        deathCounter = 0;
+        for (int i = 0; i < enemyList.Length; i++)
+        {
+           if(enemyList[i].isDead)
+            {
+                deathCounter++;
+                    if (deathCounter == enemyList.Length)
+                {
+                    enemyGate.SetActive(false);
+                    roomAfterGate.SetActive(true);
+                }
+            }
+        }
     }
 
     public void Death()
@@ -39,12 +61,4 @@ public class GameManager_TopDown : MonoBehaviour
         SceneManager.LoadScene(currentLevel);
 
     }
-
-    //public IEnumerator RestartGameCo()
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-
-    //    player.transform.position = playerStartPoint;
-    //    player.gameObject.SetActive(true);
-    //}
 }
