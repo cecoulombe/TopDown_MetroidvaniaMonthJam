@@ -203,9 +203,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
     {
         if (isWalking)
         {
-            //Vector3 vector3 = Vector3.left * moveDirection.x + Vector3.down * moveDirection.y;
             Aim.rotation = Quaternion.LookRotation(Vector3.forward, -lastMoveDirection);
-            Aim.rotation = target.rotation;
 
         }
 
