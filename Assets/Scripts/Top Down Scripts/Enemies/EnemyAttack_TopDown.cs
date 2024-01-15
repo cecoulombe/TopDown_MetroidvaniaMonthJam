@@ -182,6 +182,10 @@ public class EnemyAttack_TopDown : MonoBehaviour
             if (Vector3.Distance(target.position, transform.position) >= rangedAttackRangeMin && Vector3.Distance(target.position, transform.position) <= rangedAttackRangeMax)
             {
                 OnShoot();
+                Vector3 direction = (target.position - transform.position).normalized;
+                moveDirection = -direction;
+                lastMoveDirection = moveDirection;
+                isWalking = true;
                 return;
             }
 
