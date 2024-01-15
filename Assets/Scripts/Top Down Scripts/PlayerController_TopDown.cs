@@ -90,6 +90,11 @@ public class PlayerController_TopDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            StartCoroutine(TakeDamage(maxHealth));
+        }
+
         Inputs();
         Flip();
         //Movement();
@@ -236,7 +241,6 @@ public class PlayerController_TopDown : MonoBehaviour
         health += healAmount;
         health = Mathf.Clamp(health, 0, maxHealth);
         healthBar.fillAmount = health / maxHealth;
-
     }
     #endregion
 
