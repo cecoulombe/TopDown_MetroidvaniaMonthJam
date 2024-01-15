@@ -1848,6 +1848,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5134701059709482958, guid: 314e23d21de9641eeb4f255f0a82aeff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7028290374932615096, guid: 314e23d21de9641eeb4f255f0a82aeff, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2057,11 +2061,11 @@ PrefabInstance:
       objectReference: {fileID: 420503067}
     - target: {fileID: 1624224465659347987, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 2.34
       objectReference: {fileID: 0}
     - target: {fileID: 1624224465659347987, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 1624224465659347987, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2290,7 +2294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5134701059709482958, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2447,7 +2451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5134701059709482958, guid: dcaf6cdab12114872bdca919afe84d77, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -170,6 +170,10 @@ public class EnemyAttack_TopDown : MonoBehaviour
         if (isAwake && enemyType == EnemyType.ranged)
         {
             OnShoot();
+            Vector3 direction = (target.position - transform.position).normalized;
+            moveDirection = -direction;
+            lastMoveDirection = moveDirection;
+            isWalking = true;
             return;
         }
 
@@ -287,6 +291,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        isAwake = true;
         if (health <= 0)
         {
             //Destroy(gameObject);
