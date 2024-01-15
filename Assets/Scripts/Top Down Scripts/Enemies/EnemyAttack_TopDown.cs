@@ -319,7 +319,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
             {
                 playerController.knockFromRight = false;
             }
-            playerController.TakeDamage(contactDamage);
+            StartCoroutine(playerController.TakeDamage(contactDamage));
         }
     }
 

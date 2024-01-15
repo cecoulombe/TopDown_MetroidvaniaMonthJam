@@ -162,4 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  meleeDamage: 1
+  bulletDamage: 1
   weaponType: 1
