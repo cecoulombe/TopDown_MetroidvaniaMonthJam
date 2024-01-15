@@ -137,8 +137,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
     {
         if (playerController.health <= 0)
         {
-            Debug.Log("player ded");
-            ResetEnemyOnPlayerDeath();
             return;
         }
 
@@ -329,17 +327,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
             }
             StartCoroutine(playerController.TakeDamage(contactDamage));
         }
-    }
-
-    public void ResetEnemyOnPlayerDeath()
-    {
-        // reset the position of the enemy when the player dies
-        Debug.Log("reviving enemies");
-        isAwake = false;
-        gameObject.transform.position = startPosition;
-        gameObject.SetActive(true);
-        isDead = false;
-        health = maxHealth;
     }
 }
 
