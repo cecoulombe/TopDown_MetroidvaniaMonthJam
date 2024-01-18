@@ -28,20 +28,9 @@ public class GameManager_TopDown : MonoBehaviour
 
     private void Update()
     {
-        deathCounter = 0;
-        for (int i = 0; i < enemyList.Length; i++)
-        {
-           if(enemyList[i].isDead)
-            {
-                deathCounter++;
-                    if (deathCounter == enemyList.Length)
-                {
-                    enemyGate.SetActive(false);
-                    roomAfterGate.SetActive(true);
-                }
-            }
-        }
-    }
+        // Room(roomNumber);
+        Enemies();
+    }   
 
     public void Death()
     {
@@ -60,5 +49,22 @@ public class GameManager_TopDown : MonoBehaviour
         //player.Heal(player.maxHealth);
         SceneManager.LoadScene(currentLevel);
 
+    }
+
+    private void Enemies()
+    {
+        deathCounter = 0;
+        for (int i = 0; i < enemyList.Length; i++)
+        {
+            if (enemyList[i].isDead)
+            {
+                deathCounter++;
+                if (deathCounter == enemyList.Length)
+                {
+                    enemyGate.SetActive(false);
+                    roomAfterGate.SetActive(true);
+                }
+            }
+        }
     }
 }
