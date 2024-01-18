@@ -28,7 +28,6 @@ public class GameManager_TopDown : MonoBehaviour
 
     private void Update()
     {
-        // Room(roomNumber);
         Enemies();
     }   
 
@@ -44,9 +43,6 @@ public class GameManager_TopDown : MonoBehaviour
     public void ReloadLevel()
     {
         deathScreen.gameObject.SetActive(false);
-        //player.transform.position = playerStartPoint;
-        //player.gameObject.SetActive(true);
-        //player.Heal(player.maxHealth);
         SceneManager.LoadScene(currentLevel);
 
     }
