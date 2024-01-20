@@ -95,7 +95,7 @@ public class PlayerController_TopDown : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            StartCoroutine(TakeDamage(playerMaxHealth));
+            TakeDamage(playerMaxHealth);
         }
 
         Inputs();
@@ -225,26 +225,26 @@ public class PlayerController_TopDown : MonoBehaviour
     #endregion
 
     #region Take Damage
-    public IEnumerator TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
-        playerHealth -= damage;
+        //playerHealth -= damage;
         //healthBar.fillAmount = playerHealth / playerMaxHealth;
-        GameStatus.GetInstance().LoseHealth(damage);
-        if (playerHealth <= 0)
-        {
-            //GameStatus.GetInstance().AddDeath();
-            yield return new WaitForSeconds(0.25f);
-            //Destroy(gameObject);
-            gameManager.Death();
-        }
+        StartCoroutine(GameStatus.GetInstance().LoseHealth(damage));
+        //if (playerHealth <= 0)
+        //{
+        //    //GameStatus.GetInstance().AddDeath();
+        //    yield return new WaitForSeconds(0.25f);
+        //    //Destroy(gameObject);
+        //    gameManager.Death();
+        //}
     }
     #endregion
 
     #region Heal
     public void Heal(float healAmount)
     {
-        playerHealth += healAmount;
-        playerHealth = Mathf.Clamp(playerHealth, 0, playerMaxHealth);
+        //playerHealth += healAmount;
+        //playerHealth = Mathf.Clamp(playerHealth, 0, playerMaxHealth);
         GameStatus.GetInstance().AddHealth(healAmount);
         //healthBar.fillAmount = playerHealth / playerMaxHealth;
     }

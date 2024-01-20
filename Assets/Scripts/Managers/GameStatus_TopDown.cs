@@ -8,6 +8,8 @@ public class GameStatus : MonoBehaviour
     // make sure this is the only instance of the game status, even though it isn't destroying on load
     static GameStatus instance;
 
+    public GameManager_TopDown gameManager;
+
     // store some player variables that will need to persist between loads
     #region Player variables    
     [SerializeField]
@@ -58,9 +60,16 @@ public class GameStatus : MonoBehaviour
         health = Mathf.Clamp(health, 0, maxHealth);
     }
 
-    public void LoseHealth(float damageAmount)
+    public IEnumerator LoseHealth(float damage)
     {
-        health -= damageAmount;
+        health -= damage;
+        if (health <= 0)
+        {
+            //GameStatus.GetInstance().AddDeath();
+            yield return new WaitForSeconds(0.25f);
+            //Destroy(gameObject);
+            gameManager.Death();
+        }
     }
 
     public static GameStatus GetInstance()
