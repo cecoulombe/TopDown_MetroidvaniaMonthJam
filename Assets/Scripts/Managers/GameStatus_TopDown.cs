@@ -56,7 +56,6 @@ public class GameStatus : MonoBehaviour
     {
         health += healthAmount;
         health = Mathf.Clamp(health, 0, maxHealth);
-
     }
 
     public void LoseHealth(float damageAmount)
