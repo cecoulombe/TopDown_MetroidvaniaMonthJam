@@ -135,7 +135,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
 
     void Update()
     {
-        if (playerController.health <= 0)
+        if (GameStatus.GetInstance().GetHealth() <= 0)
         {
             return;
         }

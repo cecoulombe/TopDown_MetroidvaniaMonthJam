@@ -5,14 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class GameStatus : MonoBehaviour
 {
-    #region Variables
     // make sure this is the only instance of the game status, even though it isn't destroying on load
     static GameStatus instance;
 
-    // count the number of deaths for the file
-    protected int deathCounter = 0;
+    // store some player variables that will need to persist between loads
+    #region Player variables    
+    [SerializeField]
+    protected float health;
+    [SerializeField]
+    protected float maxHealth;
 
     #endregion
+    
     // making a class which can keep track of certain game states (i.e. what abilities the player has, how many times they have died, if a gate has been opened at some point?)
 
     // keep track of player state (maybe using an enum? take a look at that video after sorting this out)
@@ -24,12 +28,13 @@ public class GameStatus : MonoBehaviour
         #region Don't destroy on load/check for other instances
         if (instance != null)    // check if someone else is already this game object
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             return;
         }
 
+        health = maxHealth;
         instance = this;
-        GameObject.DontDestroyOnLoad(this.gameObject);   // become immortal
+        GameObject.DontDestroyOnLoad(gameObject);   // become immortal
         #endregion
     }
 
@@ -38,14 +43,13 @@ public class GameStatus : MonoBehaviour
         Debug.Log("game status destroyed");
     }
 
-    public void AddDeath()
+    public float GetHealth()
     {
-        deathCounter += 1;
+        return health;
     }
-
-    public int GetDeaths()
+    public float GetMaxHealth()
     {
-        return deathCounter;
+        return maxHealth;
     }
 
     public static GameStatus GetInstance()

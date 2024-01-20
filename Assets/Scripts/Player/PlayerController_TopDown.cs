@@ -27,10 +27,10 @@ public class PlayerController_TopDown : MonoBehaviour
     public bool isFacingRight = true;
     private Vector2 lastMoveDirection;
 
-    [SerializeField]
-    public float health;
-    [SerializeField]
-    public float maxHealth;
+    //[SerializeField]
+    private float playerHealth;
+    //[SerializeField]
+    private float playerMaxHealth;
     public Image healthBar;
     #endregion
 
@@ -82,16 +82,20 @@ public class PlayerController_TopDown : MonoBehaviour
     void Start()
     {
         Initialization();
-        maxHealth = health;
+        //maxHealth = health;
         activeMoveSpeed = walkSpeed;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        playerHealth = GameStatus.GetInstance().GetHealth();
+        playerMaxHealth = GameStatus.GetInstance().GetMaxHealth();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            StartCoroutine(TakeDamage(maxHealth));
+            StartCoroutine(TakeDamage(playerMaxHealth));
         }
 
         Inputs();
@@ -223,11 +227,11 @@ public class PlayerController_TopDown : MonoBehaviour
     #region Take Damage
     public IEnumerator TakeDamage(float damage)
     {
-        health -= damage;
-        healthBar.fillAmount = health / maxHealth;
-        if (health <= 0)
+        playerHealth -= damage;
+        healthBar.fillAmount = playerHealth / playerMaxHealth;
+        if (playerHealth <= 0)
         {
-            GameStatus.GetInstance().AddDeath();
+            //GameStatus.GetInstance().AddDeath();
             yield return new WaitForSeconds(0.25f);
             //Destroy(gameObject);
             gameManager.Death();
@@ -238,9 +242,9 @@ public class PlayerController_TopDown : MonoBehaviour
     #region Heal
     public void Heal(float healAmount)
     {
-        health += healAmount;
-        health = Mathf.Clamp(health, 0, maxHealth);
-        healthBar.fillAmount = health / maxHealth;
+        playerHealth += healAmount;
+        playerHealth = Mathf.Clamp(playerHealth, 0, playerMaxHealth);
+        healthBar.fillAmount = playerHealth / playerMaxHealth;
     }
     #endregion
 
