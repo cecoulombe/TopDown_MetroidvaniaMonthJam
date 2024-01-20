@@ -228,7 +228,7 @@ public class PlayerController_TopDown : MonoBehaviour
     public IEnumerator TakeDamage(float damage)
     {
         playerHealth -= damage;
-        healthBar.fillAmount = playerHealth / playerMaxHealth;
+        //healthBar.fillAmount = playerHealth / playerMaxHealth;
         GameStatus.GetInstance().LoseHealth(damage);
         if (playerHealth <= 0)
         {
@@ -246,7 +246,7 @@ public class PlayerController_TopDown : MonoBehaviour
         playerHealth += healAmount;
         playerHealth = Mathf.Clamp(playerHealth, 0, playerMaxHealth);
         GameStatus.GetInstance().AddHealth(healAmount);
-        healthBar.fillAmount = playerHealth / playerMaxHealth;
+        //healthBar.fillAmount = playerHealth / playerMaxHealth;
     }
     #endregion
 

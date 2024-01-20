@@ -7,6 +7,11 @@ public class HealthBarManager : MonoBehaviour
 {
     public Image healthBar;
 
+    private void Update()
+    {
+        HealthBar();
+    }
+
     public void HealthBar()
     {
         healthBar.fillAmount = GameStatus.GetInstance().GetHealth() / GameStatus.GetInstance().GetMaxHealth();
