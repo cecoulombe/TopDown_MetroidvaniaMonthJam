@@ -52,6 +52,18 @@ public class GameStatus : MonoBehaviour
         return maxHealth;
     }
 
+    public void AddHealth(float healthAmount)
+    {
+        health += healthAmount;
+        health = Mathf.Clamp(health, 0, maxHealth);
+
+    }
+
+    public void LoseHealth(float damageAmount)
+    {
+        health -= damageAmount;
+    }
+
     public static GameStatus GetInstance()
     {
         return instance;

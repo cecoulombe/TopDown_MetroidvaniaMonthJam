@@ -28,7 +28,7 @@ public class PlayerController_TopDown : MonoBehaviour
     private Vector2 lastMoveDirection;
 
     //[SerializeField]
-    private float playerHealth;
+    public float playerHealth;
     //[SerializeField]
     private float playerMaxHealth;
     public Image healthBar;
@@ -229,6 +229,7 @@ public class PlayerController_TopDown : MonoBehaviour
     {
         playerHealth -= damage;
         healthBar.fillAmount = playerHealth / playerMaxHealth;
+        GameStatus.GetInstance().LoseHealth(damage);
         if (playerHealth <= 0)
         {
             //GameStatus.GetInstance().AddDeath();
@@ -244,6 +245,7 @@ public class PlayerController_TopDown : MonoBehaviour
     {
         playerHealth += healAmount;
         playerHealth = Mathf.Clamp(playerHealth, 0, playerMaxHealth);
+        GameStatus.GetInstance().AddHealth(healAmount);
         healthBar.fillAmount = playerHealth / playerMaxHealth;
     }
     #endregion
