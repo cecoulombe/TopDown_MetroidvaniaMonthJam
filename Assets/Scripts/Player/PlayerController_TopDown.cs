@@ -227,6 +227,7 @@ public class PlayerController_TopDown : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
         if (health <= 0)
         {
+            GameStatus.GetInstance().AddDeath();
             yield return new WaitForSeconds(0.25f);
             //Destroy(gameObject);
             gameManager.Death();
