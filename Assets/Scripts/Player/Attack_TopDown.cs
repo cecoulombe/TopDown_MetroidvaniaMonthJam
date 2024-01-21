@@ -48,11 +48,11 @@ public class Attack_TopDown : MonoBehaviour
         CheckMeleeTimer();
         shootTimer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.K) && playerController.canMelee)
+        if (Input.GetKeyDown(KeyCode.K) && GameStatus.GetInstance().CanMelee())
         {
             OnAttack();
         }
-        if(Input.GetKeyDown(KeyCode.L) && playerController.canRanged)
+        if(Input.GetKeyDown(KeyCode.L) && GameStatus.GetInstance().CanRanged())
         {
             OnShoot();
         }

@@ -14,13 +14,7 @@ public class PlayerController_TopDown : MonoBehaviour
     [SerializeField]
     private bool isWalking;
     [SerializeField]
-    private bool hasDashing;
-    [SerializeField]
     private bool isDashing;
-    [SerializeField]
-    public bool canMelee;
-    [SerializeField]
-    public bool canRanged;
 
     public GameManager_TopDown gameManager;
     public DeathManager deathManager;
@@ -200,7 +194,7 @@ public class PlayerController_TopDown : MonoBehaviour
     #region Dash
     private void Dash()
     {
-        if (hasDashing)
+        if (GameStatus.GetInstance().HasDash())
         {
             if (Input.GetKeyDown(KeyCode.J))
             {

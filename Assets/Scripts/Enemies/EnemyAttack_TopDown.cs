@@ -7,6 +7,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
     #region Varaibles
     [SerializeField]
     private float moveSpeed;
+    private float defaultSpeed;
 
     [SerializeField]
     public bool isDead;
@@ -125,6 +126,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
     {
         target = GameObject.Find("Player").transform;
         health = maxHealth;
+        defaultSpeed = moveSpeed;
         rangeFromTarget = wakeUpPercent * loseAggroRange;
         meleeAttackRange = meleePercent * rangeFromTarget;
         rangedAttackRangeMin = minRangePercent * loseAggroRange;
@@ -248,6 +250,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
             isAttacking = true;
             // call your animator to play your melee attack
         }
+        //moveSpeed = defaultSpeed;
     }
 
     private void CheckMeleeTimer()
@@ -256,13 +259,17 @@ public class EnemyAttack_TopDown : MonoBehaviour
         {
             attackCoolDown -= 1f;
         }
+        if(!isAttacking && attackCoolDown <= 0)
+        {
+            moveSpeed = defaultSpeed;
+        }
         if (isAttacking)
         {
             attackTimer += Time.deltaTime;
 
             if (attackTimer >= attackDuration)
             {
-                attackCoolDown = 300f;
+                attackCoolDown = 200f;
                 attackTimer = 0;
                 isAttacking = false;
                 Melee.SetActive(false);

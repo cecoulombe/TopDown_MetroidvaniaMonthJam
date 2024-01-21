@@ -11,14 +11,23 @@ public class GameStatus : MonoBehaviour
     private HealthBarManager HealthManager;
 
     // store some player variables that will need to persist between loads
-    #region Player variables    
+    #region Player variables
+    [Header("Player health stats")]
     [SerializeField]
     protected float health;
     [SerializeField]
     protected float maxHealth;
 
+    [Header("Player state bools")]
+    [SerializeField]
+    protected bool hasDash;
+    [SerializeField]
+    protected bool canMelee;
+    [SerializeField]
+    protected bool canRanged;
+
     #endregion
-    
+
     // making a class which can keep track of certain game states (i.e. what abilities the player has, how many times they have died, if a gate has been opened at some point?)
 
     // keep track of player state (maybe using an enum? take a look at that video after sorting this out)
@@ -37,6 +46,11 @@ public class GameStatus : MonoBehaviour
         health = maxHealth;
         instance = this;
         GameObject.DontDestroyOnLoad(gameObject);   // become immortal
+
+        // keep this variables for now, but can change them later on using external scripts
+        SetHasDash(true);
+        SetCanMelee(true);
+        SetCanRanged(true);
         #endregion
     }
 
@@ -45,10 +59,12 @@ public class GameStatus : MonoBehaviour
         Debug.Log("game status destroyed");
     }
 
+    #region Health and Damage Functions
     public float GetHealth()
     {
         return health;
     }
+
     public float GetMaxHealth()
     {
         return maxHealth;
@@ -64,6 +80,36 @@ public class GameStatus : MonoBehaviour
     {
         health -= damageAmount;
     }
+    #endregion
+
+    #region Ability Checks
+    public void SetHasDash(bool dash)
+    {
+        hasDash = dash;
+    }
+    public bool HasDash()
+    {
+        return hasDash;
+    }
+
+    public void SetCanMelee(bool melee)
+    {
+        canMelee = melee;
+    }
+    public bool CanMelee()
+    {
+        return canMelee;
+    }
+
+    public void SetCanRanged(bool ranged)
+    {
+        canRanged = ranged;
+    }
+    public bool CanRanged()
+    {
+        return canRanged;
+    }
+    #endregion
 
     public static GameStatus GetInstance()
     {
