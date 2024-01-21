@@ -6832,17 +6832,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
---- !u!114 &2240363057039864847 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7990294630944369888, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
-  m_PrefabInstance: {fileID: 2240363057039864846}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07480ab7417de44a09cc014a0e010b1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4110392547352614621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6908,6 +6897,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc107ab3c9caf4090bdb7485283a3b04, type: 3}
+--- !u!1001 &6133437896666670749
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1472597602915162290, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 420503067}
+    - target: {fileID: 1472597602915162290, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 413506168}
+    - target: {fileID: 1875534664673971997, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 991.3429
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875534664673971997, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 80.52141
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875534664673971997, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.76128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875534664673971997, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875534664673971997, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875534664673971997, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875534664673971997, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875534664673971997, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875534664673971997, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875534664673971997, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202906785708191877, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
+      propertyPath: m_Name
+      value: Death Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6326781d64f1a408090f647e1910e1e2, type: 3}
 --- !u!1001 &7783535503177804659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6921,12 +6975,16 @@ PrefabInstance:
       value: GameStatus
       objectReference: {fileID: 0}
     - target: {fileID: 3137214073301050648, guid: 2d5ef7e2431b34cd7966d547975541d3, type: 3}
-      propertyPath: health
-      value: 10
-      objectReference: {fileID: 0}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 420503067}
     - target: {fileID: 3137214073301050648, guid: 2d5ef7e2431b34cd7966d547975541d3, type: 3}
-      propertyPath: maxHealth
-      value: 10
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 413506168}
+    - target: {fileID: 3137214073301050648, guid: 2d5ef7e2431b34cd7966d547975541d3, type: 3}
+      propertyPath: sceneLoader
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6387817101012548571, guid: 2d5ef7e2431b34cd7966d547975541d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7064,7 +7122,7 @@ PrefabInstance:
     - target: {fileID: 7730509046582602952, guid: 02b6f346c6b7d4779b628cd76e7293cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2240363057039864847}
+      objectReference: {fileID: 0}
     - target: {fileID: 8326115889479567795, guid: 02b6f346c6b7d4779b628cd76e7293cd, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -7084,6 +7142,7 @@ SceneRoots:
   - {fileID: 613920100}
   - {fileID: 7783535503177804659}
   - {fileID: 2240363057039864846}
+  - {fileID: 6133437896666670749}
   - {fileID: 720046170}
   - {fileID: 8524804049138403686}
   - {fileID: 414759918}

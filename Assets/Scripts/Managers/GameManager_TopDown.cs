@@ -29,23 +29,23 @@ public class GameManager_TopDown : MonoBehaviour
     private void Update()
     {
         Enemies();
-    }   
-
-    public void Death()
-    {
-        player.gameObject.SetActive(false);
-
-        deathScreen.gameObject.SetActive(true);
-
-        //StartCoroutine("RestartGameCo");
     }
 
-    public void ReloadLevel()
-    {
-        deathScreen.gameObject.SetActive(false);
-        SceneManager.LoadScene(currentLevel);
+    //public void Death()
+    //{
+    //    player.gameObject.SetActive(false);
 
-    }
+    //    deathScreen.gameObject.SetActive(true);
+
+    //    //StartCoroutine("RestartGameCo");
+    //}
+
+    //public void ReloadLevel()
+    //{
+    //    deathScreen.gameObject.SetActive(false);
+    //    sceneLoader.ReloadRoom();
+    //    health = maxHealth;
+    //}
 
     private void Enemies()
     {

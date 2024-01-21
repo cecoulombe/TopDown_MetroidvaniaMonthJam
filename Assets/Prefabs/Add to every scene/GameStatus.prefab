@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364ea6d3b5d29408db7b00182d71af74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
-  score: 0
+  sceneLoader: {fileID: 0}
+  deathScreen: {fileID: 0}
+  player: {fileID: 0}
+  health: 10
+  maxHealth: 10

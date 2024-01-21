@@ -23,6 +23,7 @@ public class PlayerController_TopDown : MonoBehaviour
     public bool canRanged;
 
     public GameManager_TopDown gameManager;
+    public DeathManager deathManager;
 
     public bool isFacingRight = true;
     private Vector2 lastMoveDirection;
@@ -93,10 +94,10 @@ public class PlayerController_TopDown : MonoBehaviour
         playerHealth = GameStatus.GetInstance().GetHealth();
         playerMaxHealth = GameStatus.GetInstance().GetMaxHealth();
 
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    TakeDamage(playerMaxHealth);
-        //}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            StartCoroutine(TakeDamage(playerMaxHealth));
+        }
 
         Inputs();
         Flip();
@@ -225,28 +226,21 @@ public class PlayerController_TopDown : MonoBehaviour
     #endregion
 
     #region Take Damage
-    //public void TakeDamage(float damage)
-    //{
-    //    //playerHealth -= damage;
-    //    //healthBar.fillAmount = playerHealth / playerMaxHealth;
-    //    StartCoroutine(GameStatus.GetInstance().LoseHealth(damage));
-    //    //if (playerHealth <= 0)
-    //    //{
-    //    //    //GameStatus.GetInstance().AddDeath();
-    //    //    yield return new WaitForSeconds(0.25f);
-    //    //    //Destroy(gameObject);
-    //    //    gameManager.Death();
-    //    //}
-    //}
+    public IEnumerator TakeDamage(float damage)
+    {
+        GameStatus.GetInstance().LoseHealth(damage);
+        if (playerHealth <= 0)
+        {
+            yield return new WaitForSeconds(0.25f);
+            deathManager.Death();
+        }
+    }
     #endregion
 
     #region Heal
     public void Heal(float healAmount)
     {
-        //playerHealth += healAmount;
-        //playerHealth = Mathf.Clamp(playerHealth, 0, playerMaxHealth);
         GameStatus.GetInstance().AddHealth(healAmount);
-        //healthBar.fillAmount = playerHealth / playerMaxHealth;
     }
     #endregion
 
