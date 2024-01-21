@@ -31,9 +31,10 @@ public class GameStatus : MonoBehaviour
     #region Enemy/boss gates, doors, chests, &c. tracking
     // format for each gate is "roomName_enemyGate" or "roomName_bossGate", "roomName_lockedDoor", "roomName_Chest"
     // I think i will need to manually add in each enemy gate for each room, and then the generic script will affect if they are set or not
-    [Header("Gates/Doors/Chests tracking")]
+
+    [Header("Gates/doors/chests tracking")]
     [SerializeField]
-    protected bool Room1_EnemyGate;
+    private bool room1_enemyGateOpen;
     #endregion
 
     // making a class which can keep track of certain game states (i.e. what abilities the player has, how many times they have died, if a gate has been opened at some point?)
@@ -122,17 +123,31 @@ public class GameStatus : MonoBehaviour
     #region Check and change the state of a door/chest
     // take in the name of the thing to be checked, then return if it is true of false
 
-    public bool GetGateState(GameObject gateName)
+    public bool GetGateState(string roomName)
     {
-        Room1_EnemyGate = gateName.activeInHierarchy;
-        return gateName.activeInHierarchy;
+        //return gateName;
+        //Room1_EnemyGate = gateName.activeInHierarchy;
+        //return gateName.activeInHierarchy;
+        if (roomName == "Room1")
+        {
+            Debug.Log(room1_enemyGateOpen);
+            return room1_enemyGateOpen;
+        }
+        else
+        {
+            Debug.Log("cannot find the current room, returning true");
+            return true;
+        }
     }
 
     // do the same thing for set, but take in the name of the thing set it to true
-    public void SetGateState(GameObject gateName, bool deactivate)
+    public void SetGateState(string roomName)
     {
-        gateName.SetActive(deactivate);
-        Room1_EnemyGate = false;
+        if(roomName == "Room1")
+        {
+            Debug.Log("Opening the gate in room 1");
+            room1_enemyGateOpen = true;
+        }
     }
     #endregion
 
