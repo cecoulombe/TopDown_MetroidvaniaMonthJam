@@ -63,6 +63,12 @@ public class GameStatus : MonoBehaviour
         #endregion
     }
 
+    private void Update()
+    {
+        string currentRoom = SceneManager.GetActiveScene().name;
+        GetGateState(currentRoom);
+    }
+
     private void OnDestroy()
     {
         Debug.Log("game status destroyed");
