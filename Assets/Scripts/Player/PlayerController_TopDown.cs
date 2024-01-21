@@ -16,7 +16,7 @@ public class PlayerController_TopDown : MonoBehaviour
     [SerializeField]
     private bool isDashing;
 
-    public GameManager_TopDown gameManager;
+    //public GameManager_TopDown gameManager;
     public DeathManager deathManager;
 
     public bool isFacingRight = true;
