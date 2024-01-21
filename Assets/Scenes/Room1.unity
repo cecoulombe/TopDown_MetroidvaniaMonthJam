@@ -7152,7 +7152,15 @@ PrefabInstance:
     - target: {fileID: 7730509046582602952, guid: 02b6f346c6b7d4779b628cd76e7293cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 2240363057039864847}
+    - target: {fileID: 7730509046582602952, guid: 02b6f346c6b7d4779b628cd76e7293cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
       objectReference: {fileID: 0}
+    - target: {fileID: 7758756431619581254, guid: 02b6f346c6b7d4779b628cd76e7293cd, type: 3}
+      propertyPath: deathManager
+      value: 
+      objectReference: {fileID: 1953139892}
     - target: {fileID: 8326115889479567795, guid: 02b6f346c6b7d4779b628cd76e7293cd, type: 3}
       propertyPath: m_Name
       value: Canvas

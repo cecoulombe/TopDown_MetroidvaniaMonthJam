@@ -46,8 +46,14 @@ public class EnemyWeapon_TopDown : MonoBehaviour
                 player.knockFromRight = false;
             }
 
-            StartCoroutine(player.TakeDamage(damage * damangeMultiplier));
-            //StartCoroutine(GameStatus.GetInstance().TakeDamage(damage * damangeMultiplier));
+            //StartCoroutine(player.TakeDamage(damage * damangeMultiplier));
+            player.TakeDamage(damage * damangeMultiplier);
+            if (weaponType == WeaponType.Melee)
+            {
+                // turn of the weapon after it hits the player so that it doesn't stack attack them
+                //this.gameObject.SetActive(false);
+                this.enabled = false;
+            }
 
             if (weaponType == WeaponType.Bullet)
             {

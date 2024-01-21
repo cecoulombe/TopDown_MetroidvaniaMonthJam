@@ -96,13 +96,20 @@ public class PlayerController_TopDown : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            StartCoroutine(TakeDamage(playerMaxHealth));
+            //StartCoroutine(TakeDamage(playerMaxHealth));
+            TakeDamage(playerMaxHealth);
         }
 
         Inputs();
         Flip();
         //Movement();
         Dash();
+
+        if (playerHealth <= 0.01)
+        {
+            //yield return new WaitForSeconds(0.25f);
+            deathManager.Death();
+        }
 
         // Posisble ideas of abilities and mechanics that could be added? not necessarily for the jam but just in general in case this is an idea I want to role with beyond Feb.
         // dash with i-frames that lets them go through thin walls/enemies/projectiles
@@ -226,14 +233,14 @@ public class PlayerController_TopDown : MonoBehaviour
     #endregion
 
     #region Take Damage
-    public IEnumerator TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         GameStatus.GetInstance().LoseHealth(damage);
-        if (playerHealth <= 0)
-        {
-            yield return new WaitForSeconds(0.25f);
-            deathManager.Death();
-        }
+        //if (playerHealth <= 0.01)
+        //{
+        //    //yield return new WaitForSeconds(0.25f);
+        //    deathManager.Death();
+        //}
     }
     #endregion
 

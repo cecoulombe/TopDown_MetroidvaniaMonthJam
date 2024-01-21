@@ -135,8 +135,10 @@ public class EnemyAttack_TopDown : MonoBehaviour
 
     void Update()
     {
-        if (playerController.playerHealth <= 0)
+        if (GameStatus.GetInstance().GetHealth() <= 0)
         {
+            //moveDirection = new Vector3(0f, 0f, 0f);
+            moveSpeed = 0;
             return;
         }
 
@@ -241,6 +243,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
     {
         if (!isAttacking)
         {
+            moveSpeed = 0;
             Melee.SetActive(true);
             isAttacking = true;
             // call your animator to play your melee attack
@@ -325,8 +328,8 @@ public class EnemyAttack_TopDown : MonoBehaviour
             {
                 playerController.knockFromRight = false;
             }
-            StartCoroutine(playerController.TakeDamage(contactDamage));
-            //StartCoroutine(GameStatus.GetInstance().TakeDamage(contactDamage));
+            //StartCoroutine(playerController.TakeDamage(contactDamage));
+            playerController.TakeDamage(contactDamage);
         }
     }
 }
