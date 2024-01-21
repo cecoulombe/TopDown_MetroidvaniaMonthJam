@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1875534664673971997}
-  - component: {fileID: 8811145562350424262}
+  - component: {fileID: 1472597602915162290}
   m_Layer: 0
-  m_Name: Scene Loader
+  m_Name: Death Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8811145562350424262
+--- !u!114 &1472597602915162290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,6 +41,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8202906785708191877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07480ab7417de44a09cc014a0e010b1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3505e5d107b3c4661b7e71e34a9fa599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathScreen: {fileID: 0}
+  player: {fileID: 0}
+  sceneLoader: {fileID: 0}

@@ -14,6 +14,11 @@ public class DeathManager : MonoBehaviour
 
     private float maxHealth;
 
+    private void Start()
+    {
+        sceneLoader = GameObject.FindObjectOfType(typeof(SceneLoader)) as SceneLoader;
+    }
+
     public void Death()
     {
         player.gameObject.SetActive(false);
@@ -27,6 +32,7 @@ public class DeathManager : MonoBehaviour
     {
         deathScreen.gameObject.SetActive(false);
         sceneLoader.ReloadRoom();
+        //SceneManager.ReloadRoom();
         maxHealth = GameStatus.GetInstance().GetMaxHealth();
         GameStatus.GetInstance().AddHealth(maxHealth * 10);
     }
