@@ -22,10 +22,11 @@ public class DeathManager : MonoBehaviour
     public void Death()
     {
         player.gameObject.SetActive(false);
-
+        GameStatus.GetInstance().AddDeath();
         deathScreen.gameObject.SetActive(true);
 
         //StartCoroutine("RestartGameCo");
+
     }
 
     public void ReloadLevel()

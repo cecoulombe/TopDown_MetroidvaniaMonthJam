@@ -17,6 +17,8 @@ public class GameStatus : MonoBehaviour
     protected float health;
     [SerializeField]
     protected float maxHealth;
+    [SerializeField]
+    private int deathCounter = 0;
 
     [Header("Player state bools")]
     [SerializeField]
@@ -94,6 +96,11 @@ public class GameStatus : MonoBehaviour
     public void LoseHealth(float damageAmount)
     {
         health -= damageAmount;
+    }
+
+    public void AddDeath()
+    {
+        deathCounter += 1;
     }
     #endregion
 

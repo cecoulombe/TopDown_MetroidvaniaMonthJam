@@ -8,7 +8,7 @@ public class Room1 : MonoBehaviour
     #region Variables
     public EnemyAttack_TopDown[] enemyList;
 
-    private float deathCounter;
+    private float enemyDeathCounter;
 
     private string currentRoom;
 
@@ -50,14 +50,14 @@ public class Room1 : MonoBehaviour
 
     private void Enemies()
     {
-        deathCounter = 0;
+        enemyDeathCounter = 0;
         for (int i = 0; i < enemyList.Length; i++)
         {
             if (enemyList[i].isDead)
             {
                 Debug.Log("enemy dead");
-                deathCounter++;
-                if (deathCounter == enemyList.Length)
+                enemyDeathCounter++;
+                if (enemyDeathCounter == enemyList.Length)
                 {
                     Debug.Log("all enemies dead, opening the gate");
                     GameStatus.GetInstance().SetGateState(currentRoom);
