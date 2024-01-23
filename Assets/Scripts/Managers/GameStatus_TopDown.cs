@@ -134,6 +134,11 @@ public class GameStatus : MonoBehaviour
     }
     #endregion
 
+    public string GetCurrentRoom()
+    {
+       return SceneManager.GetActiveScene().name;
+    }
+
     #region Check and change the state of a door/chest
     // take in the name of the thing to be checked, then return if it is true of false
 
