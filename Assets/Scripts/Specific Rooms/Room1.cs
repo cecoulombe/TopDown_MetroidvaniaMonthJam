@@ -29,13 +29,13 @@ public class Room1 : MonoBehaviour
         {
             //use this to check any/all gates and everything else in the room
             room1_enemyGateOpen = GameStatus.GetInstance().GetGateState(currentRoom);
-            if (!room1_enemyGateOpen)  // the gate is open, so get rid of it and show the room after
+            if (!room1_enemyGateOpen)  // the gate is not open, so keep it closed and hide the room after
             {
                 Debug.Log("closed gate");
                 Room1_EnemyGate.SetActive(true);
                 Room1_RoomAfterGate.SetActive(false);
             }
-            else    // the gate is not open, so keep it closed and hide the room after
+            else    // the gate is already open, so get rid of it and show the room after
             {
                 Debug.Log("open gate");
                 Room1_EnemyGate.SetActive(false);

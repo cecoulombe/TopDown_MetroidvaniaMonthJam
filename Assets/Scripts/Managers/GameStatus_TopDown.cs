@@ -38,6 +38,8 @@ public class GameStatus : MonoBehaviour
     [Header("Gates/doors/chests tracking")]
     [SerializeField]
     private bool room1_enemyGateOpen;
+    [SerializeField]
+    private bool room2_chestOpen;
     #endregion
 
     // making a class which can keep track of certain game states (i.e. what abilities the player has, how many times they have died, if a gate has been opened at some point?)
@@ -166,6 +168,28 @@ public class GameStatus : MonoBehaviour
         {
             Debug.Log("Opening the gate in room 1");
             room1_enemyGateOpen = true;
+        }
+    }
+
+    public bool GetChestState(string roomName)
+    {
+        if (roomName == "Room2")
+        {
+            Debug.Log("from game status" + room2_chestOpen);
+            return room2_chestOpen;
+        }
+        else
+        {
+            Debug.Log("cannot find the current room, returning true");
+            return true;
+        }
+    }
+
+    public void SetChestState(string roomName)
+    {
+        if (roomName == "Room2")
+        {
+            room2_chestOpen = true;
         }
     }
     #endregion
