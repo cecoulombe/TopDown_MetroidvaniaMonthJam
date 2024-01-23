@@ -31,7 +31,8 @@ public class GameStatus : MonoBehaviour
     #endregion
 
     #region Enemy/boss gates, doors, chests, &c. tracking
-    // format for each gate is "roomName_enemyGate" or "roomName_bossGate", "roomName_lockedDoor", "roomName_Chest"
+    // format for each gate is "roomName_enemyGateOpen" or "roomName_bossGateOpen", "roomName_lockedDoor", "roomName_Chest"
+        // adding open to the end of the names for clarity because the bools are simply indicating if the associated game object has been opened or not
     // I think i will need to manually add in each enemy gate for each room, and then the generic script will affect if they are set or not
 
     [Header("Gates/doors/chests tracking")]
