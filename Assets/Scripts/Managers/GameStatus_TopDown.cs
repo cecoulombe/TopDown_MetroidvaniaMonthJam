@@ -44,10 +44,7 @@ public class GameStatus : MonoBehaviour
     // keep track of player state (maybe using an enum? take a look at that video after sorting this out)
 
     // track individual room values (i.e. is a room's chest has been opened or if the enemy gate has been opened)
-    private void Awake()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+
     private void Start()
     {
         #region Don't destroy on load/check for other instances
