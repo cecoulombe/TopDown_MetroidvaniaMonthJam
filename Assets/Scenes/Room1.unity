@@ -312,7 +312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &279029437
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1315,6 +1315,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087248419}
   m_CullTransparentMesh: 1
+--- !u!1 &1126126734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1689124777473693492, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
+  m_PrefabInstance: {fileID: 6285183518217105375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1126126738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126126734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30ab93d5568f4e558ba0c114bd5eea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInteracting: 0
 --- !u!1 &1422996507
 GameObject:
   m_ObjectHideFlags: 0
@@ -6307,6 +6325,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1689124777473693492, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
+      propertyPath: m_TagString
+      value: Interactor
+      objectReference: {fileID: 0}
     - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: Melee
       value: 
@@ -6366,7 +6388,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1689124777473693492, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1126126738}
   m_SourcePrefab: {fileID: 100100000, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
 --- !u!114 &6285183518217105376 stripped
 MonoBehaviour:

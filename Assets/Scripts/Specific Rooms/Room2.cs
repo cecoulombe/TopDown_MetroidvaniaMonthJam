@@ -48,38 +48,5 @@ public class Room2 : MonoBehaviour
                 Room2_Chest_Opened.SetActive(true);
             }
         }
-
-        OpenChest();
-    }
-    // might want an on trigger, so if the player enters a certain radius and presses the interact button, they will open the chest and get the reward?
-    //private void OnTriggerEnter2D(Collider2D Player)
-    //{
-    //    if (Player.CompareTag("Player"))
-    //    {
-    //        Debug.Log("player entered the space to open the chest");
-    //        closeEnoughToChest = true;
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("something else entered the collision");
-    //    }
-    //}
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            Debug.Log("player is touching the chest");
-            closeEnoughToChest = true;
-        }
-    }
-
-    private void OpenChest()
-    {
-        if(closeEnoughToChest && !Room2_ChestOpen && Input.GetKeyDown(KeyCode.Return))
-        {
-            GameStatus.GetInstance().SetChestState(currentRoom);
-            Debug.Log("Opening the chest in room 2 and giving the rewards");
-        }
     }
 }

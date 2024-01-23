@@ -18,6 +18,7 @@ public class PlayerController_TopDown : MonoBehaviour
 
     //public GameManager_TopDown gameManager;
     public DeathManager deathManager;
+    public InteractionManager interactionManager;
 
     public bool isFacingRight = true;
     private Vector2 lastMoveDirection;
@@ -145,6 +146,7 @@ public class PlayerController_TopDown : MonoBehaviour
         shootTimer += Time.deltaTime;
         OnAttack();
         OnShoot();
+        Interaction();
         
 
         // Posisble ideas of abilities and mechanics that could be added? not necessarily for the jam but just in general in case this is an idea I want to role with beyond Feb.
@@ -330,6 +332,16 @@ public class PlayerController_TopDown : MonoBehaviour
         }
     }
     #endregion
+
+    private void Interaction()
+    {
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            // send out the beam to see if there is an interactable in front of you
+            // if there is, start the interaction for the appropriate object type
+            interactionManager.IsInteracting();
+        }
+    }
 
     #region Initialize
     // this function will initialize all of our variables, which will run on start and be used by other scripts

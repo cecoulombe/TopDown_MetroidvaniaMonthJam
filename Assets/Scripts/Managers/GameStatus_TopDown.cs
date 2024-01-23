@@ -143,12 +143,9 @@ public class GameStatus : MonoBehaviour
 
     #region Check and change the state of a door/chest
     // take in the name of the thing to be checked, then return if it is true of false
-
+    #region Gates
     public bool GetGateState(string roomName)
     {
-        //return gateName;
-        //Room1_EnemyGate = gateName.activeInHierarchy;
-        //return gateName.activeInHierarchy;
         if (roomName == "Room1")
         {
             Debug.Log(room1_enemyGateOpen);
@@ -170,7 +167,9 @@ public class GameStatus : MonoBehaviour
             room1_enemyGateOpen = true;
         }
     }
+    #endregion
 
+    #region Chests
     public bool GetChestState(string roomName)
     {
         if (roomName == "Room2")
@@ -192,6 +191,32 @@ public class GameStatus : MonoBehaviour
             room2_chestOpen = true;
         }
     }
+    #endregion
+
+    //#region Doors
+    //public bool GetDoorsState(string roomName)
+    //{
+    //    //if (roomName == "Room2")
+    //    //{
+    //    //    return false;
+    //    //}
+    //    //else
+    //    //{
+    //    //    return false
+    //    //}
+    //    Debug.Log("there are currently no doors, calling this was a probably mistake");
+    //    return false;
+    //}
+
+    //public void SetDoorsState(string roomName)
+    //{
+    //    //if (roomName == "Room2")
+    //    //{
+    //    //    room2_chestOpen = true;
+    //    //}
+    //    Debug.Log("there are currently no doors, calling this was a probably mistake");
+    //}
+    //#endregion
     #endregion
 
     public static GameStatus GetInstance()

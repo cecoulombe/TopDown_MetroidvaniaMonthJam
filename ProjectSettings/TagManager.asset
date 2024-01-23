@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - window
-  - Killbox
+  - Interactor
+  - Interactable
+  - Chest
+  - Door
   layers:
   - Default
   - TransparentFX
