@@ -105,9 +105,6 @@ public class PlayerController_TopDown : MonoBehaviour
 
     [SerializeField]
     private float shootTimer = 0.5f;
-
-    [SerializeField]
-    private float weaponRange = 40f;
     #endregion
     #endregion
 

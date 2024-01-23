@@ -68,8 +68,8 @@ public class EnemyAttack_TopDown : MonoBehaviour
     [SerializeField]
     private bool isAttacking;
 
-    [SerializeField]
-    private float timeToAttack = 0.3f;
+    //[SerializeField]
+    //private float timeToAttack = 0.3f;
 
     [SerializeField]
     private float attackDuration = 0.3f;

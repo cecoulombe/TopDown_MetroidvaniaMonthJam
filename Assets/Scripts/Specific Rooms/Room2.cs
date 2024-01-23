@@ -11,8 +11,6 @@ public class Room2 : MonoBehaviour
     #region Variables
     private string currentRoom;
 
-    private bool closeEnoughToChest;
-
     [Header("Gates/doors/chests tracking")]
     [SerializeField]
     private GameObject Room2_Chest_Closed;
@@ -22,14 +20,8 @@ public class Room2 : MonoBehaviour
     private bool Room2_ChestOpen;
     #endregion
 
-    private void Start()
-    {
-        closeEnoughToChest = false;
-    }
-
     private void Update()
     {
-
         currentRoom = SceneManager.GetActiveScene().name;
         if (currentRoom == "Room2")     
         {

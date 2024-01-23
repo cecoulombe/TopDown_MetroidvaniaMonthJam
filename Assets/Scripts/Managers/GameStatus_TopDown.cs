@@ -18,7 +18,9 @@ public class GameStatus : MonoBehaviour
     [SerializeField]
     protected float maxHealth;
     [SerializeField]
-    private int deathCounter = 0;
+    protected int deathCounter = 0;
+    [SerializeField]
+    protected float money = 0f;
 
     [Header("Player state bools")]
     [SerializeField]
@@ -104,6 +106,18 @@ public class GameStatus : MonoBehaviour
     public void AddDeath()
     {
         deathCounter += 1;
+    }
+    #endregion
+
+    #region Money
+    public void AddMoney(float moneyEarned)
+    {
+        money += moneyEarned;
+    }
+
+    public void LoseMoney(float cost)
+    {
+        money -= cost;
     }
     #endregion
 

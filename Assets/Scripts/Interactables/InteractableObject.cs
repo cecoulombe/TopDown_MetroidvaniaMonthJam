@@ -9,6 +9,8 @@ public class InteractableObject : MonoBehaviour
 
     private string currentRoom;
     private bool isOpen;
+    [SerializeField]
+    private float rewardAmount;
 
     private void Update()
     {
@@ -37,6 +39,14 @@ public class InteractableObject : MonoBehaviour
         // run the code to open the chest and give the player whatever the contents were
         Debug.Log("opening the chest and giving the reward");
         GameStatus.GetInstance().SetChestState(currentRoom);
+        GiveReward();
+    }
+
+    private void GiveReward()
+    {
+        // specify the reward to be given, but for now, assume it is just a full health bar and some money
+        GameStatus.GetInstance().AddHealth(GameStatus.GetInstance().GetMaxHealth());
+        GameStatus.GetInstance().AddMoney(rewardAmount);
     }
     #endregion
 
