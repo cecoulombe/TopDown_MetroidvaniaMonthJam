@@ -72,6 +72,42 @@ public class PlayerController_TopDown : MonoBehaviour
 
     [SerializeField]
     public bool knockFromRight;
+
+    #region Melee Variables
+    [Header("Melee Variables")]
+    public GameObject Melee;
+
+    [SerializeField]
+    private bool isAttacking;
+
+    [SerializeField]
+    private float timeToAttack = 0.3f;
+
+    [SerializeField]
+    private float attackDuration = 0.3f;
+
+    [SerializeField]
+    private float attackTimer = 0f;
+    #endregion
+
+    #region Ranged Variables
+    [Header("Ranged Variables")]
+
+    [SerializeField]
+    private GameObject bullet;
+
+    [SerializeField]
+    private float fireForce = 10f;
+
+    [SerializeField]
+    private float shootCoolDown = 0.25f;
+
+    [SerializeField]
+    private float shootTimer = 0.5f;
+
+    [SerializeField]
+    private float weaponRange = 40f;
+    #endregion
     #endregion
 
     void Start()
@@ -104,6 +140,12 @@ public class PlayerController_TopDown : MonoBehaviour
             //yield return new WaitForSeconds(0.25f);
             deathManager.Death();
         }
+
+        CheckMeleeTimer();
+        shootTimer += Time.deltaTime;
+        OnAttack();
+        OnShoot();
+        
 
         // Posisble ideas of abilities and mechanics that could be added? not necessarily for the jam but just in general in case this is an idea I want to role with beyond Feb.
         // dash with i-frames that lets them go through thin walls/enemies/projectiles
@@ -242,6 +284,50 @@ public class PlayerController_TopDown : MonoBehaviour
     public void Heal(float healAmount)
     {
         GameStatus.GetInstance().AddHealth(healAmount);
+    }
+    #endregion
+
+    #region Attacking
+    private void OnAttack()
+    {
+        if (Input.GetKeyDown(KeyCode.K) && GameStatus.GetInstance().CanMelee())
+        {
+            if (!isAttacking)
+            {
+                Melee.SetActive(true);
+                isAttacking = true;
+                // call your animator to play your melee attack
+            }
+        }
+    }
+
+    private void CheckMeleeTimer()
+    {
+        if (isAttacking)
+        {
+            attackTimer += Time.deltaTime;
+
+            if (attackTimer >= attackDuration)
+            {
+                attackTimer = 0;
+                isAttacking = false;
+                Melee.SetActive(false);
+            }
+        }
+    }
+
+    private void OnShoot()
+    {
+        if (Input.GetKeyDown(KeyCode.L) && GameStatus.GetInstance().CanRanged())
+        {
+            if (shootTimer > shootCoolDown)
+            {
+                shootTimer = 0;
+                GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation);
+                intBullet.GetComponent<Rigidbody2D>().AddForce(-Aim.up * fireForce, ForceMode2D.Impulse);
+                Destroy(intBullet, 2f);
+            }
+        }
     }
     #endregion
 

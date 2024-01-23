@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6654104826078215126}
   - component: {fileID: 6097019054114789390}
   - component: {fileID: 2342177725705903606}
-  - component: {fileID: 6814999600659992947}
   - component: {fileID: 3304656133038596254}
   - component: {fileID: 4698403735483341585}
   m_Layer: 0
@@ -116,25 +115,11 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
---- !u!114 &6814999600659992947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 659966838298721686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93ac09c8c87df45b8a9cc3d62b432207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   Melee: {fileID: 8770396034533496844}
   isAttacking: 0
   timeToAttack: 0.3
   attackDuration: 0.3
   attackTimer: 0
-  playerController: {fileID: 2342177725705903606}
-  Aim: {fileID: 7672878893040883262}
   bullet: {fileID: 2609964779410368697, guid: 66b4ed7c004ca41a396c94556583f4fa, type: 3}
   fireForce: 10
   shootCoolDown: 0.25

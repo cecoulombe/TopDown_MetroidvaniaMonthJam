@@ -6308,6 +6308,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
+      propertyPath: Melee
+      value: 
+      objectReference: {fileID: 6285183518217105377}
+    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 2609964779410368697, guid: 66b4ed7c004ca41a396c94556583f4fa, type: 3}
+    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 708854631}
@@ -6371,6 +6379,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895413755e3db461aa0a2dbd4d0f7fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6285183518217105377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8770396034533496844, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
+  m_PrefabInstance: {fileID: 6285183518217105375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6389117885832961799
 PrefabInstance:
   m_ObjectHideFlags: 0
