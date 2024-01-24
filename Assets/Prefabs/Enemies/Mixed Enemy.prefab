@@ -175,12 +175,15 @@ MonoBehaviour:
   knockBackTotalTime: 0.2
   knockFromRight: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: 007c60bee184a45509c45868d7967808, type: 3}
-  bigHealthChance: 12
+  bigHealthChance: 10
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 24
+  smallHealthChance: 20
+  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+  bigAmmoChance: 12
+  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+  smallAmmoChance: 23
   Melee: {fileID: 7028290374932615096}
   isAttacking: 0
-  timeToAttack: 0.3
   attackDuration: 0.5
   attackTimer: 0
   attackCoolDown: 0

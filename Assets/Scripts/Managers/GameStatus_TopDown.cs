@@ -22,9 +22,9 @@ public class GameStatus : MonoBehaviour
     [SerializeField]
     protected float money = 0f;
     [SerializeField]
-    protected int ammoCount;
+    protected float ammoCount;
     [SerializeField]
-    protected int maxAmmo;
+    protected float maxAmmo;
 
     [Header("Player state bools")]
     [SerializeField]
@@ -130,7 +130,7 @@ public class GameStatus : MonoBehaviour
         return maxAmmo;
     }
 
-    public void RefillBullets(int bulletsRefilled)
+    public void AddAmmo(float bulletsRefilled)
     {
         ammoCount += bulletsRefilled;
         ammoCount = Mathf.Clamp(ammoCount, 0, maxAmmo);
@@ -142,7 +142,7 @@ public class GameStatus : MonoBehaviour
         ammoCount -= 1;
     }
 
-    public void IncreaseMaxAmmo(int ammoIncrease)
+    public void AddMaxAmmo(float ammoIncrease)
     {
         maxAmmo += ammoIncrease;
     }

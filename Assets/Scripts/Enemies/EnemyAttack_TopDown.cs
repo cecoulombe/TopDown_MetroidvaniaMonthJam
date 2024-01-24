@@ -59,6 +59,15 @@ public class EnemyAttack_TopDown : MonoBehaviour
     private GameObject smallHealthDrop;
     [SerializeField]
     private float smallHealthChance;
+
+    [SerializeField]
+    private GameObject bigAmmoDrop;
+    [SerializeField]
+    private float bigAmmoChance;
+    [SerializeField]
+    private GameObject smallAmmoDrop;
+    [SerializeField]
+    private float smallAmmoChance;
     #endregion
 
     #region Melee Variables
@@ -313,11 +322,25 @@ public class EnemyAttack_TopDown : MonoBehaviour
             float randNum = Random.Range(0f, 10f) / 10f * 100f;
             if(randNum <= bigHealthChance)
             {
-                Instantiate(bigHealthDrop, Aim.position, Aim.rotation);
+                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(0f, 1f), Aim.position.y + Random.Range(0f, 1f), Aim.position.z);
+                Instantiate(bigHealthDrop, dropPos, Aim.rotation);
             }
             else if (randNum > bigHealthChance && randNum <= smallHealthChance)
             {
-                Instantiate(smallHealthDrop, Aim.position, Aim.rotation);
+                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(0f, 1f), Aim.position.y + Random.Range(0f, 1f), Aim.position.z);
+                Instantiate(smallHealthDrop, dropPos, Aim.rotation);
+            }
+
+            float randNumAmmo = Random.Range(0f, 10f) / 10f * 100f;
+            if (randNumAmmo <= bigAmmoChance)
+            {
+                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(0f, 1f), Aim.position.y + Random.Range(0f, 1f), Aim.position.z);
+                Instantiate(bigAmmoDrop, dropPos, Aim.rotation);
+            }
+            else if (randNumAmmo > bigAmmoChance && randNumAmmo <= smallAmmoChance)
+            {
+                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(0f, 1f), Aim.position.y + Random.Range(0f, 1f), Aim.position.z);
+                Instantiate(smallAmmoDrop, dropPos, Aim.rotation);
             }
         }
     }

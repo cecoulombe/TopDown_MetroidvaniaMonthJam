@@ -46,6 +46,7 @@ public class InteractableObject : MonoBehaviour
     {
         // specify the reward to be given, but for now, assume it is just a full health bar and some money
         GameStatus.GetInstance().AddHealth(GameStatus.GetInstance().GetMaxHealth());
+        GameStatus.GetInstance().AddAmmo(GameStatus.GetInstance().GetMaxAmmo());
         GameStatus.GetInstance().AddMoney(rewardAmount);
     }
     #endregion

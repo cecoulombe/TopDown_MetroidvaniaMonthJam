@@ -34,7 +34,7 @@ public class DeathManager : MonoBehaviour
         deathScreen.gameObject.SetActive(false);
         sceneLoader.ReloadRoom();
         //SceneManager.ReloadRoom();
-        maxHealth = GameStatus.GetInstance().GetMaxHealth();
-        GameStatus.GetInstance().AddHealth(maxHealth * 10);
+        GameStatus.GetInstance().AddHealth(GameStatus.GetInstance().GetMaxHealth());
+        GameStatus.GetInstance().AddAmmo(GameStatus.GetInstance().GetMaxAmmo());
     }
 }

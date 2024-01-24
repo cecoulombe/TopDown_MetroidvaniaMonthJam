@@ -430,6 +430,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2563478602847825122}
     m_Modifications:
+    - target: {fileID: 1167321709506856792, guid: 314e23d21de9641eeb4f255f0a82aeff, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 6285183518217105376}
     - target: {fileID: 1624224465659347987, guid: 314e23d21de9641eeb4f255f0a82aeff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.26
@@ -473,10 +477,6 @@ PrefabInstance:
     - target: {fileID: 5134701059709482958, guid: 314e23d21de9641eeb4f255f0a82aeff, type: 3}
       propertyPath: m_Name
       value: Melee Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5134701059709482958, guid: 314e23d21de9641eeb4f255f0a82aeff, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -602,6 +602,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2563478602847825122}
     m_Modifications:
+    - target: {fileID: 1167321709506856792, guid: dcaf6cdab12114872bdca919afe84d77, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 6285183518217105376}
     - target: {fileID: 1624224465659347987, guid: dcaf6cdab12114872bdca919afe84d77, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.1
@@ -645,10 +649,6 @@ PrefabInstance:
     - target: {fileID: 5134701059709482958, guid: dcaf6cdab12114872bdca919afe84d77, type: 3}
       propertyPath: m_Name
       value: Mixed Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5134701059709482958, guid: dcaf6cdab12114872bdca919afe84d77, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -815,6 +815,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708854629}
   m_CullTransparentMesh: 1
+--- !u!114 &734730118 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1167321709506856792, guid: dcaf6cdab12114872bdca919afe84d77, type: 3}
+  m_PrefabInstance: {fileID: 486327979}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a20e30f32037408aab2eeeaef8c8683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &736351037
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,6 +1001,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2563478602847825122}
     m_Modifications:
+    - target: {fileID: 1167321709506856792, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 6285183518217105376}
     - target: {fileID: 1624224465659347987, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.02
@@ -1033,10 +1048,6 @@ PrefabInstance:
     - target: {fileID: 5134701059709482958, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: m_Name
       value: Ranged Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5134701059709482958, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1540,6 +1551,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteracting: 0
   interactableObject: {fileID: 0}
+--- !u!114 &1334083527 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1167321709506856792, guid: 314e23d21de9641eeb4f255f0a82aeff, type: 3}
+  m_PrefabInstance: {fileID: 293122950}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a20e30f32037408aab2eeeaef8c8683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1342649489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1167321709506856792, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
+  m_PrefabInstance: {fileID: 899285361}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a20e30f32037408aab2eeeaef8c8683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1402657933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,6 +2380,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2563478602847825122}
     m_Modifications:
+    - target: {fileID: 1167321709506856792, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 6285183518217105376}
     - target: {fileID: 1624224465659347987, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5800004
@@ -5218,6 +5255,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyList:
   - {fileID: 2004899179}
+  - {fileID: 1334083527}
+  - {fileID: 1342649489}
+  - {fileID: 734730118}
   Room1_EnemyGate: {fileID: 5953735133445758579}
   Room1_RoomAfterGate: {fileID: 7919107092243224285}
   room1_enemyGateOpen: 0
