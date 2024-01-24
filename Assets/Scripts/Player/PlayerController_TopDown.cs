@@ -233,7 +233,7 @@ public class PlayerController_TopDown : MonoBehaviour
     #endregion
 
     #region Dash
-    private void Dash()
+    private void Dash()     // the base dash will allow the player to "jump" gaps and evade attacks but will not give i-frames
     {
         if (GameStatus.GetInstance().HasDash())
         {
@@ -243,6 +243,12 @@ public class PlayerController_TopDown : MonoBehaviour
                 {
                     isDashing = true;
                     activeMoveSpeed = dashSpeed;
+                    // add invincibility for the dash if the player has picked up iframes (will allow them to dash through small walls as well)
+                    if(GameStatus.GetInstance().HasInvincibleDash())
+                    {
+                        //do the iframe dash
+                        col.enabled = false;
+                    }
                     dashCounter = dashLength;
                 }
             }
@@ -254,6 +260,7 @@ public class PlayerController_TopDown : MonoBehaviour
                 if (dashCounter <= 0)
                 {
                     isDashing = false;
+                    col.enabled = true;
                     activeMoveSpeed = walkSpeed;
                     dashCoolCounter = dashCooldown;
                 }
@@ -335,6 +342,7 @@ public class PlayerController_TopDown : MonoBehaviour
     }
     #endregion
 
+    #region Interacting
     private void Interaction()
     {
         if(Input.GetKeyDown(KeyCode.Return))
@@ -344,6 +352,7 @@ public class PlayerController_TopDown : MonoBehaviour
             interactionManager.IsInteracting();
         }
     }
+    #endregion
 
     #region Initialize
     // this function will initialize all of our variables, which will run on start and be used by other scripts

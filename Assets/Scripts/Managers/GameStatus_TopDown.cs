@@ -30,6 +30,8 @@ public class GameStatus : MonoBehaviour
     [SerializeField]
     protected bool hasDash;
     [SerializeField]
+    protected bool hasInvincibleDash;
+    [SerializeField]
     protected bool canMelee;
     [SerializeField]
     protected bool canRanged;
@@ -72,6 +74,7 @@ public class GameStatus : MonoBehaviour
         SetHasDash(true);
         SetCanMelee(true);
         SetCanRanged(true);
+        SetHasInvincibleDash(true);
         #endregion
     }
 
@@ -168,6 +171,15 @@ public class GameStatus : MonoBehaviour
     public bool HasDash()
     {
         return hasDash;
+    }
+
+    public void SetHasInvincibleDash(bool iDash)
+    {
+        hasInvincibleDash = iDash;
+    }
+    public bool HasInvincibleDash()
+    {
+        return hasInvincibleDash;
     }
 
     public void SetCanMelee(bool melee)
