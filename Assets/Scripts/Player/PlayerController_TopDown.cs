@@ -15,6 +15,8 @@ public class PlayerController_TopDown : MonoBehaviour
     private bool isWalking;
     [SerializeField]
     private bool isDashing;
+    [SerializeField]
+    private bool isInvincibleDashing;
 
     //public GameManager_TopDown gameManager;
     public DeathManager deathManager;
@@ -54,6 +56,11 @@ public class PlayerController_TopDown : MonoBehaviour
     private float dashCounter;
 
     private float dashCoolCounter;
+
+    [SerializeField]
+    private float iDashCooldown;
+
+    private float iDashCoolCounter;
     #endregion
 
     #region Attack Variables
@@ -244,10 +251,12 @@ public class PlayerController_TopDown : MonoBehaviour
                     isDashing = true;
                     activeMoveSpeed = dashSpeed;
                     // add invincibility for the dash if the player has picked up iframes (will allow them to dash through small walls as well)
-                    if(GameStatus.GetInstance().HasInvincibleDash())
+                    if(GameStatus.GetInstance().HasInvincibleDash() && iDashCoolCounter <= 0)
                     {
+                        Debug.Log("starting the idash");
                         //do the iframe dash
                         col.enabled = false;
+                        isInvincibleDashing = true;
                     }
                     dashCounter = dashLength;
                 }
@@ -260,15 +269,29 @@ public class PlayerController_TopDown : MonoBehaviour
                 if (dashCounter <= 0)
                 {
                     isDashing = false;
-                    col.enabled = true;
                     activeMoveSpeed = walkSpeed;
                     dashCoolCounter = dashCooldown;
+                    if(isInvincibleDashing)
+                    {
+                        Debug.Log("end of idash, start the cooldown for that, the hit box should be back on now");
+                        col.enabled = true;
+                        isInvincibleDashing = false;
+                        iDashCoolCounter = iDashCooldown;
+                    }
                 }
             }
 
             if (dashCoolCounter > 0)
             {
                 dashCoolCounter -= Time.deltaTime;
+            }
+            if(iDashCoolCounter > 0)
+            {
+                iDashCoolCounter -= Time.deltaTime;
+            }
+            else
+            {
+                Debug.Log("idash has cooled down and can go again");
             }
         }
     }

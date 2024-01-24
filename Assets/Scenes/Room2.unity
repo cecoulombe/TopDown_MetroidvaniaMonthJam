@@ -2520,9 +2520,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6436150650467953065}
     - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
+      propertyPath: dashLength
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
+      propertyPath: iDashSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
+      propertyPath: iDashLength
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: deathManager
       value: 
       objectReference: {fileID: 41332906}
+    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
+      propertyPath: iDashCooldown
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6077998538669012166, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: interactableObject
       value: 
@@ -3900,6 +3916,10 @@ PrefabInstance:
     - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
       propertyPath: maxAmmo
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
+      propertyPath: hasInvincibleDash
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2472151596668438739, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
       propertyPath: m_Name
