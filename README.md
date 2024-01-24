@@ -14,5 +14,5 @@ or the appropriate game for your operating system downloaded from itch.io when c
 
 ## Authors
 
-* **Caitlin Coulombe (https://github.com/cecoulombe)
+* Caitlin Coulombe (https://github.com/cecoulombe)
 
