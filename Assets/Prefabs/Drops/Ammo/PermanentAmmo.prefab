@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1854552320202556599}
   - component: {fileID: 490441834834982290}
   - component: {fileID: 7537027121402654435}
-  - component: {fileID: 2069731630292285203}
+  - component: {fileID: 8118674902163425429}
   m_Layer: 0
-  m_Name: Big Health Drop
+  m_Name: PermanentAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.18561673, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2069731630292285203
+--- !u!114 &8118674902163425429
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,9 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1985900085209205504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 625ff4543c4554dd38fae32abde6e4f5, type: 3}
+  m_Script: {fileID: 11500000, guid: a4fcf795043724ef79784fa466b1ae0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallHealth: 1
-  bigHealth: 2
-  healthType: 1
+  addMaxAmmo: 3

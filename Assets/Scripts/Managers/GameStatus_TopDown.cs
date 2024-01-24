@@ -106,7 +106,7 @@ public class GameStatus : MonoBehaviour
         health = Mathf.Clamp(health, 0, maxHealth);
     }
 
-    public void IncreaseMaxHealth(float healthIncrease)
+    public void AddMaxHealth(float healthIncrease)
     {
         maxHealth += healthIncrease;
     }

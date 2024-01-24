@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerController_TopDown : MonoBehaviour
 {
-    #region Set Up Variables
+    // Set Up Variables contain all variables relating to the rigid body, collider, and player state bools. Also contains the references to managers in the scene and the direction the player is moving
+    #region Set Up Variables    
     // reference to the rigidbody, collider, and player scripts
     protected Rigidbody2D rb;
     protected Collider2D col;
@@ -25,13 +26,12 @@ public class PlayerController_TopDown : MonoBehaviour
     public bool isFacingRight = true;
     private Vector2 lastMoveDirection;
 
-    //[SerializeField]
     public float playerHealth;
-    //[SerializeField]
     private float playerMaxHealth;
     public Image healthBar;
     #endregion
 
+    // Movement variables contain the active movement speed, the walk speed, and the dash variables
     #region Movement Variables
     [Header("Movement Variables")]
     private float activeMoveSpeed;
@@ -61,15 +61,9 @@ public class PlayerController_TopDown : MonoBehaviour
     private float iDashCooldown;
 
     private float iDashCoolCounter;
-    #endregion
+    #endregion    
 
-    #region Attack Variables
-    [Header("Attack Variables")]
-    [SerializeField]
-    private Transform Aim;
-    #endregion
-
-    #region Damage and Health Variables
+    #region Knockback Variables
     [SerializeField]
     public float knockBackForce;
 
@@ -80,6 +74,13 @@ public class PlayerController_TopDown : MonoBehaviour
 
     [SerializeField]
     public bool knockFromRight;
+    #endregion
+
+    // Attack variables contains all variables for both types of attacks done by the player (melee and ranged)
+    #region Attack Variables
+    [Header("Attack Variables")]
+    [SerializeField]
+    private Transform Aim;
 
     #region Melee Variables
     [Header("Melee Variables")]
@@ -118,7 +119,6 @@ public class PlayerController_TopDown : MonoBehaviour
     void Start()
     {
         Initialization();
-        //maxHealth = health;
         activeMoveSpeed = walkSpeed;
 
     }
@@ -131,18 +131,15 @@ public class PlayerController_TopDown : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //StartCoroutine(TakeDamage(playerMaxHealth));
             TakeDamage(playerMaxHealth);
         }
 
         Inputs();
         Flip();
-        //Movement();
         Dash();
 
         if (playerHealth <= 0.01)
         {
-            //yield return new WaitForSeconds(0.25f);
             deathManager.Death();
         }
 
@@ -154,8 +151,6 @@ public class PlayerController_TopDown : MonoBehaviour
         
 
         // Posisble ideas of abilities and mechanics that could be added? not necessarily for the jam but just in general in case this is an idea I want to role with beyond Feb.
-        // dash with i-frames that lets them go through thin walls/enemies/projectiles
-        // sneak (slow down movement but dont get detected by enemy ai?)
         // dash attacks - you dash towards enemies to close the gap and it increases the size of the attack
         // elemental attacks that you have to use to break elemental barriers (i.e. flame thrower vs an ice wall)
         // charge attacks
