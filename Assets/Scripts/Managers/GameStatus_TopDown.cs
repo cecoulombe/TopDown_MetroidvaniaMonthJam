@@ -21,6 +21,10 @@ public class GameStatus : MonoBehaviour
     protected int deathCounter = 0;
     [SerializeField]
     protected float money = 0f;
+    [SerializeField]
+    protected int ammoCount;
+    [SerializeField]
+    protected int maxAmmo;
 
     [Header("Player state bools")]
     [SerializeField]
@@ -60,6 +64,7 @@ public class GameStatus : MonoBehaviour
         }
 
         health = maxHealth;
+        ammoCount = maxAmmo;
         instance = this;
         GameObject.DontDestroyOnLoad(gameObject);   // become immortal
 
@@ -98,6 +103,11 @@ public class GameStatus : MonoBehaviour
         health = Mathf.Clamp(health, 0, maxHealth);
     }
 
+    public void IncreaseMaxHealth(float healthIncrease)
+    {
+        maxHealth += healthIncrease;
+    }
+
     public void LoseHealth(float damageAmount)
     {
         health -= damageAmount;
@@ -106,6 +116,35 @@ public class GameStatus : MonoBehaviour
     public void AddDeath()
     {
         deathCounter += 1;
+    }
+    #endregion
+
+    #region Ammo counter
+    public float GetAmmo()
+    {
+        return ammoCount;
+    }
+
+    public float GetMaxAmmo()
+    {
+        return maxAmmo;
+    }
+
+    public void RefillBullets(int bulletsRefilled)
+    {
+        ammoCount += bulletsRefilled;
+        ammoCount = Mathf.Clamp(ammoCount, 0, maxAmmo);
+    }
+
+
+    public void ShootBullets()
+    {
+        ammoCount -= 1;
+    }
+
+    public void IncreaseMaxAmmo(int ammoIncrease)
+    {
+        maxAmmo += ammoIncrease;
     }
     #endregion
 

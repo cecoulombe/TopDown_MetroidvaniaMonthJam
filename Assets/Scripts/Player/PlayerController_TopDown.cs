@@ -317,15 +317,20 @@ public class PlayerController_TopDown : MonoBehaviour
 
     private void OnShoot()
     {
-        if (Input.GetKeyDown(KeyCode.L) && GameStatus.GetInstance().CanRanged())
+        if (Input.GetKeyDown(KeyCode.L) && GameStatus.GetInstance().CanRanged() && GameStatus.GetInstance().GetAmmo() > 0)
         {
             if (shootTimer > shootCoolDown)
             {
                 shootTimer = 0;
                 GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation);
                 intBullet.GetComponent<Rigidbody2D>().AddForce(-Aim.up * fireForce, ForceMode2D.Impulse);
+                GameStatus.GetInstance().ShootBullets();
                 Destroy(intBullet, 2f);
             }
+        }
+        else if(GameStatus.GetInstance().GetAmmo() <= 0)
+        {
+            Debug.Log("no ammo left, need to refill");
         }
     }
     #endregion
