@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PermanentAmmoUpgrade : MonoBehaviour
 {
@@ -8,10 +9,12 @@ public class PermanentAmmoUpgrade : MonoBehaviour
     [SerializeField]
     private float addMaxAmmo = 3;
 
+    private string currentRoom;
     #endregion
 
-    private void Update()
+    private void Start()
     {
+        currentRoom = SceneManager.GetActiveScene().name;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +24,9 @@ public class PermanentAmmoUpgrade : MonoBehaviour
         {
             GameStatus.GetInstance().AddMaxAmmo(addMaxAmmo);
             GameStatus.GetInstance().AddAmmo(GameStatus.GetInstance().GetMaxAmmo());
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            GameStatus.GetInstance().SetUpgradeState(currentRoom, "Ammo");
+
         }
     }
 }

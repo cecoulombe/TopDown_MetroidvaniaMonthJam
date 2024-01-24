@@ -48,6 +48,10 @@ public class GameStatus : MonoBehaviour
     private bool room1_enemyGateOpen;
     [SerializeField]
     private bool room2_chestOpen;
+    [SerializeField]
+    private bool room2_HealthIncreaseTaken;
+    [SerializeField]
+    private bool room2_AmmoIncreaseTaken;
     #endregion
 
     // making a class which can keep track of certain game states (i.e. what abilities the player has, how many times they have died, if a gate has been opened at some point?)
@@ -282,6 +286,55 @@ public class GameStatus : MonoBehaviour
     //    Debug.Log("there are currently no doors, calling this was a probably mistake");
     //}
     //#endregion
+
+    // this structure can be used for any of the permanent pick ups/upgrades including the ability to dash and attack
+    #region Permanent Upgrades
+    public bool GetUpgradeState(string roomName, string pickup)
+    {
+        if (roomName == "Room2")
+        {
+            if(pickup == "Health")
+            {
+                Debug.Log("room2_HealthIncrease" + room2_HealthIncreaseTaken);
+                return room2_HealthIncreaseTaken;
+            }
+            else if (pickup == "Ammo")
+            {
+                Debug.Log("room2_AmmoIncrease" + room2_AmmoIncreaseTaken);
+                return room2_AmmoIncreaseTaken;
+            }
+            else
+            {
+                Debug.Log("pick up type not known");
+                return false;
+            }
+        }
+        else
+        {
+            Debug.Log("cannot find the current room, returning true");
+            return true;
+        }
+    }
+
+    // do the same thing for set, but take in the name of the thing set it to true
+    public void SetUpgradeState(string roomName, string pickup)
+    {
+
+        if (roomName == "Room2")
+        {
+            if (pickup == "Health")
+            {
+                Debug.Log("room2_HealthIncrease has been picked up");
+                room2_HealthIncreaseTaken = true;
+            }
+            else if (pickup == "Ammo")
+            {
+                Debug.Log("room2_AmmoIncrease has been picked up");
+                room2_AmmoIncreaseTaken = true;
+            }
+        }
+    }
+    #endregion
     #endregion
 
     public static GameStatus GetInstance()
