@@ -2400,10 +2400,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: InvincibleDash
       objectReference: {fileID: 0}
+    - target: {fileID: 1985900085209205504, guid: 6db5f0e5bb1dd4bb8aaa9fb199b45f2d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1985900085209205504, guid: 6db5f0e5bb1dd4bb8aaa9fb199b45f2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2067200513}
   m_SourcePrefab: {fileID: 100100000, guid: 6db5f0e5bb1dd4bb8aaa9fb199b45f2d, type: 3}
 --- !u!4 &1006388940 stripped
 Transform:
@@ -2568,6 +2575,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895413755e3db461aa0a2dbd4d0f7fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1049969475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1985900085209205504, guid: 8a92150f5281448d78213a7fae4d19d8, type: 3}
+  m_PrefabInstance: {fileID: 5997743429513975074}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1067951190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3816,10 +3828,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeAttack
       objectReference: {fileID: 0}
+    - target: {fileID: 1985900085209205504, guid: 17d39701a3ea34204af06547cbe85149, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1985900085209205504, guid: 17d39701a3ea34204af06547cbe85149, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1540373754}
   m_SourcePrefab: {fileID: 100100000, guid: 17d39701a3ea34204af06547cbe85149, type: 3}
 --- !u!4 &1426464279 stripped
 Transform:
@@ -3835,12 +3854,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
+      propertyPath: hasDash
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
       propertyPath: maxAmmo
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
+      propertyPath: canMelee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
+      propertyPath: canRanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
       propertyPath: hasInvincibleDash
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2472151596668438739, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
       propertyPath: m_Name
@@ -3923,6 +3954,24 @@ Transform:
   - {fileID: 511368913}
   m_Father: {fileID: 407550099}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1540373751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1985900085209205504, guid: 17d39701a3ea34204af06547cbe85149, type: 3}
+  m_PrefabInstance: {fileID: 1426464278}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1540373754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540373751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8ca9668c3e84866845d1e0c5436bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasPickup: 0
 --- !u!1001 &1684158393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4648,6 +4697,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6942689764387477464, guid: 0bbb98c9807a4470e9aab25dce36a8f8, type: 3}
   m_PrefabInstance: {fileID: 2056742164}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2067200510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1985900085209205504, guid: 6db5f0e5bb1dd4bb8aaa9fb199b45f2d, type: 3}
+  m_PrefabInstance: {fileID: 1006388939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2067200513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067200510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60debb28e5384286a6260fb2cadef3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasPickup: 0
 --- !u!1 &2108073157
 GameObject:
   m_ObjectHideFlags: 0
@@ -4684,6 +4751,11 @@ Transform:
   - {fileID: 290081100}
   m_Father: {fileID: 511368913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2135808447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1985900085209205504, guid: 846f1e569d8054ae3b1eea38429a32ef, type: 3}
+  m_PrefabInstance: {fileID: 878414665563848624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &65163279962146999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4921,16 +4993,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangedAttack
       objectReference: {fileID: 0}
+    - target: {fileID: 1985900085209205504, guid: 846f1e569d8054ae3b1eea38429a32ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1985900085209205504, guid: 846f1e569d8054ae3b1eea38429a32ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 878414665563848628}
   m_SourcePrefab: {fileID: 100100000, guid: 846f1e569d8054ae3b1eea38429a32ef, type: 3}
 --- !u!4 &878414665563848625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1854552320202556599, guid: 846f1e569d8054ae3b1eea38429a32ef, type: 3}
   m_PrefabInstance: {fileID: 878414665563848624}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &878414665563848628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135808447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2f9c84af9124423baf1a3491192828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasPickup: 0
 --- !u!1 &893495071184805749
 GameObject:
   m_ObjectHideFlags: 0
@@ -6031,13 +6123,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1985900085209205504, guid: 8a92150f5281448d78213a7fae4d19d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5997743429513975076}
   m_SourcePrefab: {fileID: 100100000, guid: 8a92150f5281448d78213a7fae4d19d8, type: 3}
 --- !u!4 &5997743429513975075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1854552320202556599, guid: 8a92150f5281448d78213a7fae4d19d8, type: 3}
   m_PrefabInstance: {fileID: 5997743429513975074}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5997743429513975076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049969475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c332bfd100c430591f53426b95e1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasPickup: 0
 --- !u!222 &6071777453570585622
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -32,9 +32,9 @@ public class GameStatus : MonoBehaviour
     [SerializeField]
     protected bool hasInvincibleDash;
     [SerializeField]
-    protected bool canMelee;
+    protected bool hasMelee;
     [SerializeField]
-    protected bool canRanged;
+    protected bool hasRanged;
 
     #endregion
 
@@ -76,8 +76,8 @@ public class GameStatus : MonoBehaviour
 
         // keep this variables for now, but can change them later on using external scripts
         SetHasDash(false);
-        SetCanMelee(false);
-        SetCanRanged(false);
+        SetHasMelee(false);
+        SetHasRanged(false);
         SetHasInvincibleDash(false);
 
         //hasDash = false;
@@ -190,24 +190,24 @@ public class GameStatus : MonoBehaviour
         return hasInvincibleDash;
     }
 
-    public void SetCanMelee(bool melee)
+    public void SetHasMelee(bool melee)
     {
-        canMelee = melee;
+        hasMelee = melee;
     }
 
-    public bool CanMelee()
+    public bool HasMelee()
     {
-        return canMelee;
+        return hasMelee;
     }
 
-    public void SetCanRanged(bool ranged)
+    public void SetHasRanged(bool ranged)
     {
-        canRanged = ranged;
+        hasRanged = ranged;
     }
 
-    public bool CanRanged()
+    public bool HasRanged()
     {
-        return canRanged;
+        return hasRanged;
     }
     #endregion
 
@@ -313,8 +313,23 @@ public class GameStatus : MonoBehaviour
 
         if(pickup == "dash")
         {
-            Debug.Log("player has dash");
+            Debug.Log("player has dash? ");
             return hasDash;
+        }
+        else if (pickup == "iDash")
+        {
+            Debug.Log("player has iDash? ");
+            return hasInvincibleDash;
+        }
+        else if (pickup == "melee")
+        {
+            Debug.Log("player has melee attack? ");
+            return hasMelee;
+        }
+        else if (pickup == "ranged")
+        {
+            Debug.Log("player has ranged attack? ");
+            return hasRanged;
         }
         else
         {
@@ -344,6 +359,24 @@ public class GameStatus : MonoBehaviour
         {
             Debug.Log("giving the player dash");
             SetHasDash(true);
+            //hasDash = true;
+        }
+        else if(pickup == "iDash")
+        {
+            Debug.Log("giving the player invincible dash");
+            SetHasInvincibleDash(true);
+            //hasDash = true;
+        }
+        else if (pickup == "melee")
+        {
+            Debug.Log("giving the player ranged attack");
+            SetHasMelee(true);
+            //hasDash = true;
+        }
+        else if (pickup == "ranged")
+        {
+            Debug.Log("giving the player ranged attack");
+            SetHasRanged(true);
             //hasDash = true;
         }
     }

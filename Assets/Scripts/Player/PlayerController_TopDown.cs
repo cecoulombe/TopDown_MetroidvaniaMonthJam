@@ -314,7 +314,7 @@ public class PlayerController_TopDown : MonoBehaviour
     #region Attacking
     private void OnAttack()
     {
-        if (Input.GetKeyDown(KeyCode.K) && GameStatus.GetInstance().CanMelee())
+        if (Input.GetKeyDown(KeyCode.K) && GameStatus.GetInstance().HasMelee())
         {
             if (!isAttacking)
             {
@@ -342,7 +342,7 @@ public class PlayerController_TopDown : MonoBehaviour
 
     private void OnShoot()
     {
-        if (Input.GetKeyDown(KeyCode.L) && GameStatus.GetInstance().CanRanged() && GameStatus.GetInstance().GetAmmo() > 0)
+        if (Input.GetKeyDown(KeyCode.L) && GameStatus.GetInstance().HasRanged() && GameStatus.GetInstance().GetAmmo() > 0)
         {
             if (shootTimer > shootCoolDown)
             {
