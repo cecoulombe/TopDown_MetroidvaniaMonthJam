@@ -75,10 +75,13 @@ public class GameStatus : MonoBehaviour
         GameObject.DontDestroyOnLoad(gameObject);   // become immortal
 
         // keep this variables for now, but can change them later on using external scripts
-        SetHasDash(true);
-        SetCanMelee(true);
-        SetCanRanged(true);
-        SetHasInvincibleDash(true);
+        SetHasDash(false);
+        SetCanMelee(false);
+        SetCanRanged(false);
+        SetHasInvincibleDash(false);
+
+        //hasDash = false;
+
         #endregion
     }
 
@@ -181,6 +184,7 @@ public class GameStatus : MonoBehaviour
     {
         hasInvincibleDash = iDash;
     }
+
     public bool HasInvincibleDash()
     {
         return hasInvincibleDash;
@@ -190,6 +194,7 @@ public class GameStatus : MonoBehaviour
     {
         canMelee = melee;
     }
+
     public bool CanMelee()
     {
         return canMelee;
@@ -199,6 +204,7 @@ public class GameStatus : MonoBehaviour
     {
         canRanged = ranged;
     }
+
     public bool CanRanged()
     {
         return canRanged;
@@ -303,16 +309,16 @@ public class GameStatus : MonoBehaviour
                 Debug.Log("room2_AmmoIncrease" + room2_AmmoIncreaseTaken);
                 return room2_AmmoIncreaseTaken;
             }
-            else
-            {
-                Debug.Log("pick up type not known");
-                return false;
-            }
+        }
+
+        if(pickup == "dash")
+        {
+            Debug.Log("player has dash");
+            return hasDash;
         }
         else
         {
-            Debug.Log("cannot find the current room, returning true");
-            return true;
+            return false;
         }
     }
 
@@ -332,6 +338,13 @@ public class GameStatus : MonoBehaviour
                 Debug.Log("room2_AmmoIncrease has been picked up");
                 room2_AmmoIncreaseTaken = true;
             }
+        }
+
+        if(pickup == "dash")
+        {
+            Debug.Log("giving the player dash");
+            SetHasDash(true);
+            //hasDash = true;
         }
     }
     #endregion
