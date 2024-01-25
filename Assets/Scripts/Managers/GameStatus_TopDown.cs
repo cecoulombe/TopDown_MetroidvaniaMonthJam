@@ -62,6 +62,11 @@ public class GameStatus : MonoBehaviour
     // keep track of player state (maybe using an enum? take a look at that video after sorting this out)
 
     // track individual room values (i.e. is a room's chest has been opened or if the enemy gate has been opened)
+    private void Awake()
+    {
+        previousRoom = "spawn";
+    }
+
 
     private void Start()
     {

@@ -50,7 +50,7 @@ MonoBehaviour:
   money: 0
   ammoCount: 0
   maxAmmo: 10
-  previousRoom: null
+  previousRoom: spawn
   hasDash: 0
   hasInvincibleDash: 0
   hasMelee: 0

@@ -11,6 +11,16 @@ public class Room1 : MonoBehaviour
     private float enemyDeathCounter;
 
     private string currentRoom;
+    private string previousRoom;
+
+    [Header("Loading zones for each door")]
+    [SerializeField]
+    private PlayerController_TopDown player;
+
+    [SerializeField]
+    private GameObject spawnPoint;
+    [SerializeField]
+    private GameObject room2_LoadingZone;
 
     [Header("Gates/doors/chests tracking")]
     [SerializeField]
@@ -20,6 +30,25 @@ public class Room1 : MonoBehaviour
     [SerializeField]
     private bool room1_enemyGateOpen;
     #endregion
+
+    private void Awake()
+    {
+        // I want to know the room the player came from so that I can load them in at the right spot
+        previousRoom = GameStatus.GetInstance().GetPreviousRoom();
+    }
+
+    private void Start()
+    {
+        // I think I want to set the players load position here? Before any thing else can happen in the room? Lets give that a try
+        if (previousRoom == "spawn")
+        {
+            player.transform.position = spawnPoint.transform.position;
+        }
+        else if (previousRoom == "Room2")
+        {
+            player.transform.position = room2_LoadingZone.transform.position;
+        }
+    }
 
     private void Update()
     {

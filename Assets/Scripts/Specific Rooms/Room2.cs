@@ -17,6 +17,8 @@ public class Room2 : MonoBehaviour
     private PlayerController_TopDown player;
 
     [SerializeField]
+    private GameObject spawnPoint;
+    [SerializeField]
     private GameObject room1_LoadingZone;
 
 
@@ -48,12 +50,12 @@ public class Room2 : MonoBehaviour
     private void Start()
     {
         // I think I want to set the players load position here? Before any thing else can happen in the room? Lets give that a try
-        if (previousRoom == "null")
+        if (previousRoom == "spawn")
         {
-            // room 1 is a bottom transition, so set the position of the player to the position of the room1 loading zone which is a game object in the scene?
-            //player.transform.position = room1_LoadingZone.transform.position;
+            // this will be used if the player loads into this room specifically, mainly for testing
+            player.transform.position = spawnPoint.transform.position;
         }
-        if (previousRoom == "Room1")
+        else if (previousRoom == "Room1")
         {
             // room 1 is a bottom transition, so set the position of the player to the position of the room1 loading zone which is a game object in the scene?
             player.transform.position = room1_LoadingZone.transform.position;
