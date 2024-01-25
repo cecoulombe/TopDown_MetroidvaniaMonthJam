@@ -10,6 +10,15 @@ public class Room2 : MonoBehaviour
 
     #region Variables
     private string currentRoom;
+    private string previousRoom;
+
+    [Header("Loading zones for each door")]
+    [SerializeField]
+    private PlayerController_TopDown player;
+
+    [SerializeField]
+    private GameObject room1_LoadingZone;
+
 
     [Header("Gates/doors/chests tracking")]
     [SerializeField]
@@ -29,6 +38,27 @@ public class Room2 : MonoBehaviour
     [SerializeField]
     private bool room2_AmmoUpgradeTaken;
     #endregion
+
+    private void Awake()
+    {
+        // I want to know the room the player came from so that I can load them in at the right spot
+        previousRoom = GameStatus.GetInstance().GetPreviousRoom();
+    }
+
+    private void Start()
+    {
+        // I think I want to set the players load position here? Before any thing else can happen in the room? Lets give that a try
+        if (previousRoom == "null")
+        {
+            // room 1 is a bottom transition, so set the position of the player to the position of the room1 loading zone which is a game object in the scene?
+            //player.transform.position = room1_LoadingZone.transform.position;
+        }
+        if (previousRoom == "Room1")
+        {
+            // room 1 is a bottom transition, so set the position of the player to the position of the room1 loading zone which is a game object in the scene?
+            player.transform.position = room1_LoadingZone.transform.position;
+        }
+    }
 
     private void Update()
     {

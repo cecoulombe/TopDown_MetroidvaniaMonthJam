@@ -26,6 +26,9 @@ public class GameStatus : MonoBehaviour
     [SerializeField]
     protected float maxAmmo;
 
+    [SerializeField]
+    protected string previousRoom;
+
     [Header("Player state bools")]
     [SerializeField]
     protected bool hasDash;
@@ -211,10 +214,23 @@ public class GameStatus : MonoBehaviour
     }
     #endregion
 
+    #region Room Management
     public string GetCurrentRoom()
     {
        return SceneManager.GetActiveScene().name;
     }
+
+    // these two strings return the same room; however, one will be used to store the name of the previous room that we were in to determine which door to spawn at on a transition
+    public void SetPreviousRoom(string roomBeforeTransition)
+    {
+        previousRoom = roomBeforeTransition;
+    }
+
+    public string GetPreviousRoom()
+    {
+        return previousRoom;
+    }
+    #endregion
 
     #region Check and change the state of a door/chest
     // take in the name of the thing to be checked, then return if it is true of false

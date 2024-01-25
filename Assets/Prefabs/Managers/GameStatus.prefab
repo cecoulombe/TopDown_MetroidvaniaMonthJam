@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2472151596668438739}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -79.175476, y: 116.22562, z: 3.3123703}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47,7 +47,15 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   deathCounter: 0
-  hasDash: 1
-  canMelee: 1
-  canRanged: 1
+  money: 0
+  ammoCount: 0
+  maxAmmo: 10
+  previousRoom: null
+  hasDash: 0
+  hasInvincibleDash: 0
+  hasMelee: 0
+  hasRanged: 0
   room1_enemyGateOpen: 0
+  room2_chestOpen: 0
+  room2_HealthIncreaseTaken: 0
+  room2_AmmoIncreaseTaken: 0
