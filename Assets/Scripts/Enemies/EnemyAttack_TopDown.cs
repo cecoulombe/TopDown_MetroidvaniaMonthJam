@@ -5,9 +5,12 @@ using UnityEngine;
 public class EnemyAttack_TopDown : MonoBehaviour
 {
     #region Varaibles
+    [Header("Movement Variables")]
     [SerializeField]
     private float moveSpeed;
     private float defaultSpeed;
+    [SerializeField]
+    private float lungeSpeed = 10f;
 
     [SerializeField]
     public bool isDead;
@@ -20,18 +23,20 @@ public class EnemyAttack_TopDown : MonoBehaviour
     private Vector2 moveDirection;
     private Vector2 lastMoveDirection;
 
-    private Vector3 startPosition;
-
-    [SerializeField]
-    private float health = 3f;
-    [SerializeField]
-    private float maxHealth;
-
     private float rangeFromTarget;
 
     [SerializeField]
     private float loseAggroRange;
 
+    private bool isWalking;
+
+    [Header("Enemy Health")]
+    [SerializeField]
+    private float health = 3f;
+    [SerializeField]
+    private float maxHealth;
+
+    [Header("Attacking and Player Damage")]
     [SerializeField]
     private float contactDamage;
 
@@ -49,8 +54,8 @@ public class EnemyAttack_TopDown : MonoBehaviour
     [SerializeField]
     public bool knockFromRight;
 
-    private bool isWalking;
 
+    [Header("Health and Ammo Drops")]
     [SerializeField]
     private GameObject bigHealthDrop;
     [SerializeField]
@@ -77,9 +82,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
     [SerializeField]
     private bool isAttacking;
 
-    //[SerializeField]
-    //private float timeToAttack = 0.3f;
-
     [SerializeField]
     private float attackDuration = 0.3f;
 
@@ -87,6 +89,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
     private float attackTimer = 0f;
 
     private float meleeAttackRange;
+    private float lungeAttackRange;
 
     [SerializeField]
     private float attackCoolDown;
@@ -116,14 +119,14 @@ public class EnemyAttack_TopDown : MonoBehaviour
     [SerializeField]
     private float wakeUpPercent;
     [SerializeField]
-    private float meleePercent;
+    private float lungePercent;
     [SerializeField]
     private float minRangePercent;
     [SerializeField]
     private float maxRangePercent;
     #endregion
 
-    public enum EnemyType { chaser, melee, ranged, mixed}
+    public enum EnemyType { chaser, melee, ranged, mixed, charger}
     public EnemyType enemyType;
 
     private void Awake()
@@ -137,11 +140,10 @@ public class EnemyAttack_TopDown : MonoBehaviour
         health = maxHealth;
         defaultSpeed = moveSpeed;
         rangeFromTarget = wakeUpPercent * loseAggroRange;
-        meleeAttackRange = meleePercent * rangeFromTarget;
+        meleeAttackRange = 1f;
+        meleeAttackRange = lungePercent * loseAggroRange;
         rangedAttackRangeMin = minRangePercent * loseAggroRange;
         rangedAttackRangeMax = maxRangePercent * loseAggroRange;
-
-        startPosition = gameObject.transform.position;
     }
 
     void Update()
@@ -161,49 +163,33 @@ public class EnemyAttack_TopDown : MonoBehaviour
         CheckMeleeTimer();
         shootTimer += Time.deltaTime;
 
-        if (Vector3.Distance(target.position, transform.position) <= rangeFromTarget)
+        if (Vector3.Distance(target.position, transform.position) <= rangeFromTarget || health != maxHealth)
         {
+            StartCoroutine(DelayBeforeMoving());
             isAwake = true;
         }
 
-        if (enemyType == EnemyType.melee || enemyType == EnemyType.mixed)
+        if (isAwake && enemyType == EnemyType.charger)
         {
-            if (attackCoolDown <= 0)
-            {
-                if (Vector3.Distance(target.position, transform.position) <= meleeAttackRange)
-                {
-                    moveDirection = new Vector3(0f, 0f, 0f);
-                    OnAttack();
-                    return;
-                }
-            }
+            ChargerAttacker();
+        }
+
+        if (isAwake && enemyType == EnemyType.melee)
+        {
+            MeleeAttacker();
         }
 
         if (isAwake && enemyType == EnemyType.ranged)
         {
-            OnShoot();
-            Vector3 direction = (target.position - transform.position).normalized;
-            moveDirection = -direction;
-            lastMoveDirection = moveDirection;
-            isWalking = true;
-            return;
+            RangedAttacker();
         }
 
         if (isAwake && enemyType == EnemyType.mixed)
         {
-            if (Vector3.Distance(target.position, transform.position) >= rangedAttackRangeMin && Vector3.Distance(target.position, transform.position) <= rangedAttackRangeMax)
-            {
-                OnShoot();
-                Vector3 direction = (target.position - transform.position).normalized;
-                moveDirection = -direction;
-                lastMoveDirection = moveDirection;
-                isWalking = true;
-                return;
-            }
-
+            MixedAttacker();
         }
 
-        if (target && isAwake && attackCoolDown <= 100f && (enemyType != EnemyType.ranged))
+        if (target && isAwake && attackCoolDown <= 100f && (enemyType != EnemyType.ranged || enemyType != EnemyType.mixed))
         {
             Vector3 direction = (target.position - transform.position).normalized;
             moveDirection = direction;
@@ -211,7 +197,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
             isWalking = true;
         }
 
-        if (Vector3.Distance(target.position, transform.position) >= loseAggroRange)
+        if (Vector3.Distance(target.position, transform.position) >= loseAggroRange && health == maxHealth)
         {
             isAwake = false;
             isWalking = false;
@@ -249,6 +235,89 @@ public class EnemyAttack_TopDown : MonoBehaviour
         }
     }
 
+
+    #region Enemy Type Attack Specifics
+    private void ChargerAttacker()
+    {
+        // nothing for the charger yet, will probably add small lunges towards the player
+        // want the charger to randomly lunge towards the player
+        //int randNum = Random.Range(0, 5);
+        //if(Random.Range(0, 5) <= 1 && attackCoolDown <= 0)
+        //{
+        //    OnLunge();
+        //    Debug.Log("lunging at player");
+        //    return;
+
+        //}
+
+        if (attackCoolDown <= 0)
+        {
+            int randNum = Random.Range(0, 5);
+            Debug.Log(randNum);
+            if (randNum <= 0) //&& Vector3.Distance(target.position, transform.position) <= lungeAttackRange)
+            {
+                OnLunge();
+                Debug.Log("lunging at player");
+                return;
+            }
+        }
+    }
+    private void MeleeAttacker()
+    {
+        if (attackCoolDown <= 0)
+        {
+            if (Vector3.Distance(target.position, transform.position) <= meleeAttackRange)
+            {
+                moveDirection = new Vector3(0f, 0f, 0f);
+                OnAttack();
+                return;
+            }
+        }
+    }
+    private void RangedAttacker()
+    {
+        OnShoot();
+        Vector3 direction = (target.position - transform.position).normalized;
+        moveDirection = -direction;
+        lastMoveDirection = moveDirection;
+        isWalking = true;
+        return;
+    }
+    private void MixedAttacker()
+    {
+        if (attackCoolDown <= 0 && Vector3.Distance(target.position, transform.position) <= meleeAttackRange)
+        {
+            //if (Vector3.Distance(target.position, transform.position) <= meleeAttackRange)
+            //{
+            moveDirection = new Vector3(0f, 0f, 0f);
+            OnAttack();
+            return;
+            //}
+        }
+        else if (Vector3.Distance(target.position, transform.position) >= rangedAttackRangeMin && Vector3.Distance(target.position, transform.position) <= rangedAttackRangeMax)
+        {
+            Vector3 direction = (target.position - transform.position).normalized;
+            moveDirection = -direction;
+            lastMoveDirection = moveDirection;
+            isWalking = true;
+            OnShoot();
+            return;
+        }
+        else
+        {
+            Vector3 direction = (target.position - transform.position).normalized;
+            moveDirection = direction;
+            lastMoveDirection = moveDirection;
+            isWalking = true;
+        }
+    }
+    #endregion
+
+    private IEnumerator DelayBeforeMoving()
+    {
+        yield return new WaitForSeconds(0.1f);
+    }
+
     #region Attacking
     private void OnAttack()
     {
@@ -260,6 +329,17 @@ public class EnemyAttack_TopDown : MonoBehaviour
             // call your animator to play your melee attack
         }
         //moveSpeed = defaultSpeed;
+    }
+
+    private void OnLunge()
+    {
+        if (!isAttacking)
+        {
+            moveSpeed *= lungeSpeed;
+            isAttacking = true;
+            // call your animator to play your melee attack
+        }
+        moveSpeed = defaultSpeed;
     }
 
     private void CheckMeleeTimer()
@@ -326,12 +406,12 @@ public class EnemyAttack_TopDown : MonoBehaviour
             {
                 if (randNum <= bigHealthChance)
                 {
-                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(0f, 1f), Aim.position.y + Random.Range(0f, 1f), Aim.position.z);
+                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-1f, 1f), Aim.position.y + Random.Range(-1f, 1f), Aim.position.z);
                     Instantiate(bigHealthDrop, dropPos, Aim.rotation);
                 }
                 else if (randNum > bigHealthChance && randNum <= smallHealthChance)
                 {
-                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(0f, 1f), Aim.position.y + Random.Range(0f, 1f), Aim.position.z);
+                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-1f, 1f), Aim.position.y + Random.Range(-1f, 1f), Aim.position.z);
                     Instantiate(smallHealthDrop, dropPos, Aim.rotation);
                 }
             }
@@ -343,12 +423,12 @@ public class EnemyAttack_TopDown : MonoBehaviour
                     float randNumAmmo = Random.Range(0f, 10f) / 10f * 100f;
                     if (randNumAmmo <= bigAmmoChance)
                     {
-                        Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(0f, 1f), Aim.position.y + Random.Range(0f, 1f), Aim.position.z);
+                        Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-1f, 1f), Aim.position.y + Random.Range(-1f, 1f), Aim.position.z);
                         Instantiate(bigAmmoDrop, dropPos, Aim.rotation);
                     }
                     else if (randNumAmmo > bigAmmoChance && randNumAmmo <= smallAmmoChance)
                     {
-                        Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(0f, 1f), Aim.position.y + Random.Range(0f, 1f), Aim.position.z);
+                        Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-1f, 1f), Aim.position.y + Random.Range(-1f, 1f), Aim.position.z);
                         Instantiate(smallAmmoDrop, dropPos, Aim.rotation);
                     }
                 }
