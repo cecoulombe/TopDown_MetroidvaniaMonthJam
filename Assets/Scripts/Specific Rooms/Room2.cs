@@ -41,14 +41,11 @@ public class Room2 : MonoBehaviour
     private bool room2_AmmoUpgradeTaken;
     #endregion
 
-    private void Awake()
+    private void Start()
     {
         // I want to know the room the player came from so that I can load them in at the right spot
         previousRoom = GameStatus.GetInstance().GetPreviousRoom();
-    }
 
-    private void Start()
-    {
         // I think I want to set the players load position here? Before any thing else can happen in the room? Lets give that a try
         if (previousRoom == "spawn")
         {
