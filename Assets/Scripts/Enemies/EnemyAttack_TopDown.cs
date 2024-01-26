@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttack_TopDown : MonoBehaviour
 {
     #region Varaibles
-    public enum EnemyType { chaser, melee, ranged, mixed, charger }
+    public enum EnemyType { chaser, melee, ranged, mixed, charger, turret }
     public EnemyType enemyType;
 
     [Header("Movement Variables")]
@@ -195,6 +195,11 @@ public class EnemyAttack_TopDown : MonoBehaviour
             MixedAttacker();
         }
 
+        if (isAwake && enemyType == EnemyType.turret)
+        {
+            TurretAttacker();
+        }
+
         if (target && isAwake && attackCoolDown <= 100f && (enemyType != EnemyType.ranged || enemyType != EnemyType.mixed))
         {
             Vector3 direction = (target.position - transform.position).normalized;
@@ -242,7 +247,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
     }
 
 
-    #region Enemy Type Attack Specifics
+    #region Enemy Type Specific Attack 
     private void ChargerAttacker()
     {
         if (attackCoolDown <= 0)
@@ -303,6 +308,14 @@ public class EnemyAttack_TopDown : MonoBehaviour
             lastMoveDirection = moveDirection;
             isWalking = true;
         }
+    }
+
+    private void TurretAttacker()
+    {
+        OnShoot();
+        moveSpeed = 0;
+        isWalking = false;
+        return;
     }
     #endregion
 
