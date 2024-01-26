@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4001550551383539128}
   - component: {fileID: 1167321709506856792}
   m_Layer: 0
-  m_Name: Chaser Enemy
+  m_Name: PatternWalker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,9 +178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a20e30f32037408aab2eeeaef8c8683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 0
-  moveSpeed: 3
-  defaultSpeed: 3
+  enemyType: 6
+  moveSpeed: 2
+  defaultSpeed: 2
   lungeSpeed: 10
   isDead: 0
   isAwake: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   isPatternWalker: 1
   pointA: {fileID: 0}
   pointB: {fileID: 0}
-  patternSpeed: 3
+  patternSpeed: 2
   health: 0
   maxHealth: 3
   contactDamage: 1

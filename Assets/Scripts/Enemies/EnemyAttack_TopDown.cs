@@ -5,15 +5,18 @@ using UnityEngine;
 public class EnemyAttack_TopDown : MonoBehaviour
 {
     #region Varaibles
-    public enum EnemyType { chaser, melee, ranged, mixed, charger, turret }
+    public enum EnemyType { chaser, melee, ranged, mixed, charger, turret, patternWalker }
     public EnemyType enemyType;
 
     [Header("Movement Variables")]
     [SerializeField]
     private float moveSpeed;
+    [SerializeField]
     private float defaultSpeed;
     [SerializeField]
     private float lungeSpeed = 10f;
+    [SerializeField]
+    private float patternSpeed = 3.0f;
 
     [SerializeField]
     public bool isDead;
@@ -33,6 +36,19 @@ public class EnemyAttack_TopDown : MonoBehaviour
 
     private bool isWalking;
 
+    [Header("Walk Pattern")]
+    [SerializeField]
+    private bool isPatternWalker;
+
+    [SerializeField]
+    private Transform pointA;
+
+    [SerializeField]
+    private Transform pointB;
+
+    private bool switching = false;
+    private Transform walkPath;
+
     [Header("Enemy Health")]
     [SerializeField]
     private float health = 3f;
@@ -44,7 +60,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
     private float contactDamage;
 
     public PlayerController_TopDown playerController;
-    //public PlayerHealth_TopDown playerHealth;
 
     [SerializeField]
     public float knockBackForce;
@@ -91,11 +106,14 @@ public class EnemyAttack_TopDown : MonoBehaviour
     [SerializeField]
     private float attackTimer = 0f;
 
+    [SerializeField]
     private float meleeAttackRange;
+
     [SerializeField]
     private float lungeAttackRange;
 
     private float attackCoolDown;
+
     [SerializeField]
     private float meleeCoolDown = 200f;
     [SerializeField]
@@ -126,8 +144,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
     [SerializeField]
     private float wakeUpPercent;
     [SerializeField]
-    private float lungePercent;
-    [SerializeField]
     private float minRangePercent;
     [SerializeField]
     private float maxRangePercent;
@@ -146,8 +162,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
         health = maxHealth;
         defaultSpeed = moveSpeed;
         rangeFromTarget = wakeUpPercent * loseAggroRange;
-        meleeAttackRange = 1f;
-        lungeAttackRange = lungePercent * loseAggroRange;
         rangedAttackRangeMin = minRangePercent * loseAggroRange;
         rangedAttackRangeMax = maxRangePercent * loseAggroRange;
     }
@@ -224,7 +238,28 @@ public class EnemyAttack_TopDown : MonoBehaviour
 
         }
 
-        if (target)
+        if((!isAwake && isPatternWalker) || enemyType == EnemyType.patternWalker && isAwake)
+        {
+            if (!switching)
+            {
+                walkPath = pointB;
+            }
+            else if (switching)
+            {
+                walkPath = pointA;
+            }
+
+            if (transform.position == pointB.position)
+            {
+                switching = true;
+            }
+            else if (transform.position == pointA.position)
+            {
+                switching = false;
+            }
+            transform.position = Vector3.MoveTowards(transform.position, walkPath.position, patternSpeed * Time.deltaTime);
+        }
+        else if (isAwake) //target && 
         {
             if (knockBackCounter <= 0)  // not being knocked back so you can move
             {

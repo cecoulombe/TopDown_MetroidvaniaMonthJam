@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: e0abcbec08e544f789cfdbd992d1cbb5
-  - enabled: 1
     path: Assets/Scenes/Room1.unity
     guid: c0c4df7600f0c47b3be3792db232930f
   - enabled: 1
@@ -17,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room2.unity
     guid: ca498f111e0014d98ba014aa46e9c536
+  - enabled: 1
+    path: Assets/Scenes/EnemyTestScene.unity
+    guid: 0b94d9a247ff54efc875c947b7d367c5
   m_configObjects: {}

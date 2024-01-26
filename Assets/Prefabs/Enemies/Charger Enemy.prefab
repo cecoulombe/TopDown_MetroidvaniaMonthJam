@@ -127,10 +127,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a20e30f32037408aab2eeeaef8c8683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: 4
   moveSpeed: 2
+  defaultSpeed: 2
+  lungeSpeed: 10
   isDead: 0
   isAwake: 0
   loseAggroRange: 10
+  isPatternWalker: 0
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
+  patternSpeed: 3
   health: 0
   maxHealth: 3
   contactDamage: 1
@@ -151,17 +158,18 @@ MonoBehaviour:
   isAttacking: 0
   attackDuration: 0.5
   attackTimer: 0
-  attackCoolDown: 0
+  lungeAttackRange: 4
+  meleeCoolDown: 200
+  chargerCoolDown: 500
   Aim: {fileID: 38192990922292354}
   bullet: {fileID: 2609964779410368697, guid: 0d81a5adc69054da39e0f592da93e4f1, type: 3}
   fireForce: 5
   shootCoolDown: 0.7
   shootTimer: 0
   wakeUpPercent: 0.7
-  meleePercent: 0.2
+  lungePercent: 0
   minRangePercent: 0.6
   maxRangePercent: 0.95
-  enemyType: 4
 --- !u!60 &2165286085598958409
 PolygonCollider2D:
   m_ObjectHideFlags: 0
