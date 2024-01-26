@@ -576,16 +576,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 2563478602847825122}
     m_Modifications:
     - target: {fileID: 1167321709506856792, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
+      propertyPath: enemyType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167321709506856792, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
+      propertyPath: lungeSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1167321709506856792, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
       propertyPath: lungePercent
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1167321709506856792, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
       propertyPath: attackCoolDown
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1167321709506856792, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
       propertyPath: attackDuration
-      value: 1
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 1167321709506856792, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
       propertyPath: playerController

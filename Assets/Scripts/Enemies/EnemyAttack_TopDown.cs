@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemyAttack_TopDown : MonoBehaviour
 {
     #region Varaibles
+    public enum EnemyType { chaser, melee, ranged, mixed, charger }
+    public EnemyType enemyType;
+
     [Header("Movement Variables")]
     [SerializeField]
     private float moveSpeed;
@@ -89,10 +92,14 @@ public class EnemyAttack_TopDown : MonoBehaviour
     private float attackTimer = 0f;
 
     private float meleeAttackRange;
+    [SerializeField]
     private float lungeAttackRange;
 
-    [SerializeField]
     private float attackCoolDown;
+    [SerializeField]
+    private float meleeCoolDown = 200f;
+    [SerializeField]
+    private float chargerCoolDown = 500f;
     #endregion
 
     #region Ranged Variables
@@ -126,8 +133,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
     private float maxRangePercent;
     #endregion
 
-    public enum EnemyType { chaser, melee, ranged, mixed, charger}
-    public EnemyType enemyType;
+    
 
     private void Awake()
     {
@@ -141,7 +147,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
         defaultSpeed = moveSpeed;
         rangeFromTarget = wakeUpPercent * loseAggroRange;
         meleeAttackRange = 1f;
-        meleeAttackRange = lungePercent * loseAggroRange;
+        lungeAttackRange = lungePercent * loseAggroRange;
         rangedAttackRangeMin = minRangePercent * loseAggroRange;
         rangedAttackRangeMax = maxRangePercent * loseAggroRange;
     }
@@ -239,22 +245,9 @@ public class EnemyAttack_TopDown : MonoBehaviour
     #region Enemy Type Attack Specifics
     private void ChargerAttacker()
     {
-        // nothing for the charger yet, will probably add small lunges towards the player
-        // want the charger to randomly lunge towards the player
-        //int randNum = Random.Range(0, 5);
-        //if(Random.Range(0, 5) <= 1 && attackCoolDown <= 0)
-        //{
-        //    OnLunge();
-        //    Debug.Log("lunging at player");
-        //    return;
-
-        //}
-
         if (attackCoolDown <= 0)
         {
-            int randNum = Random.Range(0, 5);
-            Debug.Log(randNum);
-            if (randNum <= 0) //&& Vector3.Distance(target.position, transform.position) <= lungeAttackRange)
+            if (Vector3.Distance(target.position, transform.position) <= lungeAttackRange)
             {
                 OnLunge();
                 Debug.Log("lunging at player");
@@ -335,11 +328,11 @@ public class EnemyAttack_TopDown : MonoBehaviour
     {
         if (!isAttacking)
         {
-            moveSpeed *= lungeSpeed;
+            moveSpeed = lungeSpeed;
             isAttacking = true;
-            // call your animator to play your melee attack
+            // call your animator to play your lunge attack
         }
-        moveSpeed = defaultSpeed;
+        //moveSpeed = defaultSpeed;
     }
 
     private void CheckMeleeTimer()
@@ -358,11 +351,21 @@ public class EnemyAttack_TopDown : MonoBehaviour
 
             if (attackTimer >= attackDuration)
             {
-                attackCoolDown = 200f;
+                if(enemyType == EnemyType.melee)
+                {
+                    attackCoolDown = meleeCoolDown;
+                }
+                if (enemyType == EnemyType.charger)
+                {
+                    attackCoolDown = chargerCoolDown;
+                }
+
                 attackTimer = 0;
                 isAttacking = false;
+                moveSpeed = defaultSpeed;
                 Melee.SetActive(false);
             }
+            return;
         }
     }
 
