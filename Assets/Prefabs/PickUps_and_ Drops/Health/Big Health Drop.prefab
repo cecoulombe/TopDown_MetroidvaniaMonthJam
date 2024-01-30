@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7537027121402654435}
   - component: {fileID: 2069731630292285203}
   m_Layer: 0
-  m_Name: Big Health Drop 1
+  m_Name: Big Health Drop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

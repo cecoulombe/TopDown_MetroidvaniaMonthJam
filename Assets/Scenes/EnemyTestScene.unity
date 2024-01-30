@@ -579,7 +579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 4f6b03edf4862451fb1f166f6d7912f5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8588737929235803540, guid: 4f6b03edf4862451fb1f166f6d7912f5, type: 3}
       propertyPath: playerController
@@ -648,7 +648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 40870e9cfd38542f3b5467f9830adf3e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -713,7 +713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: ec7efd88cdebe4beb95603c3b86fe0d6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -926,7 +926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 72769de63d3564be8a5767653ee0649e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6883590742739767753, guid: 72769de63d3564be8a5767653ee0649e, type: 3}
       propertyPath: playerController
@@ -1542,7 +1542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 28386c12a61c6412ab397a2884cb813e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8588737929235803540, guid: 28386c12a61c6412ab397a2884cb813e, type: 3}
       propertyPath: playerController
@@ -1741,7 +1741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 09991227108b9463099e093e33c86304, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6164902235044226044, guid: 09991227108b9463099e093e33c86304, type: 3}
       propertyPath: playerController
@@ -1807,6 +1807,10 @@ PrefabInstance:
     - target: {fileID: 5826854295990666989, guid: 15e3aecda213942a6bf08ab0ce60f340, type: 3}
       propertyPath: m_Name
       value: VerticalPatternWalker
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826854295990666989, guid: 15e3aecda213942a6bf08ab0ce60f340, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2019,7 +2023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: d0aadc46520a4449d8c7fbf0697858e4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6164902235044226044, guid: d0aadc46520a4449d8c7fbf0697858e4, type: 3}
       propertyPath: playerController
@@ -2149,7 +2153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 2e5605d1cb6a644c38b9cbcd67d6ae93, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8002718938314679976, guid: 2e5605d1cb6a644c38b9cbcd67d6ae93, type: 3}
       propertyPath: playerController
@@ -2362,6 +2366,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448424914}
   m_CullTransparentMesh: 1
+--- !u!114 &1501060332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+  m_PrefabInstance: {fileID: 2081663554}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3534d29dd97d4375a29cb1a055bf7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1549861032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,7 +2653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: f9c841f6f32f540549bdd5b22e2d2725, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8002718938314679976, guid: f9c841f6f32f540549bdd5b22e2d2725, type: 3}
       propertyPath: playerController
@@ -3079,7 +3094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 0807a1f697f184535b0d047fd90f172c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3134,6 +3149,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: health
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: bigAmmoDrop
+      value: 
+      objectReference: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: bigAmmoChance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: bigHealthDrop
+      value: 
+      objectReference: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
+    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: smallAmmoDrop
+      value: 
+      objectReference: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: wakeUpPercent
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: bigHealthChance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: smallAmmoChance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: smallHealthDrop
+      value: 
+      objectReference: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: smallHealthChance
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
       propertyPath: m_Name
       value: StaticCharger
@@ -3142,6 +3201,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8588737929235803540, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: myHealth
+      value: 
+      objectReference: {fileID: 1501060332}
     - target: {fileID: 8588737929235803540, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
       propertyPath: playerController
       value: 
@@ -3205,7 +3268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 433ad5c84b861426698b1cc1989359a2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6883590742739767753, guid: 433ad5c84b861426698b1cc1989359a2, type: 3}
       propertyPath: playerController

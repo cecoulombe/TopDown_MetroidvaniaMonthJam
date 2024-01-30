@@ -8,36 +8,23 @@ public class EnemyAttack_TopDown : MonoBehaviour
     public enum EnemyType { chaser, melee, ranged, mixed, charger, turret, patternWalker }
     public EnemyType enemyType;
 
-    [Header("Movement Variables")]
-    [SerializeField]
-    private float moveSpeed;
-    [SerializeField]
-    private float defaultSpeed;
     [SerializeField]
     private float lungeSpeed = 10f;
     [SerializeField]
     private float patternSpeed = 3.0f;
 
-    [SerializeField]
-    public bool isDead;
+    private bool amDead;
+    private bool amDamaged;
 
     [SerializeField]
-    private bool isAwake;
+    private EnemyHealth myHealth;
 
     private Rigidbody2D rb;
     private Transform target;
     private Vector2 moveDirection;
     private Vector2 lastMoveDirection;
 
-    private float rangeFromTarget;
-
-    [SerializeField]
-    private float loseAggroRange;
-
-    private bool isWalking;
-
     [Header("Walk Pattern")]
-    [SerializeField]
     private bool isPatternWalker;
 
     [SerializeField]
@@ -48,49 +35,13 @@ public class EnemyAttack_TopDown : MonoBehaviour
 
     private bool switching = false;
     private Transform walkPath;
-
-    [Header("Enemy Health")]
-    [SerializeField]
-    private float health = 3f;
-    [SerializeField]
-    private float maxHealth;
+    private bool amAwake;
 
     [Header("Attacking and Player Damage")]
     [SerializeField]
     private float contactDamage;
 
     public PlayerController_TopDown playerController;
-
-    [SerializeField]
-    public float knockBackForce;
-
-    [SerializeField]
-    public float knockBackCounter;
-
-    public float knockBackTotalTime;
-
-    [SerializeField]
-    public bool knockFromRight;
-
-
-    [Header("Health and Ammo Drops")]
-    [SerializeField]
-    private GameObject bigHealthDrop;
-    [SerializeField]
-    private float bigHealthChance;
-    [SerializeField]
-    private GameObject smallHealthDrop;
-    [SerializeField]
-    private float smallHealthChance;
-
-    [SerializeField]
-    private GameObject bigAmmoDrop;
-    [SerializeField]
-    private float bigAmmoChance;
-    [SerializeField]
-    private GameObject smallAmmoDrop;
-    [SerializeField]
-    private float smallAmmoChance;
     #endregion
 
     #region Melee Variables
@@ -142,8 +93,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
     private float rangedAttackRangeMax;
 
     [SerializeField]
-    private float wakeUpPercent;
-    [SerializeField]
     private float minRangePercent;
     [SerializeField]
     private float maxRangePercent;
@@ -153,29 +102,21 @@ public class EnemyAttack_TopDown : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); 
     }
 
     void Start()
     {
         target = GameObject.Find("Player").transform;
-        health = maxHealth;
-        defaultSpeed = moveSpeed;
-        rangeFromTarget = wakeUpPercent * loseAggroRange;
-        rangedAttackRangeMin = minRangePercent * loseAggroRange;
-        rangedAttackRangeMax = maxRangePercent * loseAggroRange;
+        isPatternWalker = myHealth.isPatternWalker;
     }
 
     void Update()
     {
-        if (GameStatus.GetInstance().GetHealth() <= 0)
-        {
-            //moveDirection = new Vector3(0f, 0f, 0f);
-            moveSpeed = 0;
-            return;
-        }
+        amDamaged = myHealth.isDamaged;
+        amAwake = myHealth.isAwake;
 
-        if (isDead)
+        if (myHealth.isDead)
         {
             return;
         }
@@ -183,62 +124,40 @@ public class EnemyAttack_TopDown : MonoBehaviour
         CheckMeleeTimer();
         shootTimer += Time.deltaTime;
 
-        if (Vector3.Distance(target.position, transform.position) <= rangeFromTarget || health != maxHealth)
-        {
-            StartCoroutine(DelayBeforeMoving());
-            isAwake = true;
-        }
-
-        if (isAwake && enemyType == EnemyType.charger)
+        if (amAwake && enemyType == EnemyType.charger)
         {
             ChargerAttacker();
         }
 
-        if (isAwake && enemyType == EnemyType.melee)
+        if (amAwake && enemyType == EnemyType.melee)
         {
             MeleeAttacker();
         }
 
-        if (isAwake && enemyType == EnemyType.ranged)
+        if (amAwake && enemyType == EnemyType.ranged)
         {
             RangedAttacker();
         }
 
-        if (isAwake && enemyType == EnemyType.mixed)
+        if (amAwake && enemyType == EnemyType.mixed)
         {
             MixedAttacker();
         }
 
-        if (isAwake && enemyType == EnemyType.turret)
+        if (amAwake && enemyType == EnemyType.turret)
         {
             TurretAttacker();
-        }
-
-        if (target && isAwake && attackCoolDown <= 100f && (enemyType != EnemyType.ranged || enemyType != EnemyType.mixed))
-        {
-            Vector3 direction = (target.position - transform.position).normalized;
-            moveDirection = direction;
-            lastMoveDirection = moveDirection;
-            isWalking = true;
-        }
-
-        if (Vector3.Distance(target.position, transform.position) >= loseAggroRange && health == maxHealth)
-        {
-            isAwake = false;
-            isWalking = false;
-            moveDirection = new Vector3(0f, 0f, 0f);
         }
     }
 
     private void FixedUpdate()
     {
-        if (isWalking)
-        {
-            Aim.rotation = Quaternion.LookRotation(Vector3.forward, -lastMoveDirection);
+        Movement();
+    }
 
-        }
-
-        if((!isAwake && isPatternWalker) || enemyType == EnemyType.patternWalker && isAwake)
+    private void Movement()
+    {
+        if ((!amAwake && isPatternWalker) || enemyType == EnemyType.patternWalker && amAwake)
         {
             if (!switching)
             {
@@ -259,28 +178,7 @@ public class EnemyAttack_TopDown : MonoBehaviour
             }
             transform.position = Vector3.MoveTowards(transform.position, walkPath.position, patternSpeed * Time.deltaTime);
         }
-        else if (isAwake) //target && 
-        {
-            if (knockBackCounter <= 0)  // not being knocked back so you can move
-            {
-                rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
-            }
-            else    // will need to update this to be from any direction, so make it knockback force equal to the opposite direction of the enemy
-            {
-                if (knockFromRight)
-                {
-                    rb.velocity = new Vector2(-knockBackForce, 0f);
-                }
-                if (!knockFromRight)
-                {
-                    rb.velocity = new Vector2(knockBackForce, 0f);
-                }
-
-                knockBackCounter -= Time.deltaTime;
-            }
-        }
     }
-
 
     #region Enemy Type Specific Attack 
     private void ChargerAttacker()
@@ -313,26 +211,23 @@ public class EnemyAttack_TopDown : MonoBehaviour
         Vector3 direction = (target.position - transform.position).normalized;
         moveDirection = -direction;
         lastMoveDirection = moveDirection;
-        isWalking = true;
+        myHealth.isWalking = true;
         return;
     }
     private void MixedAttacker()
     {
         if (attackCoolDown <= 0 && Vector3.Distance(target.position, transform.position) <= meleeAttackRange)
         {
-            //if (Vector3.Distance(target.position, transform.position) <= meleeAttackRange)
-            //{
             moveDirection = new Vector3(0f, 0f, 0f);
             OnAttack();
             return;
-            //}
         }
         else if (Vector3.Distance(target.position, transform.position) >= rangedAttackRangeMin && Vector3.Distance(target.position, transform.position) <= rangedAttackRangeMax)
         {
             Vector3 direction = (target.position - transform.position).normalized;
             moveDirection = -direction;
             lastMoveDirection = moveDirection;
-            isWalking = true;
+            myHealth.isWalking = true;
             OnShoot();
             return;
         }
@@ -341,46 +236,38 @@ public class EnemyAttack_TopDown : MonoBehaviour
             Vector3 direction = (target.position - transform.position).normalized;
             moveDirection = direction;
             lastMoveDirection = moveDirection;
-            isWalking = true;
+            myHealth.isWalking = true;
         }
     }
 
     private void TurretAttacker()
     {
         OnShoot();
-        moveSpeed = 0;
-        isWalking = false;
+        myHealth.isWalking = false;
         return;
     }
     #endregion
-
-    private IEnumerator DelayBeforeMoving()
-    {
-        yield return new WaitForSeconds(0.1f);
-    }
 
     #region Attacking
     private void OnAttack()
     {
         if (!isAttacking)
         {
-            moveSpeed = 0;
+            myHealth.moveSpeed = 0;
             Melee.SetActive(true);
             isAttacking = true;
             // call your animator to play your melee attack
         }
-        //moveSpeed = defaultSpeed;
     }
 
     private void OnLunge()
     {
         if (!isAttacking)
         {
-            moveSpeed = lungeSpeed;
+            myHealth.moveSpeed = lungeSpeed;
             isAttacking = true;
             // call your animator to play your lunge attack
         }
-        //moveSpeed = defaultSpeed;
     }
 
     private void CheckMeleeTimer()
@@ -388,10 +275,11 @@ public class EnemyAttack_TopDown : MonoBehaviour
         if(!isAttacking && attackCoolDown > 0)
         {
             attackCoolDown -= 1f;
+            myHealth.attackCoolDown -= 1f;
         }
         if(!isAttacking && attackCoolDown <= 0)
         {
-            moveSpeed = defaultSpeed;
+            myHealth.moveSpeed = myHealth.defaultSpeed;
         }
         if (isAttacking)
         {
@@ -402,15 +290,17 @@ public class EnemyAttack_TopDown : MonoBehaviour
                 if(enemyType == EnemyType.melee)
                 {
                     attackCoolDown = meleeCoolDown;
+                    myHealth.attackCoolDown = meleeCoolDown;
                 }
                 if (enemyType == EnemyType.charger)
                 {
                     attackCoolDown = chargerCoolDown;
+                    myHealth.attackCoolDown = chargerCoolDown;
                 }
 
                 attackTimer = 0;
                 isAttacking = false;
-                moveSpeed = defaultSpeed;
+                myHealth.moveSpeed = myHealth.defaultSpeed;
                 Melee.SetActive(false);
             }
             return;
@@ -440,52 +330,6 @@ public class EnemyAttack_TopDown : MonoBehaviour
         }
     }
     #endregion
-
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-        isAwake = true;
-        if (health <= 0)
-        {
-            //Destroy(gameObject);
-            isDead = true;
-            gameObject.SetActive(false);
-            float randNum = Random.Range(0f, 10f) / 10f * 100f;
-
-            // only drop health if the player is not full (similar to Super metroid)
-            if(GameStatus.GetInstance().GetHealth() != GameStatus.GetInstance().GetMaxHealth())
-            {
-                if (randNum <= bigHealthChance)
-                {
-                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-1f, 1f), Aim.position.y + Random.Range(-1f, 1f), Aim.position.z);
-                    Instantiate(bigHealthDrop, dropPos, Aim.rotation);
-                }
-                else if (randNum > bigHealthChance && randNum <= smallHealthChance)
-                {
-                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-1f, 1f), Aim.position.y + Random.Range(-1f, 1f), Aim.position.z);
-                    Instantiate(smallHealthDrop, dropPos, Aim.rotation);
-                }
-            }
-            // make sure the player can shoot before you give bullets, and make sure that they actually need bullets (similar to the health)
-            if (GameStatus.GetInstance().HasRanged())    
-            {
-                if (GameStatus.GetInstance().GetAmmo() != GameStatus.GetInstance().GetMaxAmmo())
-                {
-                    float randNumAmmo = Random.Range(0f, 10f) / 10f * 100f;
-                    if (randNumAmmo <= bigAmmoChance)
-                    {
-                        Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-1f, 1f), Aim.position.y + Random.Range(-1f, 1f), Aim.position.z);
-                        Instantiate(bigAmmoDrop, dropPos, Aim.rotation);
-                    }
-                    else if (randNumAmmo > bigAmmoChance && randNumAmmo <= smallAmmoChance)
-                    {
-                        Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-1f, 1f), Aim.position.y + Random.Range(-1f, 1f), Aim.position.z);
-                        Instantiate(smallAmmoDrop, dropPos, Aim.rotation);
-                    }
-                }
-            }
-        }
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

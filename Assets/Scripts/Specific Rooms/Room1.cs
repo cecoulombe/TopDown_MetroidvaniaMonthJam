@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Room1 : MonoBehaviour
 {
     #region Variables
-    public EnemyAttack_TopDown[] enemyList;
+    public EnemyHealth[] enemyList;
 
     private float enemyDeathCounter;
 
@@ -67,10 +67,7 @@ public class Room1 : MonoBehaviour
                 Room1_RoomAfterGate.SetActive(true);
             }
         }
-
         Enemies();
-
-        
     }
 
     private void Enemies()

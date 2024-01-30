@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1184792806884052800}
   - component: {fileID: 4001550551383539128}
   - component: {fileID: 1167321709506856792}
+  - component: {fileID: 8958197637947619242}
   - component: {fileID: 2165286085598958409}
   m_Layer: 0
   m_Name: Charger Enemy
@@ -128,37 +129,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 4
-  moveSpeed: 2
-  defaultSpeed: 2
   lungeSpeed: 10
-  isDead: 0
-  isAwake: 0
-  loseAggroRange: 10
+  patternSpeed: 3
+  myHealth: {fileID: 0}
   isPatternWalker: 0
   pointA: {fileID: 0}
   pointB: {fileID: 0}
-  patternSpeed: 3
-  health: 0
-  maxHealth: 3
   contactDamage: 1
   playerController: {fileID: 0}
-  knockBackForce: 4
-  knockBackCounter: 0
-  knockBackTotalTime: 0.2
-  knockFromRight: 0
-  bigHealthDrop: {fileID: 1985900085209205504, guid: 007c60bee184a45509c45868d7967808, type: 3}
-  bigHealthChance: 4
-  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 26
-  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 7
-  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 28
   Melee: {fileID: 7028290374932615096}
   isAttacking: 0
   attackDuration: 0.5
   attackTimer: 0
-  lungeAttackRange: 4
+  meleeAttackRange: 0
+  lungeAttackRange: 5
   meleeCoolDown: 200
   chargerCoolDown: 500
   Aim: {fileID: 38192990922292354}
@@ -167,9 +151,48 @@ MonoBehaviour:
   shootCoolDown: 0.7
   shootTimer: 0
   wakeUpPercent: 0.7
-  lungePercent: 0
   minRangePercent: 0.6
   maxRangePercent: 0.95
+--- !u!114 &8958197637947619242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5134701059709482958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3534d29dd97d4375a29cb1a055bf7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDead: 0
+  isAwake: 0
+  isDamaged: 0
+  Aim: {fileID: 38192990922292354}
+  moveSpeed: 0
+  defaultSpeed: 2
+  lungeSpeed: 10
+  patternSpeed: 3
+  attackCoolDown: 0
+  loseAggroRange: 12
+  isWalking: 0
+  inRange: 0
+  isPatternWalker: 0
+  wakeUpPercent: 0.7
+  health: 3
+  maxHealth: 3
+  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
+  bigHealthChance: 25
+  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  smallHealthChance: 25
+  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+  bigAmmoChance: 25
+  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+  smallAmmoChance: 25
+  knockBackForce: 0
+  knockBackCounter: 0
+  knockBackTotalTime: 0.2
+  knockFromRight: 0
 --- !u!60 &2165286085598958409
 PolygonCollider2D:
   m_ObjectHideFlags: 0

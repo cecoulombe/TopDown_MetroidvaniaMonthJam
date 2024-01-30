@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4001550551383539128}
   - component: {fileID: 1167321709506856792}
   - component: {fileID: 8984478198246912230}
+  - component: {fileID: 420581362967093046}
   m_Layer: 0
   m_Name: Ranged Enemy
   m_TagString: Untagged
@@ -128,32 +129,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 2
-  moveSpeed: 1
-  defaultSpeed: 1
   lungeSpeed: 10
   patternSpeed: 3
-  isDead: 0
-  isAwake: 0
-  loseAggroRange: 10
+  myHealth: {fileID: 420581362967093046}
   isPatternWalker: 0
   pointA: {fileID: 0}
   pointB: {fileID: 0}
-  health: 0
-  maxHealth: 3
   contactDamage: 1
   playerController: {fileID: 0}
-  knockBackForce: 4
-  knockBackCounter: 0
-  knockBackTotalTime: 0.2
-  knockFromRight: 0
-  bigHealthDrop: {fileID: 1985900085209205504, guid: 007c60bee184a45509c45868d7967808, type: 3}
-  bigHealthChance: 7
-  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 23
-  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 10
-  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 25
   Melee: {fileID: 7028290374932615096}
   isAttacking: 0
   attackDuration: 0.5
@@ -219,6 +202,44 @@ PolygonCollider2D:
       - {x: 0, y: -0.25}
       - {x: 0.5, y: 0}
   m_UseDelaunayMesh: 0
+--- !u!114 &420581362967093046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5134701059709482958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3534d29dd97d4375a29cb1a055bf7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDead: 0
+  isAwake: 0
+  isDamaged: 0
+  Aim: {fileID: 38192990922292354}
+  moveSpeed: -1
+  defaultSpeed: -1
+  attackCoolDown: 0
+  loseAggroRange: 15
+  isWalking: 0
+  inRange: 0
+  isPatternWalker: 0
+  wakeUpPercent: 0.95
+  health: 3
+  maxHealth: 3
+  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
+  bigHealthChance: 25
+  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  smallHealthChance: 50
+  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+  bigAmmoChance: 25
+  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+  smallAmmoChance: 50
+  knockBackForce: 3
+  knockBackCounter: 0
+  knockBackTotalTime: 0.2
+  knockFromRight: 0
 --- !u!1 &7028290374932615096
 GameObject:
   m_ObjectHideFlags: 0
