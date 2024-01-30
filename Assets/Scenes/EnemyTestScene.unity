@@ -1259,7 +1259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 4f7f2aedd5c2a430cb530e65e4eb18dc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6164902235044226044, guid: 4f7f2aedd5c2a430cb530e65e4eb18dc, type: 3}
       propertyPath: moveSpeed
@@ -2088,7 +2088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 4026e03c6af2d4f33bf926776c54932e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6928469097822752833, guid: 4026e03c6af2d4f33bf926776c54932e, type: 3}
       propertyPath: playerController
@@ -2366,17 +2366,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448424914}
   m_CullTransparentMesh: 1
---- !u!114 &1501060332 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
-  m_PrefabInstance: {fileID: 2081663554}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3534d29dd97d4375a29cb1a055bf7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1549861032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,7 +2500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 4203d90ecfcc847f39788f8bca2b99d6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8002718938314679976, guid: 4203d90ecfcc847f39788f8bca2b99d6, type: 3}
       propertyPath: playerController
@@ -2722,7 +2711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 77573364a6c3c439197e30a286ee8900, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2891,7 +2880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 0595392be90fb4cda8a83ce795dd8074, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6883590742739767753, guid: 0595392be90fb4cda8a83ce795dd8074, type: 3}
       propertyPath: playerController
@@ -3151,60 +3140,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
       propertyPath: health
-      value: 500
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
       propertyPath: maxHealth
-      value: 500
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
-      propertyPath: bigAmmoDrop
-      value: 
-      objectReference: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
-      propertyPath: bigAmmoChance
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
-      propertyPath: bigHealthDrop
-      value: 
-      objectReference: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
-      propertyPath: smallAmmoDrop
-      value: 
-      objectReference: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
     - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
       propertyPath: wakeUpPercent
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
-      propertyPath: bigHealthChance
-      value: 25
+      propertyPath: knockBackForce
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
-      propertyPath: smallAmmoChance
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
-      propertyPath: smallHealthDrop
+    - target: {fileID: 1984197997856064039, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
+      propertyPath: playerController
       value: 
-      objectReference: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-    - target: {fileID: 1969078019802291558, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
-      propertyPath: smallHealthChance
-      value: 25
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 348364993}
     - target: {fileID: 5826854295990666989, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
       propertyPath: m_Name
       value: StaticCharger
       objectReference: {fileID: 0}
-    - target: {fileID: 5826854295990666989, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8588737929235803540, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
-      propertyPath: myHealth
-      value: 
-      objectReference: {fileID: 1501060332}
     - target: {fileID: 8588737929235803540, guid: d7b8389b1d9234bb1a085ca3efd09a7c, type: 3}
       propertyPath: playerController
       value: 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1624224465659347987}
   - component: {fileID: 1184792806884052800}
   - component: {fileID: 4001550551383539128}
-  - component: {fileID: 1167321709506856792}
+  - component: {fileID: -249049432865855253}
   - component: {fileID: 8958197637947619242}
   - component: {fileID: 2165286085598958409}
   m_Layer: 0
@@ -116,7 +116,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1167321709506856792
+--- !u!114 &-249049432865855253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,34 +125,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 5134701059709482958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a20e30f32037408aab2eeeaef8c8683, type: 3}
+  m_Script: {fileID: 11500000, guid: 0495883820df148dc8b7c38dc881a7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 4
   lungeSpeed: 10
   patternSpeed: 3
-  myHealth: {fileID: 0}
-  isPatternWalker: 0
+  myHealth: {fileID: 8958197637947619242}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   contactDamage: 1
   playerController: {fileID: 0}
-  Melee: {fileID: 7028290374932615096}
   isAttacking: 0
   attackDuration: 0.5
   attackTimer: 0
-  meleeAttackRange: 0
   lungeAttackRange: 5
-  meleeCoolDown: 200
   chargerCoolDown: 500
-  Aim: {fileID: 38192990922292354}
-  bullet: {fileID: 2609964779410368697, guid: 0d81a5adc69054da39e0f592da93e4f1, type: 3}
-  fireForce: 5
-  shootCoolDown: 0.7
-  shootTimer: 0
-  wakeUpPercent: 0.7
-  minRangePercent: 0.6
-  maxRangePercent: 0.95
 --- !u!114 &8958197637947619242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,14 +158,12 @@ MonoBehaviour:
   Aim: {fileID: 38192990922292354}
   moveSpeed: 0
   defaultSpeed: 2
-  lungeSpeed: 10
-  patternSpeed: 3
   attackCoolDown: 0
   loseAggroRange: 12
   isWalking: 0
   inRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.7
+  wakeUpPercent: 0.8
   health: 3
   maxHealth: 3
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
