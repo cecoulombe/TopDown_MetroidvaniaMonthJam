@@ -116,6 +116,14 @@ PrefabInstance:
       propertyPath: isPatternWalker
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1577679777805028275, guid: 63297aa1a7d2441ed8dc66197c49b5e6, type: 3}
+      propertyPath: pointA
+      value: 
+      objectReference: {fileID: 2096668642080312612}
+    - target: {fileID: 1577679777805028275, guid: 63297aa1a7d2441ed8dc66197c49b5e6, type: 3}
+      propertyPath: pointB
+      value: 
+      objectReference: {fileID: 8214799315723664381}
     - target: {fileID: 1624224465659347987, guid: 63297aa1a7d2441ed8dc66197c49b5e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

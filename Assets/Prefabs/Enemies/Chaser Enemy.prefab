@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1184792806884052800}
   - component: {fileID: 5005373211140199713}
   - component: {fileID: 4001550551383539128}
-  - component: {fileID: 1167321709506856792}
+  - component: {fileID: 1577679777805028275}
   - component: {fileID: 9076791506255644120}
   m_Layer: 0
   m_Name: Chaser Enemy
@@ -167,7 +167,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1167321709506856792
+--- !u!114 &1577679777805028275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,34 +176,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5134701059709482958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a20e30f32037408aab2eeeaef8c8683, type: 3}
+  m_Script: {fileID: 11500000, guid: d816c42a574104bc8a2375e734495e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 0
-  lungeSpeed: 10
   patternSpeed: 3
   myHealth: {fileID: 9076791506255644120}
-  isPatternWalker: 1
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   contactDamage: 1
   playerController: {fileID: 0}
-  Melee: {fileID: 7028290374932615096}
-  isAttacking: 0
-  attackDuration: 0.5
-  attackTimer: 0
-  meleeAttackRange: 0
-  lungeAttackRange: 0
-  meleeCoolDown: 200
-  chargerCoolDown: 500
-  Aim: {fileID: 38192990922292354}
-  bullet: {fileID: 2609964779410368697, guid: 0d81a5adc69054da39e0f592da93e4f1, type: 3}
-  fireForce: 5
-  shootCoolDown: 0.7
-  shootTimer: 0
-  wakeUpPercent: 0.7
-  minRangePercent: 0.6
-  maxRangePercent: 0.95
 --- !u!114 &9076791506255644120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,8 +203,6 @@ MonoBehaviour:
   Aim: {fileID: 38192990922292354}
   moveSpeed: 3
   defaultSpeed: 3
-  lungeSpeed: 10
-  patternSpeed: 3
   attackCoolDown: 0
   loseAggroRange: 12
   isWalking: 0
@@ -231,7 +210,7 @@ MonoBehaviour:
   isPatternWalker: 0
   wakeUpPercent: 0.8
   health: 3
-  maxHealth: 0
+  maxHealth: 3
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
   bigHealthChance: 25
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
