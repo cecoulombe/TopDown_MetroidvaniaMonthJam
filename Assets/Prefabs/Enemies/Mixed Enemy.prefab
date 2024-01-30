@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1184792806884052800}
   - component: {fileID: 7054209211433266274}
   - component: {fileID: 4001550551383539128}
-  - component: {fileID: 1167321709506856792}
+  - component: {fileID: 7782464496188549421}
   - component: {fileID: 7839916585032714909}
   m_Layer: 0
   m_Name: Mixed Enemy
@@ -151,7 +151,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1167321709506856792
+--- !u!114 &7782464496188549421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,34 +160,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 5134701059709482958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a20e30f32037408aab2eeeaef8c8683, type: 3}
+  m_Script: {fileID: 11500000, guid: 25ff4bda1109647f5b320e960b894144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 3
-  lungeSpeed: 10
   patternSpeed: 3
   myHealth: {fileID: 7839916585032714909}
-  isPatternWalker: 0
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   contactDamage: 1
   playerController: {fileID: 0}
   Melee: {fileID: 7028290374932615096}
   isAttacking: 0
-  attackDuration: 0.5
+  attackDuration: 0.3
   attackTimer: 0
   meleeAttackRange: 1
-  lungeAttackRange: 0
   meleeCoolDown: 200
-  chargerCoolDown: 500
   Aim: {fileID: 38192990922292354}
   bullet: {fileID: 2609964779410368697, guid: 0d81a5adc69054da39e0f592da93e4f1, type: 3}
-  fireForce: 5
-  shootCoolDown: 0.7
-  shootTimer: 0
-  wakeUpPercent: 0.7
-  minRangePercent: 0.6
-  maxRangePercent: 0.95
+  fireForce: 10
+  shootCoolDown: 0.5
+  shootTimer: 0.5
+  minRangePercent: 0.3
+  maxRangePercent: 1
 --- !u!114 &7839916585032714909
 MonoBehaviour:
   m_ObjectHideFlags: 0

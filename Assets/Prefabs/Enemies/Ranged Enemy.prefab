@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1624224465659347987}
   - component: {fileID: 1184792806884052800}
   - component: {fileID: 4001550551383539128}
-  - component: {fileID: 1167321709506856792}
   - component: {fileID: 8984478198246912230}
+  - component: {fileID: 917664597680830786}
   - component: {fileID: 420581362967093046}
   m_Layer: 0
   m_Name: Ranged Enemy
@@ -116,43 +116,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1167321709506856792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5134701059709482958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a20e30f32037408aab2eeeaef8c8683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyType: 2
-  lungeSpeed: 10
-  patternSpeed: 3
-  myHealth: {fileID: 420581362967093046}
-  isPatternWalker: 0
-  pointA: {fileID: 0}
-  pointB: {fileID: 0}
-  contactDamage: 1
-  playerController: {fileID: 0}
-  Melee: {fileID: 7028290374932615096}
-  isAttacking: 0
-  attackDuration: 0.5
-  attackTimer: 0
-  meleeAttackRange: 0
-  lungeAttackRange: 0
-  meleeCoolDown: 200
-  chargerCoolDown: 500
-  Aim: {fileID: 38192990922292354}
-  bullet: {fileID: 2609964779410368697, guid: 0d81a5adc69054da39e0f592da93e4f1, type: 3}
-  fireForce: 5
-  shootCoolDown: 0.7
-  shootTimer: 0
-  wakeUpPercent: 0.7
-  minRangePercent: 0.6
-  maxRangePercent: 0.95
 --- !u!60 &8984478198246912230
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -202,6 +165,31 @@ PolygonCollider2D:
       - {x: 0, y: -0.25}
       - {x: 0.5, y: 0}
   m_UseDelaunayMesh: 0
+--- !u!114 &917664597680830786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5134701059709482958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20064ab7a8895439f9b64e5148697083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patternSpeed: 3
+  myHealth: {fileID: 420581362967093046}
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
+  contactDamage: 1
+  playerController: {fileID: 0}
+  Aim: {fileID: 38192990922292354}
+  bullet: {fileID: 2609964779410368697, guid: 0d81a5adc69054da39e0f592da93e4f1, type: 3}
+  fireForce: 10
+  shootCoolDown: 0.5
+  shootTimer: 0.5
+  minRangePercent: 0
+  maxRangePercent: 1
 --- !u!114 &420581362967093046
 MonoBehaviour:
   m_ObjectHideFlags: 0

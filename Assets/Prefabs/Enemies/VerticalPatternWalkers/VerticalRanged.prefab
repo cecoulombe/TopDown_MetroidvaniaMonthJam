@@ -104,6 +104,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 980580631639407879}
     m_Modifications:
+    - target: {fileID: 917664597680830786, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
+      propertyPath: pointA
+      value: 
+      objectReference: {fileID: 2096668642080312612}
+    - target: {fileID: 917664597680830786, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
+      propertyPath: pointB
+      value: 
+      objectReference: {fileID: 8214799315723664381}
     - target: {fileID: 1167321709506856792, guid: 6fe038e2106fe43d9bf50eb5171bbfb5, type: 3}
       propertyPath: pointA
       value: 

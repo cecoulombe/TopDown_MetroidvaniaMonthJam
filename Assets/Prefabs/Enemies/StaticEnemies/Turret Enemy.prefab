@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1624224465659347987}
   - component: {fileID: 1184792806884052800}
-  - component: {fileID: 5005373211140199713}
   - component: {fileID: 4001550551383539128}
-  - component: {fileID: 224552617353205125}
-  - component: {fileID: 1810553056120780859}
+  - component: {fileID: 8763502063846707776}
+  - component: {fileID: 3949127886053470914}
+  - component: {fileID: 1028894012986191324}
   m_Layer: 0
-  m_Name: PatternWalker
+  m_Name: Turret Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 5134701059709482958}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.68, y: 0.15, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 38192990922292354}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,7 +89,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &5005373211140199713
+--- !u!50 &4001550551383539128
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5134701059709482958}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!60 &8763502063846707776
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,8 +151,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.8828125}
+    pivot: {x: 0.5, y: 0.28866667}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -133,41 +160,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.26936024, y: 0.46263343}
-      - {x: -0.5387199, y: 0}
-      - {x: -0.2645197, y: -0.4626334}
-      - {x: 0.2596798, y: -0.4626334}
-      - {x: 0.53387994, y: 0}
-      - {x: 0.2645197, y: 0.4626334}
+    - - {x: 0, y: 0.5773587}
+      - {x: -0.5, y: -0.28866667}
+      - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
---- !u!50 &4001550551383539128
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5134701059709482958}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &224552617353205125
+--- !u!114 &3949127886053470914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,16 +173,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 5134701059709482958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeffb6127c35d42968cfec011487b997, type: 3}
+  m_Script: {fileID: 11500000, guid: 7135528d7a36f4f1fbe20f813b221929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patternSpeed: 3
-  myHealth: {fileID: 1810553056120780859}
-  pointA: {fileID: 0}
-  pointB: {fileID: 0}
-  contactDamage: 1
+  myHealth: {fileID: 1028894012986191324}
+  contactDamage: 0
   playerController: {fileID: 0}
---- !u!114 &1810553056120780859
+  Aim: {fileID: 38192990922292354}
+  bullet: {fileID: 2609964779410368697, guid: 0d81a5adc69054da39e0f592da93e4f1, type: 3}
+  fireForce: 10
+  shootCoolDown: 0.25
+  shootTimer: 0.5
+  minRangePercent: 0
+  maxRangePercent: 1
+--- !u!114 &1028894012986191324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,27 +202,27 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 38192990922292354}
-  moveSpeed: 2
-  defaultSpeed: 2
+  moveSpeed: 0
+  defaultSpeed: 0
   attackCoolDown: 0
-  loseAggroRange: 15
+  loseAggroRange: 14
   isWalking: 0
   inRange: 0
-  isPatternWalker: 1
-  wakeUpPercent: 0.7
-  health: 3
-  maxHealth: 3
+  isPatternWalker: 0
+  wakeUpPercent: 0.8
+  health: 30
+  maxHealth: 30
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 25
+  bigHealthChance: 1
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 50
+  smallHealthChance: 2
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 25
+  bigAmmoChance: 50
   smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 50
+  smallAmmoChance: 100
   knockBackForce: 0
   knockBackCounter: 0
-  knockBackTotalTime: 0.2
+  knockBackTotalTime: 0
   knockFromRight: 0
 --- !u!1 &7028290374932615096
 GameObject:
