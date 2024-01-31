@@ -99,6 +99,9 @@ public class MixedEnemy : MonoBehaviour
     {
         target = GameObject.Find("Player").transform;
         isPatternWalker = myHealth.isPatternWalker;
+
+        minRangePercent = minRangePercent * myHealth.loseAggroRange;
+        maxRangePercent = maxRangePercent * myHealth.loseAggroRange;
     }
 
     void Update()
@@ -165,6 +168,7 @@ public class MixedEnemy : MonoBehaviour
             }
             else if (Vector3.Distance(target.position, transform.position) >= minRangePercent && Vector3.Distance(target.position, transform.position) <= maxRangePercent)
             {
+                Debug.Log("within shooting range, firing a shot now");
                 OnShoot();
                 myHealth.moveSpeed = -1f;
                 Vector3 direction = (target.position - transform.position).normalized;

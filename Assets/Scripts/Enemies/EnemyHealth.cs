@@ -32,7 +32,7 @@ public class EnemyHealth : MonoBehaviour
     private float rangeFromTarget;
 
     [SerializeField]
-    private float loseAggroRange;
+    public float loseAggroRange;
 
     public bool isWalking;
 
