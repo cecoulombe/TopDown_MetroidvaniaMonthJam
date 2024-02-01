@@ -977,17 +977,21 @@ PrefabInstance:
       propertyPath: iDashCooldown
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
+      propertyPath: knockBackForce
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6077998538669012166, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: interactableObject
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1123,7 +1127,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 980580631639407879, guid: 8403211db1f0c406aa2ee0ea414f4f58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.4
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: 980580631639407879, guid: 8403211db1f0c406aa2ee0ea414f4f58, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1160,6 +1164,14 @@ PrefabInstance:
     - target: {fileID: 980580631639407879, guid: 8403211db1f0c406aa2ee0ea414f4f58, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3346441789387157407, guid: 8403211db1f0c406aa2ee0ea414f4f58, type: 3}
+      propertyPath: m_Name
+      value: Spread Shot Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828261881251381750, guid: 8403211db1f0c406aa2ee0ea414f4f58, type: 3}
+      propertyPath: numberOfBullets
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3828261881251381750, guid: 8403211db1f0c406aa2ee0ea414f4f58, type: 3}
       propertyPath: playerController

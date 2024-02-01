@@ -78,6 +78,7 @@ public class SpreadShotEnemy : MonoBehaviour
 
     private float yValue;
     private float xValue;
+    private float roundCounter;
     #endregion
 
 
@@ -188,22 +189,62 @@ public class SpreadShotEnemy : MonoBehaviour
             {
                 numberOfBullets += 1;
             }
+            Debug.Log("number of bullets per wave is " + numberOfBullets);
             // break down the shot distribution: there is one up, so fire that one first
             // then there are three with the y as 1, then 3 with the x as 1, each with the other variable changing.
             // the inverse repeats when below zero until they hit 180 or straight down, which should be the 24th shot
             // for each shot to the right, I want the shot to the left to be the opposite.
             for(int bulletNumber = 1; bulletNumber <= numberOfBullets; bulletNumber++)
             {
+                roundCounter = 0;
+                Debug.Log("firing bullet number " + bulletNumber);
                 GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
                 direction = (target.position - intBullet.transform.position).normalized;
 
                 if (bulletNumber == 1)
                 {
-                    
-                    
+                    yValue = 1;
+                    xValue = 0f;
+                    Debug.Log("product " + (direction.x * xValue) + " xValue " + xValue + " direction.x " + direction.x);
                 }
 
-                angle = Mathf.Atan2(direction.y + (direction.y * yValue), direction.x + (direction.x * xValue) * Mathf.Rad2Deg;
+                //if (bulletNumber == 2)
+                //{
+                //    yValue = 1;
+                //    xValue = 1/3f;
+                //    Debug.Log("product " + (direction.x * xValue) + " xValue " + xValue + " direction.x " + direction.x);
+                //}
+
+                //if (bulletNumber == 3)
+                //{
+                //    yValue = 1;
+                //    xValue = -1/3f;
+                //    Debug.Log("product " + (direction.x * xValue) + " xValue " + xValue + " direction.x " + direction.x);
+                //}
+
+                if(bulletNumber % 2 == 0)
+                {
+                    yValue = 1;
+                    xValue = (1 / 3f) * roundCounter;
+                    roundCounter += 1;
+                    Debug.Log("product " + (direction.x * xValue) + " xValue " + xValue + " direction.x " + direction.x);
+                }
+
+                if(bulletNumber % 2 != 0)
+                {
+                    yValue = 1;
+                    xValue = (-1 / 3f) * roundCounter;
+                    Debug.Log("product " + (direction.x * xValue) + " xValue " + xValue + " direction.x " + direction.x);
+                }
+
+                angle = Mathf.Atan2(direction.y + (direction.y * yValue), direction.x + (direction.x * xValue)) * Mathf.Rad2Deg;
+                Debug.Log("angle for bullet number " + bulletNumber + " is " + angle);
+                intBullet.transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
+                intBullet.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
+
+
+                Destroy(intBullet, 4f);
+
             }
 
 
@@ -219,7 +260,7 @@ public class SpreadShotEnemy : MonoBehaviour
             cluster at the horizontals, which is not ideal
                 */
 
-                // i is the number of the bullet that has been fired
+            // i is the number of the bullet that has been fired
             //for (int bulletNumber = 0; bulletNumber < numberOfBullets; bulletNumber++)
             //{
             //    GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
