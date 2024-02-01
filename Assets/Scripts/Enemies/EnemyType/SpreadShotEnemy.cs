@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClusterShotEnemy : MonoBehaviour
+public class SpreadShotEnemy : MonoBehaviour
 {
     #region Varaibles
     [SerializeField]
@@ -73,6 +73,10 @@ public class ClusterShotEnemy : MonoBehaviour
     private float minRangePercent;
     [SerializeField]
     private float maxRangePercent;
+
+    private Transform bulletTarget;
+
+    private Vector2 direction;
     #endregion
 
 
@@ -149,67 +153,60 @@ public class ClusterShotEnemy : MonoBehaviour
 
     #region Attacking
     private void OnShoot()
-    {
-        //if (shootTimer > shootCoolDown)
-        //{
-        //    shootTimer = 0;
-
-        //    // Instantiate the bullet
-        //    GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
-
-        //    // Calculate the direction towards the player
-        //    Vector2 direction = (target.position - intBullet.transform.position).normalized;
-
-        //    // Set the bullet's velocity towards the player
-        //    intBullet.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
-
-        //    // Optionally, you can set the rotation of the bullet based on the direction
-        //    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //    intBullet.transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
-
-        //    Destroy(intBullet, 4f);
-        //}
-
-        // Checks condition and assign subtractOffset a value based on bulletCount
-        // need to know the number of shots available, then for each extra bullet, have it go either to the left or the right of the player, then if there are still more, have them go to the side again
-        switch (numberOfBullets)
-        {
-            case 3:
-                Debug.Log("3 bullets");
-                subtractOffset = 1f;
-                break;
-            case 4:
-                Debug.Log("4 bullets");
-                subtractOffset = 1.5f;
-                break;
-            case 5:
-                Debug.Log("5 bullets");
-                subtractOffset = 2f;
-                break;
-        }
-
+    { 
         // Shooting code here
-        if (shootTimer > shootCoolDown)
+        if (shootTimer > shootCoolDown)     // if you are not cooling down from the last shot, fire another
         {
             shootTimer = 0;
 
-            // Shoots bullets with calculation: ((i - subtractOffset) * angle)
-            // 1st bullet's rotation is ((0 - 1) * 10) = -10, 2nd is 0, 3rd is 10
-            for (int i = 0; i < numberOfBullets; i++)
+            /* 
+
+            for each bullet: if it is the first one, fire at the target, from then on out, if it is the second shot,
+            fire at the target +5f, but if it is odd, first at the same spot times -1, from then on, evens are at *-1,
+            +5f so that they are always on the same side
+            
+             
+            for now, while I am trying to figure this out, maybe set it so that it only shoots on a cardinal direction
+            (i.e. up (0, 0, 0) so that I can then have it shoot relative to up, then eventually I can change it so that
+            up is actually the direction of the player?)
+             
+             */
+
+            // i is the number of the bullet that has been fired
+            for (int bulletNumber = 0; bulletNumber < numberOfBullets; bulletNumber++)
             {
-                CreateBullet(new Vector3(0f, 0f, ((i - subtractOffset) * angle)));
+                GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
+
+                if (bulletNumber == 0) // this is the first bullet, so fire at the target
+                {
+                    direction = (target.position - intBullet.transform.position).normalized;
+                }
+                else if (bulletNumber == 1) // second bullet, fire to the +5
+                {
+                    direction = (target.position + new Vector3(5, 0, 0) - intBullet.transform.position).normalized;
+                }
+                else if(bulletNumber % 2 == 0) // is even
+                {
+                    direction = (target.position + new Vector3(-5 * (bulletNumber - 1), 0, 0) - intBullet.transform.position).normalized;
+                }
+                else if(bulletNumber % 2 == 1) // is odd
+                {
+                    direction = (target.position + new Vector3(5 * (bulletNumber - 1), 0, 0) - intBullet.transform.position).normalized;
+                }
+
+                // Instantiate the bullet
+                //GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
+
+                // Calculate the direction towards the player
+                //Vector2 direction = (target.position - intBullet.transform.position).normalized;
+
+                // Set the bullet's velocity towards the player
+                intBullet.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
+
+                Destroy(intBullet, 4f);
+
             }
         }
-    }
-
-
-    void CreateBullet(Vector3 offsetRotation)
-    {
-        GameObject intBullet = (GameObject)Instantiate(bullet, transform.position, transform.rotation);
-        Vector2 direction = (target.position - intBullet.transform.position).normalized;
-        intBullet.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
-        intBullet.transform.Rotate(offsetRotation);
-        Destroy(intBullet, 4f);
     }
     #endregion
 

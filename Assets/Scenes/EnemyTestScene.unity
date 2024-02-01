@@ -1169,6 +1169,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StaticClusterShot
       objectReference: {fileID: 0}
+    - target: {fileID: 7846635036302509927, guid: 8403211db1f0c406aa2ee0ea414f4f58, type: 3}
+      propertyPath: moveSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846635036302509927, guid: 8403211db1f0c406aa2ee0ea414f4f58, type: 3}
+      propertyPath: defaultSpeed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

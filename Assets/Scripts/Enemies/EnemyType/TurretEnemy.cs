@@ -5,9 +5,11 @@ using UnityEngine;
 public class TurretEnemy : MonoBehaviour
 {
     #region Varaibles
+    [SerializeField]
+    private float patternSpeed = 3.0f;
+
     private bool amDead;
     private bool amDamaged;
-    private bool amAwake;
 
     [SerializeField]
     private EnemyHealth myHealth;
@@ -16,6 +18,19 @@ public class TurretEnemy : MonoBehaviour
     private Transform target;
     private Vector2 moveDirection;
     private Vector2 lastMoveDirection;
+
+    [Header("Walk Pattern")]
+    private bool isPatternWalker;
+
+    [SerializeField]
+    private Transform pointA;
+
+    [SerializeField]
+    private Transform pointB;
+
+    private bool switching = false;
+    private Transform walkPath;
+    private bool amAwake;
 
     [Header("Attacking and Player Damage")]
     [SerializeField]
@@ -29,6 +44,15 @@ public class TurretEnemy : MonoBehaviour
 
     [SerializeField]
     private Transform Aim;
+
+    // this needs to be an odd number, and I need to find a way to make each bullet evenly spaced around the character
+    [SerializeField]
+    private float numberOfBullets;
+
+    [SerializeField]
+    private float angle;
+
+    private float subtractOffset;
 
     [SerializeField]
     private GameObject bullet;
@@ -49,6 +73,10 @@ public class TurretEnemy : MonoBehaviour
     private float minRangePercent;
     [SerializeField]
     private float maxRangePercent;
+
+    private Transform bulletTarget;
+
+    private Vector2 direction;
     #endregion
 
 
@@ -61,6 +89,7 @@ public class TurretEnemy : MonoBehaviour
     void Start()
     {
         target = GameObject.Find("Player").transform;
+        isPatternWalker = myHealth.isPatternWalker;
     }
 
     void Update()
@@ -72,20 +101,52 @@ public class TurretEnemy : MonoBehaviour
         {
             return;
         }
-
         shootTimer += Time.deltaTime;
 
-        if(amAwake)
+        if (amAwake)
         {
-            TurretAttacker();
+            RangedAttacker();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        Movement();
+    }
+
+    private void Movement()
+    {
+        if (!amAwake && isPatternWalker)
+        {
+            if (!switching)
+            {
+                walkPath = pointB;
+            }
+            else if (switching)
+            {
+                walkPath = pointA;
+            }
+
+            if (transform.position == pointB.position)
+            {
+                switching = true;
+            }
+            else if (transform.position == pointA.position)
+            {
+                switching = false;
+            }
+            transform.position = Vector3.MoveTowards(transform.position, walkPath.position, patternSpeed * Time.deltaTime);
         }
     }
 
     #region Enemy Type Specific Attack 
-    private void TurretAttacker()
+    private void RangedAttacker()
     {
         OnShoot();
-        myHealth.isWalking = false;
+        Vector3 direction = (target.position - transform.position).normalized;
+        moveDirection = -direction;
+        lastMoveDirection = moveDirection;
+        myHealth.isWalking = true;
         return;
     }
     #endregion
@@ -93,24 +154,58 @@ public class TurretEnemy : MonoBehaviour
     #region Attacking
     private void OnShoot()
     {
-        if (shootTimer > shootCoolDown)
+        // Shooting code here
+        if (shootTimer > shootCoolDown)     // if you are not cooling down from the last shot, fire another
         {
             shootTimer = 0;
 
-            // Instantiate the bullet
-            GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
+            /* 
 
-            // Calculate the direction towards the player
-            Vector2 direction = (target.position - intBullet.transform.position).normalized;
+            for each bullet: if it is the first one, fire at the target, from then on out, if it is the second shot,
+            fire at the target +5f, but if it is odd, first at the same spot times -1, from then on, evens are at *-1,
+            +5f so that they are always on the same side
+            
+             
+            for now, while I am trying to figure this out, maybe set it so that it only shoots on a cardinal direction
+            (i.e. up (0, 0, 0) so that I can then have it shoot relative to up, then eventually I can change it so that
+            up is actually the direction of the player?)
+             
+             */
 
-            // Set the bullet's velocity towards the player
-            intBullet.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
+            // i is the number of the bullet that has been fired
+            for (int bulletNumber = 0; bulletNumber < numberOfBullets; bulletNumber++)
+            {
+                GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
 
-            // Optionally, you can set the rotation of the bullet based on the direction
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            intBullet.transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
+                if (bulletNumber == 0) // this is the first bullet, so fire at the target
+                {
+                    direction = (target.position - intBullet.transform.position).normalized;
+                }
+                else if (bulletNumber == 1) // second bullet, fire to the +5
+                {
+                    direction = (target.position + new Vector3(5, 0, 0) - intBullet.transform.position).normalized;
+                }
+                else if (bulletNumber % 2 == 0) // is even
+                {
+                    direction = (target.position + new Vector3(-5 * (bulletNumber - 1), 0, 0) - intBullet.transform.position).normalized;
+                }
+                else if (bulletNumber % 2 == 1) // is odd
+                {
+                    direction = (target.position + new Vector3(5 * (bulletNumber - 1), 0, 0) - intBullet.transform.position).normalized;
+                }
 
-            Destroy(intBullet, 4f);
+                // Instantiate the bullet
+                //GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
+
+                // Calculate the direction towards the player
+                //Vector2 direction = (target.position - intBullet.transform.position).normalized;
+
+                // Set the bullet's velocity towards the player
+                intBullet.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
+
+                Destroy(intBullet, 4f);
+
+            }
         }
     }
     #endregion
