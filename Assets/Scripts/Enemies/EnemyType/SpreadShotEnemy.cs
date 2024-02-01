@@ -75,6 +75,9 @@ public class SpreadShotEnemy : MonoBehaviour
 
     private Vector2 direction;
     private float angle;
+
+    private float yValue;
+    private float xValue;
     #endregion
 
 
@@ -189,7 +192,19 @@ public class SpreadShotEnemy : MonoBehaviour
             // then there are three with the y as 1, then 3 with the x as 1, each with the other variable changing.
             // the inverse repeats when below zero until they hit 180 or straight down, which should be the 24th shot
             // for each shot to the right, I want the shot to the left to be the opposite.
+            for(int bulletNumber = 1; bulletNumber <= numberOfBullets; bulletNumber++)
+            {
+                GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
+                direction = (target.position - intBullet.transform.position).normalized;
 
+                if (bulletNumber == 1)
+                {
+                    
+                    
+                }
+
+                angle = Mathf.Atan2(direction.y + (direction.y * yValue), direction.x + (direction.x * xValue) * Mathf.Rad2Deg;
+            }
 
 
 
