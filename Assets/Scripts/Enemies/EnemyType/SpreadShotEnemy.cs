@@ -49,9 +49,6 @@ public class SpreadShotEnemy : MonoBehaviour
     [SerializeField]
     private float numberOfBullets;
 
-    [SerializeField]
-    private float angle;
-
     private float subtractOffset;
 
     [SerializeField]
@@ -77,6 +74,7 @@ public class SpreadShotEnemy : MonoBehaviour
     private Transform bulletTarget;
 
     private Vector2 direction;
+    private float angle;
     #endregion
 
 
@@ -158,54 +156,89 @@ public class SpreadShotEnemy : MonoBehaviour
         if (shootTimer > shootCoolDown)     // if you are not cooling down from the last shot, fire another
         {
             shootTimer = 0;
+            /*
+            A new attempt at the logic: I want it to move in quadrants similar to the unit circle but doing only
+            a semi circle on either size of the player. Lets assume the player is directly above the shooter, that
+            is (0, 1). If they are at a 45 degree to the right, that is (1, 1), but if they are at a 45 to the left,
+            that is (-1, 1). Now the smallest step I want is 15 degrees, which is (0.33, 1) for 15 to the right, or
+            (-0.66, 1) for 30 degrees to the left. Because the largest a value can be is abs(1), if we want to go
+            beyond 45 degrees on either side, we cannot change the x axis but instead need to change the y axis.
+            This means that 75 degrees to the right would be (1, 0.33) because we have subtracted 2 * 0.33 as we
+            move down (I have this all written out in front of me, it makes sense, trust me ;D). A more complicated
+            example would be -120 degrees, or 150 degrees to the left, which should be (-1, -0.66). Note that one
+            number must always be abs(1) but they can both be abs(1) at the same time.
 
-            /* 
+            This logic allows for <= 24 shots to be fired in a perfect circle, with 15 degrees between each shot.
+            Anything more than that will just lead to overlap in the bullets unless we add in a seperate condition
+            for the shots to be fired at 7.5 degree increments
 
-            for each bullet: if it is the first one, fire at the target, from then on out, if it is the second shot,
-            fire at the target +5f, but if it is odd, first at the same spot times -1, from then on, evens are at *-1,
-            +5f so that they are always on the same side
-            
-             
-            for now, while I am trying to figure this out, maybe set it so that it only shoots on a cardinal direction
-            (i.e. up (0, 0, 0) so that I can then have it shoot relative to up, then eventually I can change it so that
-            up is actually the direction of the player?)
+            Lets try this out and see how it works
              
              */
-
-            // i is the number of the bullet that has been fired
-            for (int bulletNumber = 0; bulletNumber < numberOfBullets; bulletNumber++)
+            // Check that the total shots are less than or equal to 24(if not, bring down to 24 for processing power)
+            // we need an even number of bullets after the first one fires, so I will always round down if it is odd
+            if (numberOfBullets > 24)
             {
-                GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
-
-                if (bulletNumber == 0) // this is the first bullet, so fire at the target
-                {
-                    direction = (target.position - intBullet.transform.position).normalized;
-                }
-                else if (bulletNumber == 1) // second bullet, fire to the +5
-                {
-                    direction = (target.position + new Vector3(5, 0, 0) - intBullet.transform.position).normalized;
-                }
-                else if(bulletNumber % 2 == 0) // is even
-                {
-                    direction = (target.position + new Vector3(-5 * (bulletNumber - 1), 0, 0) - intBullet.transform.position).normalized;
-                }
-                else if(bulletNumber % 2 == 1) // is odd
-                {
-                    direction = (target.position + new Vector3(5 * (bulletNumber - 1), 0, 0) - intBullet.transform.position).normalized;
-                }
-
-                // Instantiate the bullet
-                //GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
-
-                // Calculate the direction towards the player
-                //Vector2 direction = (target.position - intBullet.transform.position).normalized;
-
-                // Set the bullet's velocity towards the player
-                intBullet.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
-
-                Destroy(intBullet, 4f);
-
+                numberOfBullets = 24;
             }
+            if(numberOfBullets - 1 % 2 == 0)
+            {
+                numberOfBullets += 1;
+            }
+            // break down the shot distribution: there is one up, so fire that one first
+            // then there are three with the y as 1, then 3 with the x as 1, each with the other variable changing.
+            // the inverse repeats when below zero until they hit 180 or straight down, which should be the 24th shot
+            // for each shot to the right, I want the shot to the left to be the opposite.
+
+
+
+
+
+
+
+
+            /* 
+            if I am adding 5f to the target for each shot, then the angle will depend on how close the target it,
+            but if not, then I can use trig to determine how many shots it would take before the bullets are at
+            horizontal, in which case I would want to have them start having a negative y value otherwise they will
+            cluster at the horizontals, which is not ideal
+                */
+
+                // i is the number of the bullet that has been fired
+            //for (int bulletNumber = 0; bulletNumber < numberOfBullets; bulletNumber++)
+            //{
+            //    GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
+
+            //    if (bulletNumber == 0) // this is the first bullet, so fire at the target
+            //    {
+            //        direction = (target.position - intBullet.transform.position).normalized;
+            //        //angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            //    }
+            //    else if (bulletNumber == 1) // second bullet, fire to the +5
+            //    {
+            //        direction = (target.position + new Vector3(5, 0, 0) - intBullet.transform.position).normalized;
+            //    }
+            //    else if(bulletNumber % 2 == 0) // is even
+            //    {
+            //        direction = (target.position + new Vector3(-5 * (bulletNumber - 1), 0, 0) - intBullet.transform.position).normalized;
+            //    }
+            //    else if(bulletNumber % 2 == 1) // is odd
+            //    {
+            //        direction = (target.position + new Vector3(5 * (bulletNumber - 1), 0, 0) - intBullet.transform.position).normalized;
+            //    }
+
+            //    // Set the bullet's velocity towards the player
+            //    intBullet.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
+
+            //    // Optionally, you can set the rotation of the bullet based on the direction
+            //    angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            //    intBullet.transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
+
+
+            //    Destroy(intBullet, 4f);
+
+            //}
         }
     }
     #endregion
