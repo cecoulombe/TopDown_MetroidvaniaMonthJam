@@ -1181,6 +1181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StaticClusterShot
       objectReference: {fileID: 0}
+    - target: {fileID: 5826854295990666989, guid: 8403211db1f0c406aa2ee0ea414f4f58, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7846635036302509927, guid: 8403211db1f0c406aa2ee0ea414f4f58, type: 3}
       propertyPath: moveSpeed
       value: 0
