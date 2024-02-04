@@ -11,6 +11,11 @@ public class SpreadBullet : MonoBehaviour
 
     private Vector2 velocity;
 
+    private void Start()
+    {
+        Destroy(gameObject, 4f);
+    }
+
     private void Update()
     {
         velocity = direction * fireForce;
@@ -18,11 +23,11 @@ public class SpreadBullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // i don't like this, I don't think it will work for what I am doing
-        Vector2 pos = transform.position;
+        //// i don't like this, I don't think it will work for what I am doing
+        //Vector2 pos = transform.position;
 
-        pos += velocity * Time.deltaTime;
+        //pos += velocity * Time.deltaTime;
 
-        transform.position = pos;
+        //transform.position = pos;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpreadShotEnemy_Turret : MonoBehaviour
 {
     #region Varaibles
+    [SerializeField]
     private GunScript[] guns;
 
     [SerializeField]
@@ -149,23 +150,9 @@ public class SpreadShotEnemy_Turret : MonoBehaviour
         {
             shootTimer = 0;
 
-            //// Instantiate the bullet
-            //GameObject intBullet = Instantiate(bullet, Aim.position, target.rotation);
-
-            //// Calculate the direction towards the player
-            //Vector2 direction = (target.position - intBullet.transform.position).normalized;
-
-            //// Set the bullet's velocity towards the player
-            //intBullet.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
-
-            //// Optionally, you can set the rotation of the bullet based on the direction
-            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            //intBullet.transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
-
-            //Destroy(intBullet, 4f);
-
-            foreach(GunScript gun in guns)
+            foreach (GunScript gun in guns)
             {
+                gun.playerLocation = target.transform.position;
                 gun.Shoot();
             }
         }

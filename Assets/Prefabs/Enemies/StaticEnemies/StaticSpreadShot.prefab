@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 980580631639407879}
   m_Layer: 0
-  m_Name: StaticClusterShot
+  m_Name: StaticSpreadShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

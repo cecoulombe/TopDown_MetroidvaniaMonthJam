@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6634465937734490535}
   - component: {fileID: 420581362967093046}
   m_Layer: 0
-  m_Name: Spread Shot Enemy Turret
+  m_Name: Spread Shot Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
