@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpreadShotEnemy_Turret : MonoBehaviour
+public class SpreadShotEnemy : MonoBehaviour
 {
     #region Varaibles
     [SerializeField]
