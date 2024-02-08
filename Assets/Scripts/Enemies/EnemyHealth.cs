@@ -39,7 +39,7 @@ public class EnemyHealth : MonoBehaviour
     public bool inRange;
 
     [SerializeField]
-    public bool isPatternWalker;
+    public bool isPatternWalker = true;
 
     [SerializeField]
     private float wakeUpPercent;
