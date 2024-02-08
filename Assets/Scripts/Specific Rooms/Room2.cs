@@ -60,6 +60,10 @@ public class Room2 : MonoBehaviour
             // this will be used if the player loads into this room specifically, mainly for testing
             player.transform.position = spawnPoint.transform.position;
         }
+        else if (previousRoom == "MainMenu")  // if you are continuing a previous file, you will spawn in the last room you were in at the main menu location
+        {
+            player.transform.position = spawnPoint.transform.position;
+        }
         else if (previousRoom == "Room1")
         {
             // room 1 is a bottom transition, so set the position of the player to the position of the room1 loading zone which is a game object in the scene?

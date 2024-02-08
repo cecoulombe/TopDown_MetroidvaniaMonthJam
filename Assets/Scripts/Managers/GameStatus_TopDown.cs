@@ -29,6 +29,9 @@ public class GameStatus : MonoBehaviour
     [SerializeField]
     protected string previousRoom;
 
+    [SerializeField]
+    protected bool gamePaused;
+
     [Header("Player state bools")]
     [SerializeField]
     protected bool hasDash;
@@ -105,6 +108,18 @@ public class GameStatus : MonoBehaviour
     {
         Debug.Log("game status destroyed");
     }
+
+    #region Pause Menu
+    public void SetGamePaused(bool pausedStatus)
+    {
+        gamePaused = pausedStatus;
+    }
+
+    public bool GetGamePaused()
+    {
+        return gamePaused;
+    }
+    #endregion
 
     #region Health and Damage Functions
     public float GetHealth()

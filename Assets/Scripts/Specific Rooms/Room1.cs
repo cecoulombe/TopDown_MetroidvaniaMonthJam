@@ -40,6 +40,11 @@ public class Room1 : MonoBehaviour
         {
             player.transform.position = spawnPoint.transform.position;
         }
+        else if (previousRoom == "MainMenu")    // if starting a new file from the main menu, then you will spawn into room 1
+            // if you are continuing a previous file, you will spawn in the last room you were in at the main menu location
+        {
+            player.transform.position = spawnPoint.transform.position;
+        }
         else if (previousRoom == "Room2")
         {
             player.transform.position = room2_LoadingZone.transform.position;
