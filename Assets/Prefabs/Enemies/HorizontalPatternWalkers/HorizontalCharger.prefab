@@ -168,6 +168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charger Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8958197637947619242, guid: e6153924d42b84fe29bcca5098d80f7a, type: 3}
+      propertyPath: isPatternWalker
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

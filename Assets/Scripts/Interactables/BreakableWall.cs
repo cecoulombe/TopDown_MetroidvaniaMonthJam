@@ -8,8 +8,6 @@ public class BreakableWall : MonoBehaviour
     [SerializeField]
     public bool isDead;
 
-    private Rigidbody2D rb;
-
     [Header("Wall Health")]
     [SerializeField]
     private float health;
@@ -18,34 +16,21 @@ public class BreakableWall : MonoBehaviour
     #endregion
 
 
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
     void Start()
     {
         health = maxHealth;
     }
 
-    void Update()
-    {
-        if (isDead)
-        {
-            //Debug.Log("wall is broken");
-            return;
-        }
-    }
-
     public void TakeDamage(float damage)
     {
+        Debug.Log("taking damage");
         health -= damage;
         if (health <= 0)
         {
+            Debug.Log("wall is broken");
             //Destroy(gameObject);
             isDead = true;
-            gameObject.SetActive(false);
+            GameStatus.GetInstance().SetWallState(GameStatus.GetInstance().GetCurrentRoom());
         }
     }
 }

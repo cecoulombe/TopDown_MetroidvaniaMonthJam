@@ -41,20 +41,22 @@ public class GameStatus : MonoBehaviour
 
     #endregion
 
-    #region Enemy/boss gates, doors, chests, &c. tracking
+    #region Enemy/boss gates, doors, chests, breakable walls, &c. tracking
     // format for each gate is "roomName_enemyGateOpen" or "roomName_bossGateOpen", "roomName_lockedDoor", "roomName_Chest"
         // adding open to the end of the names for clarity because the bools are simply indicating if the associated game object has been opened or not
     // I think i will need to manually add in each enemy gate for each room, and then the generic script will affect if they are set or not
 
     [Header("Gates/doors/chests tracking")]
     [SerializeField]
-    private bool room1_enemyGateOpen;
+    protected bool room1_enemyGateOpen;
     [SerializeField]
-    private bool room2_chestOpen;
+    protected bool room2_chestOpen;
     [SerializeField]
-    private bool room2_HealthIncreaseTaken;
+    protected bool room2_HealthIncreaseTaken;
     [SerializeField]
-    private bool room2_AmmoIncreaseTaken;
+    protected bool room2_AmmoIncreaseTaken;
+    [SerializeField]
+    protected bool room2_wallOpen;
     #endregion
 
     // making a class which can keep track of certain game states (i.e. what abilities the player has, how many times they have died, if a gate has been opened at some point?)
@@ -285,6 +287,30 @@ public class GameStatus : MonoBehaviour
         if (roomName == "Room2")
         {
             room2_chestOpen = true;
+        }
+    }
+    #endregion
+
+    #region Breakable Walls
+    public bool GetWallState(string roomName)
+    {
+        if (roomName == "Room2")
+        {
+            Debug.Log("from game status" + room2_wallOpen);
+            return room2_wallOpen;
+        }
+        else
+        {
+            Debug.Log("cannot find the current room, returning true");
+            return true;
+        }
+    }
+
+    public void SetWallState(string roomName)
+    {
+        if (roomName == "Room2")
+        {
+            room2_wallOpen = true;
         }
     }
     #endregion

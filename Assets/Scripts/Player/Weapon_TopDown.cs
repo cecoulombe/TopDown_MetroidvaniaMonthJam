@@ -13,6 +13,7 @@ public class Weapon_TopDown : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("hitting something");
         EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
         if(enemy != null)
         {
@@ -29,6 +30,18 @@ public class Weapon_TopDown : MonoBehaviour
             enemy.TakeDamage(damage);
 
             if(weaponType == WeaponType.Bullet)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        BreakableWall wall = collision.GetComponent<BreakableWall>();
+        if (wall != null)
+        {
+            Debug.Log("hitting the wall");
+            wall.TakeDamage(damage);
+
+            if (weaponType == WeaponType.Bullet)
             {
                 Destroy(gameObject);
             }

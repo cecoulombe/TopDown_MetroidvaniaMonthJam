@@ -22,22 +22,31 @@ public class Room_Template : MonoBehaviour
     [SerializeField]
     private GameObject room2_LoadingZone;
 
+    // for every set of variables in this script, make sure to add the corresponding tracker to the game status
     [Header("Gates/doors/chests/breakable walls tracking")]
     [Header("Gates")]
     [SerializeField]
     private GameObject RoomNumber_EnemyGate;
     [SerializeField]
-    private GameObject RoomNumer_RoomAfterGate;
+    private GameObject RoomNumber_RoomAfterGate;
     [SerializeField]
     private bool roomNumber_enemyGateOpen;
 
     [Header("Chests")]
     [SerializeField]
-    private GameObject RoomNumer_Chest_Closed;
+    private GameObject RoomNumber_Chest_Closed;
     [SerializeField]
     private GameObject RoomNumber_Chest_Opened;
     [SerializeField]
     private bool RoomNumber_ChestOpen;
+
+    [Header("Breakable Walls")]
+    [SerializeField]
+    private GameObject RoomNumber_Wall_Closed;
+    [SerializeField]
+    private GameObject RoomNumber_Wall_Opened;
+    [SerializeField]
+    private bool RoomNumber_WallOpen;
 
     [Header("Permanent Upgrades")]
     [Header("Health")]
@@ -81,13 +90,13 @@ public class Room_Template : MonoBehaviour
             {
                 Debug.Log("closed gate");
                 RoomNumber_EnemyGate.SetActive(true);
-                RoomNumer_RoomAfterGate.SetActive(false);
+                RoomNumber_RoomAfterGate.SetActive(false);
             }
             else    // the gate is already open, so get rid of it and show the room after
             {
                 Debug.Log("open gate");
                 RoomNumber_EnemyGate.SetActive(false);
-                RoomNumer_RoomAfterGate.SetActive(true);
+                RoomNumber_RoomAfterGate.SetActive(true);
             }
             #endregion
 
@@ -96,14 +105,30 @@ public class Room_Template : MonoBehaviour
             if (!RoomNumber_ChestOpen)  // the chest is closed
             {
                 Debug.Log("closed chest");
-                RoomNumer_Chest_Closed.SetActive(true);
+                RoomNumber_Chest_Closed.SetActive(true);
                 RoomNumber_Chest_Opened.SetActive(false);
             }
             else    // open the chest and keep it visually opened after (it will stay open after leaving the room)
             {
                 Debug.Log("open chest");
-                RoomNumer_Chest_Closed.SetActive(false);
+                RoomNumber_Chest_Closed.SetActive(false);
                 RoomNumber_Chest_Opened.SetActive(true);
+            }
+            #endregion
+
+            #region Breakable Walls
+            RoomNumber_WallOpen = GameStatus.GetInstance().GetWallState(currentRoom);
+            if (!RoomNumber_WallOpen)  // the wall is closed
+            {
+                Debug.Log("closed wall");
+                RoomNumber_Wall_Closed.SetActive(true);
+                RoomNumber_Wall_Opened.SetActive(false);
+            }
+            else    // open the wall and keep it visually opened after (it will stay open after leaving the room)
+            {
+                Debug.Log("open wall");
+                RoomNumber_Wall_Closed.SetActive(false);
+                RoomNumber_Wall_Opened.SetActive(true);
             }
             #endregion
 

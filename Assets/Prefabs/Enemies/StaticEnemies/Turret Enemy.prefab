@@ -177,12 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myHealth: {fileID: 1028894012986191324}
-  contactDamage: 0
+  contactDamage: 1
   playerController: {fileID: 0}
   Aim: {fileID: 38192990922292354}
   bullet: {fileID: 2609964779410368697, guid: 0d81a5adc69054da39e0f592da93e4f1, type: 3}
   fireForce: 10
-  shootCoolDown: 0.25
+  shootCoolDown: 0.5
   shootTimer: 0.5
   minRangePercent: 0
   maxRangePercent: 1

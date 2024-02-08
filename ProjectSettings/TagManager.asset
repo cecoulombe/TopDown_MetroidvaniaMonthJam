@@ -8,6 +8,7 @@ TagManager:
   - Interactable
   - Chest
   - Door
+  - BreakableWall
   layers:
   - Default
   - TransparentFX

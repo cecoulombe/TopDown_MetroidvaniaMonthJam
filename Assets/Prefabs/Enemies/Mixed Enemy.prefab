@@ -204,7 +204,7 @@ MonoBehaviour:
   loseAggroRange: 13
   isWalking: 0
   inRange: 0
-  isPatternWalker: 0
+  isPatternWalker: 1
   wakeUpPercent: 0.9
   health: 3
   maxHealth: 3

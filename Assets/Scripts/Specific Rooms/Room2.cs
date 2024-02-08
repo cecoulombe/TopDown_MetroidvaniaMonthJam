@@ -39,6 +39,14 @@ public class Room2 : MonoBehaviour
     private GameObject room2_AmmoUpgrade;
     [SerializeField]
     private bool room2_AmmoUpgradeTaken;
+
+    [Header("Breakable Walls")]
+    [SerializeField]
+    private GameObject Room2_Wall_Closed;
+    [SerializeField]
+    private GameObject Room2_Wall_Opened;
+    [SerializeField]
+    private bool Room2_WallOpen;
     #endregion
 
     private void Start()
@@ -101,6 +109,24 @@ public class Room2 : MonoBehaviour
             {
                 room2_AmmoUpgrade.SetActive(false);
             }
+
+            #region Breakable Walls
+            Room2_WallOpen = GameStatus.GetInstance().GetWallState(currentRoom);
+            if (!Room2_WallOpen)  // the wall is closed
+            {
+                Debug.Log("closed wall");
+                Room2_Wall_Closed.SetActive(true);
+                Room2_Wall_Opened.SetActive(false);
+            }
+            else    // open the wall and keep it visually opened after (it will stay open after leaving the room)
+            {
+                Debug.Log("open wall");
+                Room2_Wall_Closed.SetActive(false);
+                Room2_Wall_Opened.SetActive(true);
+            }
+            #endregion
         }
+
+
     }
 }

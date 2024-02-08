@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0495883820df148dc8b7c38dc881a7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lungeSpeed: 10
+  lungeSpeed: 8
   patternSpeed: 3
   myHealth: {fileID: 8958197637947619242}
   pointA: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   contactDamage: 1
   playerController: {fileID: 0}
   isAttacking: 0
-  attackDuration: 0.5
+  attackDuration: 0.3
   attackTimer: 0
   lungeAttackRange: 5
   chargerCoolDown: 500
@@ -162,7 +162,7 @@ MonoBehaviour:
   loseAggroRange: 12
   isWalking: 0
   inRange: 0
-  isPatternWalker: 0
+  isPatternWalker: 1
   wakeUpPercent: 0.8
   health: 3
   maxHealth: 3
