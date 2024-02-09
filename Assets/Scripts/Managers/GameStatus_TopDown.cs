@@ -149,6 +149,20 @@ public class GameStatus : MonoBehaviour
             resetPrefs = true;
         }
 
+        if(Input.GetKey(KeyCode.Y))
+        {
+            Debug.Log("giving movement abilities");
+            GiveAbilitiesPlayerPrefs();
+            resetPrefs = true;
+        }
+
+        if (Input.GetKey(KeyCode.U))
+        {
+            Debug.Log("giving everything");
+            GiveAllPlayerPrefs();
+            resetPrefs = true;
+        }
+
         if (!resetPrefs)
         {
             SetPlayerPrefs();
@@ -581,6 +595,40 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", 0);
 
         //PlayerPrefs.Save();
+    }
+
+    public void GiveAllPlayerPrefs()  // use this to reset the player prefs when testing stuff but remove the hot key in the final version - a version of this will be used to make multiple save files
+    {
+        //PlayerPrefs.SetFloat("maxHealth" + saveFile, maxHealth);
+        PlayerPrefs.SetFloat("maxHealth", 30);
+        PlayerPrefs.SetFloat("maxAmmo", 30);
+        PlayerPrefs.SetInt("deathCounter", 0);
+
+        // player states
+        PlayerPrefs.SetInt("hasDash", 1);
+        PlayerPrefs.SetInt("hasInvincibleDash", 1);
+        PlayerPrefs.SetInt("hasMelee", 1);
+        PlayerPrefs.SetInt("hasRanged", 1);
+
+        // doors and everything else
+        PlayerPrefs.SetInt("room1_enemyGateOpen", 1);
+        PlayerPrefs.SetInt("room2_chestOpen", 1);
+        PlayerPrefs.SetInt("room2_wallOpen", 1);
+
+        // permanent upgrades
+        PlayerPrefs.SetInt("room2_HealthIncreaseTaken", 1);
+        PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", 1);
+
+        //PlayerPrefs.Save();
+    }
+
+    private void GiveAbilitiesPlayerPrefs()
+    {
+        // player states
+        PlayerPrefs.SetInt("hasDash", 1);
+        PlayerPrefs.SetInt("hasInvincibleDash", 1);
+        PlayerPrefs.SetInt("hasMelee", 1);
+        PlayerPrefs.SetInt("hasRanged", 1);
     }
     #endregion
 
