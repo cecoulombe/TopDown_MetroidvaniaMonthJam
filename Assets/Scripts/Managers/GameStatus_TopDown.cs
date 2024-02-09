@@ -129,7 +129,7 @@ public class GameStatus : MonoBehaviour
         instance = this;
         GameObject.DontDestroyOnLoad(gameObject);   // become immortal
 
-        //UpdateGameStatus();
+        UpdateGameStatus();
 
         health = maxHealth;
         ammoCount = maxAmmo;
@@ -149,10 +149,15 @@ public class GameStatus : MonoBehaviour
     {
         string currentRoom = SceneManager.GetActiveScene().name;
         GetGateState(currentRoom);
+        SetPlayerPrefs();
     }
 
     private void OnDestroy()
     {
+        PlayerPrefs.Save();
+        Debug.Log("Player Prefs max health: " + maxHealth_prefs + "n/ max health is: " + GetMaxHealth());
+
+
         Debug.Log("game status destroyed");
     }
 
@@ -580,25 +585,25 @@ public class GameStatus : MonoBehaviour
     public void SetPlayerPrefs()
     {
         //PlayerPrefs.SetFloat("maxHealth" + saveFile, maxHealth);
-        PlayerPrefs.SetFloat("maxHealth", maxHealth_prefs);
-        PlayerPrefs.SetFloat("maxAmmo", maxAmmo_prefs);
+        PlayerPrefs.SetFloat("maxHealth", GetMaxHealth());
+        PlayerPrefs.SetFloat("maxAmmo", GetMaxAmmo());
 
         // player states
-        PlayerPrefs.GetInt("hasDash", HasDash() ? 1 : 0);
-        PlayerPrefs.GetInt("hasInvincibleDash", HasInvincibleDash() ? 1 : 0);
-        PlayerPrefs.GetInt("hasMelee", HasMelee() ? 1 : 0);
-        PlayerPrefs.GetInt("hasRanged", HasRanged() ? 1 : 0);
+        PlayerPrefs.SetInt("hasDash", HasDash() ? 1 : 0);
+        PlayerPrefs.SetInt("hasInvincibleDash", HasInvincibleDash() ? 1 : 0);
+        PlayerPrefs.SetInt("hasMelee", HasMelee() ? 1 : 0);
+        PlayerPrefs.SetInt("hasRanged", HasRanged() ? 1 : 0);
 
         // doors and everything else
-        PlayerPrefs.GetInt("room1_enemyGateOpen", GetGateState("room1") ? 1 : 0);
-        PlayerPrefs.GetInt("room2_chestOpen", GetChestState("room2") ? 1 : 0);
-        PlayerPrefs.GetInt("room2_wallOpen", GetWallState("room2") ? 1 : 0);
+        PlayerPrefs.SetInt("room1_enemyGateOpen", GetGateState("room1") ? 1 : 0);
+        PlayerPrefs.SetInt("room2_chestOpen", GetChestState("room2") ? 1 : 0);
+        PlayerPrefs.SetInt("room2_wallOpen", GetWallState("room2") ? 1 : 0);
 
         // permanent upgrades
-        PlayerPrefs.GetInt("room2_HealthIncreaseTaken", GetUpgradeState("room2", "Health") ? 1 : 0);
-        PlayerPrefs.GetInt("room2_AmmoIncreaseTaken", GetUpgradeState("room2", "Ammo") ? 1 : 0);
+        PlayerPrefs.SetInt("room2_HealthIncreaseTaken", GetUpgradeState("room2", "Health") ? 1 : 0);
+        PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", GetUpgradeState("room2", "Ammo") ? 1 : 0);
 
-        PlayerPrefs.Save();
+        //PlayerPrefs.Save();
 
     }
     #endregion
