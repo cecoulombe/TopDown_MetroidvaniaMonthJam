@@ -26,6 +26,7 @@ public class PermanentAmmoUpgrade : MonoBehaviour
             GameStatus.GetInstance().AddAmmo(GameStatus.GetInstance().GetMaxAmmo());
             //Destroy(gameObject);
             GameStatus.GetInstance().SetUpgradeState(currentRoom, "Ammo");
+            GameStatus.GetInstance().SetPlayerPrefs();
 
         }
     }

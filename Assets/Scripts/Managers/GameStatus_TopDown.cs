@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameStatus : MonoBehaviour
 {
+    
+
     // make sure this is the only instance of the game status, even though it isn't destroying on load
     static GameStatus instance;
 
@@ -18,9 +20,7 @@ public class GameStatus : MonoBehaviour
     [SerializeField]
     protected float maxHealth;
     [SerializeField]
-    protected int deathCounter = 0;
-    [SerializeField]
-    protected float money = 0f;
+    protected int deathCounter;
     [SerializeField]
     protected float ammoCount;
     [SerializeField]
@@ -62,6 +62,49 @@ public class GameStatus : MonoBehaviour
     protected bool room2_wallOpen;
     #endregion
 
+    #region Player Prefs Variables
+    // I think I need to use player prefs to save information between launches of the game? so I might have the prefs save between rooms for the time being and then eventually save when benching and load when launching the game?
+
+    //private int saveFile;   // this is the number of the save file, which will allow for there to be multiple files. For now, just have 1 so slot == 1
+
+    // things to player pref: max health, max ammo, death counter, last save room, dash, idash, range, melee, any doors/gates/chests/&c.
+
+    [Header("Player health stats")]
+    [SerializeField]
+    protected float maxHealth_prefs;
+    [SerializeField]
+    protected int deathCounter_prefs;
+    [SerializeField]
+    protected float maxAmmo_prefs;
+
+    [SerializeField]
+    protected string saveRoom_prefs;
+
+    [Header("Player state bools")]
+    [SerializeField]
+    protected bool hasDash_prefs;
+    [SerializeField]
+    protected bool hasInvincibleDash_prefs;
+    [SerializeField]
+    protected bool hasMelee_prefs;
+    [SerializeField]
+    protected bool hasRanged_prefs;
+
+    [Header("Gates/doors/chests tracking")]
+    [SerializeField]
+    protected bool room1_enemyGateOpen_prefs;
+    [SerializeField]
+    protected bool room2_chestOpen_prefs;
+    [SerializeField]
+    protected bool room2_wallOpen_prefs;
+
+    [Header("Permanent upgrades")]
+    [SerializeField]
+    protected bool room2_HealthIncreaseTaken_prefs;
+    [SerializeField]
+    protected bool room2_AmmoIncreaseTaken_prefs;
+    #endregion
+
     // making a class which can keep track of certain game states (i.e. what abilities the player has, how many times they have died, if a gate has been opened at some point?)
 
     // keep track of player state (maybe using an enum? take a look at that video after sorting this out)
@@ -82,10 +125,15 @@ public class GameStatus : MonoBehaviour
             return;
         }
 
-        health = maxHealth;
-        ammoCount = maxAmmo;
+        
         instance = this;
         GameObject.DontDestroyOnLoad(gameObject);   // become immortal
+
+        LoadSettings();
+        UpdateGameStatus();
+
+        health = maxHealth;
+        ammoCount = maxAmmo;
 
         // keep this variables for now, but can change them later on using external scripts
         SetHasDash(false);
@@ -132,6 +180,11 @@ public class GameStatus : MonoBehaviour
         return maxHealth;
     }
 
+    public void SetMaxHealth(float healthValue)
+    {
+        maxHealth = healthValue;
+    }
+
     public void AddHealth(float healthAmount)
     {
         health += healthAmount;
@@ -165,6 +218,11 @@ public class GameStatus : MonoBehaviour
         return maxAmmo;
     }
 
+    public void SetMaxAmmo(float ammoValue)
+    {
+        maxAmmo = ammoValue;
+    }
+
     public void AddAmmo(float bulletsRefilled)
     {
         ammoCount += bulletsRefilled;
@@ -183,17 +241,17 @@ public class GameStatus : MonoBehaviour
     }
     #endregion
 
-    #region Money
-    public void AddMoney(float moneyEarned)
-    {
-        money += moneyEarned;
-    }
+    //#region Money
+    //public void AddMoney(float moneyEarned)
+    //{
+    //    money += moneyEarned;
+    //}
 
-    public void LoseMoney(float cost)
-    {
-        money -= cost;
-    }
-    #endregion
+    //public void LoseMoney(float cost)
+    //{
+    //    money -= cost;
+    //}
+    //#endregion
 
     #region Ability Checks
     public void SetHasDash(bool dash)
@@ -443,6 +501,107 @@ public class GameStatus : MonoBehaviour
         }
     }
     #endregion
+    #endregion
+
+    #region Player Prefs
+    public void LoadSettings()
+    {
+        // health, ammo, and save room
+        maxHealth_prefs = PlayerPrefs.GetFloat("maxHealth");
+        maxAmmo_prefs = PlayerPrefs.GetFloat("maxAmmo");
+        //deathCounter = PlayerPrefs.GetInt("deathCounter");
+        saveRoom_prefs = PlayerPrefs.GetString("saveRoom");
+
+        // permanent abilities
+        hasDash_prefs = PlayerPrefs.GetInt("hasDash") == 1;
+        hasInvincibleDash_prefs = PlayerPrefs.GetInt("hasInvincibleDash") == 1;
+        hasMelee_prefs = PlayerPrefs.GetInt("hasMelee") == 1;
+        hasRanged_prefs = PlayerPrefs.GetInt("hasRanged") == 1;
+
+        // gates/chests/upgrades/secret doors
+        room1_enemyGateOpen_prefs = PlayerPrefs.GetInt("room1_enemyGateOpen") == 1;
+        room2_chestOpen_prefs = PlayerPrefs.GetInt("room2_chestOpen") == 1;
+        room2_wallOpen_prefs = PlayerPrefs.GetInt("room2_wallOpen") == 1;
+
+        // permanent upgrades
+        room2_HealthIncreaseTaken_prefs = PlayerPrefs.GetInt("room2_HealthIncreaseTaken") == 1;
+        room2_AmmoIncreaseTaken_prefs = PlayerPrefs.GetInt("room2_AmmoIncreaseTaken") == 1;
+    }
+
+    public void UpdateGameStatus()
+    {
+        SetMaxHealth(maxHealth_prefs);
+        SetMaxAmmo(maxAmmo_prefs);
+
+        // player states
+        SetHasDash(hasDash_prefs);
+        SetHasInvincibleDash(hasInvincibleDash_prefs);
+        SetHasMelee(hasMelee_prefs);
+        SetHasRanged(hasRanged_prefs);
+
+        // gates, chests, walls, &c.
+        if (room1_enemyGateOpen_prefs)
+        {
+            SetGateState("room1");
+        }
+
+        if (room2_chestOpen_prefs)
+        {
+            SetChestState("room2");
+        }
+
+        if (room2_wallOpen_prefs)
+        {
+            SetWallState("room2");
+        }
+
+        //if (room1_enemyGateOpen == true)
+        //{
+        //    // gate is open
+        //}
+
+        // permanent upgrades
+        if (room2_HealthIncreaseTaken_prefs)
+        {
+            SetUpgradeState("room2", "Health");
+        }
+
+        if (room2_AmmoIncreaseTaken_prefs)
+        {
+            SetUpgradeState("room2", "Ammo");
+        }
+
+        //if (room2_AmmoIncreaseTaken)
+        //{
+        //    // upgrade was taken
+        //}
+
+    }
+
+    public void SetPlayerPrefs()
+    {
+        //PlayerPrefs.SetFloat("maxHealth" + saveFile, maxHealth);
+        PlayerPrefs.SetFloat("maxHealth", maxHealth_prefs);
+        PlayerPrefs.SetFloat("maxAmmo", maxAmmo_prefs);
+
+        // player states
+        PlayerPrefs.GetInt("hasDash", HasDash() ? 1 : 0);
+        PlayerPrefs.GetInt("hasInvincibleDash", HasInvincibleDash() ? 1 : 0);
+        PlayerPrefs.GetInt("hasMelee", HasMelee() ? 1 : 0);
+        PlayerPrefs.GetInt("hasRanged", HasRanged() ? 1 : 0);
+
+        // doors and everything else
+        PlayerPrefs.GetInt("room1_enemyGateOpen", GetGateState("room1") ? 1 : 0);
+        PlayerPrefs.GetInt("room2_chestOpen", GetChestState("room2") ? 1 : 0);
+        PlayerPrefs.GetInt("room2_wallOpen", GetWallState("room2") ? 1 : 0);
+
+        // permanent upgrades
+        PlayerPrefs.GetInt("room2_HealthIncreaseTaken", GetUpgradeState("room2", "Health") ? 1 : 0);
+        PlayerPrefs.GetInt("room2_AmmoIncreaseTaken", GetUpgradeState("room2", "Ammo") ? 1 : 0);
+
+        PlayerPrefs.Save();
+
+    }
     #endregion
 
     public static GameStatus GetInstance()

@@ -20,7 +20,7 @@ public class Room_Template : MonoBehaviour
     [SerializeField]
     private GameObject spawnPoint;
     [SerializeField]
-    private GameObject room2_LoadingZone;
+    private GameObject roomNumber_LoadingZone;
 
     // for every set of variables in this script, make sure to add the corresponding tracker to the game status
     [Header("Gates/doors/chests/breakable walls tracking")]
@@ -72,9 +72,13 @@ public class Room_Template : MonoBehaviour
         {
             player.transform.position = spawnPoint.transform.position;
         }
-        else if (previousRoom == "Room2")   // repeat this for each transition
+        else if (previousRoom == "MainMenu")  // if you are continuing a previous file, you will spawn in the last room you were in at the main menu location
         {
-            player.transform.position = room2_LoadingZone.transform.position;
+            player.transform.position = spawnPoint.transform.position;
+        }
+        else if (previousRoom == "roomNumber")   // repeat this for each transition
+        {
+            player.transform.position = roomNumber_LoadingZone.transform.position;
         }
     }
 
@@ -176,6 +180,7 @@ public class Room_Template : MonoBehaviour
                 {
                     Debug.Log("all enemies dead, opening the gate");
                     GameStatus.GetInstance().SetGateState(currentRoom);
+                    GameStatus.GetInstance().SetPlayerPrefs();
                 }
             }
         }

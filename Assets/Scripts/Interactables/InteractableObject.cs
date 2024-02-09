@@ -39,6 +39,7 @@ public class InteractableObject : MonoBehaviour
         // run the code to open the chest and give the player whatever the contents were
         Debug.Log("opening the chest and giving the reward");
         GameStatus.GetInstance().SetChestState(currentRoom);
+        GameStatus.GetInstance().SetPlayerPrefs();
         GiveReward();
     }
 
@@ -47,7 +48,7 @@ public class InteractableObject : MonoBehaviour
         // specify the reward to be given, but for now, assume it is just a full health bar and some money
         GameStatus.GetInstance().AddHealth(GameStatus.GetInstance().GetMaxHealth());
         GameStatus.GetInstance().AddAmmo(GameStatus.GetInstance().GetMaxAmmo());
-        GameStatus.GetInstance().AddMoney(rewardAmount);
+        //GameStatus.GetInstance().AddMoney(rewardAmount);
     }
     #endregion
 
@@ -73,6 +74,7 @@ public class InteractableObject : MonoBehaviour
         // run the code to open the chest and give the player whatever the contents were
         Debug.Log("opening the door");
         GameStatus.GetInstance().SetChestState(currentRoom);
+        GameStatus.GetInstance().SetPlayerPrefs();
     }
     #endregion
 }

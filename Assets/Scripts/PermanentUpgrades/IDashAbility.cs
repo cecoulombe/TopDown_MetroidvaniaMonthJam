@@ -31,6 +31,7 @@ public class IDashAbility : MonoBehaviour
         if (player != null && !hasPickup)
         {
             GameStatus.GetInstance().SetUpgradeState(currentRoom, pickup);
+            GameStatus.GetInstance().SetPlayerPrefs();
         }
     }
 }

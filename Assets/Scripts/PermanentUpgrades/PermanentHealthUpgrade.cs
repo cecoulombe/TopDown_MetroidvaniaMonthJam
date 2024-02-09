@@ -26,6 +26,7 @@ public class PermanentHealthUpgrade : MonoBehaviour
             GameStatus.GetInstance().AddHealth(GameStatus.GetInstance().GetMaxHealth());
             //Destroy(gameObject);
             GameStatus.GetInstance().SetUpgradeState(currentRoom, "Health");
+            GameStatus.GetInstance().SetPlayerPrefs();
         }
     }
 }

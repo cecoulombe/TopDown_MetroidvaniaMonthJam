@@ -88,6 +88,7 @@ public class Room1 : MonoBehaviour
                 {
                     Debug.Log("all enemies dead, opening the gate");
                     GameStatus.GetInstance().SetGateState(currentRoom);
+                    GameStatus.GetInstance().SetPlayerPrefs();
                 }
             }
         }
