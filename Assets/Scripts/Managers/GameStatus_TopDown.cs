@@ -72,36 +72,36 @@ public class GameStatus : MonoBehaviour
     [Header("Player health stats")]
     [SerializeField]
     protected float maxHealth_prefs;
-    [SerializeField]
+    //[SerializeField]
     protected int deathCounter_prefs;
     [SerializeField]
     protected float maxAmmo_prefs;
 
-    [SerializeField]
+    //[SerializeField]
     protected string saveRoom_prefs;
 
     [Header("Player state bools")]
-    [SerializeField]
+    //[SerializeField]
     protected bool hasDash_prefs;
-    [SerializeField]
+    //[SerializeField]
     protected bool hasInvincibleDash_prefs;
-    [SerializeField]
+    //[SerializeField]
     protected bool hasMelee_prefs;
-    [SerializeField]
+    //[SerializeField]
     protected bool hasRanged_prefs;
 
     [Header("Gates/doors/chests tracking")]
-    [SerializeField]
+    //[SerializeField]
     protected bool room1_enemyGateOpen_prefs;
-    [SerializeField]
+    //[SerializeField]
     protected bool room2_chestOpen_prefs;
-    [SerializeField]
+    //[SerializeField]
     protected bool room2_wallOpen_prefs;
 
     [Header("Permanent upgrades")]
-    [SerializeField]
+    //[SerializeField]
     protected bool room2_HealthIncreaseTaken_prefs;
-    [SerializeField]
+    //[SerializeField]
     protected bool room2_AmmoIncreaseTaken_prefs;
     #endregion
 
@@ -113,6 +113,7 @@ public class GameStatus : MonoBehaviour
     private void Awake()
     {
         previousRoom = "spawn";
+        LoadSettings();
     }
 
 
@@ -125,12 +126,10 @@ public class GameStatus : MonoBehaviour
             return;
         }
 
-        
         instance = this;
         GameObject.DontDestroyOnLoad(gameObject);   // become immortal
 
-        LoadSettings();
-        UpdateGameStatus();
+        //UpdateGameStatus();
 
         health = maxHealth;
         ammoCount = maxAmmo;

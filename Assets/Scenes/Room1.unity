@@ -1146,6 +1146,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2563478602847825122}
     m_Modifications:
+    - target: {fileID: 1028894012986191324, guid: fb151353b6a2b4fabbaaa37feab2b3a6, type: 3}
+      propertyPath: maxHealth
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1624224465659347987, guid: fb151353b6a2b4fabbaaa37feab2b3a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1849,6 +1853,10 @@ PrefabInstance:
     - target: {fileID: 980580631639407879, guid: 28386c12a61c6412ab397a2884cb813e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 28386c12a61c6412ab397a2884cb813e, type: 3}
+      propertyPath: moveSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1984197997856064039, guid: 28386c12a61c6412ab397a2884cb813e, type: 3}
       propertyPath: lungeSpeed
@@ -8761,6 +8769,14 @@ PrefabInstance:
     - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
       propertyPath: hasRanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
+      propertyPath: maxAmmo_prefs
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
+      propertyPath: maxHealth_prefs
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
       propertyPath: hasInvincibleDash

@@ -91,7 +91,6 @@ public class Room2 : MonoBehaviour
                 Room2_Chest_Opened.SetActive(true);
             }
 
-
             room2_HealthUpgradeTaken = GameStatus.GetInstance().GetUpgradeState(currentRoom, "Health");
             if(!room2_HealthUpgradeTaken)
             {
