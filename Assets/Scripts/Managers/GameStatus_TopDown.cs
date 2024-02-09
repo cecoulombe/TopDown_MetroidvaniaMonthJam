@@ -112,6 +112,7 @@ public class GameStatus : MonoBehaviour
     // track individual room values (i.e. is a room's chest has been opened or if the enemy gate has been opened)
     private void Awake()
     {
+        Debug.Log("Player Prefs chest opened: " + PlayerPrefs.GetInt("room2_chestOpen") + ", chest open is: " + room2_chestOpen);
         previousRoom = "spawn";
         LoadSettings();
     }
@@ -135,10 +136,10 @@ public class GameStatus : MonoBehaviour
         ammoCount = maxAmmo;
 
         // keep this variables for now, but can change them later on using external scripts
-        SetHasDash(false);
-        SetHasMelee(false);
-        SetHasRanged(false);
-        SetHasInvincibleDash(false);
+        //SetHasDash(false);
+        //SetHasMelee(false);
+        //SetHasRanged(false);
+        //SetHasInvincibleDash(false);
 
         //hasDash = false;
 
@@ -154,10 +155,9 @@ public class GameStatus : MonoBehaviour
 
     private void OnDestroy()
     {
+        Debug.Log("Before save Player Prefs chest opened: " + room2_chestOpen_prefs + ", chest open is: " + GetChestState("room2"));
         PlayerPrefs.Save();
-        Debug.Log("Player Prefs max health: " + maxHealth_prefs + "n/ max health is: " + GetMaxHealth());
-
-
+        Debug.Log("After save Player Prefs chest opened: " + room2_chestOpen_prefs + ", chest open is: " + GetChestState("room2"));
         Debug.Log("game status destroyed");
     }
 
