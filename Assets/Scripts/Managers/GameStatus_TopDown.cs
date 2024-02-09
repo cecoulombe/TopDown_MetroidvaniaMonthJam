@@ -129,7 +129,7 @@ public class GameStatus : MonoBehaviour
         instance = this;
         GameObject.DontDestroyOnLoad(gameObject);   // become immortal
 
-        UpdateGameStatus();
+        //UpdateGameStatus();
 
         health = maxHealth;
         ammoCount = maxAmmo;
@@ -509,21 +509,21 @@ public class GameStatus : MonoBehaviour
     public void LoadSettings()
     {
         // health, ammo, and save room
-        maxHealth_prefs = PlayerPrefs.GetFloat("maxHealth");
-        maxAmmo_prefs = PlayerPrefs.GetFloat("maxAmmo");
+        maxHealth = PlayerPrefs.GetFloat("maxHealth");
+        maxAmmo = PlayerPrefs.GetFloat("maxAmmo");
         //deathCounter = PlayerPrefs.GetInt("deathCounter");
         saveRoom_prefs = PlayerPrefs.GetString("saveRoom");
 
         // permanent abilities
-        hasDash_prefs = PlayerPrefs.GetInt("hasDash") == 1;
-        hasInvincibleDash_prefs = PlayerPrefs.GetInt("hasInvincibleDash") == 1;
-        hasMelee_prefs = PlayerPrefs.GetInt("hasMelee") == 1;
-        hasRanged_prefs = PlayerPrefs.GetInt("hasRanged") == 1;
+        hasDash = PlayerPrefs.GetInt("hasDash") == 1;
+        hasInvincibleDash = PlayerPrefs.GetInt("hasInvincibleDash") == 1;
+        hasMelee = PlayerPrefs.GetInt("hasMelee") == 1;
+        hasRanged = PlayerPrefs.GetInt("hasRanged") == 1;
 
         // gates/chests/upgrades/secret doors
-        room1_enemyGateOpen_prefs = PlayerPrefs.GetInt("room1_enemyGateOpen") == 1;
-        room2_chestOpen_prefs = PlayerPrefs.GetInt("room2_chestOpen") == 1;
-        room2_wallOpen_prefs = PlayerPrefs.GetInt("room2_wallOpen") == 1;
+        room1_enemyGateOpen = PlayerPrefs.GetInt("room1_enemyGateOpen") == 1;
+        room2_chestOpen = PlayerPrefs.GetInt("room2_chestOpen") == 1;
+        room2_wallOpen = PlayerPrefs.GetInt("room2_wallOpen") == 1;
 
         // permanent upgrades
         room2_HealthIncreaseTaken = PlayerPrefs.GetInt("room2_HealthIncreaseTaken") == 1;
