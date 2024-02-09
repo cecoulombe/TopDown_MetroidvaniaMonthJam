@@ -112,7 +112,6 @@ public class GameStatus : MonoBehaviour
     // track individual room values (i.e. is a room's chest has been opened or if the enemy gate has been opened)
     private void Awake()
     {
-        Debug.Log("Player Prefs chest opened: " + PlayerPrefs.GetInt("room2_chestOpen") + ", chest open is: " + room2_chestOpen);
         previousRoom = "spawn";
         LoadSettings();
     }
@@ -155,9 +154,8 @@ public class GameStatus : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("Before save Player Prefs chest opened: " + room2_chestOpen_prefs + ", chest open is: " + GetChestState("room2"));
         PlayerPrefs.Save();
-        Debug.Log("After save Player Prefs chest opened: " + room2_chestOpen_prefs + ", chest open is: " + GetChestState("room2"));
+        Debug.Log("Player Prefs health taken: " + room2_HealthIncreaseTaken_prefs + ", health is: " + room2_HealthIncreaseTaken);
         Debug.Log("game status destroyed");
     }
 
@@ -528,8 +526,8 @@ public class GameStatus : MonoBehaviour
         room2_wallOpen_prefs = PlayerPrefs.GetInt("room2_wallOpen") == 1;
 
         // permanent upgrades
-        room2_HealthIncreaseTaken_prefs = PlayerPrefs.GetInt("room2_HealthIncreaseTaken") == 1;
-        room2_AmmoIncreaseTaken_prefs = PlayerPrefs.GetInt("room2_AmmoIncreaseTaken") == 1;
+        room2_HealthIncreaseTaken = PlayerPrefs.GetInt("room2_HealthIncreaseTaken") == 1;
+        room2_AmmoIncreaseTaken = PlayerPrefs.GetInt("room2_AmmoIncreaseTaken") == 1;
     }
 
     public void UpdateGameStatus()
@@ -564,17 +562,6 @@ public class GameStatus : MonoBehaviour
         //    // gate is open
         //}
 
-        // permanent upgrades
-        if (room2_HealthIncreaseTaken_prefs)
-        {
-            SetUpgradeState("room2", "Health");
-        }
-
-        if (room2_AmmoIncreaseTaken_prefs)
-        {
-            SetUpgradeState("room2", "Ammo");
-        }
-
         //if (room2_AmmoIncreaseTaken)
         //{
         //    // upgrade was taken
@@ -600,8 +587,8 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("room2_wallOpen", GetWallState("room2") ? 1 : 0);
 
         // permanent upgrades
-        PlayerPrefs.SetInt("room2_HealthIncreaseTaken", GetUpgradeState("room2", "Health") ? 1 : 0);
-        PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", GetUpgradeState("room2", "Ammo") ? 1 : 0);
+        PlayerPrefs.SetInt("room2_HealthIncreaseTaken", room2_HealthIncreaseTaken ? 1 : 0);
+        PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", room2_AmmoIncreaseTaken ? 1 : 0);
 
         //PlayerPrefs.Save();
 
