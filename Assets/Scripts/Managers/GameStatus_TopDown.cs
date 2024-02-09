@@ -70,6 +70,8 @@ public class GameStatus : MonoBehaviour
     // things to player pref: max health, max ammo, death counter, last save room, dash, idash, range, melee, any doors/gates/chests/&c.
 
     [Header("Player health stats")]
+    private bool resetPrefs = false;
+
     [SerializeField]
     protected float maxHealth_prefs;
     //[SerializeField]
@@ -129,18 +131,8 @@ public class GameStatus : MonoBehaviour
         instance = this;
         GameObject.DontDestroyOnLoad(gameObject);   // become immortal
 
-        //UpdateGameStatus();
-
         health = maxHealth;
         ammoCount = maxAmmo;
-
-        // keep this variables for now, but can change them later on using external scripts
-        //SetHasDash(false);
-        //SetHasMelee(false);
-        //SetHasRanged(false);
-        //SetHasInvincibleDash(false);
-
-        //hasDash = false;
 
         #endregion
     }
@@ -149,7 +141,18 @@ public class GameStatus : MonoBehaviour
     {
         string currentRoom = SceneManager.GetActiveScene().name;
         GetGateState(currentRoom);
-        SetPlayerPrefs();
+
+        if(Input.GetKey(KeyCode.T))
+        {
+            Debug.Log("reseting the player prefs");
+            ResetPlayerPrefs();
+            resetPrefs = true;
+        }
+
+        if (!resetPrefs)
+        {
+            SetPlayerPrefs();
+        }
     }
 
     private void OnDestroy()
@@ -511,7 +514,7 @@ public class GameStatus : MonoBehaviour
         // health, ammo, and save room
         maxHealth = PlayerPrefs.GetFloat("maxHealth");
         maxAmmo = PlayerPrefs.GetFloat("maxAmmo");
-        //deathCounter = PlayerPrefs.GetInt("deathCounter");
+        deathCounter = PlayerPrefs.GetInt("deathCounter");
         saveRoom_prefs = PlayerPrefs.GetString("saveRoom");
 
         // permanent abilities
@@ -530,50 +533,12 @@ public class GameStatus : MonoBehaviour
         room2_AmmoIncreaseTaken = PlayerPrefs.GetInt("room2_AmmoIncreaseTaken") == 1;
     }
 
-    public void UpdateGameStatus()
-    {
-        SetMaxHealth(maxHealth_prefs);
-        SetMaxAmmo(maxAmmo_prefs);
-
-        // player states
-        SetHasDash(hasDash_prefs);
-        SetHasInvincibleDash(hasInvincibleDash_prefs);
-        SetHasMelee(hasMelee_prefs);
-        SetHasRanged(hasRanged_prefs);
-
-        // gates, chests, walls, &c.
-        if (room1_enemyGateOpen_prefs)
-        {
-            SetGateState("room1");
-        }
-
-        if (room2_chestOpen_prefs)
-        {
-            SetChestState("room2");
-        }
-
-        if (room2_wallOpen_prefs)
-        {
-            SetWallState("room2");
-        }
-
-        //if (room1_enemyGateOpen == true)
-        //{
-        //    // gate is open
-        //}
-
-        //if (room2_AmmoIncreaseTaken)
-        //{
-        //    // upgrade was taken
-        //}
-
-    }
-
     public void SetPlayerPrefs()
     {
         //PlayerPrefs.SetFloat("maxHealth" + saveFile, maxHealth);
         PlayerPrefs.SetFloat("maxHealth", GetMaxHealth());
         PlayerPrefs.SetFloat("maxAmmo", GetMaxAmmo());
+        PlayerPrefs.SetInt("deathCounter", deathCounter);
 
         // player states
         PlayerPrefs.SetInt("hasDash", HasDash() ? 1 : 0);
@@ -591,7 +556,31 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", room2_AmmoIncreaseTaken ? 1 : 0);
 
         //PlayerPrefs.Save();
+    }
 
+    public void ResetPlayerPrefs()  // use this to reset the player prefs when testing stuff but remove the hot key in the final version - a version of this will be used to make multiple save files
+    {
+        //PlayerPrefs.SetFloat("maxHealth" + saveFile, maxHealth);
+        PlayerPrefs.SetFloat("maxHealth", 10);
+        PlayerPrefs.SetFloat("maxAmmo", 10);
+        PlayerPrefs.SetInt("deathCounter", 0);
+
+        // player states
+        PlayerPrefs.SetInt("hasDash", 0);
+        PlayerPrefs.SetInt("hasInvincibleDash", 0);
+        PlayerPrefs.SetInt("hasMelee", 0);
+        PlayerPrefs.SetInt("hasRanged", 0);
+
+        // doors and everything else
+        PlayerPrefs.SetInt("room1_enemyGateOpen", 0);
+        PlayerPrefs.SetInt("room2_chestOpen", 0);
+        PlayerPrefs.SetInt("room2_wallOpen", 0);
+
+        // permanent upgrades
+        PlayerPrefs.SetInt("room2_HealthIncreaseTaken", 0);
+        PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", 0);
+
+        //PlayerPrefs.Save();
     }
     #endregion
 
