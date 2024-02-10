@@ -112,6 +112,11 @@ public class EnemyHealth : MonoBehaviour
             isAwake = true;
         }
 
+        if(isAwake)
+        {
+            isPatternWalker = false;
+        }
+
         if (target && isAwake && attackCoolDown <= 100f)
         {
             Vector3 direction = (target.position - transform.position).normalized;

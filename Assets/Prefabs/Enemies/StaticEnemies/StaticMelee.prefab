@@ -152,6 +152,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3483832366741376583, guid: 314e23d21de9641eeb4f255f0a82aeff, type: 3}
+      propertyPath: isPatternWalker
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5134701059709482958, guid: 314e23d21de9641eeb4f255f0a82aeff, type: 3}
       propertyPath: m_Name
       value: Melee Enemy

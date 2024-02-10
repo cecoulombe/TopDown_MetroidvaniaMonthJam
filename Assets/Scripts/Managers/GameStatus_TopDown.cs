@@ -50,16 +50,31 @@ public class GameStatus : MonoBehaviour
     // I think i will need to manually add in each enemy gate for each room, and then the generic script will affect if they are set or not
 
     [Header("Gates/doors/chests tracking")]
+    [Header("Enemy Gates")]
     [SerializeField]
     protected bool room1_enemyGateOpen;
+
+    [Header("Chests")]
     [SerializeField]
     protected bool room2_chestOpen;
+
+    [Header("Permanent Increases")]
+    [SerializeField]
+    protected bool room1_HealthIncreaseTaken;
+    [SerializeField]
+    protected bool room1_AmmoIncreaseTaken;
     [SerializeField]
     protected bool room2_HealthIncreaseTaken;
     [SerializeField]
     protected bool room2_AmmoIncreaseTaken;
+
+    [Header("Breakable Walls")]
     [SerializeField]
     protected bool room2_wallOpen;
+
+    [Header("Hidden Rooms")]
+    [SerializeField]
+    protected bool room1_HiddenOpen;
     #endregion
 
     #region Player Prefs Variables
@@ -72,39 +87,7 @@ public class GameStatus : MonoBehaviour
     [Header("Player health stats")]
     private bool resetPrefs = false;
 
-    [SerializeField]
-    protected float maxHealth_prefs;
-    //[SerializeField]
-    protected int deathCounter_prefs;
-    [SerializeField]
-    protected float maxAmmo_prefs;
-
-    //[SerializeField]
     protected string saveRoom_prefs;
-
-    [Header("Player state bools")]
-    //[SerializeField]
-    protected bool hasDash_prefs;
-    //[SerializeField]
-    protected bool hasInvincibleDash_prefs;
-    //[SerializeField]
-    protected bool hasMelee_prefs;
-    //[SerializeField]
-    protected bool hasRanged_prefs;
-
-    [Header("Gates/doors/chests tracking")]
-    //[SerializeField]
-    protected bool room1_enemyGateOpen_prefs;
-    //[SerializeField]
-    protected bool room2_chestOpen_prefs;
-    //[SerializeField]
-    protected bool room2_wallOpen_prefs;
-
-    [Header("Permanent upgrades")]
-    //[SerializeField]
-    protected bool room2_HealthIncreaseTaken_prefs;
-    //[SerializeField]
-    protected bool room2_AmmoIncreaseTaken_prefs;
     #endregion
 
     // making a class which can keep track of certain game states (i.e. what abilities the player has, how many times they have died, if a gate has been opened at some point?)
@@ -172,7 +155,6 @@ public class GameStatus : MonoBehaviour
     private void OnDestroy()
     {
         PlayerPrefs.Save();
-        Debug.Log("Player Prefs health taken: " + room2_HealthIncreaseTaken_prefs + ", health is: " + room2_HealthIncreaseTaken);
         Debug.Log("game status destroyed");
     }
 
@@ -407,6 +389,30 @@ public class GameStatus : MonoBehaviour
     }
     #endregion
 
+    #region Hidden Rooms
+    public bool GetHiddenState(string roomName)
+    {
+        if (roomName == "Room1")
+        {
+            Debug.Log("from game status" + room1_HiddenOpen);
+            return room1_HiddenOpen;
+        }
+        else
+        {
+            Debug.Log("cannot find the current room, returning true");
+            return true;
+        }
+    }
+
+    public void SetHiddenState(string roomName)
+    {
+        if (roomName == "Room1")
+        {
+            room1_HiddenOpen = true;
+        }
+    }
+    #endregion
+
     //#region Doors
     //public bool GetDoorsState(string roomName)
     //{
@@ -479,7 +485,19 @@ public class GameStatus : MonoBehaviour
     // do the same thing for set, but take in the name of the thing set it to true
     public void SetUpgradeState(string roomName, string pickup)
     {
-
+        if (roomName == "Room1")
+        {
+            if (pickup == "Health")
+            {
+                Debug.Log("room1_HealthIncrease has been picked up");
+                room1_HealthIncreaseTaken = true;
+            }
+            else if (pickup == "Ammo")
+            {
+                Debug.Log("room1_AmmoIncrease has been picked up");
+                room1_AmmoIncreaseTaken = true;
+            }
+        }
         if (roomName == "Room2")
         {
             if (pickup == "Health")
@@ -541,6 +559,7 @@ public class GameStatus : MonoBehaviour
         room1_enemyGateOpen = PlayerPrefs.GetInt("room1_enemyGateOpen") == 1;
         room2_chestOpen = PlayerPrefs.GetInt("room2_chestOpen") == 1;
         room2_wallOpen = PlayerPrefs.GetInt("room2_wallOpen") == 1;
+        room1_HiddenOpen = PlayerPrefs.GetInt("room1_HiddenOpen") == 1;
 
         // permanent upgrades
         room2_HealthIncreaseTaken = PlayerPrefs.GetInt("room2_HealthIncreaseTaken") == 1;
@@ -561,9 +580,10 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("hasRanged", HasRanged() ? 1 : 0);
 
         // doors and everything else
-        PlayerPrefs.SetInt("room1_enemyGateOpen", GetGateState("room1") ? 1 : 0);
-        PlayerPrefs.SetInt("room2_chestOpen", GetChestState("room2") ? 1 : 0);
-        PlayerPrefs.SetInt("room2_wallOpen", GetWallState("room2") ? 1 : 0);
+        PlayerPrefs.SetInt("room1_enemyGateOpen", room1_enemyGateOpen ? 1 : 0);
+        PlayerPrefs.SetInt("room2_chestOpen", room2_chestOpen ? 1 : 0);
+        PlayerPrefs.SetInt("room2_wallOpen", room2_wallOpen ? 1 : 0);
+        PlayerPrefs.SetInt("room1_HiddenOpen", room1_HiddenOpen ? 1 : 0);
 
         // permanent upgrades
         PlayerPrefs.SetInt("room2_HealthIncreaseTaken", room2_HealthIncreaseTaken ? 1 : 0);
@@ -589,6 +609,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("room1_enemyGateOpen", 0);
         PlayerPrefs.SetInt("room2_chestOpen", 0);
         PlayerPrefs.SetInt("room2_wallOpen", 0);
+        PlayerPrefs.SetInt("room1_HiddenOpen", 0);
 
         // permanent upgrades
         PlayerPrefs.SetInt("room2_HealthIncreaseTaken", 0);
@@ -614,6 +635,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("room1_enemyGateOpen", 1);
         PlayerPrefs.SetInt("room2_chestOpen", 1);
         PlayerPrefs.SetInt("room2_wallOpen", 1);
+        PlayerPrefs.SetInt("room1_HiddenOpen", 1);
 
         // permanent upgrades
         PlayerPrefs.SetInt("room2_HealthIncreaseTaken", 1);

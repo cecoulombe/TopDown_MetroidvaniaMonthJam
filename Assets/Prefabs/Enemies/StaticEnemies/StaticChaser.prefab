@@ -168,6 +168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chaser Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 9076791506255644120, guid: 63297aa1a7d2441ed8dc66197c49b5e6, type: 3}
+      propertyPath: isPatternWalker
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

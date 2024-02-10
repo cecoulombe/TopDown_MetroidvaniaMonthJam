@@ -9,6 +9,7 @@ TagManager:
   - Chest
   - Door
   - BreakableWall
+  - HiddenWall
   layers:
   - Default
   - TransparentFX

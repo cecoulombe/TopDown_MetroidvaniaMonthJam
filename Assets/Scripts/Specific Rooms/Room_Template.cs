@@ -48,6 +48,14 @@ public class Room_Template : MonoBehaviour
     [SerializeField]
     private bool RoomNumber_WallOpen;
 
+    [Header("Hidden Walls")]
+    [SerializeField]
+    private GameObject RoomNumber_Hidden_Closed;
+    [SerializeField]
+    private GameObject RoomNumber_Hidden_Opened;
+    [SerializeField]
+    private bool RoomNumber_HiddenOpen;
+
     [Header("Permanent Upgrades")]
     [Header("Health")]
     [SerializeField]
@@ -133,6 +141,22 @@ public class Room_Template : MonoBehaviour
                 Debug.Log("open wall");
                 RoomNumber_Wall_Closed.SetActive(false);
                 RoomNumber_Wall_Opened.SetActive(true);
+            }
+            #endregion
+
+            #region Hidden Rooms
+            RoomNumber_HiddenOpen = GameStatus.GetInstance().GetHiddenState(currentRoom);
+            if (!RoomNumber_HiddenOpen)  // the wall is closed
+            {
+                Debug.Log("closed wall");
+                RoomNumber_Hidden_Closed.SetActive(true);
+                RoomNumber_Hidden_Opened.SetActive(false);
+            }
+            else    // open the wall and keep it visually opened after (it will stay open after leaving the room)
+            {
+                Debug.Log("open wall");
+                RoomNumber_Hidden_Closed.SetActive(false);
+                RoomNumber_Hidden_Opened.SetActive(true);
             }
             #endregion
 

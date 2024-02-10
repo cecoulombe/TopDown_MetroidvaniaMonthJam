@@ -164,6 +164,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 8214799315723664381}
+    - target: {fileID: 7839916585032714909, guid: dcaf6cdab12114872bdca919afe84d77, type: 3}
+      propertyPath: isPatternWalker
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
