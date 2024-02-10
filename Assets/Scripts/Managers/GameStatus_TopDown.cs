@@ -442,9 +442,22 @@ public class GameStatus : MonoBehaviour
     #region Permanent Upgrades
     public bool GetUpgradeState(string roomName, string pickup)
     {
-        if (roomName == "Room2")
+        if (roomName == "Room1")
         {
             if(pickup == "Health")
+            {
+                Debug.Log("room1_HealthIncrease" + room1_HealthIncreaseTaken);
+                return room2_HealthIncreaseTaken;
+            }
+            else if (pickup == "Ammo")
+            {
+                Debug.Log("room1_AmmoIncrease" + room1_AmmoIncreaseTaken);
+                return room2_AmmoIncreaseTaken;
+            }
+        }
+        if (roomName == "Room2")
+        {
+            if (pickup == "Health")
             {
                 Debug.Log("room2_HealthIncrease" + room2_HealthIncreaseTaken);
                 return room2_HealthIncreaseTaken;
@@ -456,7 +469,7 @@ public class GameStatus : MonoBehaviour
             }
         }
 
-        if(pickup == "dash")
+        if (pickup == "dash")
         {
             Debug.Log("player has dash? ");
             return hasDash;
@@ -562,6 +575,8 @@ public class GameStatus : MonoBehaviour
         room1_HiddenOpen = PlayerPrefs.GetInt("room1_HiddenOpen") == 1;
 
         // permanent upgrades
+        room1_HealthIncreaseTaken = PlayerPrefs.GetInt("room1_HealthIncreaseTaken") == 1;
+        room1_AmmoIncreaseTaken = PlayerPrefs.GetInt("room1_AmmoIncreaseTaken") == 1;
         room2_HealthIncreaseTaken = PlayerPrefs.GetInt("room2_HealthIncreaseTaken") == 1;
         room2_AmmoIncreaseTaken = PlayerPrefs.GetInt("room2_AmmoIncreaseTaken") == 1;
     }
@@ -586,6 +601,8 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("room1_HiddenOpen", room1_HiddenOpen ? 1 : 0);
 
         // permanent upgrades
+        PlayerPrefs.SetInt("room1_HealthIncreaseTaken", room1_HealthIncreaseTaken ? 1 : 0);
+        PlayerPrefs.SetInt("room1_AmmoIncreaseTaken", room1_AmmoIncreaseTaken ? 1 : 0);
         PlayerPrefs.SetInt("room2_HealthIncreaseTaken", room2_HealthIncreaseTaken ? 1 : 0);
         PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", room2_AmmoIncreaseTaken ? 1 : 0);
 
@@ -612,6 +629,8 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("room1_HiddenOpen", 0);
 
         // permanent upgrades
+        PlayerPrefs.SetInt("room1_HealthIncreaseTaken", 0);
+        PlayerPrefs.SetInt("room1_AmmoIncreaseTaken", 0);
         PlayerPrefs.SetInt("room2_HealthIncreaseTaken", 0);
         PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", 0);
 
@@ -638,6 +657,8 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("room1_HiddenOpen", 1);
 
         // permanent upgrades
+        PlayerPrefs.SetInt("room1_HealthIncreaseTaken", 1);
+        PlayerPrefs.SetInt("room1_AmmoIncreaseTaken", 1);
         PlayerPrefs.SetInt("room2_HealthIncreaseTaken", 1);
         PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", 1);
 

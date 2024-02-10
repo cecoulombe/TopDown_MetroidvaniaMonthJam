@@ -111,6 +111,7 @@ public class Room1 : MonoBehaviour
 
             #region Permanent Upgrades: Health
             room1_HealthUpgradeTaken = GameStatus.GetInstance().GetUpgradeState(currentRoom, "Health");
+            Debug.Log("Room 1 health and ammo resp: " + room1_HealthUpgradeTaken + room1_AmmoUpgradeTaken);
             if (!room1_HealthUpgradeTaken)
             {
                 // the health upgrade has not been picked up, so turn it on
@@ -120,9 +121,7 @@ public class Room1 : MonoBehaviour
             {
                 room1_HealthUpgrade.SetActive(false);
             }
-            #endregion
 
-            #region Permanent Upgrades: Ammo
             room1_AmmoUpgradeTaken = GameStatus.GetInstance().GetUpgradeState(currentRoom, "Ammo");
             if (!room1_AmmoUpgradeTaken)
             {
