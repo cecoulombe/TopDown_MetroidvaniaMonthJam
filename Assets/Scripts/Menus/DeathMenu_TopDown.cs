@@ -22,6 +22,9 @@ public class DeathMenu_TopDown : MonoBehaviour
 
     public void QuitToMainMenu()
     {
+        GameStatus.GetInstance().SetSaveRoom();
         SceneManager.LoadScene(mainMenu_TopDown);
+        GameStatus.GetInstance().AddHealth(GameStatus.GetInstance().GetMaxHealth());
+        GameStatus.GetInstance().AddAmmo(GameStatus.GetInstance().GetMaxAmmo());
     }
 }
