@@ -9,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
     {
         // have a popup to confirm that they want to erase the previous save file and start a new game
         GameStatus.GetInstance().ResetPlayerPrefs();
+        GameStatus.GetInstance().LoadSettings();
         SceneManager.LoadScene(FirstRoom);         // replace this with whatever you end up making the first level of the game
 
     }

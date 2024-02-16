@@ -645,7 +645,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("room2_HealthIncreaseTaken", 0);
         PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", 0);
 
-        //PlayerPrefs.Save();
+        PlayerPrefs.Save();
     }
 
     public void GiveAllPlayerPrefs()  // use this to reset the player prefs when testing stuff but remove the hot key in the final version - a version of this will be used to make multiple save files
