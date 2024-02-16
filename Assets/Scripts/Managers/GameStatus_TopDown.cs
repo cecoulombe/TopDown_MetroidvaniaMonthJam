@@ -87,7 +87,7 @@ public class GameStatus : MonoBehaviour
     [Header("Player health stats")]
     private bool resetPrefs = false;
 
-    protected string saveRoom_prefs;
+    protected string saveRoom;
     #endregion
 
     // making a class which can keep track of certain game states (i.e. what abilities the player has, how many times they have died, if a gate has been opened at some point?)
@@ -154,6 +154,7 @@ public class GameStatus : MonoBehaviour
 
     private void OnDestroy()
     {
+        SetSaveRoom();
         PlayerPrefs.Save();
         Debug.Log("game status destroyed");
     }
@@ -167,6 +168,11 @@ public class GameStatus : MonoBehaviour
     public bool GetGamePaused()
     {
         return gamePaused;
+    }
+
+    public string GetSaveRoom()
+    {
+        return saveRoom;
     }
     #endregion
 
@@ -560,7 +566,7 @@ public class GameStatus : MonoBehaviour
         maxHealth = PlayerPrefs.GetFloat("maxHealth");
         maxAmmo = PlayerPrefs.GetFloat("maxAmmo");
         deathCounter = PlayerPrefs.GetInt("deathCounter");
-        saveRoom_prefs = PlayerPrefs.GetString("saveRoom");
+        saveRoom = PlayerPrefs.GetString("saveRoom");
 
         // permanent abilities
         hasDash = PlayerPrefs.GetInt("hasDash") == 1;
@@ -607,6 +613,11 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", room2_AmmoIncreaseTaken ? 1 : 0);
 
         //PlayerPrefs.Save();
+    }
+
+    public void SetSaveRoom()
+    {
+        PlayerPrefs.SetString("saveRoom", GetCurrentRoom());
     }
 
     public void ResetPlayerPrefs()  // use this to reset the player prefs when testing stuff but remove the hot key in the final version - a version of this will be used to make multiple save files

@@ -42,6 +42,7 @@ public class PauseMenu : MonoBehaviour
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;
+        GameStatus.GetInstance().SetSaveRoom();
         GameStatus.GetInstance().SetGamePaused(false);
         pauseMenu.SetActive(false);
         SceneManager.LoadScene(MainMenu);

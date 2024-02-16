@@ -7,7 +7,9 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadScene(string sceneName)
     {
-        GameStatus.GetInstance().SetPreviousRoom(GameStatus.GetInstance().GetCurrentRoom());
+        string currentRoom = GameStatus.GetInstance().GetCurrentRoom();
+        GameStatus.GetInstance().SetPreviousRoom(currentRoom);
+
         SceneManager.LoadScene(sceneName);
     }
 
