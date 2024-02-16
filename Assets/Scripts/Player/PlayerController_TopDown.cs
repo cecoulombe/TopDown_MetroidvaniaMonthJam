@@ -133,7 +133,8 @@ public class PlayerController_TopDown : MonoBehaviour
         {
             TakeDamage(playerMaxHealth);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKey(KeyCode.Space))
         {
             Debug.Log("pausing the game");
             GameStatus.GetInstance().SetGamePaused(true);

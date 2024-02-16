@@ -11,12 +11,12 @@ public class MainMenuManager : MonoBehaviour
         GameStatus.GetInstance().ResetPlayerPrefs();
         GameStatus.GetInstance().LoadSettings();
         SceneManager.LoadScene(FirstRoom);         // replace this with whatever you end up making the first level of the game
-
     }
 
     public void ContinueGame()
     {
         string saveRoom = GameStatus.GetInstance().GetSaveRoom();
+        Debug.Log("continuing the game from room: " + saveRoom);
         SceneManager.LoadScene(saveRoom);
     }
 
@@ -27,7 +27,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("quitting the game");
+        Debug.Log("Quitting the game");
         Application.Quit();
     }
 }

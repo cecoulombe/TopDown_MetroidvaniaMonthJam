@@ -17,12 +17,8 @@ public class PauseMenu : MonoBehaviour
 
         if(gamePaused)
         {
+            Debug.Log("opening the pause menu");
             PauseGame();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && gamePaused)
-        {
-            ResumeGame();
         }
     }
 

@@ -29,7 +29,6 @@ public class GameStatus : MonoBehaviour
     [SerializeField]
     protected string previousRoom;
 
-    [SerializeField]
     protected bool gamePaused;
 
     [Header("Player state bools")]
@@ -87,7 +86,7 @@ public class GameStatus : MonoBehaviour
     [Header("Player health stats")]
     private bool resetPrefs = false;
 
-    protected string saveRoom;
+    //protected string saveRoom;
     #endregion
 
     // making a class which can keep track of certain game states (i.e. what abilities the player has, how many times they have died, if a gate has been opened at some point?)
@@ -163,6 +162,7 @@ public class GameStatus : MonoBehaviour
     public void SetGamePaused(bool pausedStatus)
     {
         gamePaused = pausedStatus;
+        Debug.Log("game Paused" + gamePaused);
     }
 
     public bool GetGamePaused()
@@ -170,10 +170,6 @@ public class GameStatus : MonoBehaviour
         return gamePaused;
     }
 
-    public string GetSaveRoom()
-    {
-        return saveRoom;
-    }
     #endregion
 
     #region Health and Damage Functions
@@ -566,7 +562,7 @@ public class GameStatus : MonoBehaviour
         maxHealth = PlayerPrefs.GetFloat("maxHealth");
         maxAmmo = PlayerPrefs.GetFloat("maxAmmo");
         deathCounter = PlayerPrefs.GetInt("deathCounter");
-        saveRoom = PlayerPrefs.GetString("saveRoom");
+        //saveRoom = PlayerPrefs.GetString("saveRoom");
 
         // permanent abilities
         hasDash = PlayerPrefs.GetInt("hasDash") == 1;
@@ -617,7 +613,17 @@ public class GameStatus : MonoBehaviour
 
     public void SetSaveRoom()
     {
-        PlayerPrefs.SetString("saveRoom", GetCurrentRoom());
+        if (GetCurrentRoom() != "MainMenu")
+        {
+            PlayerPrefs.SetString("saveRoom", GetCurrentRoom());
+        }
+        PlayerPrefs.Save();
+        Debug.Log("save room is " + PlayerPrefs.GetString("saveRoom"));
+    }
+
+    public string GetSaveRoom()
+    {
+        return PlayerPrefs.GetString("saveRoom");
     }
 
     public void ResetPlayerPrefs()  // use this to reset the player prefs when testing stuff but remove the hot key in the final version - a version of this will be used to make multiple save files
