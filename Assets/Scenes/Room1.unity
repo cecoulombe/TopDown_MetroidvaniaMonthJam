@@ -2678,9 +2678,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.495283, b: 0.495283, a: 1}
+    m_PressedColor: {r: 0.6509434, g: 0.095185116, b: 0.095185116, a: 1}
+    m_SelectedColor: {r: 0.9803922, g: 0.49411768, b: 0.49411768, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3004,9 +3004,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.6084906, g: 0.6572739, b: 1, a: 1}
+    m_PressedColor: {r: 0.075694196, g: 0.16519366, b: 0.764151, a: 1}
+    m_SelectedColor: {r: 0.60784316, g: 0.65882355, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -6056,9 +6056,17 @@ PrefabInstance:
       value: Pause Manager
       objectReference: {fileID: 0}
     - target: {fileID: 7281192635395856044, guid: 98668206863f64eb0b9aa34c40120239, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 6285183518217105376}
+    - target: {fileID: 7281192635395856044, guid: 98668206863f64eb0b9aa34c40120239, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 656053404}
+    - target: {fileID: 7281192635395856044, guid: 98668206863f64eb0b9aa34c40120239, type: 3}
+      propertyPath: pauseFirstButton
+      value: 
+      objectReference: {fileID: 1870518103}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10331,6 +10339,10 @@ PrefabInstance:
       propertyPath: sceneLoader
       value: 
       objectReference: {fileID: 1437012187}
+    - target: {fileID: 988179584425403682, guid: 54bd42e7082964277b662630d5e8b31b, type: 3}
+      propertyPath: deathFirstButton
+      value: 
+      objectReference: {fileID: 1536884224}
     - target: {fileID: 6228308192647938156, guid: 54bd42e7082964277b662630d5e8b31b, type: 3}
       propertyPath: m_Name
       value: Death Manager

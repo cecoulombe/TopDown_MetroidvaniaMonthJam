@@ -4981,6 +4981,10 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1365376461}
+    - target: {fileID: 7281192635395856044, guid: 98668206863f64eb0b9aa34c40120239, type: 3}
+      propertyPath: pauseFirstButton
+      value: 
+      objectReference: {fileID: 1753497502}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5323,9 +5327,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.6462264, g: 0.82461745, b: 1, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.754717, b: 0.07768721, a: 1}
     m_PressedColor: {r: 0.4481132, g: 0.5842228, b: 1, a: 1}
-    m_SelectedColor: {r: 0.44705886, g: 0.58431375, b: 1, a: 1}
+    m_SelectedColor: {r: 0, g: 0.13816403, b: 0.5566038, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
