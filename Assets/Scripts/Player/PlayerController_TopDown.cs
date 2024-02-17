@@ -11,6 +11,8 @@ public class PlayerController_TopDown : MonoBehaviour
     protected Rigidbody2D rb;
     protected Collider2D col;
 
+    Animator anim;
+
     [Header("Player state bools")]
     [SerializeField]
     private bool isWalking;
@@ -119,6 +121,7 @@ public class PlayerController_TopDown : MonoBehaviour
     void Start()
     {
         Initialization();
+        anim = GetComponent<Animator>();
         activeMoveSpeed = walkSpeed;
 
     }
@@ -141,6 +144,7 @@ public class PlayerController_TopDown : MonoBehaviour
         }
 
         Inputs();
+        Animate();
         Flip();
         Dash();
 
@@ -221,6 +225,18 @@ public class PlayerController_TopDown : MonoBehaviour
 
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
+
+    }
+    #endregion
+
+    #region Animations
+    private void Animate()
+    {
+        anim.SetFloat("MoveX", input.x);
+        anim.SetFloat("MoveY", input.y);
+        anim.SetFloat("MoveMagnitude", input.magnitude);
+        anim.SetFloat("LastMoveX", lastMoveDirection.x);
+        anim.SetFloat("LastMoveY", lastMoveDirection.y);
 
 
     }
