@@ -139,10 +139,10 @@ TextureImporter:
       name: RedRock_TileSet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 168
-        width: 32
-        height: 32
+        x: 6
+        y: 34
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: RedRock_TileSet_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 168
-        width: 32
-        height: 32
+        x: 12
+        y: 35
+        width: 3
+        height: 3
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,19 +181,27 @@ TextureImporter:
       name: RedRock_TileSet_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 168
-        width: 32
-        height: 32
+        x: 0
+        y: 167
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -67.5}
+        - {x: 111.5, y: 0}
+        - {x: 0, y: 67.5}
+        - {x: -111.5, y: 0}
+      physicsShape:
+      - - {x: 0, y: -67.5}
+        - {x: 111.5, y: 0}
+        - {x: 0, y: 67.5}
+        - {x: -111.5, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: f0d32e74bc6d74787839794885b596a3
-      internalID: 1068300411
+      spriteID: 27132f058c03e443db17ce2eacf8e2fa
+      internalID: -1847679951
       vertices: []
       indices: 
       edges: []
@@ -202,10 +210,10 @@ TextureImporter:
       name: RedRock_TileSet_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 168
-        width: 32
-        height: 32
+        x: 32
+        y: 167
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc1fcb1ddc48143389d50a3fc5a36192
-      internalID: 1326487370
+      spriteID: 3bcbe628abae64fcf9bb7e5b78c6d091
+      internalID: 373884121
       vertices: []
       indices: 
       edges: []
@@ -223,10 +231,10 @@ TextureImporter:
       name: RedRock_TileSet_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 168
-        width: 32
-        height: 32
+        x: 64
+        y: 167
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed88eab9b089f45669b814d288e106a8
-      internalID: -1342176773
+      spriteID: 90586ea3569c246fab5ce26a8fe6064a
+      internalID: -670387430
       vertices: []
       indices: 
       edges: []
@@ -244,10 +252,10 @@ TextureImporter:
       name: RedRock_TileSet_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 168
-        width: 32
-        height: 32
+        x: 96
+        y: 167
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 830dc1e97c0e947539c0359c0de78bdc
-      internalID: 1474621008
+      spriteID: 890b009f1cdca43baa985c810d8eef6a
+      internalID: 1036963731
       vertices: []
       indices: 
       edges: []
@@ -265,10 +273,10 @@ TextureImporter:
       name: RedRock_TileSet_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 168
-        width: 32
-        height: 32
+        x: 128
+        y: 167
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9107cf47c7d4a459bb7d3c0e0cc85917
-      internalID: 1749204742
+      spriteID: 691097b8f7cfd449d8c8fede634b39a6
+      internalID: 1604024790
       vertices: []
       indices: 
       edges: []
@@ -286,10 +294,10 @@ TextureImporter:
       name: RedRock_TileSet_7
       rect:
         serializedVersion: 2
-        x: 225
-        y: 168
-        width: 31
-        height: 32
+        x: 160
+        y: 167
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbba39b8044d249f1899f900e8da2747
-      internalID: -300752841
+      spriteID: 742d50d19833049f9802a908c946ccf8
+      internalID: 1976285595
       vertices: []
       indices: 
       edges: []
@@ -307,10 +315,10 @@ TextureImporter:
       name: RedRock_TileSet_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 136
-        width: 32
-        height: 32
+        x: 192
+        y: 167
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,8 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe6ae8b0e75eb498dabd94e26c0450ac
-      internalID: -741065790
+      spriteID: 5262bf63b841d4f669b017fcbe19ee84
+      internalID: 2035688463
       vertices: []
       indices: 
       edges: []
@@ -328,134 +336,8 @@ TextureImporter:
       name: RedRock_TileSet_9
       rect:
         serializedVersion: 2
-        x: 32
-        y: 136
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c2d9f3190d7344fd96c1d0f375de7fe
-      internalID: -369771011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_10
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 136
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd7ebc7358a184c488d485ab16838169
-      internalID: 684257727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_11
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 136
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f49d92c2ac574d74b93496016fc99f9
-      internalID: 1748675347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_12
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 136
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26bb84680d9b14c88a689ff3ca7e4dee
-      internalID: -1795295314
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_13
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 136
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8714f46a0952c4567997d5e181662b64
-      internalID: 342709227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_14
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 34
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 874e71c2b432c4a639e8e78c15995bcc
-      internalID: 1422297989
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_15
-      rect:
-        serializedVersion: 2
         x: 225
-        y: 136
+        y: 167
         width: 31
         height: 32
       alignment: 0
@@ -465,98 +347,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e59f9afbbfd04c23b6336ece9429f05
-      internalID: 1264761892
+      spriteID: 0ba5f927df4ab43b69b6d5a3e1833ba7
+      internalID: 1819026733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20a15d197a3c24f88bb7d8ff9e6ef218
+      internalID: -1039091900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 135
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c663c461d78a45be8a96f3eafa7ca50
+      internalID: 867464131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 135
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3770e35d4f741a4a21587e215b5568
+      internalID: -1070455521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 135
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0efbeb2ab4f14d418f89766431cf152
+      internalID: -1792751823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 135
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816b2e233ac314a14bd89065ab484adf
+      internalID: 127428309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_15
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 135
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6901ae91ed7ac40e2884f36a9b16b130
+      internalID: -1957809309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: RedRock_TileSet_16
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 104
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45717be7fbee54fb39bd91983826827c
-      internalID: -162121921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_17
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 104
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04b2734a1d00e48bf9f42acc3a689f75
-      internalID: -775085575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_18
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 104
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f506377f53bbf4c5c87c6161cb4c888a
-      internalID: -1862710138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_19
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 104
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92f1fe836302b4701aa1df1f825efae1
-      internalID: 611725062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_20
       rect:
         serializedVersion: 2
         x: 10
@@ -570,60 +494,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2393dcab6b4a34247b3c06615d28abf8
-      internalID: 561052458
+      spriteID: 168f00607d48e4d4992cacebaca07447
+      internalID: -787913051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedRock_TileSet_21
+      name: RedRock_TileSet_17
       rect:
         serializedVersion: 2
-        x: 160
-        y: 104
-        width: 33
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ac8f67190d874017a3e5092918cd165
-      internalID: 1261420691
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_22
-      rect:
-        serializedVersion: 2
-        x: 46
-        y: 39
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec07d00eb0eec45c8969a95007795db1
-      internalID: -715404355
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_23
-      rect:
-        serializedVersion: 2
-        x: 225
-        y: 103
+        x: 223
+        y: 135
         width: 31
         height: 32
       alignment: 0
@@ -633,20 +515,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a251fa2fd0bdd4e08a74469c3b16f46c
-      internalID: -1521301508
+      spriteID: 43472376331a941f59dfd947052e2b72
+      internalID: -199256330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedRock_TileSet_24
+      name: RedRock_TileSet_18
       rect:
         serializedVersion: 2
         x: 0
-        y: 72
-        width: 32
-        height: 32
+        y: 103
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -654,20 +536,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7a83968281d9414a91a931d5ea12231
-      internalID: 1511083074
+      spriteID: 8830e640e0aa04a4dba987e654a2001e
+      internalID: -711688142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedRock_TileSet_25
+      name: RedRock_TileSet_19
       rect:
         serializedVersion: 2
         x: 32
-        y: 72
-        width: 32
-        height: 32
+        y: 103
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -675,20 +557,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d8e573e390574bf3af1cc53b1672174
-      internalID: 437059586
+      spriteID: 1bbda7643732c4c8f883247bed92ae32
+      internalID: 611736251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedRock_TileSet_26
+      name: RedRock_TileSet_20
       rect:
         serializedVersion: 2
         x: 64
-        y: 72
-        width: 32
-        height: 32
+        y: 103
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -696,20 +578,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44db92c110c6340bd957a29a61d914bf
-      internalID: 1240829674
+      spriteID: c86e9d228cec548f9b3d5e87c10e9447
+      internalID: 624392133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedRock_TileSet_27
+      name: RedRock_TileSet_21
       rect:
         serializedVersion: 2
         x: 96
-        y: 72
-        width: 32
-        height: 32
+        y: 103
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -717,161 +599,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5298da5d2b8734a9fb4ca113a0ab6dc2
-      internalID: 1636042210
+      spriteID: a1cbcb3d49b264826b934d63db60eb24
+      internalID: -1157982491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedRock_TileSet_28
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 39
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2abefaffd024b44eeafca3f15df8f51c
-      internalID: -427736332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_29
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 72
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e0f43b13df3a45dbac65844b6202bc4
-      internalID: 1133788098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_30
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 72
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f61e9e6d3e2624b6a8e2fee46f68c316
-      internalID: -1253145036
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_31
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 39
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7bcdafce5bd84d6d89f69f473f5e9f6
-      internalID: 663108490
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_32
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 56
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9b678df0de5646d4b631481727466ac
-      internalID: 99197868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_33
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 56
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a020bf35bf7e245d3a4eb02646d35194
-      internalID: 1351378730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_34
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 56
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcc3b3d2c357049488118f6583e7385e
-      internalID: 192014187
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_35
+      name: RedRock_TileSet_22
       rect:
         serializedVersion: 2
         x: 43
@@ -885,20 +620,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9406ed73524547769a172e95dc9ea26
-      internalID: 1780529204
+      spriteID: 41335f9ebf6cd48f2ae5368720f07d5d
+      internalID: -429233633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedRock_TileSet_36
+      name: RedRock_TileSet_23
       rect:
         serializedVersion: 2
-        x: 1
-        y: 50
-        width: 6
-        height: 6
+        x: 160
+        y: 104
+        width: 33
+        height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -906,35 +641,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: beca37418b59245b7909bd18fa6c78a1
-      internalID: -840908189
+      spriteID: 0f1a7a70c7cf44b2aa7aa6401bb54128
+      internalID: -1443860401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedRock_TileSet_37
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 39
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3202e72f561a7484197350309f7c1d5f
-      internalID: 1726868822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedRock_TileSet_38
+      name: RedRock_TileSet_24
       rect:
         serializedVersion: 2
         x: 19
@@ -948,14 +662,119 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6253c00d1bcd94ad2818d824d5c46adb
-      internalID: 193682240
+      spriteID: d8d75eba8e55542ac82730570427fafd
+      internalID: -1047906675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedRock_TileSet_39
+      name: RedRock_TileSet_25
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 103
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb2c7ca46d144bbd8e4128610c40578
+      internalID: 2040548273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 71
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440104ddd95f143f18e4e12c946c05c7
+      internalID: -912846451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_27
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 71
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de372553d3b0494dba8769e389cb7a5
+      internalID: -1736967860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 71
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0b477c604714783b57773bee5f014f
+      internalID: 297878540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_29
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 71
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17c2be3e57f44be588fe7b2765200f0
+      internalID: 1014882305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_30
       rect:
         serializedVersion: 2
         x: 7
@@ -969,8 +788,239 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83cb6f5b080e94754a53826377b1a47e
-      internalID: 1924701019
+      spriteID: 7d497a3b2c7b7462b9f45cf205b06988
+      internalID: 1802604646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_31
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 71
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ece18d2677fc4231abc6d53d1108cb4
+      internalID: 126042363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_32
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 71
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758ab532bbd7c4801a1656ede3dca627
+      internalID: -641543869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_33
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 39
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562a4cb36d926464cac8ea2041a2b963
+      internalID: -388162193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_34
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 56
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e6ae54f1fc642c6af8b5ad1c43061b
+      internalID: 1356789847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_35
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 56
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538ea3e1baaaf48f8bc81bfcd04cb37e
+      internalID: 1439500911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_36
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 56
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b6710078f3b4724baaec44317e0a94
+      internalID: 2108699146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_37
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 50
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d1bf1e83ff84a9080abfad2444c2a8
+      internalID: 1349217218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_38
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 39
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec8b1a1f025d4ea28ffc2198ab4dfc8
+      internalID: 23107967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_39
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 39
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e287fb5b950490fbd303ee511e7801
+      internalID: 1562212814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_40
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 39
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd7cfa8f7875413ab2b0c1f4a827c4b
+      internalID: 586369002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRock_TileSet_41
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 34
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6ebed68c5964bb9b569d1f07913736
+      internalID: 1982549599
       vertices: []
       indices: 
       edges: []
@@ -988,44 +1038,46 @@ TextureImporter:
     nameFileIdTable:
       RedRock_TileSet_0: -493313064
       RedRock_TileSet_1: -1115957961
-      RedRock_TileSet_10: 684257727
-      RedRock_TileSet_11: 1748675347
-      RedRock_TileSet_12: -1795295314
-      RedRock_TileSet_13: 342709227
-      RedRock_TileSet_14: 1422297989
-      RedRock_TileSet_15: 1264761892
-      RedRock_TileSet_16: -162121921
-      RedRock_TileSet_17: -775085575
-      RedRock_TileSet_18: -1862710138
-      RedRock_TileSet_19: 611725062
-      RedRock_TileSet_2: 1068300411
-      RedRock_TileSet_20: 561052458
-      RedRock_TileSet_21: 1261420691
-      RedRock_TileSet_22: -715404355
-      RedRock_TileSet_23: -1521301508
-      RedRock_TileSet_24: 1511083074
-      RedRock_TileSet_25: 437059586
-      RedRock_TileSet_26: 1240829674
-      RedRock_TileSet_27: 1636042210
-      RedRock_TileSet_28: -427736332
-      RedRock_TileSet_29: 1133788098
-      RedRock_TileSet_3: 1326487370
-      RedRock_TileSet_30: -1253145036
-      RedRock_TileSet_31: 663108490
-      RedRock_TileSet_32: 99197868
-      RedRock_TileSet_33: 1351378730
-      RedRock_TileSet_34: 192014187
-      RedRock_TileSet_35: 1780529204
-      RedRock_TileSet_36: -840908189
-      RedRock_TileSet_37: 1726868822
-      RedRock_TileSet_38: 193682240
-      RedRock_TileSet_39: 1924701019
-      RedRock_TileSet_4: -1342176773
-      RedRock_TileSet_5: 1474621008
-      RedRock_TileSet_6: 1749204742
-      RedRock_TileSet_7: -300752841
-      RedRock_TileSet_8: -741065790
-      RedRock_TileSet_9: -369771011
+      RedRock_TileSet_10: -1039091900
+      RedRock_TileSet_11: 867464131
+      RedRock_TileSet_12: -1070455521
+      RedRock_TileSet_13: -1792751823
+      RedRock_TileSet_14: 127428309
+      RedRock_TileSet_15: -1957809309
+      RedRock_TileSet_16: -787913051
+      RedRock_TileSet_17: -199256330
+      RedRock_TileSet_18: -711688142
+      RedRock_TileSet_19: 611736251
+      RedRock_TileSet_2: -1847679951
+      RedRock_TileSet_20: 624392133
+      RedRock_TileSet_21: -1157982491
+      RedRock_TileSet_22: -429233633
+      RedRock_TileSet_23: -1443860401
+      RedRock_TileSet_24: -1047906675
+      RedRock_TileSet_25: 2040548273
+      RedRock_TileSet_26: -912846451
+      RedRock_TileSet_27: -1736967860
+      RedRock_TileSet_28: 297878540
+      RedRock_TileSet_29: 1014882305
+      RedRock_TileSet_3: 373884121
+      RedRock_TileSet_30: 1802604646
+      RedRock_TileSet_31: 126042363
+      RedRock_TileSet_32: -641543869
+      RedRock_TileSet_33: -388162193
+      RedRock_TileSet_34: 1356789847
+      RedRock_TileSet_35: 1439500911
+      RedRock_TileSet_36: 2108699146
+      RedRock_TileSet_37: 1349217218
+      RedRock_TileSet_38: 23107967
+      RedRock_TileSet_39: 1562212814
+      RedRock_TileSet_4: -670387430
+      RedRock_TileSet_40: 586369002
+      RedRock_TileSet_41: 1982549599
+      RedRock_TileSet_5: 1036963731
+      RedRock_TileSet_6: 1604024790
+      RedRock_TileSet_7: 1976285595
+      RedRock_TileSet_8: 2035688463
+      RedRock_TileSet_9: 1819026733
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
