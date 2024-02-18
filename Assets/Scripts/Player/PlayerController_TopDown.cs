@@ -78,6 +78,23 @@ public class PlayerController_TopDown : MonoBehaviour
     public bool knockFromRight;
     #endregion
 
+    #region Healing Variables
+    [Header("Healing Variables")]
+    [SerializeReference]
+    private float healthGain;
+
+    [SerializeField]
+    private float ammoCost;
+
+    [SerializeField]
+    private float buttonHeldMinimum;
+
+    private float buttonHeldDuration;
+
+    public GameObject healingAnim;
+
+    #endregion
+
     // Attack variables contains all variables for both types of attacks done by the player (melee and ranged)
     #region Attack Variables
     [Header("Attack Variables")]
@@ -143,9 +160,22 @@ public class PlayerController_TopDown : MonoBehaviour
             GameStatus.GetInstance().SetGamePaused(true);
         }
 
+        if (Input.GetKey(KeyCode.H))
+        {
+            buttonHeldDuration += 1f;
+            Healing();
+            return;
+        }
+        else
+        {
+            buttonHeldDuration = 0;
+            healingAnim.SetActive(false);
+        }
+
         Inputs();
         Animate();
         Flip();
+        
         Dash();
 
         if (playerHealth <= 0.01)
@@ -255,6 +285,28 @@ public class PlayerController_TopDown : MonoBehaviour
         }
     }
     #endregion
+
+    #region Healing
+    private void Healing()
+    {
+        // heal the player at the cost of ammo
+        if(GameStatus.GetInstance().HasHealing() && GameStatus.GetInstance().GetAmmo() > 0 && playerHealth != playerMaxHealth)
+        {
+            if(buttonHeldDuration >= buttonHeldMinimum)
+            {
+                //start healing and losing ammo
+                healingAnim.SetActive(true);
+                GameStatus.GetInstance().AddHealth(healthGain);
+                GameStatus.GetInstance().ShootBullets(ammoCost);
+            }
+        }
+        else
+        {
+            healingAnim.SetActive(false);
+        }
+    }
+    #endregion
+
 
     #region Dash
     private void Dash()     // the base dash will allow the player to "jump" gaps and evade attacks but will not give i-frames
@@ -371,7 +423,7 @@ public class PlayerController_TopDown : MonoBehaviour
                 shootTimer = 0;
                 GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation);
                 intBullet.GetComponent<Rigidbody2D>().AddForce(-Aim.up * fireForce, ForceMode2D.Impulse);
-                GameStatus.GetInstance().ShootBullets();
+                GameStatus.GetInstance().ShootBullets(1);
                 Destroy(intBullet, 2f);
             }
         }

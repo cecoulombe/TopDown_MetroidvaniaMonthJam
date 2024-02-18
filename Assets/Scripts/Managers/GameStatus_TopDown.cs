@@ -40,6 +40,8 @@ public class GameStatus : MonoBehaviour
     protected bool hasMelee;
     [SerializeField]
     protected bool hasRanged;
+    [SerializeField]
+    protected bool hasHealing;
 
     #endregion
 
@@ -233,9 +235,9 @@ public class GameStatus : MonoBehaviour
     }
 
 
-    public void ShootBullets()
+    public void ShootBullets(float bullets)
     {
-        ammoCount -= 1;
+        ammoCount -= bullets;
     }
 
     public void AddMaxAmmo(float ammoIncrease)
@@ -294,6 +296,16 @@ public class GameStatus : MonoBehaviour
     public bool HasRanged()
     {
         return hasRanged;
+    }
+
+    public void SetHasHealing(bool healing)
+    {
+        hasHealing = healing;
+    }
+
+    public bool HasHealing()
+    {
+        return hasHealing;
     }
     #endregion
 
@@ -491,6 +503,11 @@ public class GameStatus : MonoBehaviour
             Debug.Log("player has ranged attack? ");
             return hasRanged;
         }
+        else if (pickup == "healing")
+        {
+            Debug.Log("player has healing ");
+            return hasHealing;
+        }
         else
         {
             return false;
@@ -531,25 +548,26 @@ public class GameStatus : MonoBehaviour
         {
             Debug.Log("giving the player dash");
             SetHasDash(true);
-            //hasDash = true;
         }
         else if(pickup == "iDash")
         {
             Debug.Log("giving the player invincible dash");
             SetHasInvincibleDash(true);
-            //hasDash = true;
         }
         else if (pickup == "melee")
         {
             Debug.Log("giving the player ranged attack");
             SetHasMelee(true);
-            //hasDash = true;
         }
         else if (pickup == "ranged")
         {
             Debug.Log("giving the player ranged attack");
             SetHasRanged(true);
-            //hasDash = true;
+        }
+        else if (pickup == "healing")
+        {
+            Debug.Log("giving the player healing");
+            SetHasHealing(true);
         }
     }
     #endregion
@@ -569,6 +587,7 @@ public class GameStatus : MonoBehaviour
         hasInvincibleDash = PlayerPrefs.GetInt("hasInvincibleDash") == 1;
         hasMelee = PlayerPrefs.GetInt("hasMelee") == 1;
         hasRanged = PlayerPrefs.GetInt("hasRanged") == 1;
+        hasHealing = PlayerPrefs.GetInt("hasHealing") == 1;
 
         // gates/chests/upgrades/secret doors
         room1_enemyGateOpen = PlayerPrefs.GetInt("room1_enemyGateOpen") == 1;
@@ -595,6 +614,8 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("hasInvincibleDash", HasInvincibleDash() ? 1 : 0);
         PlayerPrefs.SetInt("hasMelee", HasMelee() ? 1 : 0);
         PlayerPrefs.SetInt("hasRanged", HasRanged() ? 1 : 0);
+        PlayerPrefs.SetInt("hasHealing", HasHealing() ? 1 : 0);
+
 
         // doors and everything else
         PlayerPrefs.SetInt("room1_enemyGateOpen", room1_enemyGateOpen ? 1 : 0);
@@ -638,6 +659,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("hasInvincibleDash", 0);
         PlayerPrefs.SetInt("hasMelee", 0);
         PlayerPrefs.SetInt("hasRanged", 0);
+        PlayerPrefs.SetInt("hasHealing", 0);
 
         // doors and everything else
         PlayerPrefs.SetInt("room1_enemyGateOpen", 0);
@@ -666,6 +688,8 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("hasInvincibleDash", 1);
         PlayerPrefs.SetInt("hasMelee", 1);
         PlayerPrefs.SetInt("hasRanged", 1);
+        PlayerPrefs.SetInt("hasHealing", 1);
+
 
         // doors and everything else
         PlayerPrefs.SetInt("room1_enemyGateOpen", 1);
@@ -689,6 +713,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("hasInvincibleDash", 1);
         PlayerPrefs.SetInt("hasMelee", 1);
         PlayerPrefs.SetInt("hasRanged", 1);
+        PlayerPrefs.SetInt("hasHealing", 1);
     }
     #endregion
 
