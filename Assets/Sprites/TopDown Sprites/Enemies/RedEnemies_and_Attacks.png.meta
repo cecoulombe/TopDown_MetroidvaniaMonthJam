@@ -144,7 +144,7 @@ TextureImporter:
         width: 43
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,7 +165,7 @@ TextureImporter:
         width: 44
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,7 +186,7 @@ TextureImporter:
         width: 43
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,7 +207,7 @@ TextureImporter:
         width: 44
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -228,7 +228,7 @@ TextureImporter:
         width: 41
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,6 +236,132 @@ TextureImporter:
       bones: []
       spriteID: 92424bb86aecb467294fc5485e1c1049
       internalID: 72113060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedEnemies_and_Attacks_5
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 110
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f21c9abc3f7437b887dd0153bcdcea
+      internalID: -860711885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedEnemies_and_Attacks_6
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 110
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f2c05ff0ffa4bf09181164dd50be52
+      internalID: -1026911518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedEnemies_and_Attacks_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 110
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b6681e07e59470fb515a33d5fc5f47
+      internalID: -991179157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedEnemies_and_Attacks_8
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 110
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 062ab78565b4743a6b3d1edb74a0fa96
+      internalID: 1093120175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedEnemies_and_Attacks_9
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 69
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef41ae0d2a5ef49319cdcbe4d31afa7d
+      internalID: 1363660060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedEnemies_and_Attacks_10
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 69
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ecccf5617c546cdae4b97ea0b74462
+      internalID: -141577146
       vertices: []
       indices: 
       edges: []
@@ -253,9 +379,15 @@ TextureImporter:
     nameFileIdTable:
       RedEnemies_and_Attacks_0: -406733434
       RedEnemies_and_Attacks_1: -52809648
+      RedEnemies_and_Attacks_10: -141577146
       RedEnemies_and_Attacks_2: -264370939
       RedEnemies_and_Attacks_3: -1309619827
       RedEnemies_and_Attacks_4: 72113060
+      RedEnemies_and_Attacks_5: -860711885
+      RedEnemies_and_Attacks_6: -1026911518
+      RedEnemies_and_Attacks_7: -991179157
+      RedEnemies_and_Attacks_8: 1093120175
+      RedEnemies_and_Attacks_9: 1363660060
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

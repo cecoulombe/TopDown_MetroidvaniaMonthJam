@@ -16,6 +16,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     private Transform Aim;
 
+    Animator anim;
+
     [Header("Movement Variables")]
     [SerializeField]
     public float moveSpeed;
@@ -89,6 +91,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         target = GameObject.Find("Player").transform;
         health = maxHealth;
         moveSpeed = defaultSpeed;
@@ -130,6 +133,7 @@ public class EnemyHealth : MonoBehaviour
             isWalking = false;
             moveDirection = new Vector3(0f, 0f, 0f);
         }
+        Animate();
     }
 
     private void FixedUpdate()
@@ -143,7 +147,6 @@ public class EnemyHealth : MonoBehaviour
         if (isWalking)
         {
             Aim.rotation = Quaternion.LookRotation(Vector3.forward, -lastMoveDirection);
-
         }
 
         if (isAwake && !isPatternWalker) //target && 
@@ -167,6 +170,19 @@ public class EnemyHealth : MonoBehaviour
             }
         }
     }
+
+    #region Animations
+    private void Animate()
+    {
+        anim.SetFloat("MoveX", moveDirection.x);
+        anim.SetFloat("MoveY", moveDirection.y);
+        anim.SetFloat("MoveMagnitude", moveDirection.magnitude);
+        anim.SetFloat("LastMoveX", lastMoveDirection.x);
+        anim.SetFloat("LastMoveY", lastMoveDirection.y);
+
+
+    }
+    #endregion
 
     private IEnumerator DelayBeforeMoving()
     {
