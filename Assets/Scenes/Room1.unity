@@ -182,7 +182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2878226728462299625, guid: 8bd1bfc31e06641cdbda70032500cc76, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3180124408987137196, guid: 8bd1bfc31e06641cdbda70032500cc76, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4687,6 +4687,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 146248662414860277, guid: 8554ebd6118894f33a2f7716ea76201b, type: 3}
   m_PrefabInstance: {fileID: 1541520922}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1644515558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6758732952953410838, guid: 8bd1bfc31e06641cdbda70032500cc76, type: 3}
+  m_PrefabInstance: {fileID: 31561744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3534d29dd97d4375a29cb1a055bf7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1680131075
 GameObject:
   m_ObjectHideFlags: 0
@@ -6876,6 +6887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyList:
   - {fileID: 1787039178982152789}
+  - {fileID: 1644515558}
   player: {fileID: 6285183518217105376}
   spawnPoint: {fileID: 1240157899}
   room2_LoadingZone: {fileID: 1532354102}
