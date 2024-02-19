@@ -31,6 +31,19 @@ public class EnemyWeapon_TopDown : MonoBehaviour
             damangeMultiplier = bulletDamage;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+       if(other.gameObject.CompareTag("Wall"))
+        {
+            if(weaponType == WeaponType.Bullet)
+            {
+                Debug.Log("shooting a wall");
+                Destroy(gameObject);
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerController_TopDown player = collision.GetComponent<PlayerController_TopDown>();

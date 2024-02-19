@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5957637126692221657}
   - component: {fileID: 6077214255734061450}
   - component: {fileID: 8336160622786841458}
-  - component: {fileID: 4073760661095269932}
   - component: {fileID: 1744576904417193837}
   - component: {fileID: 4751742258011269628}
+  - component: {fileID: 8449130310821234139}
   m_Layer: 0
   m_Name: Spread Shot Enemy
   m_TagString: Untagged
@@ -116,7 +116,71 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &4073760661095269932
+--- !u!114 &1744576904417193837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244812335564898564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe37976bb51a4b4e8b36b95d6db722e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guns: []
+  patternSpeed: 0
+  myHealth: {fileID: 4751742258011269628}
+  pointA: {fileID: 6494033740833249977}
+  pointB: {fileID: 6481968380584528883}
+  contactDamage: 0
+  playerController: {fileID: 0}
+  Aim: {fileID: 4944970806378744392}
+  bullet: {fileID: 2609964779410368697, guid: 0d81a5adc69054da39e0f592da93e4f1, type: 3}
+  fireForce: 10
+  shootCoolDown: 1
+  shootTimer: 0.5
+  minRangePercent: 0
+  maxRangePercent: 1
+--- !u!114 &4751742258011269628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244812335564898564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3534d29dd97d4375a29cb1a055bf7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDead: 0
+  isAwake: 0
+  isDamaged: 0
+  Aim: {fileID: 4944970806378744392}
+  moveSpeed: 0
+  defaultSpeed: 0
+  attackCoolDown: 0
+  loseAggroRange: 15
+  isWalking: 0
+  inRange: 0
+  isPatternWalker: 0
+  wakeUpPercent: 0.7
+  health: 3
+  maxHealth: 3
+  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
+  bigHealthChance: 14
+  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  smallHealthChance: 30
+  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+  bigAmmoChance: 0
+  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+  smallAmmoChance: 0
+  knockBackForce: 3
+  knockBackCounter: 0
+  knockBackTotalTime: 0.2
+  knockFromRight: 0
+--- !u!60 &8449130310821234139
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,75 +224,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.25}
-      - {x: -0.5, y: 0}
-      - {x: 0, y: -0.25}
-      - {x: 0.5, y: 0}
+    - - {x: -0.43359375, y: 0.25}
+      - {x: -0.43359375, y: -0.25}
+      - {x: 0, y: -0.5}
+      - {x: 0.43359375, y: -0.25}
+      - {x: 0.43359375, y: 0.25}
+      - {x: 0, y: 0.5}
   m_UseDelaunayMesh: 0
---- !u!114 &1744576904417193837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244812335564898564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fe37976bb51a4b4e8b36b95d6db722e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  guns: []
-  patternSpeed: 3
-  myHealth: {fileID: 4751742258011269628}
-  pointA: {fileID: 6494033740833249977}
-  pointB: {fileID: 6481968380584528883}
-  contactDamage: 0
-  playerController: {fileID: 0}
-  Aim: {fileID: 4944970806378744392}
-  bullet: {fileID: 2609964779410368697, guid: 0d81a5adc69054da39e0f592da93e4f1, type: 3}
-  fireForce: 10
-  shootCoolDown: 0.5
-  shootTimer: 0.5
-  minRangePercent: 0
-  maxRangePercent: 1
---- !u!114 &4751742258011269628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244812335564898564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3534d29dd97d4375a29cb1a055bf7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDead: 0
-  isAwake: 0
-  isDamaged: 0
-  Aim: {fileID: 4944970806378744392}
-  moveSpeed: 0
-  defaultSpeed: 0
-  attackCoolDown: 0
-  loseAggroRange: 15
-  isWalking: 0
-  inRange: 0
-  isPatternWalker: 0
-  wakeUpPercent: 0.95
-  health: 3
-  maxHealth: 3
-  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 25
-  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 50
-  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 25
-  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 50
-  knockBackForce: 3
-  knockBackCounter: 0
-  knockBackTotalTime: 0.2
-  knockFromRight: 0
 --- !u!1 &1029774658735272997
 GameObject:
   m_ObjectHideFlags: 0

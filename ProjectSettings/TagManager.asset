@@ -10,6 +10,7 @@ TagManager:
   - Door
   - BreakableWall
   - HiddenWall
+  - Wall
   layers:
   - Default
   - TransparentFX
