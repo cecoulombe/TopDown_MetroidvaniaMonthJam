@@ -94,7 +94,7 @@ public class Room_Template : MonoBehaviour
     {
 
         currentRoom = SceneManager.GetActiveScene().name;
-        if (currentRoom == "room name")
+        if (currentRoom == "roomName")
         {
             #region Gates
             roomNumber_enemyGateOpen = GameStatus.GetInstance().GetGateState(currentRoom);

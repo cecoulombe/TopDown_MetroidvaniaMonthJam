@@ -64,18 +64,14 @@ public class GameStatus : MonoBehaviour
     protected bool room1_HealthIncreaseTaken;
     [SerializeField]
     protected bool room1_AmmoIncreaseTaken;
-    [SerializeField]
-    protected bool room2_HealthIncreaseTaken;
-    [SerializeField]
-    protected bool room2_AmmoIncreaseTaken;
 
     [Header("Breakable Walls")]
     [SerializeField]
-    protected bool room2_wallOpen;
+    protected bool GameStart_wallOpen;
 
     [Header("Hidden Rooms")]
     [SerializeField]
-    protected bool room1_HiddenOpen;
+    protected bool GameStart_HiddenOpen;
     #endregion
 
     #region Player Prefs Variables
@@ -124,7 +120,7 @@ public class GameStatus : MonoBehaviour
     private void Update()
     {
         string currentRoom = SceneManager.GetActiveScene().name;
-        GetGateState(currentRoom);
+        //GetGateState(currentRoom);
 
         if(Input.GetKey(KeyCode.T))
         {
@@ -133,19 +129,19 @@ public class GameStatus : MonoBehaviour
             resetPrefs = true;
         }
 
-        if(Input.GetKey(KeyCode.Y))
-        {
-            Debug.Log("giving movement abilities");
-            GiveAbilitiesPlayerPrefs();
-            resetPrefs = true;
-        }
+        //if(Input.GetKey(KeyCode.Y))
+        //{
+        //    Debug.Log("giving movement abilities");
+        //    GiveAbilitiesPlayerPrefs();
+        //    resetPrefs = true;
+        //}
 
-        if (Input.GetKey(KeyCode.U))
-        {
-            Debug.Log("giving everything");
-            GiveAllPlayerPrefs();
-            resetPrefs = true;
-        }
+        //if (Input.GetKey(KeyCode.U))
+        //{
+        //    Debug.Log("giving everything");
+        //    GiveAllPlayerPrefs();
+        //    resetPrefs = true;
+        //}
 
         if (!resetPrefs)
         {
@@ -344,10 +340,10 @@ public class GameStatus : MonoBehaviour
         }
     }
 
-    // do the same thing for set, but take in the name of the thing set it to true
+     //do the same thing for set, but take in the name of the thing set it to true
     public void SetGateState(string roomName)
     {
-        if(roomName == "Room1")
+        if (roomName == "Room1")
         {
             Debug.Log("Opening the gate in room 1");
             room1_enemyGateOpen = true;
@@ -382,10 +378,10 @@ public class GameStatus : MonoBehaviour
     #region Breakable Walls
     public bool GetWallState(string roomName)
     {
-        if (roomName == "Room2")
+        if (roomName == "GameStart")
         {
-            Debug.Log("from game status" + room2_wallOpen);
-            return room2_wallOpen;
+            Debug.Log("from game status" + GameStart_wallOpen);
+            return GameStart_wallOpen;
         }
         else
         {
@@ -396,9 +392,9 @@ public class GameStatus : MonoBehaviour
 
     public void SetWallState(string roomName)
     {
-        if (roomName == "Room2")
+        if (roomName == "GameStart")
         {
-            room2_wallOpen = true;
+            GameStart_wallOpen = true;
         }
     }
     #endregion
@@ -406,10 +402,10 @@ public class GameStatus : MonoBehaviour
     #region Hidden Rooms
     public bool GetHiddenState(string roomName)
     {
-        if (roomName == "Room1")
+        if (roomName == "GameStart")
         {
-            Debug.Log("from game status" + room1_HiddenOpen);
-            return room1_HiddenOpen;
+            Debug.Log("from game status" + GameStart_HiddenOpen);
+            return GameStart_HiddenOpen;
         }
         else
         {
@@ -420,37 +416,12 @@ public class GameStatus : MonoBehaviour
 
     public void SetHiddenState(string roomName)
     {
-        if (roomName == "Room1")
+        if (roomName == "GameStart")
         {
-            room1_HiddenOpen = true;
+            GameStart_HiddenOpen = true;
         }
     }
     #endregion
-
-    //#region Doors
-    //public bool GetDoorsState(string roomName)
-    //{
-    //    //if (roomName == "Room2")
-    //    //{
-    //    //    return false;
-    //    //}
-    //    //else
-    //    //{
-    //    //    return false
-    //    //}
-    //    Debug.Log("there are currently no doors, calling this was a probably mistake");
-    //    return false;
-    //}
-
-    //public void SetDoorsState(string roomName)
-    //{
-    //    //if (roomName == "Room2")
-    //    //{
-    //    //    room2_chestOpen = true;
-    //    //}
-    //    Debug.Log("there are currently no doors, calling this was a probably mistake");
-    //}
-    //#endregion
 
     // this structure can be used for any of the permanent pick ups/upgrades including the ability to dash and attack
     #region Permanent Upgrades
@@ -458,28 +429,15 @@ public class GameStatus : MonoBehaviour
     {
         if (roomName == "Room1")
         {
-            if(pickup == "Health")
+            if (pickup == "Health")
             {
                 Debug.Log("room1_HealthIncrease" + room1_HealthIncreaseTaken);
-                return room2_HealthIncreaseTaken;
+                return room1_HealthIncreaseTaken;
             }
             else if (pickup == "Ammo")
             {
                 Debug.Log("room1_AmmoIncrease" + room1_AmmoIncreaseTaken);
-                return room2_AmmoIncreaseTaken;
-            }
-        }
-        if (roomName == "Room2")
-        {
-            if (pickup == "Health")
-            {
-                Debug.Log("room2_HealthIncrease" + room2_HealthIncreaseTaken);
-                return room2_HealthIncreaseTaken;
-            }
-            else if (pickup == "Ammo")
-            {
-                Debug.Log("room2_AmmoIncrease" + room2_AmmoIncreaseTaken);
-                return room2_AmmoIncreaseTaken;
+                return room1_AmmoIncreaseTaken;
             }
         }
 
@@ -514,7 +472,7 @@ public class GameStatus : MonoBehaviour
         }
     }
 
-    // do the same thing for set, but take in the name of the thing set it to true
+     //do the same thing for set, but take in the name of the thing set it to true
     public void SetUpgradeState(string roomName, string pickup)
     {
         if (roomName == "Room1")
@@ -530,26 +488,12 @@ public class GameStatus : MonoBehaviour
                 room1_AmmoIncreaseTaken = true;
             }
         }
-        if (roomName == "Room2")
-        {
-            if (pickup == "Health")
-            {
-                Debug.Log("room2_HealthIncrease has been picked up");
-                room2_HealthIncreaseTaken = true;
-            }
-            else if (pickup == "Ammo")
-            {
-                Debug.Log("room2_AmmoIncrease has been picked up");
-                room2_AmmoIncreaseTaken = true;
-            }
-        }
-
-        if(pickup == "dash")
+        if (pickup == "dash")
         {
             Debug.Log("giving the player dash");
             SetHasDash(true);
         }
-        else if(pickup == "iDash")
+        else if (pickup == "iDash")
         {
             Debug.Log("giving the player invincible dash");
             SetHasInvincibleDash(true);
@@ -590,16 +534,11 @@ public class GameStatus : MonoBehaviour
         hasHealing = PlayerPrefs.GetInt("hasHealing") == 1;
 
         // gates/chests/upgrades/secret doors
-        room1_enemyGateOpen = PlayerPrefs.GetInt("room1_enemyGateOpen") == 1;
-        room2_chestOpen = PlayerPrefs.GetInt("room2_chestOpen") == 1;
-        room2_wallOpen = PlayerPrefs.GetInt("room2_wallOpen") == 1;
-        room1_HiddenOpen = PlayerPrefs.GetInt("room1_HiddenOpen") == 1;
+        GameStart_wallOpen = PlayerPrefs.GetInt("GameStart_wallOpen") == 1;
+        GameStart_HiddenOpen = PlayerPrefs.GetInt("GameStart_HiddenOpen") == 1;
 
         // permanent upgrades
-        room1_HealthIncreaseTaken = PlayerPrefs.GetInt("room1_HealthIncreaseTaken") == 1;
-        room1_AmmoIncreaseTaken = PlayerPrefs.GetInt("room1_AmmoIncreaseTaken") == 1;
-        room2_HealthIncreaseTaken = PlayerPrefs.GetInt("room2_HealthIncreaseTaken") == 1;
-        room2_AmmoIncreaseTaken = PlayerPrefs.GetInt("room2_AmmoIncreaseTaken") == 1;
+        //room1_HealthIncreaseTaken = PlayerPrefs.GetInt("room1_HealthIncreaseTaken") == 1;
     }
 
     public void SetPlayerPrefs()
@@ -618,16 +557,11 @@ public class GameStatus : MonoBehaviour
 
 
         // doors and everything else
-        PlayerPrefs.SetInt("room1_enemyGateOpen", room1_enemyGateOpen ? 1 : 0);
-        PlayerPrefs.SetInt("room2_chestOpen", room2_chestOpen ? 1 : 0);
-        PlayerPrefs.SetInt("room2_wallOpen", room2_wallOpen ? 1 : 0);
-        PlayerPrefs.SetInt("room1_HiddenOpen", room1_HiddenOpen ? 1 : 0);
+        PlayerPrefs.SetInt("GameStart_wallOpen", GameStart_wallOpen ? 1 : 0);
+        PlayerPrefs.SetInt("GameStart_HiddenOpen", GameStart_HiddenOpen ? 1 : 0);
 
         // permanent upgrades
-        PlayerPrefs.SetInt("room1_HealthIncreaseTaken", room1_HealthIncreaseTaken ? 1 : 0);
-        PlayerPrefs.SetInt("room1_AmmoIncreaseTaken", room1_AmmoIncreaseTaken ? 1 : 0);
-        PlayerPrefs.SetInt("room2_HealthIncreaseTaken", room2_HealthIncreaseTaken ? 1 : 0);
-        PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", room2_AmmoIncreaseTaken ? 1 : 0);
+        //PlayerPrefs.SetInt("room1_HealthIncreaseTaken", room1_HealthIncreaseTaken ? 1 : 0);
 
         //PlayerPrefs.Save();
     }
@@ -662,59 +596,49 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("hasHealing", 0);
 
         // doors and everything else
-        PlayerPrefs.SetInt("room1_enemyGateOpen", 0);
-        PlayerPrefs.SetInt("room2_chestOpen", 0);
-        PlayerPrefs.SetInt("room2_wallOpen", 0);
-        PlayerPrefs.SetInt("room1_HiddenOpen", 0);
+        PlayerPrefs.SetInt("GameStart_wallOpen", 0);
+        PlayerPrefs.SetInt("GameStart_HiddenOpen", 0);
 
         // permanent upgrades
-        PlayerPrefs.SetInt("room1_HealthIncreaseTaken", 0);
-        PlayerPrefs.SetInt("room1_AmmoIncreaseTaken", 0);
-        PlayerPrefs.SetInt("room2_HealthIncreaseTaken", 0);
-        PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", 0);
+        //PlayerPrefs.SetInt("room1_HealthIncreaseTaken", 0);
 
         PlayerPrefs.Save();
     }
 
-    public void GiveAllPlayerPrefs()  // use this to reset the player prefs when testing stuff but remove the hot key in the final version - a version of this will be used to make multiple save files
-    {
-        //PlayerPrefs.SetFloat("maxHealth" + saveFile, maxHealth);
-        PlayerPrefs.SetFloat("maxHealth", 30);
-        PlayerPrefs.SetFloat("maxAmmo", 30);
-        PlayerPrefs.SetInt("deathCounter", 0);
+    //public void GiveAllPlayerPrefs()  // use this to reset the player prefs when testing stuff but remove the hot key in the final version - a version of this will be used to make multiple save files
+    //{
+    //    //PlayerPrefs.SetFloat("maxHealth" + saveFile, maxHealth);
+    //    PlayerPrefs.SetFloat("maxHealth", 30);
+    //    PlayerPrefs.SetFloat("maxAmmo", 30);
+    //    PlayerPrefs.SetInt("deathCounter", 0);
 
-        // player states
-        PlayerPrefs.SetInt("hasDash", 1);
-        PlayerPrefs.SetInt("hasInvincibleDash", 1);
-        PlayerPrefs.SetInt("hasMelee", 1);
-        PlayerPrefs.SetInt("hasRanged", 1);
-        PlayerPrefs.SetInt("hasHealing", 1);
+    //    // player states
+    //    PlayerPrefs.SetInt("hasDash", 1);
+    //    PlayerPrefs.SetInt("hasInvincibleDash", 1);
+    //    PlayerPrefs.SetInt("hasMelee", 1);
+    //    PlayerPrefs.SetInt("hasRanged", 1);
+    //    PlayerPrefs.SetInt("hasHealing", 1);
 
 
-        // doors and everything else
-        PlayerPrefs.SetInt("room1_enemyGateOpen", 1);
-        PlayerPrefs.SetInt("room2_chestOpen", 1);
-        PlayerPrefs.SetInt("room2_wallOpen", 1);
-        PlayerPrefs.SetInt("room1_HiddenOpen", 1);
+    //    // doors and everything else
+    //    PlayerPrefs.SetInt("room2_wallOpen", 1);
+    //    PlayerPrefs.SetInt("room1_HiddenOpen", 1);
 
-        // permanent upgrades
-        PlayerPrefs.SetInt("room1_HealthIncreaseTaken", 1);
-        PlayerPrefs.SetInt("room1_AmmoIncreaseTaken", 1);
-        PlayerPrefs.SetInt("room2_HealthIncreaseTaken", 1);
-        PlayerPrefs.SetInt("room2_AmmoIncreaseTaken", 1);
+    //    // permanent upgrades
+    //    //PlayerPrefs.SetInt("room1_HealthIncreaseTaken", 1);
 
-        //PlayerPrefs.Save();
-    }
+    //    //PlayerPrefs.Save();
+    //}
 
-    private void GiveAbilitiesPlayerPrefs()
-    {
-        // player states
-        PlayerPrefs.SetInt("hasDash", 1);
-        PlayerPrefs.SetInt("hasInvincibleDash", 1);
-        PlayerPrefs.SetInt("hasMelee", 1);
-        PlayerPrefs.SetInt("hasRanged", 1);
-        PlayerPrefs.SetInt("hasHealing", 1);
-    }
+    //private void GiveAbilitiesPlayerPrefs()
+    //{
+    //    // player states
+    //    PlayerPrefs.SetInt("hasDash", 1);
+    //    PlayerPrefs.SetInt("hasInvincibleDash", 1);
+    //    PlayerPrefs.SetInt("hasMelee", 1);
+    //    PlayerPrefs.SetInt("hasRanged", 1);
+    //    PlayerPrefs.SetInt("hasHealing", 1);
+    //}
     #endregion
 
     public static GameStatus GetInstance()
