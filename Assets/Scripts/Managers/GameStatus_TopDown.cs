@@ -53,7 +53,7 @@ public class GameStatus : MonoBehaviour
     [Header("Gates/doors/chests tracking")]
     [Header("Enemy Gates")]
     [SerializeField]
-    protected bool room1_enemyGateOpen;
+    protected bool Anger1_enemyGateOpen;
 
     [Header("Chests")]
     [SerializeField]
@@ -72,6 +72,8 @@ public class GameStatus : MonoBehaviour
     [Header("Hidden Rooms")]
     [SerializeField]
     protected bool GameStart_HiddenOpen;
+    [SerializeField]
+    protected bool Anger2_HiddenOpen;
     #endregion
 
     #region Player Prefs Variables
@@ -120,7 +122,7 @@ public class GameStatus : MonoBehaviour
     private void Update()
     {
         string currentRoom = SceneManager.GetActiveScene().name;
-        //GetGateState(currentRoom);
+        GetGateState(currentRoom);
 
         if(Input.GetKey(KeyCode.T))
         {
@@ -328,10 +330,10 @@ public class GameStatus : MonoBehaviour
     #region Gates
     public bool GetGateState(string roomName)
     {
-        if (roomName == "Room1")
+        if (roomName == "Anger1")
         {
-            Debug.Log(room1_enemyGateOpen);
-            return room1_enemyGateOpen;
+            Debug.Log(Anger1_enemyGateOpen);
+            return Anger1_enemyGateOpen;
         }
         else
         {
@@ -343,10 +345,10 @@ public class GameStatus : MonoBehaviour
      //do the same thing for set, but take in the name of the thing set it to true
     public void SetGateState(string roomName)
     {
-        if (roomName == "Room1")
+        if (roomName == "Anger1")
         {
             Debug.Log("Opening the gate in room 1");
-            room1_enemyGateOpen = true;
+            Anger1_enemyGateOpen = true;
         }
     }
     #endregion
@@ -407,6 +409,11 @@ public class GameStatus : MonoBehaviour
             Debug.Log("from game status" + GameStart_HiddenOpen);
             return GameStart_HiddenOpen;
         }
+        else if (roomName == "Anger2")
+        {
+            Debug.Log("from game status" + Anger2_HiddenOpen);
+            return Anger2_HiddenOpen;
+        }
         else
         {
             Debug.Log("cannot find the current room, returning true");
@@ -419,6 +426,10 @@ public class GameStatus : MonoBehaviour
         if (roomName == "GameStart")
         {
             GameStart_HiddenOpen = true;
+        }
+        if (roomName == "Anger2")
+        {
+            Anger2_HiddenOpen = true;
         }
     }
     #endregion
@@ -536,6 +547,8 @@ public class GameStatus : MonoBehaviour
         // gates/chests/upgrades/secret doors
         GameStart_wallOpen = PlayerPrefs.GetInt("GameStart_wallOpen") == 1;
         GameStart_HiddenOpen = PlayerPrefs.GetInt("GameStart_HiddenOpen") == 1;
+        Anger1_enemyGateOpen = PlayerPrefs.GetInt("Anger1_enemyGateOpen") == 1;
+        Anger2_HiddenOpen = PlayerPrefs.GetInt("Anger2_HiddenOpen") == 1;
 
         // permanent upgrades
         //room1_HealthIncreaseTaken = PlayerPrefs.GetInt("room1_HealthIncreaseTaken") == 1;
@@ -559,7 +572,8 @@ public class GameStatus : MonoBehaviour
         // doors and everything else
         PlayerPrefs.SetInt("GameStart_wallOpen", GameStart_wallOpen ? 1 : 0);
         PlayerPrefs.SetInt("GameStart_HiddenOpen", GameStart_HiddenOpen ? 1 : 0);
-
+        PlayerPrefs.SetInt("Anger1_enemyGateOpen", Anger1_enemyGateOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Anger2_HiddenOpen", Anger2_HiddenOpen ? 1 : 0);
         // permanent upgrades
         //PlayerPrefs.SetInt("room1_HealthIncreaseTaken", room1_HealthIncreaseTaken ? 1 : 0);
 
@@ -598,6 +612,8 @@ public class GameStatus : MonoBehaviour
         // doors and everything else
         PlayerPrefs.SetInt("GameStart_wallOpen", 0);
         PlayerPrefs.SetInt("GameStart_HiddenOpen", 0);
+        PlayerPrefs.SetInt("Anger1_enemyGateOpen", 0);
+        PlayerPrefs.SetInt("Anger2_HiddenOpen", 0);
 
         // permanent upgrades
         //PlayerPrefs.SetInt("room1_HealthIncreaseTaken", 0);
