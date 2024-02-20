@@ -307,10 +307,10 @@ TextureImporter:
       name: RedEnemies_and_Attacks_8
       rect:
         serializedVersion: 2
-        x: 92
-        y: 110
-        width: 18
-        height: 32
+        x: 52
+        y: 85
+        width: 8
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +328,10 @@ TextureImporter:
       name: RedEnemies_and_Attacks_9
       rect:
         serializedVersion: 2
-        x: 5
-        y: 69
-        width: 25
-        height: 37
+        x: 2
+        y: 76
+        width: 27
+        height: 27
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,10 +349,10 @@ TextureImporter:
       name: RedEnemies_and_Attacks_10
       rect:
         serializedVersion: 2
-        x: 34
-        y: 69
+        x: 33
+        y: 85
         width: 27
-        height: 38
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

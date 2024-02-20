@@ -9,22 +9,20 @@ public class GunScript : MonoBehaviour
 
     public Vector2 direction;
 
-    public Vector2 playerLocation;
+    public Vector2 centerLocation;
 
     [SerializeField]
-    private float fireForce = 10f;
+    private float fireForce = 1f;
 
     private void Update()
     {
-        direction = (transform.localRotation * playerLocation).normalized;
+        direction = (transform.localRotation * -centerLocation).normalized;
     }
 
     public void Shoot()
     {
         GameObject go = Instantiate(bullet.gameObject, transform.position, Quaternion.identity);
         SpreadBullet goBullet = go.GetComponent<SpreadBullet>();
-
-
 
         // Set the bullet's velocity towards the player
         go.GetComponent<Rigidbody2D>().velocity = direction * fireForce;

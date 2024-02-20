@@ -176,7 +176,17 @@ public class EnemyHealth : MonoBehaviour
     {
         anim.SetFloat("MoveX", moveDirection.x);
         anim.SetFloat("MoveY", moveDirection.y);
-        anim.SetFloat("MoveMagnitude", moveDirection.magnitude);
+
+        if(isWalking)
+        {
+            anim.SetFloat("MoveMagnitude", 1);
+        }
+        else
+        {
+            anim.SetFloat("MoveMagnitude", 0);
+
+        }
+        //anim.SetFloat("MoveMagnitude", rb.velocity.magnitude);
         anim.SetFloat("LastMoveX", lastMoveDirection.x);
         anim.SetFloat("LastMoveY", lastMoveDirection.y);
 

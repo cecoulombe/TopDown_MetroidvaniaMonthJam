@@ -152,7 +152,7 @@ public class SpreadShotEnemy : MonoBehaviour
 
             foreach (GunScript gun in guns)
             {
-                gun.playerLocation = target.transform.position;
+                gun.centerLocation = this.transform.position;
                 gun.Shoot();
             }
         }
