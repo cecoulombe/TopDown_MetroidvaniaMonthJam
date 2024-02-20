@@ -49,9 +49,9 @@ public class Anger6 : MonoBehaviour
     [Header("Permanent Upgrades")]
     [Header("Melee")]
     [SerializeField]
-    private GameObject Anger2_MeleeUpgrade;
+    private GameObject Anger6_MeleeUpgrade;
     [SerializeField]
-    private bool Anger2_MeleeUpgradeTaken;
+    private bool Anger6_MeleeUpgradeTaken;
     #endregion
 
     private void Start()
@@ -84,26 +84,9 @@ public class Anger6 : MonoBehaviour
 
     private void Update()
     {
-
         currentRoom = SceneManager.GetActiveScene().name;
         if (currentRoom == "roomName")
         {
-            #region Gates
-            Anger6_enemyGateOpen = GameStatus.GetInstance().GetGateState(currentRoom);
-            if (!Anger6_enemyGateOpen)  // the gate is not open, so keep it closed and hide the room after
-            {
-                Debug.Log("closed gate");
-                Anger6_EnemyGate.SetActive(true);
-                Anger6_RoomAfterGate.SetActive(false);
-            }
-            else    // the gate is already open, so get rid of it and show the room after
-            {
-                Debug.Log("open gate");
-                Anger6_EnemyGate.SetActive(false);
-                Anger6_RoomAfterGate.SetActive(true);
-            }
-            #endregion
-
             #region Hidden Rooms
             Anger2_and6_HiddenOpen = GameStatus.GetInstance().GetHiddenState(currentRoom);
             if (!Anger2_and6_HiddenOpen)  // the wall is closed
@@ -121,17 +104,32 @@ public class Anger6 : MonoBehaviour
             #endregion
 
             #region Permanent Upgrades: Melee
-            Anger2_MeleeUpgradeTaken = GameStatus.GetInstance().GetUpgradeState(currentRoom, "Melee");
-            if (!Anger2_MeleeUpgradeTaken)
+            Anger6_MeleeUpgradeTaken = GameStatus.GetInstance().GetUpgradeState(currentRoom, "Melee");
+            if (!Anger6_MeleeUpgradeTaken)
             {
                 // the health upgrade has not been picked up, so turn it on
-                Anger2_MeleeUpgrade.SetActive(true);
-                Enemies();
+                Anger6_MeleeUpgrade.SetActive(true);
+                Anger6_EnemyGate.SetActive(false);
             }
             else
             {
-                Anger6_EnemyGate.SetActive(true);
-                Anger2_MeleeUpgrade.SetActive(false);
+                Anger6_MeleeUpgrade.SetActive(false);
+                #region Gates
+                Anger6_enemyGateOpen = GameStatus.GetInstance().GetGateState(currentRoom);
+                if (!Anger6_enemyGateOpen)  // the gate is not open, so keep it closed and hide the room after
+                {
+                    Debug.Log("closed gate");
+                    Anger6_EnemyGate.SetActive(true);
+                    Anger6_RoomAfterGate.SetActive(false);
+                }
+                else    // the gate is already open, so get rid of it and show the room after
+                {
+                    Debug.Log("open gate");
+                    Anger6_EnemyGate.SetActive(false);
+                    Anger6_RoomAfterGate.SetActive(true);
+                }
+                #endregion
+                Enemies();
             }
             #endregion
         }

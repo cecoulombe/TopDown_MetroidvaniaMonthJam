@@ -5584,9 +5584,9 @@ MonoBehaviour:
   Anger1_LoadingZone: {fileID: 217814655}
   Anger3_LoadingZone: {fileID: 697420362}
   Anger6_LoadingZone: {fileID: 421703086}
-  Anger2_Hidden_Closed: {fileID: 968906718}
-  Anger2_Hidden_Opened: {fileID: 1002137026}
-  Anger2_HiddenOpen: 0
+  Anger2_and6_Hidden_Closed: {fileID: 968906718}
+  Anger2_and6_Hidden_Opened: {fileID: 1002137026}
+  Anger2_and6_HiddenOpen: 0
 --- !u!1001 &833345004
 PrefabInstance:
   m_ObjectHideFlags: 0

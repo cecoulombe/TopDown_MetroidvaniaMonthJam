@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRoom: Anger4
-  sceneLoader: {fileID: 0}
+  sceneLoader: {fileID: 196117957}
 --- !u!61 &30001175
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1076,7 +1076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 150095213}
   m_Layer: 0
-  m_Name: Anger1_LoadingZone
+  m_Name: Anger2_LoadingZone
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1091,7 +1091,7 @@ Transform:
   m_GameObject: {fileID: 150095212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.65, y: 3.97, z: 0}
+  m_LocalPosition: {x: 2.08, y: 3.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1350,11 +1350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1854552320202556599, guid: 17d39701a3ea34204af06547cbe85149, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.1
+      value: -60.54
       objectReference: {fileID: 0}
     - target: {fileID: 1854552320202556599, guid: 17d39701a3ea34204af06547cbe85149, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.1
+      value: 8.07
       objectReference: {fileID: 0}
     - target: {fileID: 1854552320202556599, guid: 17d39701a3ea34204af06547cbe85149, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5192,6 +5192,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 146248662414860277, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
   m_PrefabInstance: {fileID: 709060138}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &723987375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1985900085209205504, guid: 17d39701a3ea34204af06547cbe85149, type: 3}
+  m_PrefabInstance: {fileID: 187558152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &732617312
 GameObject:
   m_ObjectHideFlags: 0
@@ -6369,6 +6374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864948669}
+  - component: {fileID: 864948670}
   m_Layer: 0
   m_Name: RoomManager
   m_TagString: Untagged
@@ -6391,6 +6397,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1131129303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &864948670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864948668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d3f0fa25d5b44598034cc3d7062f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList: []
+  player: {fileID: 898157023}
+  spawnPoint: {fileID: 2137706288}
+  Anger5_LoadingZone: {fileID: 850423045}
+  Anger2_LoadingZone: {fileID: 150095212}
+  Anger7_LoadingZone: {fileID: 748480677}
+  Anger6_EnemyGate: {fileID: 1791530499}
+  Anger6_RoomAfterGate: {fileID: 54120132}
+  Anger6_enemyGateOpen: 0
+  Anger2_and6_Hidden_Closed: {fileID: 753447019}
+  Anger2_and6_Hidden_Opened: {fileID: 1336268314}
+  Anger2_and6_HiddenOpen: 0
+  Anger6_MeleeUpgrade: {fileID: 723987375}
+  Anger6_MeleeUpgradeTaken: 0
 --- !u!1001 &866186787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9328,7 +9360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRoom: Anger5
-  sceneLoader: {fileID: 0}
+  sceneLoader: {fileID: 196117957}
 --- !u!61 &1255919947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13299,7 +13331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1877752244
 Transform:
   m_ObjectHideFlags: 0
@@ -14067,7 +14099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRoom: Anger2
-  sceneLoader: {fileID: 0}
+  sceneLoader: {fileID: 196117957}
 --- !u!61 &2066896214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14967,7 +14999,7 @@ Transform:
   m_GameObject: {fileID: 2137706288}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.7, y: 3.2, z: 0}
+  m_LocalPosition: {x: -1.8, y: 3.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
