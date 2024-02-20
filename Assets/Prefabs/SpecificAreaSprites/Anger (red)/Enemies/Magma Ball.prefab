@@ -340,7 +340,7 @@ MonoBehaviour:
   isDamaged: 0
   Aim: {fileID: 132617652703165701}
   moveSpeed: 0
-  defaultSpeed: 0
+  defaultSpeed: -1
   attackCoolDown: 0
   loseAggroRange: 20
   isWalking: 0

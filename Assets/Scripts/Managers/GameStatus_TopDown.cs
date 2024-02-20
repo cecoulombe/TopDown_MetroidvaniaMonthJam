@@ -54,6 +54,8 @@ public class GameStatus : MonoBehaviour
     [Header("Enemy Gates")]
     [SerializeField]
     protected bool Anger1_enemyGateOpen;
+    [SerializeField]
+    protected bool Anger4_enemyGateOpen;
 
     [Header("Chests")]
     [SerializeField]
@@ -61,7 +63,7 @@ public class GameStatus : MonoBehaviour
 
     [Header("Permanent Increases")]
     [SerializeField]
-    protected bool room1_HealthIncreaseTaken;
+    protected bool Anger4_HealthIncreaseTaken;
     [SerializeField]
     protected bool room1_AmmoIncreaseTaken;
 
@@ -74,6 +76,8 @@ public class GameStatus : MonoBehaviour
     protected bool GameStart_HiddenOpen;
     [SerializeField]
     protected bool Anger2_HiddenOpen;
+    [SerializeField]
+    protected bool Anger4_HiddenOpen;
     #endregion
 
     #region Player Prefs Variables
@@ -244,18 +248,6 @@ public class GameStatus : MonoBehaviour
     }
     #endregion
 
-    //#region Money
-    //public void AddMoney(float moneyEarned)
-    //{
-    //    money += moneyEarned;
-    //}
-
-    //public void LoseMoney(float cost)
-    //{
-    //    money -= cost;
-    //}
-    //#endregion
-
     #region Ability Checks
     public void SetHasDash(bool dash)
     {
@@ -335,6 +327,11 @@ public class GameStatus : MonoBehaviour
             Debug.Log(Anger1_enemyGateOpen);
             return Anger1_enemyGateOpen;
         }
+        if (roomName == "Anger4")
+        {
+            Debug.Log(Anger4_enemyGateOpen);
+            return Anger4_enemyGateOpen;
+        }
         else
         {
             Debug.Log("cannot find the current room, returning true");
@@ -347,8 +344,13 @@ public class GameStatus : MonoBehaviour
     {
         if (roomName == "Anger1")
         {
-            Debug.Log("Opening the gate in room 1");
+            Debug.Log("Opening the gate in anger 1");
             Anger1_enemyGateOpen = true;
+        }
+        else if (roomName == "Anger4")
+        {
+            Debug.Log("Opening the gate in anger 4");
+            Anger4_enemyGateOpen = true;
         }
     }
     #endregion
@@ -414,6 +416,11 @@ public class GameStatus : MonoBehaviour
             Debug.Log("from game status" + Anger2_HiddenOpen);
             return Anger2_HiddenOpen;
         }
+        else if (roomName == "Anger4")
+        {
+            Debug.Log("from game status" + Anger4_HiddenOpen);
+            return Anger4_HiddenOpen;
+        }
         else
         {
             Debug.Log("cannot find the current room, returning true");
@@ -431,6 +438,10 @@ public class GameStatus : MonoBehaviour
         {
             Anger2_HiddenOpen = true;
         }
+        if (roomName == "Anger4")
+        {
+            Anger4_HiddenOpen = true;
+        }
     }
     #endregion
 
@@ -438,17 +449,12 @@ public class GameStatus : MonoBehaviour
     #region Permanent Upgrades
     public bool GetUpgradeState(string roomName, string pickup)
     {
-        if (roomName == "Room1")
+        if (roomName == "Anger4")
         {
             if (pickup == "Health")
             {
-                Debug.Log("room1_HealthIncrease" + room1_HealthIncreaseTaken);
-                return room1_HealthIncreaseTaken;
-            }
-            else if (pickup == "Ammo")
-            {
-                Debug.Log("room1_AmmoIncrease" + room1_AmmoIncreaseTaken);
-                return room1_AmmoIncreaseTaken;
+                Debug.Log("Anger4_HealthIncrease" + Anger4_HealthIncreaseTaken);
+                return Anger4_HealthIncreaseTaken;
             }
         }
 
@@ -486,17 +492,12 @@ public class GameStatus : MonoBehaviour
      //do the same thing for set, but take in the name of the thing set it to true
     public void SetUpgradeState(string roomName, string pickup)
     {
-        if (roomName == "Room1")
+        if (roomName == "Anger4")
         {
             if (pickup == "Health")
             {
-                Debug.Log("room1_HealthIncrease has been picked up");
-                room1_HealthIncreaseTaken = true;
-            }
-            else if (pickup == "Ammo")
-            {
-                Debug.Log("room1_AmmoIncrease has been picked up");
-                room1_AmmoIncreaseTaken = true;
+                Debug.Log("Anger4_HealthIncrease has been picked up");
+                Anger4_HealthIncreaseTaken = true;
             }
         }
         if (pickup == "dash")
@@ -549,9 +550,10 @@ public class GameStatus : MonoBehaviour
         GameStart_HiddenOpen = PlayerPrefs.GetInt("GameStart_HiddenOpen") == 1;
         Anger1_enemyGateOpen = PlayerPrefs.GetInt("Anger1_enemyGateOpen") == 1;
         Anger2_HiddenOpen = PlayerPrefs.GetInt("Anger2_HiddenOpen") == 1;
+        Anger4_HiddenOpen = PlayerPrefs.GetInt("Anger4_HiddenOpen") == 1;
 
         // permanent upgrades
-        //room1_HealthIncreaseTaken = PlayerPrefs.GetInt("room1_HealthIncreaseTaken") == 1;
+        Anger4_HealthIncreaseTaken = PlayerPrefs.GetInt("Anger4_HealthIncreaseTaken") == 1;
     }
 
     public void SetPlayerPrefs()
@@ -574,8 +576,9 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("GameStart_HiddenOpen", GameStart_HiddenOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger1_enemyGateOpen", Anger1_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger2_HiddenOpen", Anger2_HiddenOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Anger4_HiddenOpen", Anger4_HiddenOpen ? 1 : 0);
         // permanent upgrades
-        //PlayerPrefs.SetInt("room1_HealthIncreaseTaken", room1_HealthIncreaseTaken ? 1 : 0);
+        PlayerPrefs.SetInt("Anger4_HealthIncreaseTaken", Anger4_HealthIncreaseTaken ? 1 : 0);
 
         //PlayerPrefs.Save();
     }
@@ -614,9 +617,10 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("GameStart_HiddenOpen", 0);
         PlayerPrefs.SetInt("Anger1_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Anger2_HiddenOpen", 0);
+        PlayerPrefs.SetInt("Anger4_HiddenOpen", 0);
 
         // permanent upgrades
-        //PlayerPrefs.SetInt("room1_HealthIncreaseTaken", 0);
+        PlayerPrefs.SetInt("Anger4_HealthIncreaseTaken", 0);
 
         PlayerPrefs.Save();
     }
