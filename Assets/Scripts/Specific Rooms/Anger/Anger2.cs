@@ -26,11 +26,11 @@ public class Anger2 : MonoBehaviour
     [Header("Gates/doors/chests/breakable walls tracking")]
     [Header("Hidden Walls")]
     [SerializeField]
-    private GameObject Anger2_Hidden_Closed;
+    private GameObject Anger2_and6_Hidden_Closed;
     [SerializeField]
-    private GameObject Anger2_Hidden_Opened;
+    private GameObject Anger2_and6_Hidden_Opened;
     [SerializeField]
-    private bool Anger2_HiddenOpen;
+    private bool Anger2_and6_HiddenOpen;
     #endregion
 
     private void Start()
@@ -63,23 +63,22 @@ public class Anger2 : MonoBehaviour
 
     private void Update()
     {
-
         currentRoom = SceneManager.GetActiveScene().name;
         if (currentRoom == "Anger2")
         {
             #region Hidden Rooms
-            Anger2_HiddenOpen = GameStatus.GetInstance().GetHiddenState(currentRoom);
-            if (!Anger2_HiddenOpen)  // the wall is closed
+            Anger2_and6_HiddenOpen = GameStatus.GetInstance().GetHiddenState(currentRoom);
+            if (!Anger2_and6_HiddenOpen)  // the wall is closed
             {
                 Debug.Log("closed wall");
-                Anger2_Hidden_Closed.SetActive(true);
-                Anger2_Hidden_Opened.SetActive(false);
+                Anger2_and6_Hidden_Closed.SetActive(true);
+                Anger2_and6_Hidden_Opened.SetActive(false);
             }
             else    // open the wall and keep it visually opened after (it will stay open after leaving the room)
             {
                 Debug.Log("open wall");
-                Anger2_Hidden_Closed.SetActive(false);
-                Anger2_Hidden_Opened.SetActive(true);
+                Anger2_and6_Hidden_Closed.SetActive(false);
+                Anger2_and6_Hidden_Opened.SetActive(true);
             }
             #endregion
         }

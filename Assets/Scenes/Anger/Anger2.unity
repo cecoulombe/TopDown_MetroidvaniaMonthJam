@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6b6178d9beb4219b5d414dea0d796f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRoom: MainMenu
+  targetRoom: Anger6
   sceneLoader: {fileID: 1208274412}
 --- !u!61 &2666299
 BoxCollider2D:

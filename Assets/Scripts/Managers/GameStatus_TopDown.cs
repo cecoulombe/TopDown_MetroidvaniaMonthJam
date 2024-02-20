@@ -56,6 +56,8 @@ public class GameStatus : MonoBehaviour
     protected bool Anger1_enemyGateOpen;
     [SerializeField]
     protected bool Anger4_enemyGateOpen;
+    [SerializeField]
+    protected bool Anger5_enemyGateOpen;
 
     [Header("Chests")]
     [SerializeField]
@@ -65,7 +67,7 @@ public class GameStatus : MonoBehaviour
     [SerializeField]
     protected bool Anger4_HealthIncreaseTaken;
     [SerializeField]
-    protected bool room1_AmmoIncreaseTaken;
+    protected bool Anger5_AmmoIncreaseTaken;
 
     [Header("Breakable Walls")]
     [SerializeField]
@@ -75,7 +77,7 @@ public class GameStatus : MonoBehaviour
     [SerializeField]
     protected bool GameStart_HiddenOpen;
     [SerializeField]
-    protected bool Anger2_HiddenOpen;
+    protected bool Anger2_and6_HiddenOpen;
     [SerializeField]
     protected bool Anger4_HiddenOpen;
     #endregion
@@ -327,10 +329,15 @@ public class GameStatus : MonoBehaviour
             Debug.Log(Anger1_enemyGateOpen);
             return Anger1_enemyGateOpen;
         }
-        if (roomName == "Anger4")
+        else if (roomName == "Anger4")
         {
             Debug.Log(Anger4_enemyGateOpen);
             return Anger4_enemyGateOpen;
+        }
+        else if (roomName == "Anger5")
+        {
+            Debug.Log(Anger5_enemyGateOpen);
+            return Anger5_enemyGateOpen;
         }
         else
         {
@@ -351,6 +358,11 @@ public class GameStatus : MonoBehaviour
         {
             Debug.Log("Opening the gate in anger 4");
             Anger4_enemyGateOpen = true;
+        }
+        else if (roomName == "Anger5")
+        {
+            Debug.Log("Opening the gate in anger 5");
+            Anger5_enemyGateOpen = true;
         }
     }
     #endregion
@@ -413,8 +425,8 @@ public class GameStatus : MonoBehaviour
         }
         else if (roomName == "Anger2")
         {
-            Debug.Log("from game status" + Anger2_HiddenOpen);
-            return Anger2_HiddenOpen;
+            Debug.Log("from game status" + Anger2_and6_HiddenOpen);
+            return Anger2_and6_HiddenOpen;
         }
         else if (roomName == "Anger4")
         {
@@ -436,7 +448,7 @@ public class GameStatus : MonoBehaviour
         }
         if (roomName == "Anger2")
         {
-            Anger2_HiddenOpen = true;
+            Anger2_and6_HiddenOpen = true;
         }
         if (roomName == "Anger4")
         {
@@ -455,6 +467,14 @@ public class GameStatus : MonoBehaviour
             {
                 Debug.Log("Anger4_HealthIncrease" + Anger4_HealthIncreaseTaken);
                 return Anger4_HealthIncreaseTaken;
+            }
+        }
+        else if (roomName == "Anger5")
+        {
+            if (pickup == "Ammo")
+            {
+                Debug.Log("Anger5_AmmoIncreaseTaken" + Anger5_AmmoIncreaseTaken);
+                return Anger5_AmmoIncreaseTaken;
             }
         }
 
@@ -498,6 +518,14 @@ public class GameStatus : MonoBehaviour
             {
                 Debug.Log("Anger4_HealthIncrease has been picked up");
                 Anger4_HealthIncreaseTaken = true;
+            }
+        }
+        else if (roomName == "Anger5")
+        {
+            if (pickup == "Ammo")
+            {
+                Debug.Log("Anger5_AmmoIncrease has been picked up");
+                Anger5_AmmoIncreaseTaken = true;
             }
         }
         if (pickup == "dash")
@@ -549,11 +577,15 @@ public class GameStatus : MonoBehaviour
         GameStart_wallOpen = PlayerPrefs.GetInt("GameStart_wallOpen") == 1;
         GameStart_HiddenOpen = PlayerPrefs.GetInt("GameStart_HiddenOpen") == 1;
         Anger1_enemyGateOpen = PlayerPrefs.GetInt("Anger1_enemyGateOpen") == 1;
-        Anger2_HiddenOpen = PlayerPrefs.GetInt("Anger2_HiddenOpen") == 1;
+        Anger4_enemyGateOpen = PlayerPrefs.GetInt("Anger4_enemyGateOpen") == 1;
+        Anger5_enemyGateOpen = PlayerPrefs.GetInt("Anger5_enemyGateOpen") == 1;
+        Anger2_and6_HiddenOpen = PlayerPrefs.GetInt("Anger2_and6_HiddenOpen") == 1;
         Anger4_HiddenOpen = PlayerPrefs.GetInt("Anger4_HiddenOpen") == 1;
 
         // permanent upgrades
         Anger4_HealthIncreaseTaken = PlayerPrefs.GetInt("Anger4_HealthIncreaseTaken") == 1;
+        Anger5_AmmoIncreaseTaken = PlayerPrefs.GetInt("Anger5_AmmoIncreaseTaken") == 1;
+
     }
 
     public void SetPlayerPrefs()
@@ -575,10 +607,13 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("GameStart_wallOpen", GameStart_wallOpen ? 1 : 0);
         PlayerPrefs.SetInt("GameStart_HiddenOpen", GameStart_HiddenOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger1_enemyGateOpen", Anger1_enemyGateOpen ? 1 : 0);
-        PlayerPrefs.SetInt("Anger2_HiddenOpen", Anger2_HiddenOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Anger4_enemyGateOpen", Anger4_enemyGateOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Anger5_enemyGateOpen", Anger5_enemyGateOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", Anger2_and6_HiddenOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger4_HiddenOpen", Anger4_HiddenOpen ? 1 : 0);
         // permanent upgrades
         PlayerPrefs.SetInt("Anger4_HealthIncreaseTaken", Anger4_HealthIncreaseTaken ? 1 : 0);
+        PlayerPrefs.SetInt("Anger5_AmmoIncreaseTaken", Anger5_AmmoIncreaseTaken ? 1 : 0);
 
         //PlayerPrefs.Save();
     }
@@ -616,11 +651,15 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("GameStart_wallOpen", 0);
         PlayerPrefs.SetInt("GameStart_HiddenOpen", 0);
         PlayerPrefs.SetInt("Anger1_enemyGateOpen", 0);
-        PlayerPrefs.SetInt("Anger2_HiddenOpen", 0);
+        PlayerPrefs.SetInt("Anger4_enemyGateOpen", 0);
+        PlayerPrefs.SetInt("Anger5_enemyGateOpen", 0);
+        PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", 0);
         PlayerPrefs.SetInt("Anger4_HiddenOpen", 0);
 
         // permanent upgrades
         PlayerPrefs.SetInt("Anger4_HealthIncreaseTaken", 0);
+        PlayerPrefs.SetInt("Anger5_AmmoIncreaseTaken", 0);
+
 
         PlayerPrefs.Save();
     }
