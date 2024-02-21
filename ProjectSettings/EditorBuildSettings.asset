@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Anger/Anger3_1.unity
     guid: d960c739924d14f48958a2fab6dc86d5
+  - enabled: 1
+    path: Assets/Scenes/Anger/Anger7.unity
+    guid: 23f672d522f4e49819b76cc0fa424565
   m_configObjects: {}
