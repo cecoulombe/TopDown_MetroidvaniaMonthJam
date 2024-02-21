@@ -58,6 +58,8 @@ public class GameStatus : MonoBehaviour
     protected bool Anger4_enemyGateOpen;
     [SerializeField]
     protected bool Anger5_enemyGateOpen;
+    [SerializeField]
+    protected bool Anger6_enemyGateOpen;
 
     [Header("Chests")]
     [SerializeField]
@@ -339,6 +341,11 @@ public class GameStatus : MonoBehaviour
             Debug.Log(Anger5_enemyGateOpen);
             return Anger5_enemyGateOpen;
         }
+        else if (roomName == "Anger6")
+        {
+            Debug.Log(Anger6_enemyGateOpen);
+            return Anger6_enemyGateOpen;
+        }
         else
         {
             Debug.Log("cannot find the current room, returning true");
@@ -363,6 +370,11 @@ public class GameStatus : MonoBehaviour
         {
             Debug.Log("Opening the gate in anger 5");
             Anger5_enemyGateOpen = true;
+        }
+        else if (roomName == "Anger6")
+        {
+            Debug.Log("Opening the gate in anger 6");
+            Anger6_enemyGateOpen = true;
         }
     }
     #endregion
@@ -423,7 +435,7 @@ public class GameStatus : MonoBehaviour
             Debug.Log("from game status" + GameStart_HiddenOpen);
             return GameStart_HiddenOpen;
         }
-        else if (roomName == "Anger2")
+        else if (roomName == "Anger2" || roomName == "Anger6")
         {
             Debug.Log("from game status" + Anger2_and6_HiddenOpen);
             return Anger2_and6_HiddenOpen;
@@ -446,7 +458,7 @@ public class GameStatus : MonoBehaviour
         {
             GameStart_HiddenOpen = true;
         }
-        if (roomName == "Anger2")
+        if (roomName == "Anger2" || roomName == "Anger6")
         {
             Anger2_and6_HiddenOpen = true;
         }
@@ -475,6 +487,14 @@ public class GameStatus : MonoBehaviour
             {
                 Debug.Log("Anger5_AmmoIncreaseTaken" + Anger5_AmmoIncreaseTaken);
                 return Anger5_AmmoIncreaseTaken;
+            }
+        }
+        else if (roomName == "Anger6")
+        {
+            if (pickup == "Melee")
+            {
+                Debug.Log("player has melee attack? " + hasMelee);
+                return hasMelee;
             }
         }
 
@@ -540,7 +560,7 @@ public class GameStatus : MonoBehaviour
         }
         else if (pickup == "melee")
         {
-            Debug.Log("giving the player ranged attack");
+            Debug.Log("giving the player melee attack");
             SetHasMelee(true);
         }
         else if (pickup == "ranged")
@@ -579,6 +599,7 @@ public class GameStatus : MonoBehaviour
         Anger1_enemyGateOpen = PlayerPrefs.GetInt("Anger1_enemyGateOpen") == 1;
         Anger4_enemyGateOpen = PlayerPrefs.GetInt("Anger4_enemyGateOpen") == 1;
         Anger5_enemyGateOpen = PlayerPrefs.GetInt("Anger5_enemyGateOpen") == 1;
+        Anger6_enemyGateOpen = PlayerPrefs.GetInt("Anger6_enemyGateOpen") == 1;
         Anger2_and6_HiddenOpen = PlayerPrefs.GetInt("Anger2_and6_HiddenOpen") == 1;
         Anger4_HiddenOpen = PlayerPrefs.GetInt("Anger4_HiddenOpen") == 1;
 
@@ -609,6 +630,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Anger1_enemyGateOpen", Anger1_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger4_enemyGateOpen", Anger4_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger5_enemyGateOpen", Anger5_enemyGateOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Anger6_enemyGateOpen", Anger6_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", Anger2_and6_HiddenOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger4_HiddenOpen", Anger4_HiddenOpen ? 1 : 0);
         // permanent upgrades
@@ -653,6 +675,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Anger1_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Anger4_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Anger5_enemyGateOpen", 0);
+        PlayerPrefs.SetInt("Anger6_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", 0);
         PlayerPrefs.SetInt("Anger4_HiddenOpen", 0);
 
