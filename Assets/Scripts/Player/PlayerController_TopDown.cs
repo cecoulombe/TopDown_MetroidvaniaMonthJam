@@ -313,7 +313,7 @@ public class PlayerController_TopDown : MonoBehaviour
     {
         if (GameStatus.GetInstance().HasDash())
         {
-            if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Y))
+            if (Input.GetKeyDown(KeyCode.J))
             {
                 if (dashCoolCounter <= 0 && dashCounter <= 0)
                 {
@@ -388,7 +388,7 @@ public class PlayerController_TopDown : MonoBehaviour
     #region Attacking
     private void OnAttack()
     {
-        if ((Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.T)) && GameStatus.GetInstance().HasMelee())
+        if ((Input.GetKeyDown(KeyCode.K)) && GameStatus.GetInstance().HasMelee())
         {
             if (!isAttacking)
             {
@@ -416,7 +416,7 @@ public class PlayerController_TopDown : MonoBehaviour
 
     private void OnShoot()
     {
-        if ((Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.R)) && GameStatus.GetInstance().HasRanged() && GameStatus.GetInstance().GetAmmo() > 0)
+        if ((Input.GetKeyDown(KeyCode.L)) && GameStatus.GetInstance().HasRanged() && GameStatus.GetInstance().GetAmmo() > 0)
         {
             if (shootTimer > shootCoolDown)
             {

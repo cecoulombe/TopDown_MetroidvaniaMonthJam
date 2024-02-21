@@ -69,6 +69,10 @@ public class GameStatus : MonoBehaviour
 
     [Header("Permanent Increases")]
     [SerializeField]
+    protected bool Anger3_1_HealthIncreaseTaken;
+    [SerializeField]
+    protected bool Anger3_1_AmmoIncreaseTaken;
+    [SerializeField]
     protected bool Anger4_HealthIncreaseTaken;
     [SerializeField]
     protected bool Anger5_AmmoIncreaseTaken;
@@ -76,6 +80,10 @@ public class GameStatus : MonoBehaviour
     [Header("Breakable Walls")]
     [SerializeField]
     protected bool GameStart_wallOpen;
+    [SerializeField]
+    protected bool Anger3_wallOpen;
+    [SerializeField]
+    protected bool Anger3_1_wallOpen;
 
     [Header("Hidden Rooms")]
     [SerializeField]
@@ -423,6 +431,16 @@ public class GameStatus : MonoBehaviour
             Debug.Log("from game status" + GameStart_wallOpen);
             return GameStart_wallOpen;
         }
+        else if (roomName == "Anger3")
+        {
+            Debug.Log("from game status" + Anger3_wallOpen);
+            return Anger3_wallOpen;
+        }
+        else if (roomName == "Anger3_1")
+        {
+            Debug.Log("from game status" + Anger3_1_wallOpen);
+            return Anger3_1_wallOpen;
+        }
         else
         {
             Debug.Log("cannot find the current room, returning true");
@@ -435,6 +453,14 @@ public class GameStatus : MonoBehaviour
         if (roomName == "GameStart")
         {
             GameStart_wallOpen = true;
+        }
+        else if (roomName == "Anger3")
+        {
+            Anger3_wallOpen = true;
+        }
+        else if (roomName == "Anger3_1")
+        {
+            Anger3_1_wallOpen = true;
         }
     }
     #endregion
@@ -485,7 +511,20 @@ public class GameStatus : MonoBehaviour
     #region Permanent Upgrades
     public bool GetUpgradeState(string roomName, string pickup)
     {
-        if (roomName == "Anger4")
+        if (roomName == "Anger3_1")
+        {
+            if (pickup == "Health")
+            {
+                Debug.Log("Anger3_1_HealthIncrease" + Anger3_1_HealthIncreaseTaken);
+                return Anger3_1_HealthIncreaseTaken;
+            }
+            else if (pickup == "Ammo")
+            {
+                Debug.Log("Anger3_1_AmmoIncreaseTaken" + Anger3_1_AmmoIncreaseTaken);
+                return Anger3_1_AmmoIncreaseTaken;
+            }
+        }
+        else if (roomName == "Anger4")
         {
             if (pickup == "Health")
             {
@@ -544,7 +583,20 @@ public class GameStatus : MonoBehaviour
      //do the same thing for set, but take in the name of the thing set it to true
     public void SetUpgradeState(string roomName, string pickup)
     {
-        if (roomName == "Anger4")
+        if (roomName == "Anger3_1")
+        {
+            if (pickup == "Health")
+            {
+                Debug.Log("Anger3_1_HealthIncrease has been picked up");
+                Anger3_1_HealthIncreaseTaken = true;
+            }
+            else if (pickup == "Ammo")
+            {
+                Debug.Log("Anger3_1_AmmoIncrease has been picked up");
+                Anger3_1_AmmoIncreaseTaken = true;
+            }
+        }
+        else if (roomName == "Anger4")
         {
             if (pickup == "Health")
             {
@@ -605,20 +657,28 @@ public class GameStatus : MonoBehaviour
         hasRanged = PlayerPrefs.GetInt("hasRanged") == 1;
         hasHealing = PlayerPrefs.GetInt("hasHealing") == 1;
 
-        // gates/chests/upgrades/secret doors
+        // Breakable Walls
         GameStart_wallOpen = PlayerPrefs.GetInt("GameStart_wallOpen") == 1;
+        Anger3_wallOpen = PlayerPrefs.GetInt("Anger3_wallOpen") == 1;
+        Anger3_1_wallOpen = PlayerPrefs.GetInt("Anger3_1_wallOpen") == 1;
+
+        // Fake Walls
         GameStart_HiddenOpen = PlayerPrefs.GetInt("GameStart_HiddenOpen") == 1;
+        Anger2_and6_HiddenOpen = PlayerPrefs.GetInt("Anger2_and6_HiddenOpen") == 1;
+        Anger4_HiddenOpen = PlayerPrefs.GetInt("Anger4_HiddenOpen") == 1;
+
+        // Enemy Gates
         Anger1_enemyGateOpen = PlayerPrefs.GetInt("Anger1_enemyGateOpen") == 1;
         Anger4_enemyGateOpen = PlayerPrefs.GetInt("Anger4_enemyGateOpen") == 1;
         Anger5_enemyGateOpen = PlayerPrefs.GetInt("Anger5_enemyGateOpen") == 1;
         Anger6_enemyGateOpen = PlayerPrefs.GetInt("Anger6_enemyGateOpen") == 1;
-        Anger2_and6_HiddenOpen = PlayerPrefs.GetInt("Anger2_and6_HiddenOpen") == 1;
-        Anger4_HiddenOpen = PlayerPrefs.GetInt("Anger4_HiddenOpen") == 1;
+        
 
         // permanent upgrades
+        Anger3_1_HealthIncreaseTaken = PlayerPrefs.GetInt("Anger3_1_HealthIncreaseTaken") == 1;
+        Anger3_1_AmmoIncreaseTaken = PlayerPrefs.GetInt("Anger3_1_AmmoIncreaseTaken") == 1;
         Anger4_HealthIncreaseTaken = PlayerPrefs.GetInt("Anger4_HealthIncreaseTaken") == 1;
         Anger5_AmmoIncreaseTaken = PlayerPrefs.GetInt("Anger5_AmmoIncreaseTaken") == 1;
-
     }
 
     public void SetPlayerPrefs()
@@ -636,16 +696,25 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("hasHealing", HasHealing() ? 1 : 0);
 
 
-        // doors and everything else
+        // Breakable Walls
         PlayerPrefs.SetInt("GameStart_wallOpen", GameStart_wallOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Anger3_wallOpen", Anger3_wallOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Anger3_1_wallOpen", Anger3_1_wallOpen ? 1 : 0);
+
+        // Fake Walls
         PlayerPrefs.SetInt("GameStart_HiddenOpen", GameStart_HiddenOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", Anger2_and6_HiddenOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Anger4_HiddenOpen", Anger4_HiddenOpen ? 1 : 0);
+
+        // Enemy Gates
         PlayerPrefs.SetInt("Anger1_enemyGateOpen", Anger1_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger4_enemyGateOpen", Anger4_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger5_enemyGateOpen", Anger5_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger6_enemyGateOpen", Anger6_enemyGateOpen ? 1 : 0);
-        PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", Anger2_and6_HiddenOpen ? 1 : 0);
-        PlayerPrefs.SetInt("Anger4_HiddenOpen", Anger4_HiddenOpen ? 1 : 0);
+        
         // permanent upgrades
+        PlayerPrefs.SetInt("Anger3_1_HealthIncreaseTaken", Anger3_1_HealthIncreaseTaken ? 1 : 0);
+        PlayerPrefs.SetInt("Anger3_1_AmmoIncreaseTaken", Anger3_1_AmmoIncreaseTaken ? 1 : 0);
         PlayerPrefs.SetInt("Anger4_HealthIncreaseTaken", Anger4_HealthIncreaseTaken ? 1 : 0);
         PlayerPrefs.SetInt("Anger5_AmmoIncreaseTaken", Anger5_AmmoIncreaseTaken ? 1 : 0);
 
@@ -683,20 +752,28 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("hasRanged", 0);
         PlayerPrefs.SetInt("hasHealing", 0);
 
-        // doors and everything else
+        // Breakable Walls
         PlayerPrefs.SetInt("GameStart_wallOpen", 0);
+        PlayerPrefs.SetInt("Anger3_wallOpen", 0);
+        PlayerPrefs.SetInt("Anger3_1_wallOpen", 0);
+
+        // Fake Walls
         PlayerPrefs.SetInt("GameStart_HiddenOpen", 0);
+        PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", 0);
+        PlayerPrefs.SetInt("Anger4_HiddenOpen", 0);
+
+        // Enemy Gates
         PlayerPrefs.SetInt("Anger1_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Anger4_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Anger5_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Anger6_enemyGateOpen", 0);
-        PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", 0);
-        PlayerPrefs.SetInt("Anger4_HiddenOpen", 0);
+        
 
         // permanent upgrades
+        PlayerPrefs.SetInt("Anger3_1_HealthIncreaseTaken", 0);
+        PlayerPrefs.SetInt("Anger3_1_AmmoIncreaseTaken", 0);
         PlayerPrefs.SetInt("Anger4_HealthIncreaseTaken", 0);
         PlayerPrefs.SetInt("Anger5_AmmoIncreaseTaken", 0);
-
 
         PlayerPrefs.Save();
     }

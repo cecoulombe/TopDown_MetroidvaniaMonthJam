@@ -19,6 +19,16 @@ public class Anger3 : MonoBehaviour
     private GameObject Anger2_LoadingZone;
     [SerializeField]
     private GameObject Anger4_LoadingZone;
+    [SerializeField]
+    private GameObject Anger3_1_LoadingZone;
+
+    [Header("Breakable Walls")]
+    [SerializeField]
+    private GameObject Anger3_Wall_Closed;
+    [SerializeField]
+    private GameObject Anger3_Wall_Opened;
+    [SerializeField]
+    private bool Anger3_WallOpen;
     #endregion
 
     private void Start()
@@ -43,5 +53,30 @@ public class Anger3 : MonoBehaviour
         {
             player.transform.position = Anger4_LoadingZone.transform.position;
         }
+        else if (previousRoom == "Anger3_1")   // repeat this for each transition
+        {
+            player.transform.position = Anger3_1_LoadingZone.transform.position;
+        }
+    }
+
+    private void Update()
+    {
+        currentRoom = SceneManager.GetActiveScene().name;
+        Debug.Log("from the room manager: " + currentRoom);
+        #region Breakable Walls
+        Anger3_WallOpen = GameStatus.GetInstance().GetWallState(currentRoom);
+        if (!Anger3_WallOpen)  // the wall is closed
+        {
+            Debug.Log("closed wall");
+            Anger3_Wall_Closed.SetActive(true);
+            Anger3_Wall_Opened.SetActive(false);
+        }
+        else    // open the wall and keep it visually opened after (it will stay open after leaving the room)
+        {
+            Debug.Log("open wall");
+            Anger3_Wall_Closed.SetActive(false);
+            Anger3_Wall_Opened.SetActive(true);
+        }
+        #endregion
     }
 }
