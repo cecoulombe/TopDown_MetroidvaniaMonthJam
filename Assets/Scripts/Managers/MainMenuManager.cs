@@ -3,26 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public GameObject firstButton;
+    public GameObject startNewFirstButton;
+    public GameObject continueFirstButton;
+
+    public GameObject StartNewGameScreen;
+
+    public GameObject mainMenuButtons;
 
     private void Start()
     {
         // clear the event system before setting the first button
         EventSystem.current.SetSelectedGameObject(null);
         // set a new selected object using the first button
-        EventSystem.current.SetSelectedGameObject(firstButton);
+
+        if(GameStatus.GetInstance().GetPreviousRoom() == "spawn")
+        {
+            Button continueFile = continueFirstButton.GetComponent<Button>();
+            continueFile.interactable = false;
+            EventSystem.current.SetSelectedGameObject(startNewFirstButton);
+        }
+        else
+        {
+            Button continueFile = continueFirstButton.GetComponent<Button>();
+            continueFile.interactable = true;
+            EventSystem.current.SetSelectedGameObject(continueFirstButton);
+        }
     }
 
 
     public void StartNewGame(string FirstRoom)
     {
-        // have a popup to confirm that they want to erase the previous save file and start a new game
-        GameStatus.GetInstance().ResetPlayerPrefs();
-        GameStatus.GetInstance().LoadSettings();
-        SceneManager.LoadScene(FirstRoom);         // replace this with whatever you end up making the first level of the game
+        if (GameStatus.GetInstance().GetPreviousRoom() == "spawn")
+        {
+            GameStatus.GetInstance().ResetPlayerPrefs();
+            GameStatus.GetInstance().SetSaveRoom();
+            GameStatus.GetInstance().LoadSettings();
+            SceneManager.LoadScene(FirstRoom);
+        }
+        else
+        {
+            // confirm that they actually want to restart
+            StartNewGameScreen.SetActive(true);
+            mainMenuButtons.SetActive(false);
+        }
     }
 
     public void ContinueGame()

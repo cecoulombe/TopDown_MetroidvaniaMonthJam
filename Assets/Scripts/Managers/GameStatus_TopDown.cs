@@ -108,6 +108,7 @@ public class GameStatus : MonoBehaviour
     {
         previousRoom = "spawn";
         LoadSettings();
+        Debug.Log("the previous room is: " + previousRoom);
     }
 
 
@@ -595,7 +596,7 @@ public class GameStatus : MonoBehaviour
         maxHealth = PlayerPrefs.GetFloat("maxHealth");
         maxAmmo = PlayerPrefs.GetFloat("maxAmmo");
         deathCounter = PlayerPrefs.GetInt("deathCounter");
-        //saveRoom = PlayerPrefs.GetString("saveRoom");
+        previousRoom = PlayerPrefs.GetString("saveRoom");
 
         // permanent abilities
         hasDash = PlayerPrefs.GetInt("hasDash") == 1;
@@ -658,6 +659,7 @@ public class GameStatus : MonoBehaviour
             PlayerPrefs.SetString("saveRoom", GetCurrentRoom());
         }
         PlayerPrefs.Save();
+
         Debug.Log("save room is " + PlayerPrefs.GetString("saveRoom"));
     }
 
@@ -672,6 +674,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetFloat("maxHealth", 10);
         PlayerPrefs.SetFloat("maxAmmo", 10);
         PlayerPrefs.SetInt("deathCounter", 0);
+        PlayerPrefs.SetString("saveRoom", "MainMenu");
 
         // player states
         PlayerPrefs.SetInt("hasDash", 0);
