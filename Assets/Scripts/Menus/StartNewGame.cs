@@ -12,6 +12,8 @@ public class StartNewGame : MonoBehaviour
 
     public GameObject mainMenuButtons;
 
+    public GameObject startNewGamePrompt;
+
     private void Start()
     {
         // clear the event system before setting the first button
@@ -27,12 +29,14 @@ public class StartNewGame : MonoBehaviour
         // have a popup to confirm that they want to erase the previous save file and start a new game
         GameStatus.GetInstance().ResetPlayerPrefs();
         GameStatus.GetInstance().LoadSettings();
+        GameStatus.GetInstance().AddHealth(GameStatus.GetInstance().GetMaxHealth());
         SceneManager.LoadScene(FirstRoom);         // replace this with whatever you end up making the first level of the game
+
     }
 
     public void Nevermind()
     {
-        gameObject.SetActive(false);
         mainMenuButtons.SetActive(true);
+        startNewGamePrompt.SetActive(false);
     }
 }

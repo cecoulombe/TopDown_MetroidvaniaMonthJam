@@ -56,7 +56,7 @@ public class MeleeEnemy : MonoBehaviour
     private float attackCoolDown;
 
     [SerializeField]
-    private float meleeCoolDown = 200f;
+    private float meleeCoolDown;
     #endregion
 
     private void Awake()

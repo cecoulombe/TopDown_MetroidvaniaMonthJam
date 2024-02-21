@@ -32,6 +32,7 @@ public class MainMenuManager : MonoBehaviour
             continueFile.interactable = true;
             EventSystem.current.SetSelectedGameObject(continueFirstButton);
         }
+
     }
 
 
@@ -42,6 +43,7 @@ public class MainMenuManager : MonoBehaviour
             GameStatus.GetInstance().ResetPlayerPrefs();
             GameStatus.GetInstance().SetSaveRoom();
             GameStatus.GetInstance().LoadSettings();
+            GameStatus.GetInstance().AddHealth(GameStatus.GetInstance().GetMaxHealth());
             SceneManager.LoadScene(FirstRoom);
         }
         else
@@ -56,6 +58,7 @@ public class MainMenuManager : MonoBehaviour
     {
         string saveRoom = GameStatus.GetInstance().GetSaveRoom();
         Debug.Log("continuing the game from room: " + saveRoom);
+        GameStatus.GetInstance().AddHealth(GameStatus.GetInstance().GetMaxHealth());
         SceneManager.LoadScene(saveRoom);
     }
 
