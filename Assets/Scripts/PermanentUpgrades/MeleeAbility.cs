@@ -32,6 +32,7 @@ public class MeleeAbility : MonoBehaviour
         {
             GameStatus.GetInstance().SetUpgradeState(currentRoom, pickup);
             GameStatus.GetInstance().SetPlayerPrefs();
+            GameStatus.GetInstance().SetOpenMeleeInstructions(true);
         }
     }
 }

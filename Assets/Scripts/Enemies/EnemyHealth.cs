@@ -18,6 +18,8 @@ public class EnemyHealth : MonoBehaviour
 
     Animator anim;
 
+    public bool isAngerBoss;
+
     [Header("Movement Variables")]
     [SerializeField]
     public float moveSpeed;
@@ -100,6 +102,10 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
+        if(isAngerBoss)
+        {
+            return;
+        }
         if (isDead)
         {
             //Debug.Log("enemy is dead");
@@ -138,6 +144,10 @@ public class EnemyHealth : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isAngerBoss)
+        {
+            return;
+        }
         Movement();
     }
 

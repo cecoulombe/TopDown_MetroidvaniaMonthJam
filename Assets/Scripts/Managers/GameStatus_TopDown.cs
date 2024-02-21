@@ -31,6 +31,8 @@ public class GameStatus : MonoBehaviour
 
     protected bool gamePaused;
 
+    protected bool openInstructions;
+
     [Header("Player state bools")]
     [SerializeField]
     protected bool hasDash;
@@ -176,6 +178,15 @@ public class GameStatus : MonoBehaviour
     public bool GetGamePaused()
     {
         return gamePaused;
+    }
+
+    public void SetOpenMeleeInstructions(bool shouldOpen)
+    {
+        openInstructions = shouldOpen;
+    }
+    public bool OpenMeleeInstructions()
+    {
+        return openInstructions;
     }
 
     #endregion

@@ -35,8 +35,6 @@ public class MeleeEnemy : MonoBehaviour
     [Header("Attacking and Player Damage")]
     [SerializeField]
     private float contactDamage;
-
-    public PlayerController_TopDown playerController;
     #endregion
 
     #region Melee Variables
@@ -181,17 +179,19 @@ public class MeleeEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerController.knockBackCounter = playerController.knockBackTotalTime;
+            collision.gameObject.GetComponent<PlayerController_TopDown>();
+
+            collision.gameObject.GetComponent<PlayerController_TopDown>().knockBackCounter = collision.gameObject.GetComponent<PlayerController_TopDown>().knockBackTotalTime;
             if (collision.transform.position.x <= transform.position.x)
             {
-                playerController.knockFromRight = true;
+                collision.gameObject.GetComponent<PlayerController_TopDown>().knockFromRight = true;
             }
             if (collision.transform.position.x >= transform.position.x)
             {
-                playerController.knockFromRight = false;
+                collision.gameObject.GetComponent<PlayerController_TopDown>().knockFromRight = false;
             }
             //StartCoroutine(playerController.TakeDamage(contactDamage));
-            playerController.TakeDamage(contactDamage);
+            collision.gameObject.GetComponent<PlayerController_TopDown>().TakeDamage(contactDamage);
         }
     }
 }
