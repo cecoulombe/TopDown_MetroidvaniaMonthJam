@@ -84,6 +84,8 @@ public class GameStatus : MonoBehaviour
     protected bool Anger3_wallOpen;
     [SerializeField]
     protected bool Anger3_1_wallOpen;
+    [SerializeField]
+    protected bool Words1_wallOpen;
 
     [Header("Hidden Rooms")]
     [SerializeField]
@@ -441,6 +443,11 @@ public class GameStatus : MonoBehaviour
             Debug.Log("from game status" + Anger3_1_wallOpen);
             return Anger3_1_wallOpen;
         }
+        else if (roomName == "Words1")
+        {
+            Debug.Log("from game status" + Words1_wallOpen);
+            return Words1_wallOpen;
+        }
         else
         {
             Debug.Log("cannot find the current room, returning true");
@@ -461,6 +468,10 @@ public class GameStatus : MonoBehaviour
         else if (roomName == "Anger3_1")
         {
             Anger3_1_wallOpen = true;
+        }
+        else if (roomName == "Words1")
+        {
+            Words1_wallOpen = true;
         }
     }
     #endregion
@@ -661,6 +672,7 @@ public class GameStatus : MonoBehaviour
         GameStart_wallOpen = PlayerPrefs.GetInt("GameStart_wallOpen") == 1;
         Anger3_wallOpen = PlayerPrefs.GetInt("Anger3_wallOpen") == 1;
         Anger3_1_wallOpen = PlayerPrefs.GetInt("Anger3_1_wallOpen") == 1;
+        Words1_wallOpen = PlayerPrefs.GetInt("Words1_wallOpen") == 1;
 
         // Fake Walls
         GameStart_HiddenOpen = PlayerPrefs.GetInt("GameStart_HiddenOpen") == 1;
@@ -700,6 +712,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("GameStart_wallOpen", GameStart_wallOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger3_wallOpen", Anger3_wallOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger3_1_wallOpen", Anger3_1_wallOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Words1_wallOpen", Words1_wallOpen ? 1 : 0);
 
         // Fake Walls
         PlayerPrefs.SetInt("GameStart_HiddenOpen", GameStart_HiddenOpen ? 1 : 0);
@@ -756,6 +769,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("GameStart_wallOpen", 0);
         PlayerPrefs.SetInt("Anger3_wallOpen", 0);
         PlayerPrefs.SetInt("Anger3_1_wallOpen", 0);
+        PlayerPrefs.SetInt("Words1_wallOpen", 0);
 
         // Fake Walls
         PlayerPrefs.SetInt("GameStart_HiddenOpen", 0);
