@@ -774,7 +774,7 @@ Transform:
   m_GameObject: {fileID: 123189341}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.5, y: -20.2, z: 0}
+  m_LocalPosition: {x: -14.9, y: -18.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3407,7 +3407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRoom: Words1
-  sceneLoader: {fileID: 0}
+  sceneLoader: {fileID: 1952880837}
 --- !u!61 &637711018
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3514,6 +3514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 638116167}
+  - component: {fileID: 638116168}
   m_Layer: 0
   m_Name: RoomManager
   m_TagString: Untagged
@@ -3536,6 +3537,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1214356013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &638116168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638116166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063287af869b042bfb5332d53040727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList: []
+  player: {fileID: 1187303056}
+  spawnPoint: {fileID: 123189341}
+  Words1_LoadingZone: {fileID: 51571159}
+  Words3_LoadingZone: {fileID: 522060815}
+  Anger6_1_LoadingZone: {fileID: 462420398}
+  Words2_EnemyGate: {fileID: 326128873}
+  Words2_RoomAfterGate: {fileID: 550783914}
+  Words2_enemyGateOpen: 0
+  Words2_Hidden_Closed: {fileID: 1819024697}
+  Words2_Hidden_Opened: {fileID: 442622698}
+  Words2_HiddenOpen: 0
+  Words2_HealthUpgrade: {fileID: 1669087313}
+  Words2_HealthUpgradeTaken: 0
 --- !u!1001 &656931873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4584,8 +4611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6b6178d9beb4219b5d414dea0d796f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRoom: Words1
-  sceneLoader: {fileID: 0}
+  targetRoom: Words3
+  sceneLoader: {fileID: 1952880837}
 --- !u!61 &843757931
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8841,7 +8868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRoom: Anger6_1
-  sceneLoader: {fileID: 0}
+  sceneLoader: {fileID: 1952880837}
 --- !u!61 &1570496683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9445,7 +9472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1985900085209205504, guid: c483c96b8820e4c0fb943e212fbd69a0, type: 3}
       propertyPath: m_Name
-      value: RedHealthPerm
+      value: GreenHealthPerm
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9455,6 +9482,11 @@ PrefabInstance:
 --- !u!4 &1669087312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1854552320202556599, guid: c483c96b8820e4c0fb943e212fbd69a0, type: 3}
+  m_PrefabInstance: {fileID: 1669087311}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1669087313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1985900085209205504, guid: c483c96b8820e4c0fb943e212fbd69a0, type: 3}
   m_PrefabInstance: {fileID: 1669087311}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1673631965

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8118674902163425429}
   - component: {fileID: 7031518019138376761}
   m_Layer: 0
-  m_Name: RedAmmoPerm
+  m_Name: GreenAmmoPerm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ Animator:
   m_GameObject: {fileID: 1985900085209205504}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 70af9a768798d44c9961aa1b7d15c48c, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

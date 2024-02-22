@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4953752062511720032}
   - component: {fileID: 7772329626378215656}
   m_Layer: 0
-  m_Name: RedHealthPerm
+  m_Name: GreenHealthPerm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ Animator:
   m_GameObject: {fileID: 1985900085209205504}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d176bba2297f24308ac6012e560708eb, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
