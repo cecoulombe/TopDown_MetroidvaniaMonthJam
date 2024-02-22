@@ -16,6 +16,14 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     private Transform Aim;
 
+    private SpriteRenderer sprite;
+
+    private int red;
+    private int blue;
+    private int green;
+
+    private int colourMultiplier;
+
     Animator anim;
 
     public bool isAngerBoss;
@@ -50,9 +58,9 @@ public class EnemyHealth : MonoBehaviour
 
     [Header("Enemy Health")]
     [SerializeField]
-    private float health = 3f;
+    public float health = 3f;
     [SerializeField]
-    private float maxHealth;
+    public float maxHealth;
 
     [Header("Health and Ammo Drops")]
     [SerializeField]
@@ -95,6 +103,7 @@ public class EnemyHealth : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         target = GameObject.Find("Player").transform;
+        sprite = GetComponent<SpriteRenderer>();
         health = maxHealth;
         moveSpeed = defaultSpeed;
         rangeFromTarget = wakeUpPercent * loseAggroRange;
@@ -106,6 +115,9 @@ public class EnemyHealth : MonoBehaviour
         {
             return;
         }
+
+        colourChanges();
+
         if (isDead)
         {
             //Debug.Log("enemy is dead");
@@ -180,6 +192,15 @@ public class EnemyHealth : MonoBehaviour
             }
         }
     }
+
+    #region Colour change based on health
+    private void colourChanges()
+    {
+        float percentOfMaxHealth = health / maxHealth;
+
+        sprite.color = new Color(percentOfMaxHealth, percentOfMaxHealth, percentOfMaxHealth, 1);
+    }
+    #endregion
 
     #region Animations
     private void Animate()
