@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 1969078019802291558}
   - component: {fileID: 2350379441923365935}
   - component: {fileID: 3000748337740670392}
+  - component: {fileID: 6520985607746289304}
   m_Layer: 0
   m_Name: Stones 2
   m_TagString: Untagged
@@ -321,8 +322,9 @@ MonoBehaviour:
   isAttacking: 0
   attackDuration: 0.3
   attackTimer: 0
-  lungeAttackRange: 5
-  chargerCoolDown: 600
+  lungeAttackRange: 4
+  attackCoolDown: 0
+  chargerCoolDown: 250
 --- !u!114 &1969078019802291558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,13 +345,15 @@ MonoBehaviour:
   moveSpeed: 1.5
   defaultSpeed: 1.5
   attackCoolDown: 0
-  loseAggroRange: 12
+  loseAggroRange: 50
   isWalking: 0
-  inRange: 0
+  inAwakeRange: 0
+  inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.4
+  wakeUpPercent: 0.06
   health: 3
   maxHealth: 3
+  takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
   bigHealthChance: 4
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
@@ -358,7 +362,7 @@ MonoBehaviour:
   bigAmmoChance: 8
   smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
   smallAmmoChance: 20
-  knockBackForce: 0
+  knockBackForce: 1
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -454,6 +458,27 @@ MonoBehaviour:
   healingAmount: 0.4
   healingAnim: {fileID: 1377256832566962537}
   canHeal: 0
+--- !u!95 &6520985607746289304
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323967515501927682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2860522510478485732
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,6 +642,10 @@ PrefabInstance:
     - target: {fileID: 3549863579763767140, guid: 2136a421cb89d45ab992dff66785a4f2, type: 3}
       propertyPath: m_Name
       value: Healing
+      objectReference: {fileID: 0}
+    - target: {fileID: 3549863579763767140, guid: 2136a421cb89d45ab992dff66785a4f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9057327369378433922, guid: 2136a421cb89d45ab992dff66785a4f2, type: 3}
       propertyPath: m_SortingOrder

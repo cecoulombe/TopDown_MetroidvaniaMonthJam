@@ -18,12 +18,6 @@ public class EnemyHealth : MonoBehaviour
 
     private SpriteRenderer sprite;
 
-    private int red;
-    private int blue;
-    private int green;
-
-    private int colourMultiplier;
-
     Animator anim;
 
     public bool isAngerBoss;
@@ -41,14 +35,15 @@ public class EnemyHealth : MonoBehaviour
 
     public float attackCoolDown;
 
-    private float rangeFromTarget;
+    private float wakeUpRange;
 
     [SerializeField]
     public float loseAggroRange;
 
     public bool isWalking;
 
-    public bool inRange;
+    public bool inAwakeRange;
+    public bool inLoseAggroRange;
 
     [SerializeField]
     public bool isPatternWalker = true;
@@ -61,6 +56,8 @@ public class EnemyHealth : MonoBehaviour
     public float health = 3f;
     [SerializeField]
     public float maxHealth;
+
+    public bool takingDamage;
 
     [Header("Health and Ammo Drops")]
     [SerializeField]
@@ -106,7 +103,7 @@ public class EnemyHealth : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         health = maxHealth;
         moveSpeed = defaultSpeed;
-        rangeFromTarget = wakeUpPercent * loseAggroRange;
+        wakeUpRange = wakeUpPercent * loseAggroRange;
     }
 
     void Update()
@@ -124,10 +121,12 @@ public class EnemyHealth : MonoBehaviour
             return;
         }
 
-        inRange = Vector3.Distance(target.position, transform.position) <= rangeFromTarget;
+        inAwakeRange = Vector3.Distance(target.position, transform.position) <= wakeUpRange;
+        inLoseAggroRange = Vector3.Distance(target.position, transform.position) <= loseAggroRange;
+
         IsDamaged();
 
-        if (inRange || isDamaged)
+        if (inAwakeRange || isDamaged)
         {
             StartCoroutine(DelayBeforeMoving());
             isAwake = true;
@@ -145,7 +144,7 @@ public class EnemyHealth : MonoBehaviour
             lastMoveDirection = moveDirection;
             isWalking = true;
         }
-        if (!inRange && !isDamaged)
+        if (!inLoseAggroRange && !isDamaged)
         {
             isAwake = false;
             isWalking = false;
@@ -161,6 +160,7 @@ public class EnemyHealth : MonoBehaviour
             return;
         }
         Movement();
+        takingDamage = false;
     }
 
     private void Movement()
@@ -280,7 +280,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void IsDamaged()
     {
-        if(health != maxHealth)
+        if(health < maxHealth)
         {
             isDamaged = true;
         }

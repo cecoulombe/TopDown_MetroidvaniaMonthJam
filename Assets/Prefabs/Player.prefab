@@ -120,9 +120,9 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
-  healthGain: 0.005
-  ammoCost: 0.01
-  buttonHeldMinimum: 3
+  healthGain: 0.01
+  ammoCost: 0.05
+  buttonHeldMinimum: 1
   healingAnim: {fileID: 2920657051829054033}
   Aim: {fileID: 7672878893040883262}
   Melee: {fileID: 9156338318740844701}

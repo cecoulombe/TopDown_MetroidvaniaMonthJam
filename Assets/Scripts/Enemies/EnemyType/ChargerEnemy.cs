@@ -54,6 +54,7 @@ public class ChargerEmeny : MonoBehaviour
     [SerializeField]
     private float lungeAttackRange;
 
+    [SerializeField]
     private float attackCoolDown;
 
     [SerializeField]
@@ -85,6 +86,7 @@ public class ChargerEmeny : MonoBehaviour
 
         if (amAwake)
         {
+            //CheckMeleeTimer();
             ChargerAttacker();
         }
     }
@@ -167,7 +169,7 @@ public class ChargerEmeny : MonoBehaviour
 
                 attackTimer = 0;
                 isAttacking = false;
-                myHealth.moveSpeed = myHealth.defaultSpeed;
+                myHealth.moveSpeed = 0;
             }
             return;
         }
