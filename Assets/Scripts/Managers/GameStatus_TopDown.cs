@@ -62,6 +62,8 @@ public class GameStatus : MonoBehaviour
     protected bool Anger5_enemyGateOpen;
     [SerializeField]
     protected bool Anger6_enemyGateOpen;
+    [SerializeField]
+    protected bool Words2_enemyGateOpen;
 
     [Header("Chests")]
     [SerializeField]
@@ -76,6 +78,8 @@ public class GameStatus : MonoBehaviour
     protected bool Anger4_HealthIncreaseTaken;
     [SerializeField]
     protected bool Anger5_AmmoIncreaseTaken;
+    [SerializeField]
+    protected bool Words2_HealthIncreaseTaken;
 
     [Header("Breakable Walls")]
     [SerializeField]
@@ -94,6 +98,8 @@ public class GameStatus : MonoBehaviour
     protected bool Anger2_and6_HiddenOpen;
     [SerializeField]
     protected bool Anger4_HiddenOpen;
+    [SerializeField]
+    protected bool Words2_HiddenOpen;
     #endregion
 
     #region Player Prefs Variables
@@ -368,6 +374,11 @@ public class GameStatus : MonoBehaviour
             Debug.Log(Anger6_enemyGateOpen);
             return Anger6_enemyGateOpen;
         }
+        else if (roomName == "Words2")
+        {
+            Debug.Log(Words2_enemyGateOpen);
+            return Words2_enemyGateOpen;
+        }
         else
         {
             Debug.Log("cannot find the current room, returning true");
@@ -397,6 +408,11 @@ public class GameStatus : MonoBehaviour
         {
             Debug.Log("Opening the gate in anger 6");
             Anger6_enemyGateOpen = true;
+        }
+        else if (roomName == "Words2")
+        {
+            Debug.Log("Opening the gate in words 2");
+            Words2_enemyGateOpen = true;
         }
     }
     #endregion
@@ -494,6 +510,11 @@ public class GameStatus : MonoBehaviour
             Debug.Log("from game status" + Anger4_HiddenOpen);
             return Anger4_HiddenOpen;
         }
+        else if (roomName == "Words2")
+        {
+            Debug.Log("from game status" + Words2_HiddenOpen);
+            return Words2_HiddenOpen;
+        }
         else
         {
             Debug.Log("cannot find the current room, returning true");
@@ -514,6 +535,10 @@ public class GameStatus : MonoBehaviour
         if (roomName == "Anger4")
         {
             Anger4_HiddenOpen = true;
+        }
+        if (roomName == "Words2")
+        {
+            Words2_HiddenOpen = true;
         }
     }
     #endregion
@@ -557,6 +582,14 @@ public class GameStatus : MonoBehaviour
             {
                 Debug.Log("player has melee attack? " + hasMelee);
                 return hasMelee;
+            }
+        }
+        else if (roomName == "Words2")
+        {
+            if (pickup == "Health")
+            {
+                Debug.Log("Words2_HealthIncrease" + Words2_HealthIncreaseTaken);
+                return Words2_HealthIncreaseTaken;
             }
         }
 
@@ -623,6 +656,16 @@ public class GameStatus : MonoBehaviour
                 Anger5_AmmoIncreaseTaken = true;
             }
         }
+        else if (roomName == "Words2")
+        {
+            if (pickup == "Health")
+            {
+                Debug.Log("Words2_HealthIncrease has been picked up");
+                Words2_HealthIncreaseTaken = true;
+            }
+        }
+
+
         if (pickup == "dash")
         {
             Debug.Log("giving the player dash");
@@ -678,19 +721,22 @@ public class GameStatus : MonoBehaviour
         GameStart_HiddenOpen = PlayerPrefs.GetInt("GameStart_HiddenOpen") == 1;
         Anger2_and6_HiddenOpen = PlayerPrefs.GetInt("Anger2_and6_HiddenOpen") == 1;
         Anger4_HiddenOpen = PlayerPrefs.GetInt("Anger4_HiddenOpen") == 1;
+        Words2_HiddenOpen = PlayerPrefs.GetInt("Words2_HiddenOpen") == 1;
 
         // Enemy Gates
         Anger1_enemyGateOpen = PlayerPrefs.GetInt("Anger1_enemyGateOpen") == 1;
         Anger4_enemyGateOpen = PlayerPrefs.GetInt("Anger4_enemyGateOpen") == 1;
         Anger5_enemyGateOpen = PlayerPrefs.GetInt("Anger5_enemyGateOpen") == 1;
         Anger6_enemyGateOpen = PlayerPrefs.GetInt("Anger6_enemyGateOpen") == 1;
-        
+        Words2_enemyGateOpen = PlayerPrefs.GetInt("Words2_enemyGateOpen") == 1;
+
 
         // permanent upgrades
         Anger3_1_HealthIncreaseTaken = PlayerPrefs.GetInt("Anger3_1_HealthIncreaseTaken") == 1;
         Anger3_1_AmmoIncreaseTaken = PlayerPrefs.GetInt("Anger3_1_AmmoIncreaseTaken") == 1;
         Anger4_HealthIncreaseTaken = PlayerPrefs.GetInt("Anger4_HealthIncreaseTaken") == 1;
         Anger5_AmmoIncreaseTaken = PlayerPrefs.GetInt("Anger5_AmmoIncreaseTaken") == 1;
+        Words2_HealthIncreaseTaken = PlayerPrefs.GetInt("Words2_HealthIncreaseTaken") == 1;
     }
 
     public void SetPlayerPrefs()
@@ -718,18 +764,22 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("GameStart_HiddenOpen", GameStart_HiddenOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", Anger2_and6_HiddenOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger4_HiddenOpen", Anger4_HiddenOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Words2_HiddenOpen", Words2_HiddenOpen ? 1 : 0);
 
         // Enemy Gates
         PlayerPrefs.SetInt("Anger1_enemyGateOpen", Anger1_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger4_enemyGateOpen", Anger4_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger5_enemyGateOpen", Anger5_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger6_enemyGateOpen", Anger6_enemyGateOpen ? 1 : 0);
-        
+        PlayerPrefs.SetInt("Words2_enemyGateOpen", Words2_enemyGateOpen ? 1 : 0);
+
         // permanent upgrades
         PlayerPrefs.SetInt("Anger3_1_HealthIncreaseTaken", Anger3_1_HealthIncreaseTaken ? 1 : 0);
         PlayerPrefs.SetInt("Anger3_1_AmmoIncreaseTaken", Anger3_1_AmmoIncreaseTaken ? 1 : 0);
         PlayerPrefs.SetInt("Anger4_HealthIncreaseTaken", Anger4_HealthIncreaseTaken ? 1 : 0);
         PlayerPrefs.SetInt("Anger5_AmmoIncreaseTaken", Anger5_AmmoIncreaseTaken ? 1 : 0);
+        PlayerPrefs.SetInt("Words2_HealthIncreaseTaken", Words2_HealthIncreaseTaken ? 1 : 0);
+
 
         //PlayerPrefs.Save();
     }
@@ -775,57 +825,25 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("GameStart_HiddenOpen", 0);
         PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", 0);
         PlayerPrefs.SetInt("Anger4_HiddenOpen", 0);
+        PlayerPrefs.SetInt("Words2_HiddenOpen", 0);
 
         // Enemy Gates
         PlayerPrefs.SetInt("Anger1_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Anger4_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Anger5_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Anger6_enemyGateOpen", 0);
-        
+        PlayerPrefs.SetInt("Words2_enemyGateOpen", 0);
+
 
         // permanent upgrades
         PlayerPrefs.SetInt("Anger3_1_HealthIncreaseTaken", 0);
         PlayerPrefs.SetInt("Anger3_1_AmmoIncreaseTaken", 0);
         PlayerPrefs.SetInt("Anger4_HealthIncreaseTaken", 0);
         PlayerPrefs.SetInt("Anger5_AmmoIncreaseTaken", 0);
+        PlayerPrefs.SetInt("Words2_HealthIncreaseTaken", 0);
 
         PlayerPrefs.Save();
     }
-
-    //public void GiveAllPlayerPrefs()  // use this to reset the player prefs when testing stuff but remove the hot key in the final version - a version of this will be used to make multiple save files
-    //{
-    //    //PlayerPrefs.SetFloat("maxHealth" + saveFile, maxHealth);
-    //    PlayerPrefs.SetFloat("maxHealth", 30);
-    //    PlayerPrefs.SetFloat("maxAmmo", 30);
-    //    PlayerPrefs.SetInt("deathCounter", 0);
-
-    //    // player states
-    //    PlayerPrefs.SetInt("hasDash", 1);
-    //    PlayerPrefs.SetInt("hasInvincibleDash", 1);
-    //    PlayerPrefs.SetInt("hasMelee", 1);
-    //    PlayerPrefs.SetInt("hasRanged", 1);
-    //    PlayerPrefs.SetInt("hasHealing", 1);
-
-
-    //    // doors and everything else
-    //    PlayerPrefs.SetInt("room2_wallOpen", 1);
-    //    PlayerPrefs.SetInt("room1_HiddenOpen", 1);
-
-    //    // permanent upgrades
-    //    //PlayerPrefs.SetInt("room1_HealthIncreaseTaken", 1);
-
-    //    //PlayerPrefs.Save();
-    //}
-
-    //private void GiveAbilitiesPlayerPrefs()
-    //{
-    //    // player states
-    //    PlayerPrefs.SetInt("hasDash", 1);
-    //    PlayerPrefs.SetInt("hasInvincibleDash", 1);
-    //    PlayerPrefs.SetInt("hasMelee", 1);
-    //    PlayerPrefs.SetInt("hasRanged", 1);
-    //    PlayerPrefs.SetInt("hasHealing", 1);
-    //}
     #endregion
 
     public static GameStatus GetInstance()
