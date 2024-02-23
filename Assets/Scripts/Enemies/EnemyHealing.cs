@@ -47,7 +47,7 @@ public class EnemyHealing : MonoBehaviour
 
         healingCoolCounter -= Time.deltaTime;
 
-        if(health <= maxHealth)
+        if(health < maxHealth)
         {
             if(healingCoolCounter <= 0)
             {

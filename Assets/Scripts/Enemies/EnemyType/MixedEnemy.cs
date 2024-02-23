@@ -8,6 +8,9 @@ public class MixedEnemy : MonoBehaviour
     [SerializeField]
     private float patternSpeed = 3.0f;
 
+    [SerializeField]
+    private float shootMoveSpeed = 0f;
+
     private bool amDead;
     private bool amDamaged;
 
@@ -84,6 +87,9 @@ public class MixedEnemy : MonoBehaviour
     private float minRangePercent;
     [SerializeField]
     private float maxRangePercent;
+
+    private float minRange;
+    private float maxRange;
     #endregion
 
 
@@ -98,8 +104,8 @@ public class MixedEnemy : MonoBehaviour
         target = GameObject.Find("Player").transform;
         isPatternWalker = myHealth.isPatternWalker;
 
-        minRangePercent = minRangePercent * myHealth.loseAggroRange;
-        maxRangePercent = maxRangePercent * myHealth.loseAggroRange;
+        minRange = minRangePercent * myHealth.loseAggroRange;
+        maxRange = maxRangePercent * myHealth.loseAggroRange;
     }
 
     void Update()
@@ -164,11 +170,11 @@ public class MixedEnemy : MonoBehaviour
                 return;
 
             }
-            else if (Vector3.Distance(target.position, transform.position) >= minRangePercent && Vector3.Distance(target.position, transform.position) <= maxRangePercent)
+            else if (Vector3.Distance(target.position, transform.position) >= minRange && Vector3.Distance(target.position, transform.position) <= maxRange)
             {
                 Debug.Log("within shooting range, firing a shot now");
                 OnShoot();
-                myHealth.moveSpeed = -1f;
+                myHealth.moveSpeed = shootMoveSpeed;
                 Vector3 direction = (target.position - transform.position).normalized;
                 moveDirection = -direction;
                 lastMoveDirection = moveDirection;

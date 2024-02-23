@@ -33,6 +33,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Anger/Anger6.unity
     guid: d1d84555b50044aebbe8cf08f05f4636
   - enabled: 1
+    path: Assets/Scenes/Anger/Anger6_1.unity
+    guid: 2fd0fa27bf6234a1db3e7782e02aadfa
+  - enabled: 1
     path: Assets/Scenes/Anger/Anger7.unity
     guid: 23f672d522f4e49819b76cc0fa424565
   - enabled: 1
@@ -41,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Words/Words2.unity
     guid: 85043c88abdc44e6d835aebf0cdc5b49
+  - enabled: 1
+    path: Assets/Scenes/Words/Words3.unity
+    guid: 44c14f72ed7ad467faf954c40fc4e9d7
   m_configObjects: {}

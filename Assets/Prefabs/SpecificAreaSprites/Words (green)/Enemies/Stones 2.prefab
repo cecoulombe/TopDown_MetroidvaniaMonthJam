@@ -324,7 +324,7 @@ MonoBehaviour:
   attackTimer: 0
   lungeAttackRange: 4
   attackCoolDown: 0
-  chargerCoolDown: 250
+  chargerCoolDown: 450
 --- !u!114 &1969078019802291558
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -234,7 +234,7 @@ public class EnemyHealth : MonoBehaviour
     {
         health -= damage;
         isAwake = true;
-        if (health <= 0)
+        if (health <= 0.1)
         {
             //Destroy(gameObject);
             isDead = true;
