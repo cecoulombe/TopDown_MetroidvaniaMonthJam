@@ -25,6 +25,8 @@ public class Words2 : MonoBehaviour
     private GameObject Words3_LoadingZone;
     [SerializeField]
     private GameObject Anger6_1_LoadingZone;
+    [SerializeField]
+    private GameObject Words7_LoadingZone;
 
     // for every set of variables in this script, make sure to add the corresponding tracker to the game status
     [Header("Gates/doors/chests/breakable walls tracking")]
@@ -35,6 +37,14 @@ public class Words2 : MonoBehaviour
     private GameObject Words2_RoomAfterGate;
     [SerializeField]
     private bool Words2_enemyGateOpen;
+
+    [Header("Breakable Walls")]
+    [SerializeField]
+    private GameObject Words2_Wall_Closed;
+    [SerializeField]
+    private GameObject Words2_Wall_Opened;
+    [SerializeField]
+    private bool Words2_WallOpen;
 
     [Header("Hidden Walls")]
     [SerializeField]
@@ -78,6 +88,10 @@ public class Words2 : MonoBehaviour
         {
             player.transform.position = Anger6_1_LoadingZone.transform.position;
         }
+        else if (previousRoom == "Words7")   // repeat this for each transition
+        {
+            player.transform.position = Words7_LoadingZone.transform.position;
+        }
     }
 
     private void Update()
@@ -97,6 +111,22 @@ public class Words2 : MonoBehaviour
             Debug.Log("open gate");
             Words2_EnemyGate.SetActive(false);
             Words2_RoomAfterGate.SetActive(true);
+        }
+        #endregion
+
+        #region Breakable Walls
+        Words2_WallOpen = GameStatus.GetInstance().GetWallState(currentRoom);
+        if (!Words2_WallOpen)  // the wall is closed
+        {
+            Debug.Log("closed wall");
+            Words2_Wall_Closed.SetActive(true);
+            Words2_Wall_Opened.SetActive(false);
+        }
+        else    // open the wall and keep it visually opened after (it will stay open after leaving the room)
+        {
+            Debug.Log("open wall");
+            Words2_Wall_Closed.SetActive(false);
+            Words2_Wall_Opened.SetActive(true);
         }
         #endregion
 

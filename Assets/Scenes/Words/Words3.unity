@@ -12668,12 +12668,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
+      propertyPath: bigAmmoChance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
       propertyPath: wakeUpPercent
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
       propertyPath: loseAggroRange
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
+      propertyPath: smallAmmoChance
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
       propertyPath: m_Name
@@ -12837,12 +12845,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
+      propertyPath: bigAmmoChance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
       propertyPath: wakeUpPercent
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
       propertyPath: loseAggroRange
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
+      propertyPath: smallAmmoChance
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
       propertyPath: m_Name
@@ -13028,12 +13044,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
+      propertyPath: bigAmmoChance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
       propertyPath: wakeUpPercent
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
       propertyPath: loseAggroRange
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
+      propertyPath: smallAmmoChance
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3000748337740670392, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
       propertyPath: canHeal
@@ -13117,12 +13141,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
+      propertyPath: bigAmmoChance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
       propertyPath: wakeUpPercent
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
       propertyPath: loseAggroRange
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
+      propertyPath: smallAmmoChance
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5685464788237597865, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
       propertyPath: canHeal
@@ -13292,12 +13324,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
+      propertyPath: bigAmmoChance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
       propertyPath: wakeUpPercent
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
       propertyPath: loseAggroRange
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
+      propertyPath: smallAmmoChance
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5685464788237597865, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
       propertyPath: canHeal
@@ -13373,12 +13413,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
+      propertyPath: bigAmmoChance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
       propertyPath: wakeUpPercent
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
       propertyPath: loseAggroRange
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
+      propertyPath: smallAmmoChance
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3000748337740670392, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
       propertyPath: canHeal
@@ -13466,12 +13514,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
+      propertyPath: bigAmmoChance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
       propertyPath: wakeUpPercent
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
       propertyPath: loseAggroRange
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
+      propertyPath: smallAmmoChance
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5685464788237597865, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
       propertyPath: canHeal
@@ -13543,12 +13599,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
+      propertyPath: bigAmmoChance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
       propertyPath: wakeUpPercent
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
       propertyPath: loseAggroRange
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
+      propertyPath: smallAmmoChance
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
       propertyPath: m_Name
@@ -13632,12 +13696,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
+      propertyPath: bigAmmoChance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
       propertyPath: wakeUpPercent
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1969078019802291558, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
       propertyPath: loseAggroRange
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969078019802291558, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
+      propertyPath: smallAmmoChance
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3000748337740670392, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
       propertyPath: canHeal

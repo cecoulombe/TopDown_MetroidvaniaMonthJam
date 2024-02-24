@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Words/Words3.unity
     guid: 44c14f72ed7ad467faf954c40fc4e9d7
+  - enabled: 1
+    path: Assets/Scenes/Words/Words4.unity
+    guid: 553b110c3948e4deea377ba9ec2ebbab
+  - enabled: 1
+    path: Assets/Scenes/Words/Words5.unity
+    guid: a4aa25f2d64fd4146806e5ca4c1d2a63
   m_configObjects: {}
