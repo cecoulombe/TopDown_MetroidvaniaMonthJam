@@ -17,6 +17,8 @@ public class GameStart : MonoBehaviour
     private GameObject spawnPoint;
     [SerializeField]
     private GameObject Anger1_LoadingZone;
+    [SerializeField]
+    private GameObject Overwhelm1_LoadingZone;
 
     // for every set of variables in this script, make sure to add the corresponding tracker to the game status
     [Header("Gates/doors/chests/breakable walls tracking")]
@@ -30,11 +32,11 @@ public class GameStart : MonoBehaviour
 
     [Header("Hidden Walls")]
     [SerializeField]
-    private GameObject GameStart_Hidden_Closed;
+    private GameObject GameStart_Overwhelm1_Hidden_Closed;
     [SerializeField]
-    private GameObject GameStart_Hidden_Opened;
+    private GameObject GameStart_Overwhelm1_Hidden_Opened;
     [SerializeField]
-    private bool GameStart_HiddenOpen;
+    private bool GameStart_Overwhelm1_HiddenOpen;
     #endregion
 
     private void Start()
@@ -54,6 +56,10 @@ public class GameStart : MonoBehaviour
         else if (previousRoom == "Anger1")   // repeat this for each transition
         {
             player.transform.position = Anger1_LoadingZone.transform.position;
+        }
+        else if (previousRoom == "Overwhelm1")   // repeat this for each transition
+        {
+            player.transform.position = Overwhelm1_LoadingZone.transform.position;
         }
     }
 
@@ -80,18 +86,18 @@ public class GameStart : MonoBehaviour
             #endregion
 
             #region Hidden Rooms
-            GameStart_HiddenOpen = GameStatus.GetInstance().GetHiddenState(currentRoom);
-            if (!GameStart_HiddenOpen)  // the wall is closed
+            GameStart_Overwhelm1_HiddenOpen = GameStatus.GetInstance().GetHiddenState(currentRoom);
+            if (!GameStart_Overwhelm1_HiddenOpen)  // the wall is closed
             {
                 Debug.Log("closed wall");
-                GameStart_Hidden_Closed.SetActive(true);
-                GameStart_Hidden_Opened.SetActive(false);
+                GameStart_Overwhelm1_Hidden_Closed.SetActive(true);
+                GameStart_Overwhelm1_Hidden_Opened.SetActive(false);
             }
             else    // open the wall and keep it visually opened after (it will stay open after leaving the room)
             {
                 Debug.Log("open wall");
-                GameStart_Hidden_Closed.SetActive(false);
-                GameStart_Hidden_Opened.SetActive(true);
+                GameStart_Overwhelm1_Hidden_Closed.SetActive(false);
+                GameStart_Overwhelm1_Hidden_Opened.SetActive(true);
             }
             #endregion
         }

@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1854552320202556599}
   - component: {fileID: 490441834834982290}
-  - component: {fileID: 7537027121402654435}
-  - component: {fileID: -3526383216806199088}
-  - component: {fileID: 4851051829772083479}
+  - component: {fileID: -6354750462011763835}
+  - component: {fileID: 4829478379611158002}
+  - component: {fileID: 6568778885873767771}
   m_Layer: 0
-  m_Name: Small Ammo Drop
+  m_Name: GBig Ammo Drop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,19 +76,55 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -939690719, guid: c11c92106e73d45e7a652623c6768ed8, type: 3}
+  m_Sprite: {fileID: 851862167, guid: c11c92106e73d45e7a652623c6768ed8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.140625, y: 0.140625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &7537027121402654435
-CircleCollider2D:
+--- !u!114 &-6354750462011763835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985900085209205504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1788e23392cd148649236020659134ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallAmmo: 1
+  bigAmmo: 2
+  healthType: 1
+--- !u!95 &4829478379611158002
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985900085209205504}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &6568778885873767771
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,42 +155,24 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000011920929, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.027698314
---- !u!114 &-3526383216806199088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985900085209205504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1788e23392cd148649236020659134ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smallAmmo: 1
-  bigAmmo: 2
-  healthType: 0
---- !u!95 &4851051829772083479
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985900085209205504}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.109375, y: 0.109375}
+    newSize: {x: 0.140625, y: 0.140625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.007851027, y: 0.0578279}
+      - {x: -0.058868308, y: 0.00891063}
+      - {x: -0.0578279, y: -0.0047298633}
+      - {x: -0.007870246, y: -0.0578279}
+      - {x: 0.008872128, y: -0.056787513}
+      - {x: 0.059908625, y: -0.0067913774}
+      - {x: 0.057827853, y: 0.011993287}
+      - {x: 0.009912491, y: 0.057827897}
+  m_UseDelaunayMesh: 0

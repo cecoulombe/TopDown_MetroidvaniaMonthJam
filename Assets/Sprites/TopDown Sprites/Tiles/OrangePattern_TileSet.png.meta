@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,7 +134,889 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa49b31c7e6f4ce296df0d8483e66e3
+      internalID: 748015513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 167
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e249b4247d9147d4b0d99b3164cec73
+      internalID: -1988867675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 167
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571f7500aedb74eab8cd67e1fdeed15a
+      internalID: -1957509861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 167
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b7732093dfd45c3b9ef8a5d37c28b5
+      internalID: -1032277138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 167
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c2e9f42ed6847f3b6259807c3fb5f8
+      internalID: 2127675857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_5
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 167
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04842af2379a44cff8ffa4555525ff43
+      internalID: 103398381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_6
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 167
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52c5743cbabb481fa362d185ac0c4fe
+      internalID: 2133732224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 168
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d98931b6dea4940a2cca6666919570
+      internalID: -588454516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76e875d4a6674fe8bee193119caa3d9
+      internalID: 880872490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 135
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6797c2e7d8411418d8c0a12f4938ee2d
+      internalID: 459617414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 135
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d199b0ad87d24fc2973a5c230314b9e
+      internalID: 2050951267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 135
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401b74b193bbe4816abe56c2040c5a77
+      internalID: -876185469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_12
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 135
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e102476645e344c90a2ce9f3a6af9b5c
+      internalID: 697180392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_13
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 135
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01fc69b199c17466bb1579f0cbeaa368
+      internalID: 2118876042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_14
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 49
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6830ab26398854ebc8f4fa6cad5d61e8
+      internalID: 1297000555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_15
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 136
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86942ef35a8a14b71a0a4a032468faba
+      internalID: 337652042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 103
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d5cf94585d34d61a1e7bf004a56a1f
+      internalID: 1417846032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 103
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1772432f24f4a31a04f2aafe1b7831
+      internalID: 1801935784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 103
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2ff5395c686c4d728b5489f47af57e7
+      internalID: 338894265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 103
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b717218b8d6f45a69788909d6ba271e
+      internalID: -2049149005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_20
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 51
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae80b99f796244c2a175b916bfa1fd0
+      internalID: 1727981323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_21
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 40
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f2218f35ea748b895c1114b9651811
+      internalID: -1423734954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_22
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 40
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f68fa9072f64e1695205dc744738af
+      internalID: 853095876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_23
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 103
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0065633240051420fafedd0b5f0be830
+      internalID: 205854634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 71
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d1d3b9a204242d39695d7c11a33e0d
+      internalID: 1115699324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 71
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99b7f0cbbc1940c1985e3eeb035657d
+      internalID: 956870346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 71
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0386519515194765b129874da62021a
+      internalID: -1677293977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 71
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 134a19ead813c4c3a8ace15085f43821
+      internalID: 1030734250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_28
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 71
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77eacb0353d964591b4e2a79f3a3ac35
+      internalID: -1974865260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 71
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0dee276b702140a0bf8c0278048cc2b
+      internalID: -1312408185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 71
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d66668304694568b5152fc1bbf30a0
+      internalID: -2030525768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_31
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 40
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b03c3257b942473b90adb059c39fc5d
+      internalID: -1607376971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_32
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 57
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb9f63a062af4b37bdc2cccbf73f464
+      internalID: 1244988340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_33
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 57
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b381fe691e1514fd0b8b2993cea9f494
+      internalID: 1902526418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_34
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 57
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306490c2f0dac4afab74f106c13e9f78
+      internalID: 937533078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_35
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 40
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 991cae0a76f714852ab73e7043585dd4
+      internalID: 880254476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_36
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 40
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae3312cbb54c045b18ba9b61c8df513f
+      internalID: -592035176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_37
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 35
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638d6bd952d9046ae91db3c6221e1d92
+      internalID: -550051985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_38
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 35
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8bddd7af1f949249b28a7c84f16ec7
+      internalID: -2109432789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_39
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 40
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d8ad3658a0542d3b1cfb1acbd78625
+      internalID: 1867047985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_40
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 57
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfe73398468b4c6db57ce46b9d09cd5
+      internalID: 1888061856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrangePattern_TileSet_41
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 36
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d635b4a2be1c245a6ac033c3833fdd64
+      internalID: -709377260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +1027,49 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      OrangePattern_TileSet_0: 748015513
+      OrangePattern_TileSet_1: -1988867675
+      OrangePattern_TileSet_10: 2050951267
+      OrangePattern_TileSet_11: -876185469
+      OrangePattern_TileSet_12: 697180392
+      OrangePattern_TileSet_13: 2118876042
+      OrangePattern_TileSet_14: 1297000555
+      OrangePattern_TileSet_15: 337652042
+      OrangePattern_TileSet_16: 1417846032
+      OrangePattern_TileSet_17: 1801935784
+      OrangePattern_TileSet_18: 338894265
+      OrangePattern_TileSet_19: -2049149005
+      OrangePattern_TileSet_2: -1957509861
+      OrangePattern_TileSet_20: 1727981323
+      OrangePattern_TileSet_21: -1423734954
+      OrangePattern_TileSet_22: 853095876
+      OrangePattern_TileSet_23: 205854634
+      OrangePattern_TileSet_24: 1115699324
+      OrangePattern_TileSet_25: 956870346
+      OrangePattern_TileSet_26: -1677293977
+      OrangePattern_TileSet_27: 1030734250
+      OrangePattern_TileSet_28: -1974865260
+      OrangePattern_TileSet_29: -1312408185
+      OrangePattern_TileSet_3: -1032277138
+      OrangePattern_TileSet_30: -2030525768
+      OrangePattern_TileSet_31: -1607376971
+      OrangePattern_TileSet_32: 1244988340
+      OrangePattern_TileSet_33: 1902526418
+      OrangePattern_TileSet_34: 937533078
+      OrangePattern_TileSet_35: 880254476
+      OrangePattern_TileSet_36: -592035176
+      OrangePattern_TileSet_37: -550051985
+      OrangePattern_TileSet_38: -2109432789
+      OrangePattern_TileSet_39: 1867047985
+      OrangePattern_TileSet_4: 2127675857
+      OrangePattern_TileSet_40: 1888061856
+      OrangePattern_TileSet_41: -709377260
+      OrangePattern_TileSet_5: 103398381
+      OrangePattern_TileSet_6: 2133732224
+      OrangePattern_TileSet_7: -588454516
+      OrangePattern_TileSet_8: 880872490
+      OrangePattern_TileSet_9: 459617414
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -107,7 +107,7 @@ public class GameStatus : MonoBehaviour
 
     [Header("Hidden Rooms")]
     [SerializeField]
-    protected bool GameStart_HiddenOpen;
+    protected bool GameStart_Overwhelm1_HiddenOpen;
     [SerializeField]
     protected bool Anger2_and6_HiddenOpen;
     [SerializeField]
@@ -535,9 +535,9 @@ public class GameStatus : MonoBehaviour
     #region Hidden Rooms
     public bool GetHiddenState(string roomName)
     {
-        if (roomName == "GameStart")
+        if (roomName == "GameStart" || roomName == "Overwhelm1")
         {
-            return GameStart_HiddenOpen;
+            return GameStart_Overwhelm1_HiddenOpen;
         }
         else if (roomName == "Anger2" || roomName == "Anger6")
         {
@@ -560,9 +560,9 @@ public class GameStatus : MonoBehaviour
 
     public void SetHiddenState(string roomName)
     {
-        if (roomName == "GameStart")
+        if (roomName == "GameStart" || roomName == "Overwhelm1")
         {
-            GameStart_HiddenOpen = true;
+            GameStart_Overwhelm1_HiddenOpen = true;
         }
         if (roomName == "Anger2" || roomName == "Anger6")
         {
@@ -773,7 +773,7 @@ public class GameStatus : MonoBehaviour
         Words5_wallOpen = PlayerPrefs.GetInt("Words5_wallOpen") == 1;
 
         // Fake Walls
-        GameStart_HiddenOpen = PlayerPrefs.GetInt("GameStart_HiddenOpen") == 1;
+        GameStart_Overwhelm1_HiddenOpen = PlayerPrefs.GetInt("GameStart_Overwhelm1_HiddenOpen") == 1;
         Anger2_and6_HiddenOpen = PlayerPrefs.GetInt("Anger2_and6_HiddenOpen") == 1;
         Anger4_HiddenOpen = PlayerPrefs.GetInt("Anger4_HiddenOpen") == 1;
         Words2_HiddenOpen = PlayerPrefs.GetInt("Words2_HiddenOpen") == 1;
@@ -823,7 +823,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Words5_wallOpen", Words5_wallOpen ? 1 : 0);
 
         // Fake Walls
-        PlayerPrefs.SetInt("GameStart_HiddenOpen", GameStart_HiddenOpen ? 1 : 0);
+        PlayerPrefs.SetInt("GameStart_Overwhelm1_HiddenOpen", GameStart_Overwhelm1_HiddenOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", Anger2_and6_HiddenOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger4_HiddenOpen", Anger4_HiddenOpen ? 1 : 0);
         PlayerPrefs.SetInt("Words2_HiddenOpen", Words2_HiddenOpen ? 1 : 0);
@@ -891,7 +891,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Words5_wallOpen", 0);
 
         // Fake Walls
-        PlayerPrefs.SetInt("GameStart_HiddenOpen", 0);
+        PlayerPrefs.SetInt("GameStart_Overwhelm1_HiddenOpen", 0);
         PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", 0);
         PlayerPrefs.SetInt("Anger4_HiddenOpen", 0);
         PlayerPrefs.SetInt("Words2_HiddenOpen", 0);

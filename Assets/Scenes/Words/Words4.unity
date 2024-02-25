@@ -13383,13 +13383,13 @@ MonoBehaviour:
   health: 3
   maxHealth: 3
   takingDamage: 0
-  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
+  bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
   bigHealthChance: 4
-  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 12
-  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+  bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
   bigAmmoChance: 8
-  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+  smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 20
   knockBackForce: 1
   knockBackCounter: 0
@@ -13424,13 +13424,13 @@ MonoBehaviour:
   health: 3
   maxHealth: 3
   takingDamage: 0
-  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
+  bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
   bigHealthChance: 7
-  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 20
-  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+  bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
   bigAmmoChance: 3
-  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+  smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 12
   knockBackForce: 1
   knockBackCounter: 0
@@ -13465,13 +13465,13 @@ MonoBehaviour:
   health: 3
   maxHealth: 3
   takingDamage: 0
-  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
+  bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
   bigHealthChance: 5
-  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 15
-  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+  bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
   bigAmmoChance: 5
-  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+  smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 15
   knockBackForce: 1
   knockBackCounter: 0
@@ -15033,13 +15033,13 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   takingDamage: 0
-  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
+  bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
   bigHealthChance: 10
-  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 22
-  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+  bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
   bigAmmoChance: 5
-  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+  smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 17
   knockBackForce: 0
   knockBackCounter: 0
@@ -15074,13 +15074,13 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   takingDamage: 0
-  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
+  bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
   bigHealthChance: 10
-  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 22
-  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+  bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
   bigAmmoChance: 5
-  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+  smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 17
   knockBackForce: 0
   knockBackCounter: 0
@@ -15115,13 +15115,13 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   takingDamage: 0
-  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
+  bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
   bigHealthChance: 10
-  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 22
-  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+  bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
   bigAmmoChance: 5
-  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+  smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 17
   knockBackForce: 0
   knockBackCounter: 0
