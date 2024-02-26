@@ -70,6 +70,8 @@ public class GameStatus : MonoBehaviour
     protected bool Words3_enemyGateOpen;
     [SerializeField]
     protected bool Words5_enemyGateOpen;
+    [SerializeField]
+    protected bool Overwhelm2_enemyGateOpen;
 
     [Header("Chests")]
     [SerializeField]
@@ -90,6 +92,8 @@ public class GameStatus : MonoBehaviour
     protected bool Words2_HealthIncreaseTaken;
     [SerializeField]
     protected bool Words5_HealthIncreaseTaken;
+    [SerializeField]
+    protected bool Overwhelm2_AmmoIncreaseTaken;
 
     [Header("Breakable Walls")]
     [SerializeField]
@@ -104,6 +108,8 @@ public class GameStatus : MonoBehaviour
     protected bool Words2_wallOpen;
     [SerializeField]
     protected bool Words5_wallOpen;
+    [SerializeField]
+    protected bool Overwhelm2_wallOpen;
 
     [Header("Hidden Rooms")]
     [SerializeField]
@@ -400,6 +406,10 @@ public class GameStatus : MonoBehaviour
         {
             return Words5_enemyGateOpen;
         }
+        else if (roomName == "Overwhelm2")
+        {
+            return Overwhelm2_enemyGateOpen;
+        }
         else
         {
             Debug.Log("cannot find the current room, returning true");
@@ -441,6 +451,10 @@ public class GameStatus : MonoBehaviour
         else if (roomName == "Words5")
         {
             Words5_enemyGateOpen = true;
+        }
+        else if (roomName == "Overwhelm2")
+        {
+            Overwhelm2_enemyGateOpen = true;
         }
     }
     #endregion
@@ -496,6 +510,10 @@ public class GameStatus : MonoBehaviour
         {
             return Words5_wallOpen;
         }
+        else if (roomName == "Overwhelm2")
+        {
+            return Overwhelm2_wallOpen;
+        }
         else
         {
             Debug.Log("cannot find the current room, returning true");
@@ -528,6 +546,10 @@ public class GameStatus : MonoBehaviour
         else if (roomName == "Words5")
         {
             Words5_wallOpen = true;
+        }
+        else if (roomName == "Overwhelm2")
+        {
+            Overwhelm2_wallOpen = true;
         }
     }
     #endregion
@@ -636,6 +658,13 @@ public class GameStatus : MonoBehaviour
                 return Words5_HealthIncreaseTaken;
             }
         }
+        else if (roomName == "Overwhelm2")
+        {
+            if (pickup == "Ammo")
+            {
+                return Overwhelm2_AmmoIncreaseTaken;
+            }
+        }
 
 
         if (pickup == "dash")
@@ -718,6 +747,13 @@ public class GameStatus : MonoBehaviour
                 Words5_HealthIncreaseTaken = true;
             }
         }
+        else if (roomName == "Overwhelm2")
+        {
+            if (pickup == "Ammo")
+            {
+                Overwhelm2_AmmoIncreaseTaken = true;
+            }
+        }
 
         if (pickup == "dash")
         {
@@ -771,6 +807,8 @@ public class GameStatus : MonoBehaviour
         Words1_wallOpen = PlayerPrefs.GetInt("Words1_wallOpen") == 1;
         Words2_wallOpen = PlayerPrefs.GetInt("Words2_wallOpen") == 1;
         Words5_wallOpen = PlayerPrefs.GetInt("Words5_wallOpen") == 1;
+        Overwhelm2_wallOpen = PlayerPrefs.GetInt("Overwhelm2_wallOpen") == 1;
+
 
         // Fake Walls
         GameStart_Overwhelm1_HiddenOpen = PlayerPrefs.GetInt("GameStart_Overwhelm1_HiddenOpen") == 1;
@@ -787,7 +825,7 @@ public class GameStatus : MonoBehaviour
         Words2_enemyGateOpen = PlayerPrefs.GetInt("Words2_enemyGateOpen") == 1;
         Words3_enemyGateOpen = PlayerPrefs.GetInt("Words3_enemyGateOpen") == 1;
         Words5_enemyGateOpen = PlayerPrefs.GetInt("Words5_enemyGateOpen") == 1;
-
+        Overwhelm2_enemyGateOpen = PlayerPrefs.GetInt("Overwhelm2_enemyGateOpen") == 1;
 
         // permanent upgrades
         Anger3_1_HealthIncreaseTaken = PlayerPrefs.GetInt("Anger3_1_HealthIncreaseTaken") == 1;
@@ -797,6 +835,8 @@ public class GameStatus : MonoBehaviour
         Anger6_1_AmmoIncreaseTaken = PlayerPrefs.GetInt("Anger6_1_AmmoIncreaseTaken") == 1;
         Words2_HealthIncreaseTaken = PlayerPrefs.GetInt("Words2_HealthIncreaseTaken") == 1;
         Words5_HealthIncreaseTaken = PlayerPrefs.GetInt("Words5_HealthIncreaseTaken") == 1;
+        Overwhelm2_AmmoIncreaseTaken = PlayerPrefs.GetInt("Overwhelm2_AmmoIncreaseTaken") == 1;
+
     }
 
     public void SetPlayerPrefs()
@@ -821,6 +861,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Words1_wallOpen", Words1_wallOpen ? 1 : 0);
         PlayerPrefs.SetInt("Words2_wallOpen", Words2_wallOpen ? 1 : 0);
         PlayerPrefs.SetInt("Words5_wallOpen", Words5_wallOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Overwhelm2_wallOpen", Overwhelm2_wallOpen ? 1 : 0);
 
         // Fake Walls
         PlayerPrefs.SetInt("GameStart_Overwhelm1_HiddenOpen", GameStart_Overwhelm1_HiddenOpen ? 1 : 0);
@@ -837,6 +878,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Words2_enemyGateOpen", Words2_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Words3_enemyGateOpen", Words3_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Words5_enemyGateOpen", Words5_enemyGateOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Overwhelm2_enemyGateOpen", Overwhelm2_enemyGateOpen ? 1 : 0);
 
         // permanent upgrades
         PlayerPrefs.SetInt("Anger3_1_HealthIncreaseTaken", Anger3_1_HealthIncreaseTaken ? 1 : 0);
@@ -846,6 +888,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Anger6_1_AmmoIncreaseTaken", Anger6_1_AmmoIncreaseTaken ? 1 : 0);
         PlayerPrefs.SetInt("Words2_HealthIncreaseTaken", Words2_HealthIncreaseTaken ? 1 : 0);
         PlayerPrefs.SetInt("Words5_HealthIncreaseTaken", Words5_HealthIncreaseTaken ? 1 : 0);
+        PlayerPrefs.SetInt("Overwhelm2_AmmoIncreaseTaken", Overwhelm2_AmmoIncreaseTaken ? 1 : 0);
 
 
         //PlayerPrefs.Save();
@@ -889,6 +932,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Words1_wallOpen", 0);
         PlayerPrefs.SetInt("Words2_wallOpen", 0);
         PlayerPrefs.SetInt("Words5_wallOpen", 0);
+        PlayerPrefs.SetInt("Overwhelm2_wallOpen", 0);
 
         // Fake Walls
         PlayerPrefs.SetInt("GameStart_Overwhelm1_HiddenOpen", 0);
@@ -905,7 +949,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Words2_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Words3_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Words5_enemyGateOpen", 0);
-
+        PlayerPrefs.SetInt("Overwhelm2_enemyGateOpen", 0);
 
         // permanent upgrades
         PlayerPrefs.SetInt("Anger3_1_HealthIncreaseTaken", 0);
@@ -915,6 +959,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Anger6_1_AmmoIncreaseTaken", 0);
         PlayerPrefs.SetInt("Words2_HealthIncreaseTaken", 0);
         PlayerPrefs.SetInt("Words5_HealthIncreaseTaken", 0);
+        PlayerPrefs.SetInt("Overwhelm2_AmmoIncreaseTaken", 0);
 
         PlayerPrefs.Save();
     }

@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overwhelm/Overwhelm1.unity
     guid: 05f0078a4d2574963b11d6eaf2d9fd6b
+  - enabled: 1
+    path: Assets/Scenes/Overwhelm/Overwhelm2.unity
+    guid: 2791ab85f18cb4bfe9c88a70b9b661d0
   m_configObjects: {}
