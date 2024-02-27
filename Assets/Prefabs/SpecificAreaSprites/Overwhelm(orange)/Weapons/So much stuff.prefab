@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3906895990731031923}
   - component: {fileID: 1773352636814762128}
   - component: {fileID: 5733951992524303128}
-  - component: {fileID: 775217062682880758}
   - component: {fileID: 8707394492032589414}
+  - component: {fileID: 854665956286561044}
   m_Layer: 0
   m_Name: So much stuff
   m_TagString: Untagged
@@ -245,7 +245,21 @@ TrailRenderer:
   m_Autodestruct: 1
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!60 &775217062682880758
+--- !u!114 &8707394492032589414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2609964779410368697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e374d34819f984835a0c5691626e1162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0}
+  fireForce: 10
+--- !u!60 &854665956286561044
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,7 +295,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.953125, y: 0.96875}
+    oldSize: {x: 0.796875, y: 1.1875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -289,50 +303,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.47249138, y: -0.41389266}
-      - {x: 0.4455525, y: -0.34794033}
-      - {x: 0.41366252, y: -0.26402575}
-      - {x: 0.3343347, y: -0.121903755}
-      - {x: 0.27428526, y: 0.024488166}
-      - {x: 0.20730975, y: 0.17124972}
-      - {x: 0.20642406, y: 0.20193568}
-      - {x: 0.189224, y: 0.25228322}
-      - {x: 0.1758042, y: 0.29530308}
-      - {x: 0.12577605, y: 0.40594405}
-      - {x: 0.01866284, y: 0.48283172}
-      - {x: -0.1451062, y: 0.48163304}
-      - {x: -0.27548137, y: 0.4105668}
-      - {x: -0.33982134, y: 0.36827904}
-      - {x: -0.41288066, y: 0.2984006}
-      - {x: -0.4551077, y: 0.23314758}
-      - {x: -0.47171077, y: 0.18858951}
-      - {x: -0.4801126, y: 0.14457883}
-      - {x: -0.47803965, y: 0.08673133}
-      - {x: -0.47210345, y: 0.037397005}
-      - {x: -0.4338383, y: -0.017912775}
-      - {x: -0.29746965, y: -0.13902381}
-      - {x: -0.16058101, y: -0.21681069}
-      - {x: -0.070730954, y: -0.2581638}
-      - {x: 0.015330672, y: -0.2943838}
-      - {x: 0.1774272, y: -0.37026274}
-      - {x: 0.27730557, y: -0.41089994}
-      - {x: 0.35909328, y: -0.45434362}
-      - {x: 0.41141856, y: -0.4836347}
-      - {x: 0.47210288, y: -0.48682487}
-      - {x: 0.48049903, y: -0.45661336}
-      - {x: 0.4775811, y: -0.44309795}
+    - - {x: -0.2734375, y: 0.59375}
+      - {x: -0.3515625, y: 0.515625}
+      - {x: -0.3515625, y: 0.140625}
+      - {x: -0.2265625, y: -0.375}
+      - {x: -0.0703125, y: -0.59375}
+      - {x: 0.0078125, y: -0.59375}
+      - {x: 0.0390625, y: -0.578125}
+      - {x: 0.3515625, y: 0.1875}
+      - {x: 0.3515625, y: 0.421875}
+      - {x: 0.2109375, y: 0.59375}
   m_UseDelaunayMesh: 0
---- !u!114 &8707394492032589414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2609964779410368697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e374d34819f984835a0c5691626e1162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0}
-  fireForce: 10
