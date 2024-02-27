@@ -140,7 +140,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 117
+        y: 317
         width: 83
         height: 83
       alignment: 0
@@ -160,8 +160,8 @@ TextureImporter:
       name: OrangeEnemies_1
       rect:
         serializedVersion: 2
-        x: 84
-        y: 124
+        x: 83
+        y: 324
         width: 78
         height: 74
       alignment: 0
@@ -181,8 +181,8 @@ TextureImporter:
       name: OrangeEnemies_2
       rect:
         serializedVersion: 2
-        x: 172
-        y: 128
+        x: 173
+        y: 327
         width: 60
         height: 64
       alignment: 0
@@ -202,10 +202,10 @@ TextureImporter:
       name: OrangeEnemies_3
       rect:
         serializedVersion: 2
-        x: 170
-        y: 44
-        width: 64
-        height: 64
+        x: 157
+        y: 170
+        width: 61
+        height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,7 +224,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 241
-        y: 122
+        y: 323
         width: 72
         height: 69
       alignment: 0
@@ -244,8 +244,8 @@ TextureImporter:
       name: OrangeEnemies_5
       rect:
         serializedVersion: 2
-        x: 316
-        y: 115
+        x: 317
+        y: 313
         width: 76
         height: 85
       alignment: 0
@@ -265,8 +265,8 @@ TextureImporter:
       name: OrangeEnemies_6
       rect:
         serializedVersion: 2
-        x: 4
-        y: 36
+        x: 3
+        y: 236
         width: 81
         height: 81
       alignment: 0
@@ -307,10 +307,10 @@ TextureImporter:
       name: OrangeEnemies_8
       rect:
         serializedVersion: 2
-        x: 260
-        y: 33
-        width: 64
-        height: 64
+        x: 12
+        y: 169
+        width: 58
+        height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +328,10 @@ TextureImporter:
       name: OrangeEnemies_9
       rect:
         serializedVersion: 2
-        x: 326
-        y: 36
-        width: 64
-        height: 64
+        x: 88
+        y: 167
+        width: 57
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

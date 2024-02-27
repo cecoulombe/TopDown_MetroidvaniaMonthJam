@@ -22,10 +22,14 @@ public class GunScript : MonoBehaviour
     public void Shoot()
     {
         GameObject go = Instantiate(bullet.gameObject, transform.position, Quaternion.identity);
-        SpreadBullet goBullet = go.GetComponent<SpreadBullet>();
+        //go.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
+        go.GetComponent<Rigidbody2D>().AddForce(fireForce * direction, ForceMode2D.Impulse);
+        //SpreadBullet goBullet = go.GetComponent<SpreadBullet>();
 
         // Set the bullet's velocity towards the player
-        go.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
+        //go.GetComponent<Rigidbody2D>().velocity = direction * fireForce;
+
+        Destroy(go, 4f);
         
     }
 }

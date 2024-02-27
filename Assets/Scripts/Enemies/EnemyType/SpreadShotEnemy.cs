@@ -133,10 +133,10 @@ public class SpreadShotEnemy : MonoBehaviour
     private void RangedAttacker()
     {
         OnShoot();
-        Vector3 direction = (target.position - transform.position).normalized;
-        moveDirection = -direction;
-        lastMoveDirection = moveDirection;
-        myHealth.isWalking = true;
+        //Vector3 direction = (target.position - transform.position).normalized;
+        //moveDirection = -direction;
+        //lastMoveDirection = moveDirection;
+        //myHealth.isWalking = true;
         return;
     }
     #endregion

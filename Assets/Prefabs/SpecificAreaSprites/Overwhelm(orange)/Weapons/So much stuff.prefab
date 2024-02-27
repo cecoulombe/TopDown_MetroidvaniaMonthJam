@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 1773352636814762128}
   - component: {fileID: 5733951992524303128}
   - component: {fileID: 775217062682880758}
+  - component: {fileID: 8707394492032589414}
   m_Layer: 0
-  m_Name: Leaf of Pain
+  m_Name: So much stuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 485474016, guid: 9c0d8dbbc920342aa9386490340cb0c5, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 184009254, guid: 9c3f56efb3da14392a13b274ee5f4854, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,7 +140,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2609964779410368697}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -279,8 +280,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.46213937, y: 0.619513}
-    oldSize: {x: 1.0625, y: 0.734375}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.953125, y: 0.96875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -288,28 +289,50 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.44545642, y: -0.09548158}
-      - {x: 0.43053308, y: -0.04755252}
-      - {x: 0.40164694, y: 0.015334888}
-      - {x: 0.3403425, y: 0.106390975}
-      - {x: 0.27825403, y: 0.17666648}
-      - {x: 0.2283369, y: 0.21030012}
-      - {x: 0.15017354, y: 0.23425993}
-      - {x: 0.021666676, y: 0.26955634}
-      - {x: -0.23943484, y: 0.26938453}
-      - {x: -0.36181474, y: 0.22330365}
+    - - {x: 0.47249138, y: -0.41389266}
+      - {x: 0.4455525, y: -0.34794033}
+      - {x: 0.41366252, y: -0.26402575}
+      - {x: 0.3343347, y: -0.121903755}
+      - {x: 0.27428526, y: 0.024488166}
+      - {x: 0.20730975, y: 0.17124972}
+      - {x: 0.20642406, y: 0.20193568}
+      - {x: 0.189224, y: 0.25228322}
+      - {x: 0.1758042, y: 0.29530308}
+      - {x: 0.12577605, y: 0.40594405}
+      - {x: 0.01866284, y: 0.48283172}
+      - {x: -0.1451062, y: 0.48163304}
+      - {x: -0.27548137, y: 0.4105668}
+      - {x: -0.33982134, y: 0.36827904}
+      - {x: -0.41288066, y: 0.2984006}
+      - {x: -0.4551077, y: 0.23314758}
+      - {x: -0.47171077, y: 0.18858951}
       - {x: -0.4801126, y: 0.14457883}
       - {x: -0.47803965, y: 0.08673133}
-      - {x: -0.42579162, y: -0.01254832}
-      - {x: -0.2746707, y: -0.23290184}
-      - {x: -0.13107647, y: -0.34958103}
-      - {x: 0.025829345, y: -0.41507423}
-      - {x: 0.07039893, y: -0.431383}
-      - {x: 0.19354478, y: -0.44279173}
-      - {x: 0.3404326, y: -0.44716445}
-      - {x: 0.43428156, y: -0.4261025}
-      - {x: 0.52226317, y: -0.39441726}
-      - {x: 0.56018686, y: -0.3742097}
-      - {x: 0.5225533, y: -0.30942333}
-      - {x: 0.48058495, y: -0.19377607}
+      - {x: -0.47210345, y: 0.037397005}
+      - {x: -0.4338383, y: -0.017912775}
+      - {x: -0.29746965, y: -0.13902381}
+      - {x: -0.16058101, y: -0.21681069}
+      - {x: -0.070730954, y: -0.2581638}
+      - {x: 0.015330672, y: -0.2943838}
+      - {x: 0.1774272, y: -0.37026274}
+      - {x: 0.27730557, y: -0.41089994}
+      - {x: 0.35909328, y: -0.45434362}
+      - {x: 0.41141856, y: -0.4836347}
+      - {x: 0.47210288, y: -0.48682487}
+      - {x: 0.48049903, y: -0.45661336}
+      - {x: 0.4775811, y: -0.44309795}
   m_UseDelaunayMesh: 0
+--- !u!114 &8707394492032589414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2609964779410368697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e374d34819f984835a0c5691626e1162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0}
+  fireForce: 10
