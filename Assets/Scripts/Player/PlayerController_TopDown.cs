@@ -135,7 +135,7 @@ public class PlayerController_TopDown : MonoBehaviour
     #endregion
     #endregion
 
-    void Start()
+    void Awake()
     {
         Initialization();
         anim = GetComponent<Animator>();

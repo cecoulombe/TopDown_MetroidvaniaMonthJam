@@ -16,16 +16,25 @@ public class CameraController : MonoBehaviour
 
     public bool canMoveVertical;
 
+    private bool hasHappened;
+
     #endregion
 
     void Start()
     {
+        Debug.Log("camera awake");
         player = FindObjectOfType<PlayerController_TopDown>();
         lastPlayerPosition = player.transform.position;
+        hasHappened = false;
     }
 
     void Update()
     {
+        if(!hasHappened)
+        {
+            MoveCameraToPlayer();
+            hasHappened = true;
+        }
         if (canMoveHorizontal)
         {
             Debug.Log("moving the camera horizontally");
@@ -46,5 +55,11 @@ public class CameraController : MonoBehaviour
 
         lastPlayerPosition = player.transform.position;
 
+    }
+
+    private void MoveCameraToPlayer()
+    {
+        Debug.Log("the players current position is: " + player.transform.position + " and the camera's current position is: " + transform.position);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
     }
 }

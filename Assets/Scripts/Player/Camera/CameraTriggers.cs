@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CameraTriggers : MonoBehaviour
 {
-    public CameraController mainCam;
+    private CameraController mainCam;
 
     [SerializeField]
     private bool isHorizontalTrigger;
@@ -38,6 +39,11 @@ public class CameraTriggers : MonoBehaviour
     //    }
     //}
 
+    private void Start()
+    {
+        mainCam = FindObjectOfType<CameraController>();
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerController_TopDown player = collision.GetComponent<PlayerController_TopDown>();
