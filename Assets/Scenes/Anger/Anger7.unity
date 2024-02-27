@@ -15881,11 +15881,13 @@ MonoBehaviour:
   attackCoolDown: 0
   loseAggroRange: 6
   isWalking: 0
-  inRange: 0
+  inAwakeRange: 0
+  inLoseAggroRange: 0
   isPatternWalker: 1
   wakeUpPercent: 0.7
   health: 3
   maxHealth: 3
+  takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
   bigHealthChance: 10
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
@@ -15974,11 +15976,13 @@ MonoBehaviour:
   attackCoolDown: 0
   loseAggroRange: 19
   isWalking: 0
-  inRange: 0
+  inAwakeRange: 0
+  inLoseAggroRange: 0
   isPatternWalker: 0
   wakeUpPercent: 0.5
   health: 3
   maxHealth: 3
+  takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
   bigHealthChance: 6
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
@@ -16056,11 +16060,13 @@ MonoBehaviour:
   attackCoolDown: 0
   loseAggroRange: 12
   isWalking: 0
-  inRange: 0
+  inAwakeRange: 0
+  inLoseAggroRange: 0
   isPatternWalker: 0
   wakeUpPercent: 0.8
   health: 5
   maxHealth: 5
+  takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
   bigHealthChance: 15
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
@@ -16148,11 +16154,13 @@ MonoBehaviour:
   attackCoolDown: 0
   loseAggroRange: 19
   isWalking: 0
-  inRange: 0
+  inAwakeRange: 0
+  inLoseAggroRange: 0
   isPatternWalker: 0
   wakeUpPercent: 0.5
   health: 3
   maxHealth: 3
+  takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
   bigHealthChance: 6
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
@@ -16333,11 +16341,13 @@ MonoBehaviour:
   attackCoolDown: 0
   loseAggroRange: 9
   isWalking: 0
-  inRange: 0
+  inAwakeRange: 0
+  inLoseAggroRange: 0
   isPatternWalker: 0
   wakeUpPercent: 0.5
   health: 3
   maxHealth: 3
+  takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
   bigHealthChance: 6
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
