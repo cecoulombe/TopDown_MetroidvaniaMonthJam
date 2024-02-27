@@ -202,10 +202,10 @@ TextureImporter:
       name: OrangeEnemies_3
       rect:
         serializedVersion: 2
-        x: 157
-        y: 168
-        width: 51
-        height: 76
+        x: 158
+        y: 188
+        width: 43
+        height: 44
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -2960,6 +2960,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 146248662414860277, guid: 4330b238ecc154af7bf71806f54fa8f7, type: 3}
   m_PrefabInstance: {fileID: 357549779}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &357835416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3436899667834579473, guid: f7924fc71508142dcbe48bd1e9f43660, type: 3}
+  m_PrefabInstance: {fileID: 2901331721187346878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3534d29dd97d4375a29cb1a055bf7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &358819237
 GameObject:
   m_ObjectHideFlags: 0
@@ -11314,7 +11325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9983a0eee2f42fdbaba0ee574c49db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyList: []
+  enemyList:
+  - {fileID: 357835416}
   player: {fileID: 1866720639}
   spawnPoint: {fileID: 1865532445}
   Overwhelm1_LoadingZone: {fileID: 1223021183}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1773352636814762128}
   - component: {fileID: 5733951992524303128}
   - component: {fileID: 8707394492032589414}
-  - component: {fileID: 854665956286561044}
+  - component: {fileID: 9008747673352800678}
   m_Layer: 0
   m_Name: So much stuff
   m_TagString: Untagged
@@ -140,7 +140,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2609964779410368697}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -153,7 +153,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 512b0cbde79a34d0eb5dd04c85cbe875, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,8 +183,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.14880753
+        time: 0.0011253357
+        value: 0.20541763
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -205,17 +205,17 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0.509434, b: 0.19306234, a: 1}
+      key0: {r: 1, g: 0.4496705, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
+      ctime0: 771
       ctime1: 65535
-      ctime2: 0
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -259,8 +259,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
   fireForce: 10
---- !u!60 &854665956286561044
-PolygonCollider2D:
+--- !u!58 &9008747673352800678
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -291,26 +291,6 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.796875, y: 1.1875}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.2734375, y: 0.59375}
-      - {x: -0.3515625, y: 0.515625}
-      - {x: -0.3515625, y: 0.140625}
-      - {x: -0.2265625, y: -0.375}
-      - {x: -0.0703125, y: -0.59375}
-      - {x: 0.0078125, y: -0.59375}
-      - {x: 0.0390625, y: -0.578125}
-      - {x: 0.3515625, y: 0.1875}
-      - {x: 0.3515625, y: 0.421875}
-      - {x: 0.2109375, y: 0.59375}
-  m_UseDelaunayMesh: 0
+  m_Offset: {x: -0.0037677884, y: 0.003767848}
+  serializedVersion: 2
+  m_Radius: 0.33872628
