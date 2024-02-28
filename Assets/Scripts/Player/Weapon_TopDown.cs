@@ -35,6 +35,27 @@ public class Weapon_TopDown : MonoBehaviour
             }
         }
 
+        OWBoss_Health OWBoss = collision.GetComponent<OWBoss_Health>();
+        if (OWBoss != null)
+        {
+            //OWBoss.knockBackCounter = enemy.knockBackTotalTime;
+            //if (collision.transform.position.x <= transform.position.x)
+            //{
+            //    OWBoss.knockFromRight = true;
+            //}
+            //if (collision.transform.position.x >= transform.position.x)
+            //{
+            //    OWBoss.knockFromRight = false;
+            //}
+
+            OWBoss.TakeDamage(damage);
+
+            if (weaponType == WeaponType.Bullet)
+            {
+                Destroy(gameObject);
+            }
+        }
+
         BreakableWall wall = collision.GetComponent<BreakableWall>();
         if (wall != null)
         {
