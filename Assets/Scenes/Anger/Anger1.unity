@@ -6364,19 +6364,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalScale.x
-      value: 223.36026
+      value: 156.43036
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalScale.y
-      value: 124.19506
+      value: 109.54005
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.663
+      value: 6.473
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.982
+      value: -6.751
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11679,8 +11679,8 @@ Transform:
   m_GameObject: {fileID: 2283325076417004552}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -990.1371, y: -83.69, z: 17.76128}
-  m_LocalScale: {x: 16.69537, y: 16.7668, z: 1}
+  m_LocalPosition: {x: -988.6603, y: -83.65, z: 17.76128}
+  m_LocalScale: {x: 20.653292, y: 16.7668, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2321760937743792913}
@@ -12359,7 +12359,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6190676706810808787}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -12715,7 +12715,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2283325076417004552}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -12844,7 +12844,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.31764707, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -12869,7 +12869,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
