@@ -132,6 +132,18 @@ public class PlayerController_TopDown : MonoBehaviour
 
     [SerializeField]
     private float shootTimer = 0.5f;
+
+    [SerializeReference]
+    private float healthCost;
+
+    [SerializeField]
+    private float ammoGain;
+
+    private float rangeRefillButtonHeldDuration;
+
+    [SerializeField]
+    private float rangedButtonHeldMinimum;
+
     #endregion
     #endregion
 
@@ -172,6 +184,8 @@ public class PlayerController_TopDown : MonoBehaviour
             healingAnim.SetActive(false);
         }
 
+        
+
         Inputs();
         Animate();
         Flip();
@@ -188,7 +202,18 @@ public class PlayerController_TopDown : MonoBehaviour
         OnAttack();
         OnShoot();
         Interaction();
-        
+
+        if (Input.GetKey(KeyCode.L))
+        {
+            rangeRefillButtonHeldDuration += 1f;
+            RefillAmmo();
+            return;
+        }
+        else
+        {
+            rangeRefillButtonHeldDuration = 0;
+        }
+
 
         // Posisble ideas of abilities and mechanics that could be added? not necessarily for the jam but just in general in case this is an idea I want to role with beyond Feb.
         // dash attacks - you dash towards enemies to close the gap and it increases the size of the attack
@@ -307,6 +332,26 @@ public class PlayerController_TopDown : MonoBehaviour
     }
     #endregion
 
+    #region RefillAmmo
+    private void RefillAmmo()
+    {
+        // refill the players ammo at the cost of health
+        if (GameStatus.GetInstance().HasRanged() && GameStatus.GetInstance().GetAmmo() != GameStatus.GetInstance().GetMaxAmmo() && playerHealth > (0.1 * playerMaxHealth))
+        {
+            if (rangeRefillButtonHeldDuration >= rangedButtonHeldMinimum)
+            {
+                //start healing and losing ammo
+                GameStatus.GetInstance().LoseHealth(healthCost);
+                GameStatus.GetInstance().AddAmmo(ammoGain);
+            }
+        }
+        else
+        {
+            healingAnim.SetActive(false);
+        }
+    }
+    #endregion
+
 
     #region Dash
     private void Dash()     // the base dash will allow the player to "jump" gaps and evade attacks but will not give i-frames
@@ -416,7 +461,7 @@ public class PlayerController_TopDown : MonoBehaviour
 
     private void OnShoot()
     {
-        if ((Input.GetKeyDown(KeyCode.L)) && GameStatus.GetInstance().HasRanged() && GameStatus.GetInstance().GetAmmo() > 0)
+        if (Input.GetKeyDown(KeyCode.L) && GameStatus.GetInstance().HasRanged() && GameStatus.GetInstance().GetAmmo() > 0)
         {
             if (shootTimer > shootCoolDown)
             {
