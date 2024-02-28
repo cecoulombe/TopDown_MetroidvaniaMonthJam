@@ -14,7 +14,6 @@ public class Room_Template : MonoBehaviour
     private string previousRoom;
 
     [Header("Loading zones for each door")]
-    [SerializeField]
     private PlayerController_TopDown player;
 
     [SerializeField]
@@ -72,6 +71,8 @@ public class Room_Template : MonoBehaviour
 
     private void Start()
     {
+        player = FindObjectOfType<PlayerController_TopDown>();
+
         // I want to know the room the player came from so that I can load them in at the right spot
         previousRoom = GameStatus.GetInstance().GetPreviousRoom();
 

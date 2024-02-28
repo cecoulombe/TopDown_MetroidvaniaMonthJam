@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameStatus : MonoBehaviour
 {
-    
-
     // make sure this is the only instance of the game status, even though it isn't destroying on load
     static GameStatus instance;
 
@@ -31,7 +29,8 @@ public class GameStatus : MonoBehaviour
 
     protected bool gamePaused;
 
-    protected bool openInstructions;
+    protected bool openMeleeInstructions;
+    protected bool openRangedInstructions;
 
     [Header("Player state bools")]
     [SerializeField]
@@ -72,6 +71,8 @@ public class GameStatus : MonoBehaviour
     protected bool Words5_enemyGateOpen;
     [SerializeField]
     protected bool Overwhelm2_enemyGateOpen;
+    [SerializeField]
+    protected bool Overwhelm3_enemyGateOpen;
 
     [Header("Chests")]
     [SerializeField]
@@ -120,6 +121,8 @@ public class GameStatus : MonoBehaviour
     protected bool Anger4_HiddenOpen;
     [SerializeField]
     protected bool Words2_HiddenOpen;
+    [SerializeField]
+    protected bool Overwhelm3_4_HiddenOpen;
     #endregion
 
     #region Player Prefs Variables
@@ -219,11 +222,20 @@ public class GameStatus : MonoBehaviour
 
     public void SetOpenMeleeInstructions(bool shouldOpen)
     {
-        openInstructions = shouldOpen;
+        openMeleeInstructions = shouldOpen;
     }
     public bool OpenMeleeInstructions()
     {
-        return openInstructions;
+        return openMeleeInstructions;
+    }
+
+    public void SetOpenRangedInstructions(bool shouldOpen)
+    {
+        openRangedInstructions = shouldOpen;
+    }
+    public bool OpenRangedInstructions()
+    {
+        return openRangedInstructions;
     }
 
     #endregion
@@ -410,6 +422,10 @@ public class GameStatus : MonoBehaviour
         {
             return Overwhelm2_enemyGateOpen;
         }
+        else if (roomName == "Overwhelm3")
+        {
+            return Overwhelm3_enemyGateOpen;
+        }
         else
         {
             Debug.Log("cannot find the current room, returning true");
@@ -455,6 +471,10 @@ public class GameStatus : MonoBehaviour
         else if (roomName == "Overwhelm2")
         {
             Overwhelm2_enemyGateOpen = true;
+        }
+        else if (roomName == "Overwhelm3")
+        {
+            Overwhelm3_enemyGateOpen = true;
         }
     }
     #endregion
@@ -573,6 +593,10 @@ public class GameStatus : MonoBehaviour
         {
             return Words2_HiddenOpen;
         }
+        else if (roomName == "Overwhelm3" || roomName == "Overwhelm4")
+        {
+            return Overwhelm3_4_HiddenOpen;
+        }
         else
         {
             Debug.Log("cannot find the current room, returning true");
@@ -597,6 +621,10 @@ public class GameStatus : MonoBehaviour
         if (roomName == "Words2")
         {
             Words2_HiddenOpen = true;
+        }
+        if (roomName == "Overwhelm3" || roomName == "Overwhelm4")
+        {
+            Overwhelm3_4_HiddenOpen = true;
         }
     }
     #endregion
@@ -663,6 +691,13 @@ public class GameStatus : MonoBehaviour
             if (pickup == "Ammo")
             {
                 return Overwhelm2_AmmoIncreaseTaken;
+            }
+        }
+        else if (roomName == "Overwhelm3")
+        {
+            if (pickup == "Ranged")
+            {
+                return hasRanged;
             }
         }
 
@@ -815,6 +850,7 @@ public class GameStatus : MonoBehaviour
         Anger2_and6_HiddenOpen = PlayerPrefs.GetInt("Anger2_and6_HiddenOpen") == 1;
         Anger4_HiddenOpen = PlayerPrefs.GetInt("Anger4_HiddenOpen") == 1;
         Words2_HiddenOpen = PlayerPrefs.GetInt("Words2_HiddenOpen") == 1;
+        Overwhelm3_4_HiddenOpen = PlayerPrefs.GetInt("Overwhelm3_4_HiddenOpen") == 1;
 
         // Enemy Gates
         Anger1_enemyGateOpen = PlayerPrefs.GetInt("Anger1_enemyGateOpen") == 1;
@@ -826,6 +862,7 @@ public class GameStatus : MonoBehaviour
         Words3_enemyGateOpen = PlayerPrefs.GetInt("Words3_enemyGateOpen") == 1;
         Words5_enemyGateOpen = PlayerPrefs.GetInt("Words5_enemyGateOpen") == 1;
         Overwhelm2_enemyGateOpen = PlayerPrefs.GetInt("Overwhelm2_enemyGateOpen") == 1;
+        Overwhelm3_enemyGateOpen = PlayerPrefs.GetInt("Overwhelm3_enemyGateOpen") == 1;
 
         // permanent upgrades
         Anger3_1_HealthIncreaseTaken = PlayerPrefs.GetInt("Anger3_1_HealthIncreaseTaken") == 1;
@@ -868,6 +905,8 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", Anger2_and6_HiddenOpen ? 1 : 0);
         PlayerPrefs.SetInt("Anger4_HiddenOpen", Anger4_HiddenOpen ? 1 : 0);
         PlayerPrefs.SetInt("Words2_HiddenOpen", Words2_HiddenOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Overwhelm3_4_HiddenOpen", Overwhelm3_4_HiddenOpen ? 1 : 0);
+
 
         // Enemy Gates
         PlayerPrefs.SetInt("Anger1_enemyGateOpen", Anger1_enemyGateOpen ? 1 : 0);
@@ -879,6 +918,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Words3_enemyGateOpen", Words3_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Words5_enemyGateOpen", Words5_enemyGateOpen ? 1 : 0);
         PlayerPrefs.SetInt("Overwhelm2_enemyGateOpen", Overwhelm2_enemyGateOpen ? 1 : 0);
+        PlayerPrefs.SetInt("Overwhelm3_enemyGateOpen", Overwhelm3_enemyGateOpen ? 1 : 0);
 
         // permanent upgrades
         PlayerPrefs.SetInt("Anger3_1_HealthIncreaseTaken", Anger3_1_HealthIncreaseTaken ? 1 : 0);
@@ -939,6 +979,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Anger2_and6_HiddenOpen", 0);
         PlayerPrefs.SetInt("Anger4_HiddenOpen", 0);
         PlayerPrefs.SetInt("Words2_HiddenOpen", 0);
+        PlayerPrefs.SetInt("Overwhelm3_4_HiddenOpen", 0);
 
         PlayerPrefs.SetInt("Anger1_enemyGateOpen", 0);
         // Enemy Gates
@@ -950,6 +991,7 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Words3_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Words5_enemyGateOpen", 0);
         PlayerPrefs.SetInt("Overwhelm2_enemyGateOpen", 0);
+        PlayerPrefs.SetInt("Overwhelm3_enemyGateOpen", 0);
 
         // permanent upgrades
         PlayerPrefs.SetInt("Anger3_1_HealthIncreaseTaken", 0);

@@ -14,6 +14,11 @@ public class TransitionManager : MonoBehaviour
     [SerializeField]
     private SceneLoader sceneLoader;
 
+    private void Start()
+    {
+        sceneLoader = FindObjectOfType<SceneLoader>();
+    }
+
     private void OnTriggerEnter2D(Collider2D Player)
     {
         if(Player.CompareTag("Player"))
