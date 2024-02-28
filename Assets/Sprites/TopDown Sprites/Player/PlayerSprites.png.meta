@@ -895,10 +895,10 @@ TextureImporter:
       name: PlayerSprites_36
       rect:
         serializedVersion: 2
-        x: 120
-        y: 100
-        width: 15
-        height: 20
+        x: 46
+        y: 98
+        width: 14
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -916,10 +916,10 @@ TextureImporter:
       name: PlayerSprites_37
       rect:
         serializedVersion: 2
-        x: 135
-        y: 100
-        width: 15
-        height: 20
+        x: 45
+        y: 99
+        width: 14
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -937,10 +937,10 @@ TextureImporter:
       name: PlayerSprites_38
       rect:
         serializedVersion: 2
-        x: 150
-        y: 100
-        width: 15
-        height: 20
+        x: 47
+        y: 99
+        width: 13
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
