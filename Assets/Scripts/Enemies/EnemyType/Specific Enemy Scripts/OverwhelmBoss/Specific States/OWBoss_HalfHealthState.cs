@@ -6,7 +6,7 @@ public class OWBoss_HalfHealthState : OWBoss_BaseState
 {
     #region Single Shot Variables
     [SerializeField]
-    private float singleShootCoolDown = 450f;
+    private float singleShootCoolDown = 300f;
 
     [SerializeField]
     private float singleShootTimer = 0f;
@@ -14,10 +14,10 @@ public class OWBoss_HalfHealthState : OWBoss_BaseState
 
     #region Spread Shot Variables
     [SerializeField]
-    private float spreadShootCoolDown = 700f;
+    private float spreadShootCoolDown = 500f;
 
     [SerializeField]
-    private float spreadShootTimer = 700f;
+    private float spreadShootTimer = 400f;
     #endregion
 
     public override void EnterState(OWBoss_StateManager boss)

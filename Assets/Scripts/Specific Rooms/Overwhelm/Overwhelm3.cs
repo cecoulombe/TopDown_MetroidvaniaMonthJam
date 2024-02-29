@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Overwhelm3 : MonoBehaviour
 {
     #region Variables
-    public EnemyHealth[] enemyList;
+    public OWBoss_Health[] enemyList;
 
     private float enemyDeathCounter;
 

@@ -6,7 +6,7 @@ public class OWBoss_AlmostDeadState : OWBoss_BaseState
 {
     #region Single Shot Variables
     [SerializeField]
-    private float singleShootCoolDown = 500f;
+    private float singleShootCoolDown = 300f;
 
     [SerializeField]
     private float singleShootTimer = 0f;
@@ -14,7 +14,7 @@ public class OWBoss_AlmostDeadState : OWBoss_BaseState
 
     #region Spread Shot Variables
     [SerializeField]
-    private float spreadShootCoolDown = 800f;
+    private float spreadShootCoolDown = 600f;
 
     [SerializeField]
     private float spreadShootTimer = 400f;
@@ -22,7 +22,7 @@ public class OWBoss_AlmostDeadState : OWBoss_BaseState
 
     #region Alternate Spread Shot Variables
     [SerializeField]
-    private float alternateSpreadShootCoolDown = 500f;
+    private float alternateSpreadShootCoolDown = 400f;
 
     [SerializeField]
     private float alternateSpreadShootTimer = 250f;

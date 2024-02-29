@@ -6,7 +6,7 @@ public class OWBoss_InitialState : OWBoss_BaseState
 {
     #region Variables
     [SerializeField]
-    private float shootCoolDown = 650f;
+    private float shootCoolDown = 300f;
 
     [SerializeField]
     private float shootTimer = 0f;

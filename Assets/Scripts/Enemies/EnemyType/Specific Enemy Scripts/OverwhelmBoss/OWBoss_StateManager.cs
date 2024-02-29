@@ -16,6 +16,9 @@ public class OWBoss_StateManager : MonoBehaviour
     private OWBoss_Health myHealth;
 
     private Transform target;
+
+    private Collider2D col;
+    private SpriteRenderer sprite;
     #endregion
 
     #region Single Shot Variables
@@ -47,6 +50,8 @@ public class OWBoss_StateManager : MonoBehaviour
 
     void Start()
     {
+        col = GetComponent<Collider2D>();
+        sprite = GetComponent<SpriteRenderer>();
         myHealth = GetComponent<OWBoss_Health>();
         target = GameObject.Find("Player").transform;
         // set the starting state for the machine
@@ -57,7 +62,18 @@ public class OWBoss_StateManager : MonoBehaviour
 
     void Update()
     {
-        currentState.UpdateState(this, myHealth.health, myHealth.maxHealth);
+        if (GameStatus.GetInstance().HasRanged())
+        {
+            col.enabled = true;
+            sprite.enabled = true;
+            currentState.UpdateState(this, myHealth.health, myHealth.maxHealth);
+
+        }
+        else
+        {
+            col.enabled = false;
+            sprite.enabled = false;
+        }
     }
 
     public void SwitchState(OWBoss_BaseState state)
