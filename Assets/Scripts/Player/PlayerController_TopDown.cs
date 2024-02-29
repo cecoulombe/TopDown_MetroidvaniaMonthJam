@@ -161,10 +161,10 @@ public class PlayerController_TopDown : MonoBehaviour
         playerHealth = GameStatus.GetInstance().GetHealth();
         playerMaxHealth = GameStatus.GetInstance().GetMaxHealth();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            TakeDamage(playerMaxHealth);
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    TakeDamage(playerMaxHealth);
+        //}
 
         if (Input.GetKey(KeyCode.Space))
         {
