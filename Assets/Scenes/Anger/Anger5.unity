@@ -7066,7 +7066,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ecd1a1f65ee45f98c1ab4cbffc4dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyList: []
+  enemyList:
+  - {fileID: 8698228506564244643}
+  - {fileID: 6460517836447170186}
+  - {fileID: 3627936837204418246}
+  - {fileID: 5053660902087902695}
   player: {fileID: 219008551}
   spawnPoint: {fileID: 427455703}
   Anger4_LoadingZone: {fileID: 910634192}
@@ -13288,7 +13292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalScale.y
-      value: 101.61344
+      value: 92.546646
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13296,7 +13300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6840868
+      value: 3.768
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14465,13 +14469,13 @@ MonoBehaviour:
   maxHealth: 3
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 6
+  bigHealthChance: 15
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 15
+  smallHealthChance: 30
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 4
+  bigAmmoChance: 10
   smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 10
+  smallAmmoChance: 24
   knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
@@ -14860,13 +14864,13 @@ MonoBehaviour:
   maxHealth: 3
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 6
+  bigHealthChance: 15
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 15
+  smallHealthChance: 30
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 4
+  bigAmmoChance: 10
   smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 10
+  smallAmmoChance: 24
   knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
@@ -15260,13 +15264,13 @@ MonoBehaviour:
   maxHealth: 5
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 15
+  bigHealthChance: 30
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 30
+  smallHealthChance: 60
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 10
+  bigAmmoChance: 20
   smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 20
+  smallAmmoChance: 40
   knockBackForce: 0
   knockBackCounter: 0
   knockBackTotalTime: 0.2
@@ -15343,7 +15347,7 @@ MonoBehaviour:
   contactDamage: 1
   Aim: {fileID: 1559731376369698432}
   bullet: {fileID: 2609964779410368697, guid: 4fea0e620aa734d80a33b3e9e85f41a8, type: 3}
-  fireForce: 10
+  fireForce: 8
   shootCoolDown: 0.9
   shootTimer: 0.5
   minRangePercent: 0
@@ -15605,13 +15609,13 @@ MonoBehaviour:
   maxHealth: 4
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 10
+  bigHealthChance: 20
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 22
+  smallHealthChance: 44
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 5
+  bigAmmoChance: 10
   smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 10
+  smallAmmoChance: 20
   knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2

@@ -108,12 +108,12 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
-        if(isAngerBoss)
+        colourChanges();
+
+        if (isAngerBoss)
         {
             return;
         }
-
-        colourChanges();
 
         if (isDead)
         {

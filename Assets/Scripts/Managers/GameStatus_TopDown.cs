@@ -174,12 +174,12 @@ public class GameStatus : MonoBehaviour
         string currentRoom = SceneManager.GetActiveScene().name;
         GetGateState(currentRoom);
 
-        //if(Input.GetKey(KeyCode.T))
-        //{
-        //    Debug.Log("reseting the player prefs");
-        //    ResetPlayerPrefs();
-        //    resetPrefs = true;
-        //}
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Debug.Log("reseting the player prefs");
+            ResetPlayerPrefs();
+            resetPrefs = true;
+        }
 
         //if(Input.GetKey(KeyCode.Y))
         //{

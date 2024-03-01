@@ -6,7 +6,7 @@ public class OWBoss_HalfHealthState : OWBoss_BaseState
 {
     #region Single Shot Variables
     [SerializeField]
-    private float singleShootCoolDown = 300f;
+    private float singleShootCoolDown = 0.6f;
 
     [SerializeField]
     private float singleShootTimer = 0f;
@@ -14,22 +14,31 @@ public class OWBoss_HalfHealthState : OWBoss_BaseState
 
     #region Spread Shot Variables
     [SerializeField]
-    private float spreadShootCoolDown = 500f;
+    private float spreadShootCoolDown = 1.1f;
 
     [SerializeField]
-    private float spreadShootTimer = 400f;
+    private float spreadShootTimer = 0f;
+    #endregion
+
+    #region Alternate Spread Shot Variables
+    [SerializeField]
+    private float alternateSpreadShootCoolDown = 1.1f;
+
+    [SerializeField]
+    private float alternateSpreadShootTimer = 0.55f;
     #endregion
 
     public override void EnterState(OWBoss_StateManager boss)
     {
-        Debug.Log("hello from the half health state");
+        Debug.Log("hello from the almost dead state");
     }
 
     public override void UpdateState(OWBoss_StateManager boss, float currentHealth, float maxHealth)
     {
         // anything you do here will be called every frame so long as this is the current state
-        spreadShootTimer += 1;
-        singleShootTimer += 1;
+        spreadShootTimer += Time.deltaTime;
+        alternateSpreadShootTimer += Time.deltaTime;
+        singleShootTimer += Time.deltaTime;
 
         if (spreadShootTimer > spreadShootCoolDown)
         {
@@ -37,17 +46,23 @@ public class OWBoss_HalfHealthState : OWBoss_BaseState
             boss.SpreadShot();
         }
 
+        if (alternateSpreadShootTimer > alternateSpreadShootCoolDown)
+        {
+            alternateSpreadShootTimer = 0;
+            boss.AlternateSpreadShot();
+        }
+
         if (singleShootTimer > singleShootCoolDown)
         {
             singleShootTimer = 0;
             boss.SingleBulletShot();
         }
-        // once the criteria to switch states is met, use:
 
         if (currentHealth <= (maxHealth * 0.1))
         {
             boss.SwitchState(boss.almostDeadState);
         }
+        // anything you do here will be called every frame so long as this is the current state
     }
 
     public override void OnCollisionEnter2D(OWBoss_StateManager boss)

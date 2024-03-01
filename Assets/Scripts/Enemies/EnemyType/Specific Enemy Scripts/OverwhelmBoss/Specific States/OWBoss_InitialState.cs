@@ -4,34 +4,47 @@ using UnityEngine;
 
 public class OWBoss_InitialState : OWBoss_BaseState
 {
-    #region Variables
+    #region Single Shot Variables
     [SerializeField]
-    private float shootCoolDown = 300f;
+    private float singleShootCoolDown = 0.6f;
 
     [SerializeField]
-    private float shootTimer = 0f;
+    private float singleShootTimer = 0f;
+    #endregion
+
+    #region Spread Shot Variables
+    [SerializeField]
+    private float spreadShootCoolDown = 1.2f;
+
+    [SerializeField]
+    private float spreadShootTimer = 0;
     #endregion
 
     public override void EnterState(OWBoss_StateManager boss)
     {
-        Debug.Log("hello from the initial state");
+        Debug.Log("hello from the half health state");
     }
 
     public override void UpdateState(OWBoss_StateManager boss, float currentHealth, float maxHealth)
     {
         // anything you do here will be called every frame so long as this is the current state
+        spreadShootTimer += Time.deltaTime;
+        singleShootTimer += Time.deltaTime;
 
-        // for now, to keep it kinda simple, the boss will shoot during the initial state
-        shootTimer += 1;
-
-        if(shootTimer > shootCoolDown)
+        if (spreadShootTimer > spreadShootCoolDown)
         {
-            shootTimer = 0;
-            boss.SingleBulletShot();
+            spreadShootTimer = 0;
+            boss.SpreadShot();
         }
 
+        if (singleShootTimer > singleShootCoolDown)
+        {
+            singleShootTimer = 0;
+            boss.SingleBulletShot();
+        }
         // once the criteria to switch states is met, use:
-        if(currentHealth <= (maxHealth * 0.35))
+
+        if (currentHealth <= (maxHealth * 0.6))
         {
             boss.SwitchState(boss.halfHealthState);
         }

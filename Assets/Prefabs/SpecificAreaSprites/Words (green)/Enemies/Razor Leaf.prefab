@@ -319,7 +319,7 @@ MonoBehaviour:
   contactDamage: 1
   Aim: {fileID: 132617652703165701}
   bullet: {fileID: 2609964779410368697, guid: 507316fd1c02749b5b6b86f62c173664, type: 3}
-  fireForce: 10
+  fireForce: 8
   shootCoolDown: 1
   shootTimer: 0.5
   minRangePercent: 0

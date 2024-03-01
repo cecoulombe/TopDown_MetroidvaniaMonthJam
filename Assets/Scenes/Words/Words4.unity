@@ -4812,12 +4812,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 613408362}
     m_Modifications:
     - target: {fileID: 146248662414860277, guid: 97d5d0f82ed3047778bc8656084ac024, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 154.7543
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 97d5d0f82ed3047778bc8656084ac024, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 96.497215
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 97d5d0f82ed3047778bc8656084ac024, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -56.861103
+      value: -51.018
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: 97d5d0f82ed3047778bc8656084ac024, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.183132
+      value: -25.884
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: 97d5d0f82ed3047778bc8656084ac024, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13734,19 +13742,19 @@ MonoBehaviour:
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.06
+  wakeUpPercent: 0.2
   health: 3
   maxHealth: 3
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 4
+  bigHealthChance: 12
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
-  smallHealthChance: 12
+  smallHealthChance: 24
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
-  bigAmmoChance: 8
+  bigAmmoChance: 16
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
-  smallAmmoChance: 20
-  knockBackForce: 1
+  smallAmmoChance: 30
+  knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -13775,19 +13783,19 @@ MonoBehaviour:
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.055
+  wakeUpPercent: 0.2
   health: 3
   maxHealth: 3
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 7
+  bigHealthChance: 14
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
-  smallHealthChance: 20
+  smallHealthChance: 40
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
-  bigAmmoChance: 3
+  bigAmmoChance: 10
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
-  smallAmmoChance: 12
-  knockBackForce: 1
+  smallAmmoChance: 24
+  knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -13816,19 +13824,19 @@ MonoBehaviour:
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.05
+  wakeUpPercent: 0.2
   health: 3
   maxHealth: 3
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 5
+  bigHealthChance: 10
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
-  smallHealthChance: 15
+  smallHealthChance: 30
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
-  bigAmmoChance: 5
+  bigAmmoChance: 10
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
-  smallAmmoChance: 15
-  knockBackForce: 1
+  smallAmmoChance: 30
+  knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -13851,11 +13859,11 @@ MonoBehaviour:
   pointB: {fileID: 8214799316591901305}
   contactDamage: 1
   isAttacking: 0
-  attackDuration: 0.3
+  attackDuration: 0.5
   attackTimer: 0
-  lungeAttackRange: 4
+  lungeAttackRange: 4.5
   attackCoolDown: 0
-  chargerCoolDown: 450
+  chargerCoolDown: 215
 --- !u!114 &1984197997018388448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13875,11 +13883,11 @@ MonoBehaviour:
   pointB: {fileID: 8214799315420753466}
   contactDamage: 1
   isAttacking: 0
-  attackDuration: 0.25
+  attackDuration: 0.5
   attackTimer: 0
   lungeAttackRange: 5
   attackCoolDown: 0
-  chargerCoolDown: 475
+  chargerCoolDown: 225
 --- !u!114 &1984197997139147404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13899,11 +13907,11 @@ MonoBehaviour:
   pointB: {fileID: 8214799315526288214}
   contactDamage: 1
   isAttacking: 0
-  attackDuration: 0.3
+  attackDuration: 0.5
   attackTimer: 0
-  lungeAttackRange: 3
+  lungeAttackRange: 4
   attackCoolDown: 0
-  chargerCoolDown: 400
+  chargerCoolDown: 200
 --- !u!4 &2001848994234604430
 Transform:
   m_ObjectHideFlags: 0
@@ -15478,7 +15486,7 @@ MonoBehaviour:
   bigAmmoChance: 5
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 17
-  knockBackForce: 0
+  knockBackForce: 2
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -16511,7 +16519,7 @@ MonoBehaviour:
   contactDamage: 1
   Aim: {fileID: 132617652450358188}
   bullet: {fileID: 2609964779410368697, guid: 507316fd1c02749b5b6b86f62c173664, type: 3}
-  fireForce: 10
+  fireForce: 8
   shootCoolDown: 1
   shootTimer: 0.5
   minRangePercent: 0
@@ -16535,7 +16543,7 @@ MonoBehaviour:
   contactDamage: 1
   Aim: {fileID: 132617651945042027}
   bullet: {fileID: 2609964779410368697, guid: 507316fd1c02749b5b6b86f62c173664, type: 3}
-  fireForce: 10
+  fireForce: 8
   shootCoolDown: 1
   shootTimer: 0.5
   minRangePercent: 0
@@ -16559,7 +16567,7 @@ MonoBehaviour:
   contactDamage: 1
   Aim: {fileID: 132617651951761070}
   bullet: {fileID: 2609964779410368697, guid: 507316fd1c02749b5b6b86f62c173664, type: 3}
-  fireForce: 10
+  fireForce: 8
   shootCoolDown: 1
   shootTimer: 0.5
   minRangePercent: 0

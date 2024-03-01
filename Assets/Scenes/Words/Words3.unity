@@ -12980,11 +12980,11 @@ MonoBehaviour:
   pointB: {fileID: 7774153797139303016}
   contactDamage: 1
   isAttacking: 0
-  attackDuration: 0.25
+  attackDuration: 0.45
   attackTimer: 0
   lungeAttackRange: 5
   attackCoolDown: 0
-  chargerCoolDown: 475
+  chargerCoolDown: 215
 --- !u!114 &193674311451733235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13005,24 +13005,24 @@ MonoBehaviour:
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
-  loseAggroRange: 20
+  loseAggroRange: 50
   isWalking: 0
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.25
+  wakeUpPercent: 0.2
   health: 2
   maxHealth: 2
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 7
+  bigHealthChance: 14
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 50
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
-  bigAmmoChance: 20
+  bigAmmoChance: 30
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 100
-  knockBackForce: 1
+  knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -13920,11 +13920,11 @@ MonoBehaviour:
   pointB: {fileID: 7403723014002265929}
   contactDamage: 1
   isAttacking: 0
-  attackDuration: 0.3
+  attackDuration: 0.45
   attackTimer: 0
-  lungeAttackRange: 4
+  lungeAttackRange: 4.5
   attackCoolDown: 0
-  chargerCoolDown: 450
+  chargerCoolDown: 225
 --- !u!4 &1138781901154293052
 Transform:
   m_ObjectHideFlags: 0
@@ -13963,24 +13963,24 @@ MonoBehaviour:
   moveSpeed: 1.5
   defaultSpeed: 1.5
   attackCoolDown: 0
-  loseAggroRange: 20
+  loseAggroRange: 50
   isWalking: 0
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.25
+  wakeUpPercent: 0.2
   health: 2
   maxHealth: 2
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 4
+  bigHealthChance: 15
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 50
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
   bigAmmoChance: 20
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 100
-  knockBackForce: 1
+  knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -14216,24 +14216,24 @@ MonoBehaviour:
   moveSpeed: 2
   defaultSpeed: 2
   attackCoolDown: 0
-  loseAggroRange: 20
+  loseAggroRange: 50
   isWalking: 0
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.25
+  wakeUpPercent: 0.2
   health: 2
   maxHealth: 2
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 5
+  bigHealthChance: 15
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 50
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
-  bigAmmoChance: 20
+  bigAmmoChance: 25
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 100
-  knockBackForce: 1
+  knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -14290,11 +14290,11 @@ MonoBehaviour:
   pointB: {fileID: 8094842702486049734}
   contactDamage: 1
   isAttacking: 0
-  attackDuration: 0.3
+  attackDuration: 0.4
   attackTimer: 0
-  lungeAttackRange: 3
+  lungeAttackRange: 4
   attackCoolDown: 0
-  chargerCoolDown: 400
+  chargerCoolDown: 200
 --- !u!114 &1877515912678984071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14314,11 +14314,11 @@ MonoBehaviour:
   pointB: {fileID: 8324863378443726941}
   contactDamage: 1
   isAttacking: 0
-  attackDuration: 0.3
+  attackDuration: 0.4
   attackTimer: 0
-  lungeAttackRange: 3
+  lungeAttackRange: 4
   attackCoolDown: 0
-  chargerCoolDown: 400
+  chargerCoolDown: 200
 --- !u!4 &1883448849620029351
 Transform:
   m_ObjectHideFlags: 0
@@ -14371,24 +14371,24 @@ MonoBehaviour:
   moveSpeed: 2
   defaultSpeed: 2
   attackCoolDown: 0
-  loseAggroRange: 20
+  loseAggroRange: 50
   isWalking: 0
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.25
+  wakeUpPercent: 0.2
   health: 2
   maxHealth: 2
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 5
+  bigHealthChance: 15
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 50
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
-  bigAmmoChance: 20
+  bigAmmoChance: 25
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 100
-  knockBackForce: 1
+  knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -16248,24 +16248,24 @@ MonoBehaviour:
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
-  loseAggroRange: 20
+  loseAggroRange: 50
   isWalking: 0
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.25
+  wakeUpPercent: 0.2
   health: 2
   maxHealth: 2
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 7
+  bigHealthChance: 14
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 50
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
-  bigAmmoChance: 20
+  bigAmmoChance: 30
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 100
-  knockBackForce: 1
+  knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -16288,11 +16288,11 @@ MonoBehaviour:
   pointB: {fileID: 3416956839731871795}
   contactDamage: 1
   isAttacking: 0
-  attackDuration: 0.25
+  attackDuration: 0.45
   attackTimer: 0
   lungeAttackRange: 5
   attackCoolDown: 0
-  chargerCoolDown: 475
+  chargerCoolDown: 215
 --- !u!1 &5170953738305105050
 GameObject:
   m_ObjectHideFlags: 0
@@ -16917,24 +16917,24 @@ MonoBehaviour:
   moveSpeed: 1.5
   defaultSpeed: 1.5
   attackCoolDown: 0
-  loseAggroRange: 20
+  loseAggroRange: 50
   isWalking: 0
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.25
+  wakeUpPercent: 0.2
   health: 2
   maxHealth: 2
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 4
+  bigHealthChance: 15
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
-  smallHealthChance: 12
+  smallHealthChance: 50
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
   bigAmmoChance: 20
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 100
-  knockBackForce: 1
+  knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -16957,11 +16957,11 @@ MonoBehaviour:
   pointB: {fileID: 4324972577724789317}
   contactDamage: 1
   isAttacking: 0
-  attackDuration: 0.3
+  attackDuration: 0.45
   attackTimer: 0
-  lungeAttackRange: 4
+  lungeAttackRange: 4.5
   attackCoolDown: 0
-  chargerCoolDown: 450
+  chargerCoolDown: 225
 --- !u!114 &6188875409367083869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17080,11 +17080,11 @@ MonoBehaviour:
   pointB: {fileID: 4531073469633531171}
   contactDamage: 1
   isAttacking: 0
-  attackDuration: 0.25
+  attackDuration: 0.45
   attackTimer: 0
   lungeAttackRange: 5
   attackCoolDown: 0
-  chargerCoolDown: 475
+  chargerCoolDown: 215
 --- !u!114 &6319356367588617144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17105,24 +17105,24 @@ MonoBehaviour:
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
-  loseAggroRange: 20
+  loseAggroRange: 50
   isWalking: 0
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.25
+  wakeUpPercent: 0.2
   health: 2
   maxHealth: 2
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 7
+  bigHealthChance: 14
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 50
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
-  bigAmmoChance: 20
+  bigAmmoChance: 30
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 100
-  knockBackForce: 1
+  knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -18034,24 +18034,24 @@ MonoBehaviour:
   moveSpeed: 1.5
   defaultSpeed: 1.5
   attackCoolDown: 0
-  loseAggroRange: 20
+  loseAggroRange: 50
   isWalking: 0
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.25
+  wakeUpPercent: 0.2
   health: 2
   maxHealth: 2
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 4
+  bigHealthChance: 15
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
-  smallHealthChance: 12
+  smallHealthChance: 50
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
   bigAmmoChance: 20
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 100
-  knockBackForce: 1
+  knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -18074,11 +18074,11 @@ MonoBehaviour:
   pointB: {fileID: 1083796558104497427}
   contactDamage: 1
   isAttacking: 0
-  attackDuration: 0.3
+  attackDuration: 0.45
   attackTimer: 0
-  lungeAttackRange: 4
+  lungeAttackRange: 4.5
   attackCoolDown: 0
-  chargerCoolDown: 450
+  chargerCoolDown: 225
 --- !u!4 &7403723014002265929
 Transform:
   m_ObjectHideFlags: 0
@@ -18526,24 +18526,24 @@ MonoBehaviour:
   moveSpeed: 2
   defaultSpeed: 2
   attackCoolDown: 0
-  loseAggroRange: 20
+  loseAggroRange: 50
   isWalking: 0
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.25
+  wakeUpPercent: 0.2
   health: 2
   maxHealth: 2
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 5
+  bigHealthChance: 15
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
   smallHealthChance: 50
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
-  bigAmmoChance: 20
+  bigAmmoChance: 25
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
   smallAmmoChance: 100
-  knockBackForce: 1
+  knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
@@ -18714,11 +18714,11 @@ MonoBehaviour:
   pointB: {fileID: 535396213640823581}
   contactDamage: 1
   isAttacking: 0
-  attackDuration: 0.3
+  attackDuration: 0.4
   attackTimer: 0
-  lungeAttackRange: 3
+  lungeAttackRange: 4
   attackCoolDown: 0
-  chargerCoolDown: 400
+  chargerCoolDown: 200
 --- !u!4 &8040957011894172913
 Transform:
   m_ObjectHideFlags: 0
@@ -19181,18 +19181,18 @@ MonoBehaviour:
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 0
-  wakeUpPercent: 0.2
+  wakeUpPercent: 0.25
   health: 6
-  maxHealth: 6
+  maxHealth: 25
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 18
+  bigHealthChance: 20
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
-  smallHealthChance: 40
+  smallHealthChance: 50
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
-  bigAmmoChance: 15
+  bigAmmoChance: 20
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
-  smallAmmoChance: 35
+  smallAmmoChance: 50
   knockBackForce: 0
   knockBackCounter: 0
   knockBackTotalTime: 0
@@ -19223,10 +19223,10 @@ MonoBehaviour:
   meleeCoolDown: 400
   Aim: {fileID: 1883448849620029351}
   bullet: {fileID: 2609964779410368697, guid: 507316fd1c02749b5b6b86f62c173664, type: 3}
-  fireForce: 10
+  fireForce: 8
   shootCoolDown: 1.2
   shootTimer: 0.5
-  minRangePercent: 0
+  minRangePercent: 0.16
   maxRangePercent: 1
 --- !u!212 &8571562704154160684
 SpriteRenderer:

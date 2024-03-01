@@ -195,7 +195,7 @@ public class Room_Template : MonoBehaviour
         enemyDeathCounter = 0;
         for (int i = 0; i < enemyList.Length; i++)
         {
-            if (enemyList[i].isDead)
+            if (enemyList[i].health <= 0)
             {
                 Debug.Log("enemy dead");
                 enemyDeathCounter++;

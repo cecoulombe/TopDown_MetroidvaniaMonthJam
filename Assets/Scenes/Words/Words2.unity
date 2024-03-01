@@ -1449,18 +1449,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stones 1 (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 6413989874963074213, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
-      propertyPath: canHeal
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8180820364207320799, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8180820364207320799, guid: 9a27b1edeb6fa4c1b90e844afd3880a6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 9.39
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1866,10 +1854,6 @@ PrefabInstance:
     - target: {fileID: 980580631639407879, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3000748337740670392, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
-      propertyPath: canHeal
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: cf3919ed35229419ca0795c8752d68fc, type: 3}
       propertyPath: m_Name
@@ -9169,12 +9153,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1127034317}
     m_Modifications:
     - target: {fileID: 146248662414860277, guid: 97d5d0f82ed3047778bc8656084ac024, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 148.96355
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 97d5d0f82ed3047778bc8656084ac024, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 92.36127
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 97d5d0f82ed3047778bc8656084ac024, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.712776
+      value: -30.625
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: 97d5d0f82ed3047778bc8656084ac024, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.835415
+      value: -24.835
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: 97d5d0f82ed3047778bc8656084ac024, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13050,10 +13042,6 @@ PrefabInstance:
     - target: {fileID: 980580631639407879, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5685464788237597865, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
-      propertyPath: canHeal
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 298f90f563d2b402495f2ee1fdf21ce1, type: 3}
       propertyPath: m_Name

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Anger6 : MonoBehaviour
 {
     #region Variables
-    public EnemyHealth[] enemyList;
+    public AngerBoss_Health[] enemyList;
 
     private float enemyDeathCounter;
 
@@ -137,7 +137,7 @@ public class Anger6 : MonoBehaviour
         enemyDeathCounter = 0;
         for (int i = 0; i < enemyList.Length; i++)
         {
-            if (enemyList[i].isDead)
+            if (enemyList[i].health <= 0)
             {
                 Debug.Log("enemy dead");
                 enemyDeathCounter++;

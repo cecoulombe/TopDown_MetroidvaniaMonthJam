@@ -174,7 +174,7 @@ public class PlayerController_TopDown : MonoBehaviour
 
         if (Input.GetKey(KeyCode.H))
         {
-            buttonHeldDuration += 1f;
+            buttonHeldDuration += Time.deltaTime;
             Healing();
             return;
         }
@@ -205,7 +205,7 @@ public class PlayerController_TopDown : MonoBehaviour
 
         if (Input.GetKey(KeyCode.L))
         {
-            rangeRefillButtonHeldDuration += 1f;
+            rangeRefillButtonHeldDuration += Time.deltaTime;
             RefillAmmo();
             return;
         }

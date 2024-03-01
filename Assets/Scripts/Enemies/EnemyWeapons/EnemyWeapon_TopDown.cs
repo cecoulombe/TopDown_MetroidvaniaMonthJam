@@ -17,8 +17,15 @@ public class EnemyWeapon_TopDown : MonoBehaviour
 
     public enum WeaponType { Melee, Bullet }
     public WeaponType weaponType;
+
+    private Collider2D col;
     #endregion
 
+    private void OnEnable()
+    {
+        col = GetComponent<Collider2D>();
+        col.enabled = true;
+    }
 
     private void Update()
     {
@@ -59,14 +66,8 @@ public class EnemyWeapon_TopDown : MonoBehaviour
                 player.knockFromRight = false;
             }
 
-            //StartCoroutine(player.TakeDamage(damage * damangeMultiplier));
             player.TakeDamage(damage * damangeMultiplier);
-            if (weaponType == WeaponType.Melee)
-            {
-                // turn of the weapon after it hits the player so that it doesn't stack attack them
-                //this.gameObject.SetActive(false);
-                this.enabled = false;
-            }
+            col.enabled = false;
 
             if (weaponType == WeaponType.Bullet)
             {

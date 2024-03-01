@@ -1364,19 +1364,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalScale.x
-      value: 165.06403
+      value: 168.76613
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalScale.y
-      value: 106.1248
+      value: 107.89125
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.413
+      value: 12.34
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.962
+      value: -4.506
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4599,15 +4599,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
       propertyPath: m_LocalScale.x
-      value: 79.487366
+      value: 98.802795
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 24.258167
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.5374
+      value: 24.512
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.6
+      value: -20.181
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8088,6 +8092,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6942689764387477464, guid: 21af68a8b3427451bb08b8ccf8c4341e, type: 3}
   m_PrefabInstance: {fileID: 1137406086}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1146620950
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1209186135}
+    m_Modifications:
+    - target: {fileID: 146248662414860277, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 40.079628
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.690115
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99951863
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.031026484
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 3.556
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754054617985774197, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+      propertyPath: m_Name
+      value: BottomWall (50)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+--- !u!4 &1146620951 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 146248662414860277, guid: d3d93868fb88f401090dfc1b5d20f2b7, type: 3}
+  m_PrefabInstance: {fileID: 1146620950}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1151364479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8656,6 +8722,7 @@ Transform:
   - {fileID: 13526786}
   - {fileID: 348495932}
   - {fileID: 497956688}
+  - {fileID: 1146620951}
   - {fileID: 294448366}
   - {fileID: 1884064361}
   - {fileID: 395566632}
@@ -11019,19 +11086,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
       propertyPath: m_LocalScale.x
-      value: 35.83805
+      value: 50.17327
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
       propertyPath: m_LocalScale.y
-      value: 33.379574
+      value: 53.173664
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.6081
+      value: -41.301
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.6531
+      value: 21.758
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15216,10 +15283,10 @@ MonoBehaviour:
   contactDamage: 1
   Melee: {fileID: 872387711249780542}
   isAttacking: 0
-  attackDuration: 0.3
+  attackDuration: 0.4
   attackTimer: 0
-  meleeAttackRange: 5
-  meleeCoolDown: 700
+  meleeAttackRange: 6
+  meleeCoolDown: 500
 --- !u!212 &2528263726253610235
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15981,13 +16048,13 @@ MonoBehaviour:
   maxHealth: 3
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 6
+  bigHealthChance: 18
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 15
+  smallHealthChance: 30
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 4
+  bigAmmoChance: 10
   smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 10
+  smallAmmoChance: 24
   knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
@@ -16022,13 +16089,13 @@ MonoBehaviour:
   maxHealth: 3
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 6
+  bigHealthChance: 18
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 15
+  smallHealthChance: 30
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 4
+  bigAmmoChance: 10
   smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 10
+  smallAmmoChance: 24
   knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
@@ -16063,13 +16130,13 @@ MonoBehaviour:
   maxHealth: 3
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 6
+  bigHealthChance: 18
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 15
+  smallHealthChance: 30
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 4
+  bigAmmoChance: 10
   smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 10
+  smallAmmoChance: 24
   knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
@@ -16104,13 +16171,13 @@ MonoBehaviour:
   maxHealth: 3
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 6
+  bigHealthChance: 18
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 15
+  smallHealthChance: 30
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 4
+  bigAmmoChance: 10
   smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 10
+  smallAmmoChance: 24
   knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
@@ -16560,23 +16627,23 @@ MonoBehaviour:
   moveSpeed: 0
   defaultSpeed: 2
   attackCoolDown: 0
-  loseAggroRange: 12
+  loseAggroRange: 50
   isWalking: 0
   inAwakeRange: 0
   inLoseAggroRange: 0
   isPatternWalker: 1
-  wakeUpPercent: 0.7
+  wakeUpPercent: 0.16
   health: 6
   maxHealth: 6
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 12
+  bigHealthChance: 24
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 30
+  smallHealthChance: 50
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 5
+  bigAmmoChance: 15
   smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 10
+  smallAmmoChance: 30
   knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2

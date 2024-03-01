@@ -3473,8 +3473,8 @@ Transform:
   m_GameObject: {fileID: 439809017}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -993.106, y: -76.7556, z: 17.76128}
-  m_LocalScale: {x: 32.39092, y: 22.604523, z: 1}
+  m_LocalPosition: {x: -995.2204, y: -98.3, z: 17.76128}
+  m_LocalScale: {x: 37.751617, y: 11.748815, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1622665928}
@@ -6550,7 +6550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyList:
-  - {fileID: 8658350762780680783}
+  - {fileID: 8976469570956171586}
   player: {fileID: 898157023}
   spawnPoint: {fileID: 2137706288}
   Anger5_LoadingZone: {fileID: 850423045}
@@ -6967,25 +6967,13 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: ammoCost
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1017094626}
     - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: healthGain
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: deathManager
       value: 
       objectReference: {fileID: 873104342}
-    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: buttonHeldMinimum
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.785
@@ -9420,7 +9408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1229592443
 Transform:
   m_ObjectHideFlags: 0
@@ -11632,7 +11620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1477452459
 Transform:
   m_ObjectHideFlags: 0
@@ -13447,7 +13435,7 @@ Transform:
   m_GameObject: {fileID: 1803048334}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -995.5633, y: -77.1127, z: 17.76128}
+  m_LocalPosition: {x: -995.5, y: -96.7, z: 17.76128}
   m_LocalScale: {x: 25.942291, y: 23.141539, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15959,7 +15947,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.597487
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -16001,7 +15989,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3306369840249148100}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5bca916a58bd450aa176eea0bca196b, type: 3}
   m_Name: 
@@ -16242,9 +16230,9 @@ GameObject:
   - component: {fileID: 2850419846716527261}
   - component: {fileID: 3676940156570839373}
   - component: {fileID: 8976469570956171584}
-  - component: {fileID: 8976469570956171585}
-  - component: {fileID: 8658350762780680783}
   - component: {fileID: 8503003093919147582}
+  - component: {fileID: 8976469570956171586}
+  - component: {fileID: 8976469570956171587}
   m_Layer: 0
   m_Name: FlameBoy
   m_TagString: Untagged
@@ -16318,47 +16306,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8658350762780680783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7268946982661738362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3534d29dd97d4375a29cb1a055bf7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDead: 0
-  isAwake: 0
-  isDamaged: 0
-  Aim: {fileID: 4407856768704539558}
-  isAngerBoss: 0
-  moveSpeed: 1.5
-  defaultSpeed: 1.5
-  attackCoolDown: 0
-  loseAggroRange: 12
-  isWalking: 0
-  inAwakeRange: 0
-  inLoseAggroRange: 0
-  isPatternWalker: 0
-  wakeUpPercent: 0.5
-  health: 10
-  maxHealth: 10
-  takingDamage: 0
-  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 6
-  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 15
-  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 4
-  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 10
-  knockBackForce: 3
-  knockBackCounter: 0
-  knockBackTotalTime: 0.2
-  knockFromRight: 0
 --- !u!50 &8976469570956171584
 Rigidbody2D:
   serializedVersion: 4
@@ -16386,7 +16333,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8976469570956171585
+--- !u!114 &8976469570956171586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16395,12 +16342,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 7268946982661738362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84ac03338ad9a4284b91750a0d813bbd, type: 3}
+  m_Script: {fileID: 11500000, guid: aa2a6b23be0474e6b84db9dcdedb2a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myHealth: {fileID: 8658350762780680783}
-  changeDirectionTimer: 0
-  minionSpawnTimer: 10
+  health: 0
+  maxHealth: 25
+  takingDamage: 0
+  moveSpeed: 2
+  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
+  bigHealthChance: 100
+  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  smallHealthChance: 100
+  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+  bigAmmoChance: 100
+  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+  smallAmmoChance: 100
+--- !u!114 &8976469570956171587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7268946982661738362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be889935cc574b669fa21145e38dd34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeDirectionTimer: 2
   minion: {fileID: 8508236897731443001, guid: b1a835f2e62364016b9148f9c267f343, type: 3}
   contactDamage: 1
 --- !u!1660057539 &9223372036854775807

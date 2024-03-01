@@ -2,33 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AngerBoss : MonoBehaviour
-{   // this is for the boss that will appear after the player picks up melee. He will wander around randomly and will randomly spit out flameboys
+public class AngerBoss_StateManager : MonoBehaviour
+{
+    #region State Machine Variables
+    AngerBoss_BaseState currentState;
 
-    #region Varaibles
-    private bool amDead;
-    private bool amDamaged;
+    public AngerBoss_MovementState movementState = new AngerBoss_MovementState();
 
-    [SerializeField]
-    private EnemyHealth myHealth;
+    public AngerBoss_MinionSpawnState minionSpawnState = new AngerBoss_MinionSpawnState();
+    #endregion
+
+    #region Other Variables
+    private AngerBoss_Health myHealth;
 
     private Rigidbody2D rb;
     private Collider2D col;
     private SpriteRenderer sprite;
-    private Vector2 moveDirection;
-    private Vector2 lastMoveDirection;
-
-    private bool amAwake;
 
     [Header("Movement Variables")]
     [SerializeField]
     private float changeDirectionTimer;
 
     private Vector2 targetDirection;
-
-    [Header("Minion Spawn Variables")]
-    [SerializeField]
-    private float minionSpawnTimer;
 
     [SerializeField]
     private GameObject minion;
@@ -38,13 +33,18 @@ public class AngerBoss : MonoBehaviour
     private float contactDamage;
     #endregion
 
-    private void Awake()
+
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         sprite = GetComponent<SpriteRenderer>();
-        myHealth.isAngerBoss = true;
+        myHealth = GetComponent<AngerBoss_Health>();
         targetDirection = transform.right;
+        // set the starting state for the machine
+        currentState = movementState;
+
+        currentState.EnterState(this);
     }
 
     void Update()
@@ -53,33 +53,23 @@ public class AngerBoss : MonoBehaviour
         {
             col.enabled = true;
             sprite.enabled = true;
-            amAwake = true;
+            currentState.UpdateState(this, myHealth.health, myHealth.maxHealth);
+
         }
         else
         {
             col.enabled = false;
             sprite.enabled = false;
-            amAwake = false;
-        }
-
-        myHealth.isAwake = false;   // I want the boss to be unaware of the player, they just move around randomly
-
-        if (myHealth.isDead)
-        {
-            return;
         }
     }
 
-    private void FixedUpdate()
+    public void SwitchState(AngerBoss_BaseState state)
     {
-        if(amAwake)
-        {
-            Movement();
-            SpawnMinions();
-        }
+        currentState = state;
+        state.EnterState(this);
     }
 
-    private void Movement()
+    public void Movement()
     {
         changeDirectionTimer -= Time.deltaTime;
 
@@ -94,24 +84,26 @@ public class AngerBoss : MonoBehaviour
         rb.velocity = new Vector2(targetDirection.x, targetDirection.y) * (myHealth.moveSpeed + Random.Range(0f, 2f));
     }
 
-    private void SpawnMinions()
+    public void SpawnMinions()
     {
-        minionSpawnTimer -= Time.deltaTime;
-
-        if(minionSpawnTimer <= 0)
-        {
-            //spawn a flame boy minion
-            Vector3 spawnPos = new Vector3(transform.position.x + Random.Range(-4f, 4f), transform.position.y + Random.Range(-4f, 4f), transform.position.z);
-            Instantiate(minion, spawnPos, transform.rotation);
-
-            minionSpawnTimer = Random.Range(3f, 9f);
-        }
+        Vector3 spawnPos = new Vector3(transform.position.x + Random.Range(-4f, 4f), transform.position.y + Random.Range(-4f, 4f), transform.position.z);
+        Instantiate(minion, spawnPos, transform.rotation);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Wall")
+        {
+            // change directions
+            changeDirectionTimer = 0f;
+            targetDirection = -targetDirection;
+        }
+
         if (collision.gameObject.tag == "Player")
         {
+            changeDirectionTimer = 0f;
+            targetDirection = -targetDirection;
+
             collision.gameObject.GetComponent<PlayerController_TopDown>();
 
             collision.gameObject.GetComponent<PlayerController_TopDown>().knockBackCounter = collision.gameObject.GetComponent<PlayerController_TopDown>().knockBackTotalTime;
@@ -128,4 +120,3 @@ public class AngerBoss : MonoBehaviour
         }
     }
 }
-

@@ -3532,7 +3532,7 @@ Transform:
   m_GameObject: {fileID: 430349569}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.3, y: 38.6, z: 0}
+  m_LocalPosition: {x: 24.77, y: 41.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6897,37 +6897,13 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: ammoCost
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: ammoGain
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1660054295}
     - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: healthCost
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: healthGain
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: deathManager
       value: 
       objectReference: {fileID: 671928585}
-    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: buttonHeldMinimum
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: rangedButtonHeldMinimum
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.48
@@ -14383,9 +14359,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7770440126822065785, guid: 873f0e166f9c646659c7d40dd3f120b0, type: 3}
+      propertyPath: maxHealth
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7770440126822065785, guid: 873f0e166f9c646659c7d40dd3f120b0, type: 3}
+      propertyPath: bigAmmoDrop
+      value: 
+      objectReference: {fileID: 1985900085209205504, guid: 8402f0a1d212c44759d1261c920decab, type: 3}
+    - target: {fileID: 7770440126822065785, guid: 873f0e166f9c646659c7d40dd3f120b0, type: 3}
+      propertyPath: bigAmmoChance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7770440126822065785, guid: 873f0e166f9c646659c7d40dd3f120b0, type: 3}
+      propertyPath: bigHealthDrop
+      value: 
+      objectReference: {fileID: 1985900085209205504, guid: 13dfd8f4c2d6145ea900a10b731a8657, type: 3}
+    - target: {fileID: 7770440126822065785, guid: 873f0e166f9c646659c7d40dd3f120b0, type: 3}
+      propertyPath: smallAmmoDrop
+      value: 
+      objectReference: {fileID: 1985900085209205504, guid: f04b83c5831074b0ea9d44e183af5cee, type: 3}
+    - target: {fileID: 7770440126822065785, guid: 873f0e166f9c646659c7d40dd3f120b0, type: 3}
+      propertyPath: bigHealthChance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7770440126822065785, guid: 873f0e166f9c646659c7d40dd3f120b0, type: 3}
+      propertyPath: smallAmmoChance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7770440126822065785, guid: 873f0e166f9c646659c7d40dd3f120b0, type: 3}
+      propertyPath: smallHealthDrop
+      value: 
+      objectReference: {fileID: 1985900085209205504, guid: a6f861592843940468a17b06f33e34f5, type: 3}
+    - target: {fileID: 7770440126822065785, guid: 873f0e166f9c646659c7d40dd3f120b0, type: 3}
+      propertyPath: smallHealthChance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8300804345444143474, guid: 873f0e166f9c646659c7d40dd3f120b0, type: 3}
       propertyPath: m_Name
       value: OWBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031552311258383949, guid: 873f0e166f9c646659c7d40dd3f120b0, type: 3}
+      propertyPath: fireForce
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

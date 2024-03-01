@@ -9,7 +9,22 @@ public class Weapon_TopDown : MonoBehaviour
 
     public enum WeaponType {Melee, Bullet}
     public WeaponType weaponType;
+
+    private Collider2D col;
+
     #endregion
+
+    //private void Start()
+    //{
+    //    col = GetComponent<Collider2D>();
+    //    col.enabled = true;
+    //}
+
+    private void OnEnable()
+    {
+        col = GetComponent<Collider2D>();
+        col.enabled = true;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,6 +43,7 @@ public class Weapon_TopDown : MonoBehaviour
             }
 
             enemy.TakeDamage(damage);
+            col.enabled = false;
 
             if(weaponType == WeaponType.Bullet)
             {
@@ -38,17 +54,22 @@ public class Weapon_TopDown : MonoBehaviour
         OWBoss_Health OWBoss = collision.GetComponent<OWBoss_Health>();
         if (OWBoss != null)
         {
-            //OWBoss.knockBackCounter = enemy.knockBackTotalTime;
-            //if (collision.transform.position.x <= transform.position.x)
-            //{
-            //    OWBoss.knockFromRight = true;
-            //}
-            //if (collision.transform.position.x >= transform.position.x)
-            //{
-            //    OWBoss.knockFromRight = false;
-            //}
-
             OWBoss.TakeDamage(damage);
+
+            col.enabled = false;
+
+            if (weaponType == WeaponType.Bullet)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        AngerBoss_Health AngerBoss = collision.GetComponent<AngerBoss_Health>();
+        if (AngerBoss != null)
+        {
+            AngerBoss.TakeDamage(damage);
+
+            col.enabled = false;
 
             if (weaponType == WeaponType.Bullet)
             {
