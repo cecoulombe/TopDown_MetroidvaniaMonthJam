@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.48, y: 0.04, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 120986692392616518}
   - {fileID: 7672878893040883262}
@@ -120,8 +120,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
-  healthGain: 0.02
-  ammoCost: 0.04
+  healthGain: 0.01
+  ammoCost: 0.05
   buttonHeldMinimum: 1
   healingAnim: {fileID: 2920657051829054033}
   Aim: {fileID: 7672878893040883262}
@@ -132,11 +132,12 @@ MonoBehaviour:
   attackTimer: 0
   bullet: {fileID: 2609964779410368697, guid: 66b4ed7c004ca41a396c94556583f4fa, type: 3}
   fireForce: 10
-  shootCoolDown: 0.25
+  shootCoolDown: 0.3
   shootTimer: 0.5
   healthCost: 0.04
   ammoGain: 0.02
   rangedButtonHeldMinimum: 1.2
+  defaultIFrames: 0.3
 --- !u!50 &3304656133038596254
 Rigidbody2D:
   serializedVersion: 4

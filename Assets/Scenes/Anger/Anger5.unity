@@ -5293,7 +5293,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1964526666}
   m_Father: {fileID: 554144508}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &897201196
@@ -12734,6 +12735,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 146248662414860277, guid: b01c62746e60f4d1abb3bc131d81700f, type: 3}
   m_PrefabInstance: {fileID: 1962830616}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1964526665
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 888413919}
+    m_Modifications:
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9072915
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7792891
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.17700773
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -128.04999
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 31.583332
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754054617985774197, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+      propertyPath: m_Name
+      value: CautionTape
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+--- !u!4 &1964526666 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 146248662414860277, guid: 04fbb8d69ba74458f8f5d1b05f374419, type: 3}
+  m_PrefabInstance: {fileID: 1964526665}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1967425011
 GameObject:
   m_ObjectHideFlags: 0
@@ -14455,7 +14530,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 8600321753278224175}
-  isAngerBoss: 0
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
@@ -14480,6 +14554,7 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0.6
 --- !u!1 &3714912226311061870
 GameObject:
   m_ObjectHideFlags: 0
@@ -14850,7 +14925,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 225544560323054606}
-  isAngerBoss: 0
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
@@ -14875,6 +14949,7 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0.6
 --- !u!95 &5191011784120959382
 Animator:
   serializedVersion: 5
@@ -15250,7 +15325,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 1559731376369698432}
-  isAngerBoss: 0
   moveSpeed: 0
   defaultSpeed: 0
   attackCoolDown: 0
@@ -15275,6 +15349,7 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0.6
 --- !u!1 &6551309403089266898
 GameObject:
   m_ObjectHideFlags: 0
@@ -15595,7 +15670,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 5217684030304405094}
-  isAngerBoss: 0
   moveSpeed: 0
   defaultSpeed: 2
   attackCoolDown: 0
@@ -15620,6 +15694,7 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0.6
 --- !u!60 &8752390624849679812
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -96,7 +96,6 @@ public class PlayerController_TopDown : MonoBehaviour
     #endregion
 
     // Attack variables contains all variables for both types of attacks done by the player (melee and ranged)
-    #region Attack Variables
     [Header("Attack Variables")]
     [SerializeField]
     private Transform Aim;
@@ -143,8 +142,14 @@ public class PlayerController_TopDown : MonoBehaviour
 
     [SerializeField]
     private float rangedButtonHeldMinimum;
-
     #endregion
+
+    #region iFrames Variables
+    [Header("iFrames Variables")]
+    private float iFrames;
+
+    [SerializeField]
+    private float defaultIFrames = 0.3f;
     #endregion
 
     void Start()
@@ -152,7 +157,7 @@ public class PlayerController_TopDown : MonoBehaviour
         Initialization();
         anim = GetComponent<Animator>();
         activeMoveSpeed = walkSpeed;
-
+        iFrames = 0;
     }
 
     // Update is called once per frame
@@ -160,6 +165,8 @@ public class PlayerController_TopDown : MonoBehaviour
     {
         playerHealth = GameStatus.GetInstance().GetHealth();
         playerMaxHealth = GameStatus.GetInstance().GetMaxHealth();
+
+        iFrames -= Time.deltaTime;
 
         //if (Input.GetKeyDown(KeyCode.Escape))
         //{
@@ -414,12 +421,11 @@ public class PlayerController_TopDown : MonoBehaviour
     #region Take Damage
     public void TakeDamage(float damage)
     {
-        GameStatus.GetInstance().LoseHealth(damage);
-        //if (playerHealth <= 0.01)
-        //{
-        //    //yield return new WaitForSeconds(0.25f);
-        //    deathManager.Death();
-        //}
+        if (iFrames <= 0)
+        {
+            GameStatus.GetInstance().LoseHealth(damage);
+            iFrames = defaultIFrames;
+        }
     }
     #endregion
 

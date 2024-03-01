@@ -10,7 +10,7 @@ public class Weapon_TopDown : MonoBehaviour
     public enum WeaponType {Melee, Bullet}
     public WeaponType weaponType;
 
-    private Collider2D col;
+    //private Collider2D col;
 
     #endregion
 
@@ -20,11 +20,11 @@ public class Weapon_TopDown : MonoBehaviour
     //    col.enabled = true;
     //}
 
-    private void OnEnable()
-    {
-        col = GetComponent<Collider2D>();
-        col.enabled = true;
-    }
+    //private void OnEnable()
+    //{
+    //    col = GetComponent<Collider2D>();
+    //    col.enabled = true;
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -43,7 +43,7 @@ public class Weapon_TopDown : MonoBehaviour
             }
 
             enemy.TakeDamage(damage);
-            col.enabled = false;
+            //col.enabled = false;
 
             if(weaponType == WeaponType.Bullet)
             {
@@ -56,7 +56,7 @@ public class Weapon_TopDown : MonoBehaviour
         {
             OWBoss.TakeDamage(damage);
 
-            col.enabled = false;
+            //col.enabled = false;
 
             if (weaponType == WeaponType.Bullet)
             {
@@ -69,7 +69,7 @@ public class Weapon_TopDown : MonoBehaviour
         {
             AngerBoss.TakeDamage(damage);
 
-            col.enabled = false;
+            //col.enabled = false;
 
             if (weaponType == WeaponType.Bullet)
             {

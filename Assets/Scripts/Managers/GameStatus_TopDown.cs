@@ -95,6 +95,10 @@ public class GameStatus : MonoBehaviour
     protected bool Words5_HealthIncreaseTaken;
     [SerializeField]
     protected bool Overwhelm2_AmmoIncreaseTaken;
+    [SerializeField]
+    protected bool Overwhelm4_HealthIncreaseTaken;
+    [SerializeField]
+    protected bool Overwhelm4_AmmoIncreaseTaken;
 
     [Header("Breakable Walls")]
     [SerializeField]
@@ -700,6 +704,17 @@ public class GameStatus : MonoBehaviour
                 return hasRanged;
             }
         }
+        else if (roomName == "Overwhelm4")
+        {
+            if (pickup == "Health")
+            {
+                return Overwhelm4_HealthIncreaseTaken;
+            }
+            else if (pickup == "Ammo")
+            {
+                return Overwhelm4_AmmoIncreaseTaken;
+            }
+        }
 
 
         if (pickup == "dash")
@@ -789,6 +804,17 @@ public class GameStatus : MonoBehaviour
                 Overwhelm2_AmmoIncreaseTaken = true;
             }
         }
+        else if (roomName == "Overwhelm4")
+        {
+            if (pickup == "Health")
+            {
+                Overwhelm4_HealthIncreaseTaken = true;
+            }
+            else if (pickup == "Ammo")
+            {
+                Overwhelm4_AmmoIncreaseTaken = true;
+            }
+        }
 
         if (pickup == "dash")
         {
@@ -873,6 +899,8 @@ public class GameStatus : MonoBehaviour
         Words2_HealthIncreaseTaken = PlayerPrefs.GetInt("Words2_HealthIncreaseTaken") == 1;
         Words5_HealthIncreaseTaken = PlayerPrefs.GetInt("Words5_HealthIncreaseTaken") == 1;
         Overwhelm2_AmmoIncreaseTaken = PlayerPrefs.GetInt("Overwhelm2_AmmoIncreaseTaken") == 1;
+        Overwhelm4_HealthIncreaseTaken = PlayerPrefs.GetInt("Overwhelm4_HealthIncreaseTaken") == 1;
+        Overwhelm4_AmmoIncreaseTaken = PlayerPrefs.GetInt("Overwhelm4_AmmoIncreaseTaken") == 1;
 
     }
 
@@ -929,6 +957,8 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Words2_HealthIncreaseTaken", Words2_HealthIncreaseTaken ? 1 : 0);
         PlayerPrefs.SetInt("Words5_HealthIncreaseTaken", Words5_HealthIncreaseTaken ? 1 : 0);
         PlayerPrefs.SetInt("Overwhelm2_AmmoIncreaseTaken", Overwhelm2_AmmoIncreaseTaken ? 1 : 0);
+        PlayerPrefs.SetInt("Overwhelm4_HealthIncreaseTaken", Overwhelm4_HealthIncreaseTaken ? 1 : 0);
+        PlayerPrefs.SetInt("Overwhelm4_AmmoIncreaseTaken", Overwhelm4_AmmoIncreaseTaken ? 1 : 0);
 
 
         //PlayerPrefs.Save();
@@ -1002,6 +1032,8 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetInt("Words2_HealthIncreaseTaken", 0);
         PlayerPrefs.SetInt("Words5_HealthIncreaseTaken", 0);
         PlayerPrefs.SetInt("Overwhelm2_AmmoIncreaseTaken", 0);
+        PlayerPrefs.SetInt("Overwhelm4_HealthIncreaseTaken", 0);
+        PlayerPrefs.SetInt("Overwhelm4_AmmoIncreaseTaken", 0);
 
         PlayerPrefs.Save();
     }

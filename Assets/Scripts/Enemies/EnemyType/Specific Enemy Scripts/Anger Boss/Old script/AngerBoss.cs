@@ -43,7 +43,6 @@ public class AngerBoss : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         sprite = GetComponent<SpriteRenderer>();
-        myHealth.isAngerBoss = true;
         targetDirection = transform.right;
     }
 

@@ -13,14 +13,15 @@ public class EnemyHealth : MonoBehaviour
     public bool isDamaged;
 
     private Rigidbody2D rb;
+
+    private Collider2D col;
+
     [SerializeField]
     private Transform Aim;
 
     private SpriteRenderer sprite;
 
     Animator anim;
-
-    public bool isAngerBoss;
 
     [Header("Movement Variables")]
     [SerializeField]
@@ -87,6 +88,11 @@ public class EnemyHealth : MonoBehaviour
     public float knockBackTotalTime;
 
     public bool knockFromRight;
+
+    public float iFrames;
+
+    [SerializeField]
+    private float defaultIFrames = 0.32f;
     #endregion
 
 
@@ -94,6 +100,7 @@ public class EnemyHealth : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
     }
 
     void Start()
@@ -104,22 +111,21 @@ public class EnemyHealth : MonoBehaviour
         health = maxHealth;
         moveSpeed = defaultSpeed;
         wakeUpRange = wakeUpPercent * loseAggroRange;
+        iFrames = 0;
     }
 
     void Update()
     {
         colourChanges();
 
-        if (isAngerBoss)
-        {
-            return;
-        }
 
         if (isDead)
         {
             //Debug.Log("enemy is dead");
             return;
         }
+
+        iFrames -= Time.deltaTime;
 
         inAwakeRange = Vector3.Distance(target.position, transform.position) <= wakeUpRange;
         inLoseAggroRange = Vector3.Distance(target.position, transform.position) <= loseAggroRange;
@@ -155,10 +161,6 @@ public class EnemyHealth : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isAngerBoss)
-        {
-            return;
-        }
         Movement();
         takingDamage = false;
     }
@@ -232,7 +234,11 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        if(iFrames <= 0)
+        {
+            health -= damage;
+            iFrames = defaultIFrames;
+        }
         isAwake = true;
         if (health <= 0.1)
         {

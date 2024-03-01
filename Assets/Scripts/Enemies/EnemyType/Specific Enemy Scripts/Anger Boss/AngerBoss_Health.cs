@@ -40,6 +40,11 @@ public class AngerBoss_Health : MonoBehaviour
     private GameObject smallAmmoDrop;
     [SerializeField]
     private float smallAmmoChance;
+
+    public float iFrames;
+
+    [SerializeField]
+    private float defaultIFrames = 0.32f;
     #endregion
 
 
@@ -53,6 +58,7 @@ public class AngerBoss_Health : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         health = maxHealth;
+        iFrames = 0;
     }
 
     void Update()
@@ -64,6 +70,9 @@ public class AngerBoss_Health : MonoBehaviour
             //Debug.Log("enemy is dead");
             return;
         }
+
+        iFrames -= Time.deltaTime;
+
     }
 
     #region Colour change based on health
@@ -77,8 +86,13 @@ public class AngerBoss_Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
-        moveSpeed += 0.5f;
+        if (iFrames <= 0)
+        {
+            health -= damage;
+            moveSpeed += 0.4f;
+            iFrames = defaultIFrames;
+        }
+        
         if (health <= 0.1)
         {
             //Destroy(gameObject);

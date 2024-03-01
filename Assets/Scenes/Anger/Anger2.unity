@@ -2333,37 +2333,13 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: ammoCost
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: healthGain
-      value: 0.01
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5165691}
     - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: deathManager
       value: 
       objectReference: {fileID: 493265831}
-    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: buttonHeldMinimum
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.2
-      objectReference: {fileID: 0}
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.42
@@ -2403,10 +2379,6 @@ PrefabInstance:
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16034,7 +16006,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 506750384495447956}
-  isAngerBoss: 0
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
@@ -16059,6 +16030,7 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0.6
 --- !u!114 &4758942028913035486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16075,7 +16047,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 506750384587456823}
-  isAngerBoss: 0
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
@@ -16100,6 +16071,7 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0.6
 --- !u!114 &4758942028950135679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16116,7 +16088,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 506750384553257622}
-  isAngerBoss: 0
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
@@ -16141,6 +16112,7 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0.6
 --- !u!114 &4758942029014353374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16157,7 +16129,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 506750384622718007}
-  isAngerBoss: 0
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
@@ -16182,6 +16153,7 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0.6
 --- !u!50 &5093957284602426321
 Rigidbody2D:
   serializedVersion: 4
@@ -16623,7 +16595,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 7860303663129394180}
-  isAngerBoss: 0
   moveSpeed: 0
   defaultSpeed: 2
   attackCoolDown: 0
@@ -16648,6 +16619,7 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0.6
 --- !u!1 &6828565815376668907
 GameObject:
   m_ObjectHideFlags: 0

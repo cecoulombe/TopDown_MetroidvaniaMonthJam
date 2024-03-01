@@ -79,6 +79,11 @@ public class OWBoss_Health : MonoBehaviour
     public float knockBackTotalTime;
 
     public bool knockFromRight;
+
+    public float iFrames;
+
+    [SerializeField]
+    private float defaultIFrames = 0.32f;
     #endregion
 
 
@@ -95,6 +100,7 @@ public class OWBoss_Health : MonoBehaviour
         health = maxHealth;
         moveSpeed = defaultSpeed;
         wakeUpRange = wakeUpPercent * loseAggroRange;
+        iFrames = 0;
     }
 
     void Update()
@@ -106,6 +112,8 @@ public class OWBoss_Health : MonoBehaviour
             //Debug.Log("enemy is dead");
             return;
         }
+
+        iFrames -= Time.deltaTime;
 
         inAwakeRange = Vector3.Distance(target.position, transform.position) <= wakeUpRange;
         inLoseAggroRange = Vector3.Distance(target.position, transform.position) <= loseAggroRange;
@@ -179,8 +187,13 @@ public class OWBoss_Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
-        isAwake = true;
+        if (iFrames <= 0)
+        {
+            health -= damage;
+            isAwake = true;
+            iFrames = defaultIFrames;
+        }
+
         if (health <= 0.1)
         {
             //Destroy(gameObject);

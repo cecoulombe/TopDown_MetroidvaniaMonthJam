@@ -18,14 +18,14 @@ public class EnemyWeapon_TopDown : MonoBehaviour
     public enum WeaponType { Melee, Bullet }
     public WeaponType weaponType;
 
-    private Collider2D col;
+    //private Collider2D col;
     #endregion
 
-    private void OnEnable()
-    {
-        col = GetComponent<Collider2D>();
-        col.enabled = true;
-    }
+    //private void OnEnable()
+    //{
+    //    col = GetComponent<Collider2D>();
+    //    col.enabled = true;
+    //}
 
     private void Update()
     {
@@ -67,7 +67,7 @@ public class EnemyWeapon_TopDown : MonoBehaviour
             }
 
             player.TakeDamage(damage * damangeMultiplier);
-            col.enabled = false;
+            //col.enabled = false;
 
             if (weaponType == WeaponType.Bullet)
             {
