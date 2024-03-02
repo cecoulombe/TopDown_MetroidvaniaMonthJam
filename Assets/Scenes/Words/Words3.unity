@@ -7023,7 +7023,7 @@ Transform:
   m_GameObject: {fileID: 1046308328}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -49, y: -10.8, z: 0}
+  m_LocalPosition: {x: -47.29, y: -9.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8615,11 +8615,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -60.8
+      value: -26.56
       objectReference: {fileID: 0}
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.1
+      value: -23.28
       objectReference: {fileID: 0}
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10596,7 +10596,7 @@ Transform:
   m_GameObject: {fileID: 1709326984}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.8, y: 1.6, z: 0}
+  m_LocalPosition: {x: 14.85, y: 2.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13001,7 +13001,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 9108047398440773595}
-  isAngerBoss: 0
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
@@ -13026,6 +13025,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!1 &350585259306208591
 GameObject:
   m_ObjectHideFlags: 0
@@ -13959,7 +13960,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 8303038681753117434}
-  isAngerBoss: 0
   moveSpeed: 1.5
   defaultSpeed: 1.5
   attackCoolDown: 0
@@ -13984,6 +13984,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!1001 &1167323663659907291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14010,19 +14012,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5939890818442382412, guid: 90845c36a4c274aff97fb0dbf8521c4b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 57.99074
+      value: 51.339897
       objectReference: {fileID: 0}
     - target: {fileID: 5939890818442382412, guid: 90845c36a4c274aff97fb0dbf8521c4b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -54.532
+      value: -53.687
       objectReference: {fileID: 0}
     - target: {fileID: 5939890818442382412, guid: 90845c36a4c274aff97fb0dbf8521c4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.229
+      value: -18.215
       objectReference: {fileID: 0}
     - target: {fileID: 5939890818442382412, guid: 90845c36a4c274aff97fb0dbf8521c4b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.125
+      value: -0.123
       objectReference: {fileID: 0}
     - target: {fileID: 5939890818442382412, guid: 90845c36a4c274aff97fb0dbf8521c4b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14212,7 +14214,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 7337410420491009653}
-  isAngerBoss: 0
   moveSpeed: 2
   defaultSpeed: 2
   attackCoolDown: 0
@@ -14237,6 +14238,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!4 &1811610666303703475
 Transform:
   m_ObjectHideFlags: 0
@@ -14367,7 +14370,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 7350653359584337390}
-  isAngerBoss: 0
   moveSpeed: 2
   defaultSpeed: 2
   attackCoolDown: 0
@@ -14392,6 +14394,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!1 &1937326069773203169
 GameObject:
   m_ObjectHideFlags: 0
@@ -16244,7 +16248,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 4246445083694132608}
-  isAngerBoss: 0
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
@@ -16269,6 +16272,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!114 &5107897542429604329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16913,7 +16918,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 2990527382287474678}
-  isAngerBoss: 0
   moveSpeed: 1.5
   defaultSpeed: 1.5
   attackCoolDown: 0
@@ -16938,6 +16942,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!114 &6164581548814453663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17101,7 +17107,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 3126769426589917328}
-  isAngerBoss: 0
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
@@ -17126,6 +17131,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!114 &6378256612246619909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18030,7 +18037,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 1913876255486877856}
-  isAngerBoss: 0
   moveSpeed: 1.5
   defaultSpeed: 1.5
   attackCoolDown: 0
@@ -18055,6 +18061,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!114 &7387019251020215497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18522,7 +18530,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 1363187088809471662}
-  isAngerBoss: 0
   moveSpeed: 2
   defaultSpeed: 2
   attackCoolDown: 0
@@ -18547,6 +18554,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!1 &7945990168182903994
 GameObject:
   m_ObjectHideFlags: 0
@@ -19172,7 +19181,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 1883448849620029351}
-  isAngerBoss: 0
   moveSpeed: 0
   defaultSpeed: 0
   attackCoolDown: 0
@@ -19197,6 +19205,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!114 &8549016080050625032
 MonoBehaviour:
   m_ObjectHideFlags: 0

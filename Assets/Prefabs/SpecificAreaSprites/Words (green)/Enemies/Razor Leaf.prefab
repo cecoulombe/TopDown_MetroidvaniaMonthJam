@@ -320,7 +320,7 @@ MonoBehaviour:
   Aim: {fileID: 132617652703165701}
   bullet: {fileID: 2609964779410368697, guid: 507316fd1c02749b5b6b86f62c173664, type: 3}
   fireForce: 8
-  shootCoolDown: 1
+  shootCoolDown: 1.2
   shootTimer: 0.5
   minRangePercent: 0
   maxRangePercent: 1
@@ -340,7 +340,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 132617652703165701}
-  isAngerBoss: 0
   moveSpeed: 0
   defaultSpeed: 0
   attackCoolDown: 0
@@ -365,6 +364,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!114 &4475259436123645524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,11 +380,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 0
-  healingCooldown: 2
+  healingCooldown: 0
   healingCoolCounter: 0
   healingAmount: 0.4
   healingAnim: {fileID: 7723462659489174366}
-  canHeal: 0
+  canHeal: 1
 --- !u!95 &4350676358512827690
 Animator:
   serializedVersion: 5

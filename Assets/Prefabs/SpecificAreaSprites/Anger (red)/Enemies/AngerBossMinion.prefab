@@ -358,17 +358,18 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 506750385573696258}
-  isAngerBoss: 0
-  moveSpeed: 2
-  defaultSpeed: 2
+  moveSpeed: 1.2
+  defaultSpeed: 1.2
   attackCoolDown: 0
   loseAggroRange: 20
   isWalking: 0
-  inRange: 0
+  inAwakeRange: 0
+  inLoseAggroRange: 0
   isPatternWalker: 1
   wakeUpPercent: 0.8
   health: 2
   maxHealth: 2
+  takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
   bigHealthChance: 15
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
@@ -381,6 +382,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!95 &5486282551567834778
 Animator:
   serializedVersion: 5

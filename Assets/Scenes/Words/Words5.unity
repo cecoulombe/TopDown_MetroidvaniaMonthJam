@@ -5264,6 +5264,7 @@ MonoBehaviour:
   - {fileID: 1969078018781525041}
   - {fileID: 1969078020681126321}
   - {fileID: 1969078020650848917}
+  - {fileID: 6620199315078151110}
   player: {fileID: 1021224985}
   spawnPoint: {fileID: 212700913}
   Words4_LoadingZone: {fileID: 1200325758}
@@ -14195,6 +14196,7 @@ MonoBehaviour:
   knockBackTotalTime: 0.2
   knockFromRight: 0
   iFrames: 0.6
+  defaultIFrames: 0.32
 --- !u!114 &1969078019298715575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14236,6 +14238,7 @@ MonoBehaviour:
   knockBackTotalTime: 0.2
   knockFromRight: 0
   iFrames: 0.6
+  defaultIFrames: 0.32
 --- !u!114 &1969078020650848917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14277,6 +14280,7 @@ MonoBehaviour:
   knockBackTotalTime: 0.2
   knockFromRight: 0
   iFrames: 0.6
+  defaultIFrames: 0.32
 --- !u!114 &1969078020681126321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14318,6 +14322,7 @@ MonoBehaviour:
   knockBackTotalTime: 0.2
   knockFromRight: 0
   iFrames: 0.6
+  defaultIFrames: 0.32
 --- !u!114 &1984197996212697334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15905,6 +15910,7 @@ MonoBehaviour:
   knockBackTotalTime: 0.2
   knockFromRight: 0
   iFrames: 0.6
+  defaultIFrames: 0.32
 --- !u!1001 &5677524446648089738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16524,6 +16530,7 @@ MonoBehaviour:
   knockBackTotalTime: 0
   knockFromRight: 0
   iFrames: 0.6
+  defaultIFrames: 0.32
 --- !u!114 &6635083936832190725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17400,5 +17407,5 @@ SceneRoots:
   - {fileID: 998674992}
   - {fileID: 978354336}
   - {fileID: 1071372985}
-  - {fileID: 1759898954}
   - {fileID: 1303055743}
+  - {fileID: 1759898954}

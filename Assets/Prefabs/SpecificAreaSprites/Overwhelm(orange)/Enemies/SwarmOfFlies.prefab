@@ -309,7 +309,7 @@ Transform:
   m_GameObject: {fileID: 8022437572080053330}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.61, y: 0.08, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.9999998, y: 2.9999998, z: 2.9999998}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -428,7 +428,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 4213279470586563647}
-  isAngerBoss: 0
   moveSpeed: 3
   defaultSpeed: 3
   attackCoolDown: 0
@@ -442,17 +441,19 @@ MonoBehaviour:
   maxHealth: 3
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 5
+  bigHealthChance: 10
   smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 12
+  smallHealthChance: 24
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 5
+  bigAmmoChance: 10
   smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 12
+  smallAmmoChance: 24
   knockBackForce: 3
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!95 &8541183976628078989
 Animator:
   serializedVersion: 5

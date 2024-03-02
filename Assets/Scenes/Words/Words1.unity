@@ -9133,22 +9133,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Razor Leaf
       objectReference: {fileID: 0}
-    - target: {fileID: 4475259436123645524, guid: c5b5cebd5130942eea71d4deaa5bf31f, type: 3}
-      propertyPath: canHeal
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4475259436123645524, guid: c5b5cebd5130942eea71d4deaa5bf31f, type: 3}
-      propertyPath: healingAmount
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4475259436123645524, guid: c5b5cebd5130942eea71d4deaa5bf31f, type: 3}
-      propertyPath: healingCooldown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7723462659489174366, guid: c5b5cebd5130942eea71d4deaa5bf31f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

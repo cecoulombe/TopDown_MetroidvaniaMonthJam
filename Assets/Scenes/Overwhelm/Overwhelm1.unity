@@ -667,17 +667,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4884996111116082234, guid: 48bfaa3f91baf4ef1b4504847262c3c7, type: 3}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5826854295990666989, guid: 48bfaa3f91baf4ef1b4504847262c3c7, type: 3}
       propertyPath: m_Name
       value: SwarmOfFlies
-      objectReference: {fileID: 0}
-    - target: {fileID: 6269527032888483090, guid: 48bfaa3f91baf4ef1b4504847262c3c7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6269527032888483090, guid: 48bfaa3f91baf4ef1b4504847262c3c7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6996,7 +6992,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146248662414860277, guid: 38bbc73c65db54210a836ffee7a91d55, type: 3}
       propertyPath: m_LocalScale.x
-      value: 119.13706
+      value: 115.92036
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: 38bbc73c65db54210a836ffee7a91d55, type: 3}
       propertyPath: m_LocalScale.y
@@ -7004,7 +7000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: 38bbc73c65db54210a836ffee7a91d55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -215.209
+      value: -214.376
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: 38bbc73c65db54210a836ffee7a91d55, type: 3}
       propertyPath: m_LocalPosition.y

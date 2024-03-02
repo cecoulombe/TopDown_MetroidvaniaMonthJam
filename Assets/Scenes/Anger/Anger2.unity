@@ -1364,7 +1364,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalScale.x
-      value: 168.76613
+      value: 168.52242
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalScale.y
@@ -1372,7 +1372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.34
+      value: 12.417
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: d6a0f948ac95a4f7b87605f92d1b2f23, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4784,8 +4784,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 968906719}
     m_Modifications:
     - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 43.38919
+      objectReference: {fileID: 0}
+    - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.899994
+      value: -42.477
       objectReference: {fileID: 0}
     - target: {fileID: 146248662414860277, guid: b8d7019aee0a34776a3dfc89ed85df88, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6525,7 +6529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &968906719
 Transform:
   m_ObjectHideFlags: 0
@@ -16031,6 +16035,7 @@ MonoBehaviour:
   knockBackTotalTime: 0.2
   knockFromRight: 0
   iFrames: 0.6
+  defaultIFrames: 0.32
 --- !u!114 &4758942028913035486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16072,6 +16077,7 @@ MonoBehaviour:
   knockBackTotalTime: 0.2
   knockFromRight: 0
   iFrames: 0.6
+  defaultIFrames: 0.32
 --- !u!114 &4758942028950135679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16113,6 +16119,7 @@ MonoBehaviour:
   knockBackTotalTime: 0.2
   knockFromRight: 0
   iFrames: 0.6
+  defaultIFrames: 0.32
 --- !u!114 &4758942029014353374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16154,6 +16161,7 @@ MonoBehaviour:
   knockBackTotalTime: 0.2
   knockFromRight: 0
   iFrames: 0.6
+  defaultIFrames: 0.32
 --- !u!50 &5093957284602426321
 Rigidbody2D:
   serializedVersion: 4
@@ -16620,6 +16628,7 @@ MonoBehaviour:
   knockBackTotalTime: 0.2
   knockFromRight: 0
   iFrames: 0.6
+  defaultIFrames: 0.32
 --- !u!1 &6828565815376668907
 GameObject:
   m_ObjectHideFlags: 0

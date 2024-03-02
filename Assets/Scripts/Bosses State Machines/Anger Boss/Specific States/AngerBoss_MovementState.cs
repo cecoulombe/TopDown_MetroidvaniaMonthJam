@@ -30,7 +30,7 @@ public class AngerBoss_MovementState : AngerBoss_BaseState
             //spawn a flame boy minion
             boss.SwitchState(boss.minionSpawnState);
 
-            minionSpawnTimer = Random.Range(1f, 6f);
+            minionSpawnTimer = Random.Range(1f, 4.5f);
         }
     }
 

@@ -9560,6 +9560,7 @@ MonoBehaviour:
   knockBackTotalTime: 0.2
   knockFromRight: 0
   iFrames: 0.6
+  defaultIFrames: 0.32
 --- !u!4 &2775283766464105862
 Transform:
   m_ObjectHideFlags: 0
@@ -9843,7 +9844,7 @@ MonoBehaviour:
   attackDuration: 0.3
   attackTimer: 0
   meleeAttackRange: 4
-  meleeCoolDown: 500
+  meleeCoolDown: 250
 --- !u!114 &7633584690315675259
 MonoBehaviour:
   m_ObjectHideFlags: 0

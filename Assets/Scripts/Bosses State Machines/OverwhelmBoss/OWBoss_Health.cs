@@ -194,44 +194,73 @@ public class OWBoss_Health : MonoBehaviour
             iFrames = defaultIFrames;
         }
 
+        if (health == Mathf.Round(maxHealth * 0.95f) || health == Mathf.Round(maxHealth * 0.9f) || health == Mathf.Round(maxHealth * 0.85f) || health == Mathf.Round(maxHealth * 0.8f) || health == Mathf.Round(maxHealth * 0.75f) || health == Mathf.Round(maxHealth * 0.7f) || health == Mathf.Round(maxHealth * 0.65f) || health == Mathf.Round(maxHealth * 0.6f) || health == Mathf.Round(maxHealth * 0.55f) || health == Mathf.Round(maxHealth * 0.5f) || health == Mathf.Round(maxHealth * 0.45f) || health == Mathf.Round(maxHealth * 0.4f) || health == Mathf.Round(maxHealth * 0.35f) || health == Mathf.Round(maxHealth * 0.3f) || health == Mathf.Round(maxHealth * 0.25f) || health == Mathf.Round(maxHealth * 0.2f) || health == Mathf.Round(maxHealth * 0.15f) || health == Mathf.Round(maxHealth * 0.1f) || health == Mathf.Round(maxHealth * 0.05f))
+        {
+            Debug.Log("dropping stuff for the player");
+            float randNum = Random.Range(0f, 10f) * 10f;
+
+            if (randNum <= 50)
+            {
+                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-10f, 10f), Aim.position.y + Random.Range(-10f, 10f), Aim.position.z);
+                Instantiate(bigHealthDrop, dropPos, Aim.rotation);
+            }
+            else if (randNum > 50)
+            {
+                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-10f, 10f), Aim.position.y + Random.Range(-10f, 10f), Aim.position.z);
+                Instantiate(smallHealthDrop, dropPos, Aim.rotation);
+            }
+
+            float randNumAmmo = Random.Range(0f, 10f) * 10f;
+            if (randNumAmmo <= 50)
+            {
+                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-10f, 10f), Aim.position.y + Random.Range(-10f, 10f), Aim.position.z);
+                Instantiate(bigAmmoDrop, dropPos, Aim.rotation);
+            }
+            else if (randNumAmmo > 50)
+            {
+                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-10f, 10f), Aim.position.y + Random.Range(-10f, 10f), Aim.position.z);
+                Instantiate(smallAmmoDrop, dropPos, Aim.rotation);
+            }
+        }
+
         if (health <= 0.1)
         {
             //Destroy(gameObject);
             isDead = true;
             gameObject.SetActive(false);
-            float randNum = Random.Range(0f, 10f) / 10f * 100f;
+            int numOfDropsHealth = 0;
+            int numOfDropsHealthSmall = 0;
+            int numOfDropsAmmo = 0;
+            int numOfDropsAmmoSmall = 0;
+            float totalDrops = Random.Range(3, 5);
 
-            // only drop health if the player is not full (similar to Super metroid)
-            if (GameStatus.GetInstance().GetHealth() != GameStatus.GetInstance().GetMaxHealth())
+            while(totalDrops < 16)
             {
-                if (randNum <= bigHealthChance)
+                if (numOfDropsHealth < 5)
                 {
-                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-1f, 1f), Aim.position.y + Random.Range(-1f, 1f), Aim.position.z);
+                    numOfDropsHealth += 1;
+                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-2f, 2f), Aim.position.y + Random.Range(-2f, 2f), Aim.position.z);
                     Instantiate(bigHealthDrop, dropPos, Aim.rotation);
                 }
-                else if (randNum > bigHealthChance && randNum <= smallHealthChance)
+                if (numOfDropsHealthSmall < 5)
                 {
-                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-1f, 1f), Aim.position.y + Random.Range(-1f, 1f), Aim.position.z);
+                    numOfDropsHealthSmall += 1;
+                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-2f, 2f), Aim.position.y + Random.Range(-2f, 2f), Aim.position.z);
                     Instantiate(smallHealthDrop, dropPos, Aim.rotation);
                 }
-            }
-            // make sure the player can shoot before you give bullets, and make sure that they actually need bullets (similar to the health)
-            if (GameStatus.GetInstance().HasRanged())
-            {
-                if (GameStatus.GetInstance().GetAmmo() != GameStatus.GetInstance().GetMaxAmmo())
+                if (numOfDropsAmmo < 5)
                 {
-                    float randNumAmmo = Random.Range(0f, 10f) / 10f * 100f;
-                    if (randNumAmmo <= bigAmmoChance)
-                    {
-                        Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-1f, 1f), Aim.position.y + Random.Range(-1f, 1f), Aim.position.z);
-                        Instantiate(bigAmmoDrop, dropPos, Aim.rotation);
-                    }
-                    else if (randNumAmmo > bigAmmoChance && randNumAmmo <= smallAmmoChance)
-                    {
-                        Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-1f, 1f), Aim.position.y + Random.Range(-1f, 1f), Aim.position.z);
-                        Instantiate(smallAmmoDrop, dropPos, Aim.rotation);
-                    }
+                    numOfDropsAmmo += 1;
+                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-2f, 2f), Aim.position.y + Random.Range(-2f, 2f), Aim.position.z);
+                    Instantiate(bigAmmoDrop, dropPos, Aim.rotation);
                 }
+                if (numOfDropsAmmoSmall < 5)
+                {
+                    numOfDropsAmmoSmall += 1;
+                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-2f, 2f), Aim.position.y + Random.Range(-2f, 2f), Aim.position.z);
+                    Instantiate(smallAmmoDrop, dropPos, Aim.rotation);
+                }
+                totalDrops += 1;
             }
         }
     }
