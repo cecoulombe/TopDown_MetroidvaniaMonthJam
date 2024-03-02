@@ -6093,7 +6093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyList:
-  - {fileID: 8532087592869231032}
+  - {fileID: 0}
   - {fileID: 7943604788718626182}
   - {fileID: 6149143950412977374}
   - {fileID: 5059862723635160744}
@@ -8615,11 +8615,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.56
+      value: -57.31
       objectReference: {fileID: 0}
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.28
+      value: -20.69
       objectReference: {fileID: 0}
     - target: {fileID: 6654104826078215126, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17254,25 +17254,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &6653412265804376234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6766365445661607147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6973a1b8461ba4dd3b606b3560011c60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
-  healingCooldown: 5
-  healingCoolCounter: 5
-  healingAmount: 0.4
-  healingAnim: {fileID: 8365850189458266527}
-  canHeal: 1
 --- !u!1 &6662816421384385844
 GameObject:
   m_ObjectHideFlags: 0
@@ -17427,11 +17408,10 @@ GameObject:
   - component: {fileID: 877794449259935542}
   - component: {fileID: 780758991510600805}
   - component: {fileID: 3255178851283013277}
-  - component: {fileID: 8549016080050625032}
-  - component: {fileID: 8532087592869231032}
   - component: {fileID: 7699888251303824443}
-  - component: {fileID: 6653412265804376234}
   - component: {fileID: 6132703436124151407}
+  - component: {fileID: 8549016080050625034}
+  - component: {fileID: 8549016080050625033}
   m_Layer: 0
   m_Name: Sticks
   m_TagString: Untagged
@@ -19165,7 +19145,7 @@ MonoBehaviour:
   meleeDamage: 1
   bulletDamage: 1
   weaponType: 0
---- !u!114 &8532087592869231032
+--- !u!114 &8549016080050625033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19174,40 +19154,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6766365445661607147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3534d29dd97d4375a29cb1a055bf7d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 126a401d6a3c1461db092e630c2102d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  isAwake: 0
-  isDamaged: 0
   Aim: {fileID: 1883448849620029351}
-  moveSpeed: 0
-  defaultSpeed: 0
-  attackCoolDown: 0
-  loseAggroRange: 50
-  isWalking: 0
-  inAwakeRange: 0
-  inLoseAggroRange: 0
-  isPatternWalker: 0
-  wakeUpPercent: 0.25
-  health: 6
-  maxHealth: 25
+  health: 0
+  maxHealth: 32
   takingDamage: 0
   bigHealthDrop: {fileID: 1985900085209205504, guid: a2270d0e5829b4b38bf7c885706dd7d2, type: 3}
-  bigHealthChance: 20
   smallHealthDrop: {fileID: 1985900085209205504, guid: a68a26cc3ee374686b20106d063bfdad, type: 3}
-  smallHealthChance: 50
   bigAmmoDrop: {fileID: 1985900085209205504, guid: 76bc6e03ddcd94140a09a360fc248493, type: 3}
-  bigAmmoChance: 20
   smallAmmoDrop: {fileID: 1985900085209205504, guid: 33b9aa80e4ad144c1b2d8ceb7cd277f7, type: 3}
-  smallAmmoChance: 50
-  knockBackForce: 0
-  knockBackCounter: 0
-  knockBackTotalTime: 0
-  knockFromRight: 0
   iFrames: 0
   defaultIFrames: 0.32
---- !u!114 &8549016080050625032
+--- !u!114 &8549016080050625034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19216,28 +19177,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 6766365445661607147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25ff4bda1109647f5b320e960b894144, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f6707ef383684baa92f4e5c879442a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patternSpeed: 0
-  shootMoveSpeed: 0
-  myHealth: {fileID: 8532087592869231032}
-  pointA: {fileID: 3508129575490051944}
-  pointB: {fileID: 6897095919524719025}
-  contactDamage: 1
-  Melee: {fileID: 7168923707358232310}
-  isAttacking: 0
-  attackDuration: 1
-  attackTimer: 0
-  meleeAttackRange: 8
-  meleeCoolDown: 400
   Aim: {fileID: 1883448849620029351}
   bullet: {fileID: 2609964779410368697, guid: 507316fd1c02749b5b6b86f62c173664, type: 3}
   fireForce: 8
-  shootCoolDown: 1.2
-  shootTimer: 0.5
-  minRangePercent: 0.16
-  maxRangePercent: 1
+  rangedAttackRangeMin: 8.6
+  rangedAttackRangeMax: 40
+  singleShootCoolDown: 0
+  rangedCoolDown: 1
+  healingAmount: 0.1
+  healingAnim: {fileID: 8365850189458266527}
+  Melee: {fileID: 7168923707358232310}
+  meleeAttackRange: 8.5
+  meleeCoolDown: 1.6
+  meleeCounter: 0
+  isAttacking: 0
+  attackDuration: 1
+  attackCountDown: 0
 --- !u!212 &8571562704154160684
 SpriteRenderer:
   m_ObjectHideFlags: 0

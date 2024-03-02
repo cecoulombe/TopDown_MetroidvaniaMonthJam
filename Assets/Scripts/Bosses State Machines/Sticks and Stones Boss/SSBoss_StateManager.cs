@@ -39,6 +39,12 @@ public class SSBoss_StateManager : MonoBehaviour
 
     [SerializeField]
     public float rangedAttackRangeMax;
+
+    public float singleShootCoolDown;
+
+    [SerializeField]
+    private float rangedCoolDown;
+
     #endregion
 
     #region Healing Variables
@@ -57,6 +63,18 @@ public class SSBoss_StateManager : MonoBehaviour
 
     [SerializeField]
     public float meleeAttackRange;
+
+    [SerializeField]
+    public float meleeCoolDown = 1f;
+
+    public float meleeCounter;
+
+    public bool isAttacking;
+
+    [SerializeField]
+    public float attackDuration;
+
+    public float attackCountDown;
     #endregion
 
     void Start()
@@ -65,6 +83,10 @@ public class SSBoss_StateManager : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         myHealth = GetComponent<SSBoss_Health>();
         target = GameObject.Find("Player").transform;
+
+        singleShootCoolDown = rangedCoolDown;
+        attackCountDown = attackDuration;
+        meleeCounter = meleeCoolDown;
         // set the starting state for the machine
         currentState = initialState;
 
@@ -74,6 +96,8 @@ public class SSBoss_StateManager : MonoBehaviour
     void Update()
     {
         currentState.UpdateState(this, target, myHealth.health, myHealth.maxHealth);
+        singleShootCoolDown -= Time.deltaTime;
+        meleeCounter -= Time.deltaTime;
     }
 
     public void SwitchState(SSBoss_BaseState state)
@@ -98,11 +122,30 @@ public class SSBoss_StateManager : MonoBehaviour
         intBullet.transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
 
         Destroy(intBullet, 4f);
+
+        singleShootCoolDown = rangedCoolDown;
     }
 
     public void MeleeAttack()
     {
+        if (attackCountDown > 0)
+        {
+            isAttacking = true;
+        }
+        else
+        {
+            isAttacking = false;
+            Melee.SetActive(false);
+            attackCountDown = attackDuration;
+            meleeCounter = meleeCoolDown;
+            SwitchState(initialState);
+        }
 
+        if (isAttacking)
+        {
+            attackCountDown -= Time.deltaTime;
+            Melee.SetActive(true);
+        }
     }
 
     public void Healing()

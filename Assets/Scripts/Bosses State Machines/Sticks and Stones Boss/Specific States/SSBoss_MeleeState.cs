@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class SSBoss_MeleeState : SSBoss_BaseState
 {
-    #region Melee Variables
-    private float meleeCoolDown = 1f;
-
-    private float meleeAttackTimer = 0f;
-    #endregion 
     public override void EnterState(SSBoss_StateManager boss)
     {
         Debug.Log("hello from the melee state");
@@ -17,10 +12,10 @@ public class SSBoss_MeleeState : SSBoss_BaseState
     public override void UpdateState(SSBoss_StateManager boss, Transform targetLocation, float health, float maxHealth)
     {
         // what happens here
-        if (meleeCoolDown <= meleeAttackTimer)
+        if (boss.meleeCounter <= 0)
         {
             boss.MeleeAttack();
-            boss.SwitchState(boss.initialState);
+            //boss.SwitchState(boss.initialState);
         }
         // transition(s) to other state(s)
     }

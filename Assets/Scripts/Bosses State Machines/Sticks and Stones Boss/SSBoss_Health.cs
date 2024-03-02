@@ -8,11 +8,6 @@ public class SSBoss_Health : MonoBehaviour
     [SerializeField]
     public bool isDead;
 
-    public bool isAwake;
-
-    public bool isDamaged;
-
-    private Rigidbody2D rb;
     [SerializeField]
     private Transform Aim;
 
@@ -23,21 +18,6 @@ public class SSBoss_Health : MonoBehaviour
     private Transform target;
     private Vector2 moveDirection;
     private Vector2 lastMoveDirection;
-
-    public float attackCoolDown;
-
-    private float wakeUpRange;
-
-    [SerializeField]
-    public float loseAggroRange;
-
-    public bool isWalking;
-
-    public bool inAwakeRange;
-    public bool inLoseAggroRange;
-
-    [SerializeField]
-    private float wakeUpPercent;
 
     [Header("Enemy Health")]
     [SerializeField]
@@ -51,30 +31,12 @@ public class SSBoss_Health : MonoBehaviour
     [SerializeField]
     private GameObject bigHealthDrop;
     [SerializeField]
-    private float bigHealthChance;
-    [SerializeField]
     private GameObject smallHealthDrop;
-    [SerializeField]
-    private float smallHealthChance;
 
     [SerializeField]
     private GameObject bigAmmoDrop;
     [SerializeField]
-    private float bigAmmoChance;
-    [SerializeField]
     private GameObject smallAmmoDrop;
-    [SerializeField]
-    private float smallAmmoChance;
-
-    [Header("Knockback Variables")]
-    [SerializeField]
-    public float knockBackForce;
-
-    public float knockBackCounter;
-
-    public float knockBackTotalTime;
-
-    public bool knockFromRight;
 
     public float iFrames;
 
@@ -82,19 +44,11 @@ public class SSBoss_Health : MonoBehaviour
     private float defaultIFrames = 0.32f;
     #endregion
 
-
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
     void Start()
     {
         target = GameObject.Find("Player").transform;
         sprite = GetComponent<SpriteRenderer>();
         health = maxHealth;
-        wakeUpRange = wakeUpPercent * loseAggroRange;
         iFrames = 0;
     }
 
@@ -110,28 +64,13 @@ public class SSBoss_Health : MonoBehaviour
 
         iFrames -= Time.deltaTime;
 
-        inAwakeRange = Vector3.Distance(target.position, transform.position) <= wakeUpRange;
-        inLoseAggroRange = Vector3.Distance(target.position, transform.position) <= loseAggroRange;
+        Aim.rotation = Quaternion.LookRotation(Vector3.forward, -lastMoveDirection);
 
-        IsDamaged();
-
-        if (inAwakeRange || isDamaged)
-        {
-            isAwake = true;
-        }
-
-        if (target && isAwake && attackCoolDown <= 100f)
+        if (target)
         {
             Vector3 direction = (target.position - transform.position).normalized;
             moveDirection = direction;
             lastMoveDirection = moveDirection;
-            isWalking = true;
-        }
-        if (!inLoseAggroRange && !isDamaged)
-        {
-            isAwake = false;
-            isWalking = false;
-            moveDirection = new Vector3(0f, 0f, 0f);
         }
     }
 
@@ -154,7 +93,6 @@ public class SSBoss_Health : MonoBehaviour
         if (iFrames <= 0)
         {
             health -= damage;
-            isAwake = true;
             iFrames = defaultIFrames;
         }
 
@@ -165,24 +103,24 @@ public class SSBoss_Health : MonoBehaviour
 
             if (randNum <= 50)
             {
-                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-10f, 10f), Aim.position.y + Random.Range(-10f, 10f), Aim.position.z);
+                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
                 Instantiate(bigHealthDrop, dropPos, Aim.rotation);
             }
             else if (randNum > 50)
             {
-                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-10f, 10f), Aim.position.y + Random.Range(-10f, 10f), Aim.position.z);
+                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
                 Instantiate(smallHealthDrop, dropPos, Aim.rotation);
             }
 
             float randNumAmmo = Random.Range(0f, 10f) * 10f;
             if (randNumAmmo <= 50)
             {
-                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-10f, 10f), Aim.position.y + Random.Range(-10f, 10f), Aim.position.z);
+                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
                 Instantiate(bigAmmoDrop, dropPos, Aim.rotation);
             }
             else if (randNumAmmo > 50)
             {
-                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-10f, 10f), Aim.position.y + Random.Range(-10f, 10f), Aim.position.z);
+                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
                 Instantiate(smallAmmoDrop, dropPos, Aim.rotation);
             }
         }
@@ -226,20 +164,6 @@ public class SSBoss_Health : MonoBehaviour
                 }
                 totalDrops += 1;
             }
-        }
-    }
-
-
-
-    public void IsDamaged()
-    {
-        if (health < maxHealth)
-        {
-            isDamaged = true;
-        }
-        else
-        {
-            isDamaged = false;
         }
     }
 }
