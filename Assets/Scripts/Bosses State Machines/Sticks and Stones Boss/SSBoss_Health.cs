@@ -41,7 +41,9 @@ public class SSBoss_Health : MonoBehaviour
     public float iFrames;
 
     [SerializeField]
-    private float defaultIFrames = 0.32f;
+    public float defaultIFrames = 0.32f;
+
+    public bool isTakingDamage;
     #endregion
 
     void Start()
@@ -93,6 +95,7 @@ public class SSBoss_Health : MonoBehaviour
         if (iFrames <= 0)
         {
             health -= damage;
+            isTakingDamage = true;
             iFrames = defaultIFrames;
         }
 
@@ -101,27 +104,41 @@ public class SSBoss_Health : MonoBehaviour
             Debug.Log("dropping stuff for the player");
             float randNum = Random.Range(0f, 10f) * 10f;
 
-            if (randNum <= 50)
+            if(GameStatus.GetInstance().HasRanged())
             {
-                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
-                Instantiate(bigHealthDrop, dropPos, Aim.rotation);
+                if (randNum <= 25)
+                {
+                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
+                    Instantiate(bigHealthDrop, dropPos, Aim.rotation);
+                }
+                else if (randNum > 25 && randNum <= 50)
+                {
+                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
+                    Instantiate(smallHealthDrop, dropPos, Aim.rotation);
+                }
+                else if (randNum > 50 && randNum <= 75)
+                {
+                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
+                    Instantiate(bigAmmoDrop, dropPos, Aim.rotation);
+                }
+                else if (randNum > 75 && randNum <= 100)
+                {
+                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
+                    Instantiate(smallAmmoDrop, dropPos, Aim.rotation);
+                }
             }
-            else if (randNum > 50)
+            else
             {
-                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
-                Instantiate(smallHealthDrop, dropPos, Aim.rotation);
-            }
-
-            float randNumAmmo = Random.Range(0f, 10f) * 10f;
-            if (randNumAmmo <= 50)
-            {
-                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
-                Instantiate(bigAmmoDrop, dropPos, Aim.rotation);
-            }
-            else if (randNumAmmo > 50)
-            {
-                Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
-                Instantiate(smallAmmoDrop, dropPos, Aim.rotation);
+                if (randNum <= 50)
+                {
+                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
+                    Instantiate(bigHealthDrop, dropPos, Aim.rotation);
+                }
+                else if (randNum > 50)
+                {
+                    Vector3 dropPos = new Vector3(Aim.position.x + Random.Range(-8f, 8f), Aim.position.y + Random.Range(-8f, 8f), Aim.position.z);
+                    Instantiate(smallHealthDrop, dropPos, Aim.rotation);
+                }
             }
         }
 
@@ -165,6 +182,8 @@ public class SSBoss_Health : MonoBehaviour
                 totalDrops += 1;
             }
         }
+
+        isTakingDamage = false;
     }
 }
 

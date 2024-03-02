@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SSBoss_InitialState : SSBoss_BaseState
 {
-    #region Healing Variables
-    [Header("Healing Variables")]
-    [SerializeField]
-    private float healingCooldown;
+    //#region Healing Variables
+    //[Header("Healing Variables")]
+    //[SerializeField]
+    //private float healingCooldown;
 
-    [SerializeField]
-    private float healingCoolCounter;
-    #endregion
+    //[SerializeField]
+    //private float healingCoolCounter;
+    //#endregion
 
     public override void EnterState(SSBoss_StateManager boss)
     {
@@ -34,13 +34,12 @@ public class SSBoss_InitialState : SSBoss_BaseState
 
         // can melee if the player is in range and the cool down is less than thelimit, and the limit is being checked in the melee script, so just see if they are in range and then switch states
         // check if can heal
-        healingCoolCounter -= Time.deltaTime;
+        boss.healingCoolCounter -= Time.deltaTime;
 
         if (health < maxHealth)
         {
-            if (healingCoolCounter <= 0)
+            if (boss.healingCoolCounter <= 0)
             {
-                boss.healingAnim.SetActive(true);
                 boss.SwitchState(boss.healingState);
             }
             else
@@ -50,7 +49,7 @@ public class SSBoss_InitialState : SSBoss_BaseState
         }
         else
         {
-            healingCoolCounter = healingCooldown + Random.Range(1f, 10f);   // this should make it so that they can't insta heal after taking damage and so that they can reach max health before the counter starts again
+            boss.healingCoolCounter = boss.healingCooldown + Random.Range(1f, 10f);   // this should make it so that they can't insta heal after taking damage and so that they can reach max health before the counter starts again
             boss.healingAnim.SetActive(false);
         }
         // transition(s) to other state(s)

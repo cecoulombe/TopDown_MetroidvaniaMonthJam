@@ -14,7 +14,7 @@ public class SSBoss_StateManager : MonoBehaviour
     #endregion
 
     #region Other Variables
-    private SSBoss_Health myHealth;
+    public SSBoss_Health myHealth;
 
     private Transform target;
 
@@ -55,6 +55,11 @@ public class SSBoss_StateManager : MonoBehaviour
     [SerializeField]
     public GameObject healingAnim;
 
+    [SerializeField]
+    public float healingCooldown;
+
+    [SerializeField]
+    public float healingCoolCounter;
     #endregion
 
     #region Melee Variables
@@ -75,6 +80,8 @@ public class SSBoss_StateManager : MonoBehaviour
     public float attackDuration;
 
     public float attackCountDown;
+
+    public bool isTakingDamage;
     #endregion
 
     void Start()
@@ -95,6 +102,7 @@ public class SSBoss_StateManager : MonoBehaviour
 
     void Update()
     {
+        isTakingDamage = myHealth.isTakingDamage;
         currentState.UpdateState(this, target, myHealth.health, myHealth.maxHealth);
         singleShootCoolDown -= Time.deltaTime;
         meleeCounter -= Time.deltaTime;

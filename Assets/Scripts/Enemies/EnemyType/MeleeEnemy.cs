@@ -149,8 +149,8 @@ public class MeleeEnemy : MonoBehaviour
     {
         if (!isAttacking && attackCoolDown > 0)
         {
-            attackCoolDown -= 1f;
-            myHealth.attackCoolDown -= 1f;
+            attackCoolDown -= Time.deltaTime;
+            myHealth.attackCoolDown -= Time.deltaTime;
         }
         if (!isAttacking && attackCoolDown <= 0)
         {
