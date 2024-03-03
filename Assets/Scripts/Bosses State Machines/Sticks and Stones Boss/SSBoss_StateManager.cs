@@ -145,7 +145,7 @@ public class SSBoss_StateManager : MonoBehaviour
             isAttacking = false;
             Melee.SetActive(false);
             attackCountDown = attackDuration;
-            meleeCounter = meleeCoolDown;
+            meleeCounter = meleeCoolDown + Random.Range(0f, 1.5f);
             SwitchState(initialState);
         }
 

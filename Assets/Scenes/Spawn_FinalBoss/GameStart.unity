@@ -2866,15 +2866,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8299454780812328290, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
       propertyPath: m_Color.b
-      value: 0.8018868
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8299454780812328290, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
       propertyPath: m_Color.g
-      value: 0.8018868
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8299454780812328290, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
       propertyPath: m_Color.r
-      value: 0.8018868
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4630,10 +4630,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1370356990}
     m_Modifications:
     - target: {fileID: 2727059929082668205, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5.4659996
-      objectReference: {fileID: 0}
-    - target: {fileID: 2727059929082668205, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.823712
       objectReference: {fileID: 0}
@@ -4676,18 +4672,6 @@ PrefabInstance:
     - target: {fileID: 4675915702861039649, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
       propertyPath: m_Name
       value: FakeWallBot
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299454780812328290, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
-      propertyPath: m_Color.b
-      value: 0.8018868
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299454780812328290, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
-      propertyPath: m_Color.g
-      value: 0.8018868
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299454780812328290, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
-      propertyPath: m_Color.r
-      value: 0.8018868
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9278,10 +9262,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1370356990}
     m_Modifications:
     - target: {fileID: 2727059929082668205, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5.4659996
-      objectReference: {fileID: 0}
-    - target: {fileID: 2727059929082668205, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.823712
       objectReference: {fileID: 0}
@@ -9324,18 +9304,6 @@ PrefabInstance:
     - target: {fileID: 4675915702861039649, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
       propertyPath: m_Name
       value: FakeWallBot (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299454780812328290, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
-      propertyPath: m_Color.b
-      value: 0.8018868
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299454780812328290, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
-      propertyPath: m_Color.g
-      value: 0.8018868
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299454780812328290, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
-      propertyPath: m_Color.r
-      value: 0.8018868
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

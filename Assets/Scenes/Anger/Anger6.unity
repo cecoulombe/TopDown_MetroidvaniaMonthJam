@@ -5392,7 +5392,7 @@ Transform:
   m_GameObject: {fileID: 748480677}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.51, y: -9.1, z: 0}
+  m_LocalPosition: {x: -44.55, y: -6.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7250,8 +7250,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
+      propertyPath: ammoCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
       propertyPath: hasRanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2307118120123253687, guid: 6a902d575171d4cc9bc285835e7e636b, type: 3}
       propertyPath: maxAmmo_prefs
