@@ -50,6 +50,10 @@ public class Words5 : MonoBehaviour
     private GameObject Words5_HealthUpgrade;
     [SerializeField]
     private bool Words5_HealthUpgradeTaken;
+
+    private bool sticksDead;
+
+    private SSBoss_Health sticks;
     #endregion
 
     private void Start()
@@ -78,10 +82,12 @@ public class Words5 : MonoBehaviour
         {
             player.transform.position = Words7_LoadingZone.transform.position;
         }
+        sticks = FindObjectOfType<SSBoss_Health>();
     }
 
     private void Update()
     {
+        sticksDead = sticks.isDead;
 
         currentRoom = SceneManager.GetActiveScene().name;
         #region Gates
@@ -143,7 +149,8 @@ public class Words5 : MonoBehaviour
             {
                 Debug.Log("enemy dead");
                 enemyDeathCounter++;
-                if (enemyDeathCounter == enemyList.Length)
+                Debug.Log(enemyDeathCounter);
+                if (enemyDeathCounter == enemyList.Length && sticksDead)
                 {
                     Debug.Log("all enemies dead, opening the gate");
                     GameStatus.GetInstance().SetGateState(currentRoom);

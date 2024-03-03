@@ -39,17 +39,17 @@ public class EnemyWeapon_TopDown : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-       if(other.gameObject.CompareTag("Wall"))
-        {
-            if(weaponType == WeaponType.Bullet)
-            {
-                Debug.Log("shooting a wall");
-                Destroy(gameObject);
-            }
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D other)
+    //{
+    //   if(other.gameObject.CompareTag("Wall"))
+    //    {
+    //        if(weaponType == WeaponType.Bullet)
+    //        {
+    //            Debug.Log("shooting a wall");
+    //            Destroy(gameObject);
+    //        }
+    //    }
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -71,6 +71,16 @@ public class EnemyWeapon_TopDown : MonoBehaviour
 
             if (weaponType == WeaponType.Bullet)
             {
+                Destroy(gameObject);
+            }
+        }
+
+        bool isWall = collision.CompareTag("Wall");
+        if (isWall)
+        {
+            if (weaponType == WeaponType.Bullet)
+            {
+                Debug.Log("shooting a wall");
                 Destroy(gameObject);
             }
         }

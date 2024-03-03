@@ -10,6 +10,9 @@ public class PermanentHealthUpgrade : MonoBehaviour
     private float addMaxHealth = 3;
 
     private string currentRoom;
+
+    [SerializeField]
+    private GameObject healthPopup;
     #endregion
 
     private void Start()
@@ -27,6 +30,7 @@ public class PermanentHealthUpgrade : MonoBehaviour
             //Destroy(gameObject);
             GameStatus.GetInstance().SetUpgradeState(currentRoom, "Health");
             GameStatus.GetInstance().SetPlayerPrefs();
+            healthPopup.SetActive(true);
         }
     }
 }

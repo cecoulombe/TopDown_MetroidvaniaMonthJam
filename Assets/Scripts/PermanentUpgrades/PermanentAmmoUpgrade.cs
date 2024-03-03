@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PermanentAmmoUpgrade : MonoBehaviour
 {
     #region Variables
@@ -10,6 +11,9 @@ public class PermanentAmmoUpgrade : MonoBehaviour
     private float addMaxAmmo = 3;
 
     private string currentRoom;
+
+    [SerializeField]
+    private GameObject ammoPopup;
     #endregion
 
     private void Start()
@@ -27,6 +31,7 @@ public class PermanentAmmoUpgrade : MonoBehaviour
             //Destroy(gameObject);
             GameStatus.GetInstance().SetUpgradeState(currentRoom, "Ammo");
             GameStatus.GetInstance().SetPlayerPrefs();
+            ammoPopup.SetActive(true);
 
         }
     }

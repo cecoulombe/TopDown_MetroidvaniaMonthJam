@@ -7007,6 +7007,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1660054295}
     - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
+      propertyPath: healthCost
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 2342177725705903606, guid: 784542077d9ba4573bea848f907a2c25, type: 3}
       propertyPath: deathManager
       value: 
       objectReference: {fileID: 671928585}
@@ -10945,8 +10949,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "You have picked up a ranged weapon. \nAmmo is indicated by the grey bar
-    under the health bar.\nPress L to shoot\nHold L to regain bullets at the cost
-    of health"
+    under the health bar.\nPress L or R to shoot\nHold L or R to regain bullets at
+    the cost of health"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
