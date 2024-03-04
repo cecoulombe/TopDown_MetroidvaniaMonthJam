@@ -27,7 +27,6 @@
 .vs/
 
 # Audio Files
-*.wav/
 *.wav
 *.aup3
 *.aup3-wal
