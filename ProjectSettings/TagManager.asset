@@ -11,6 +11,7 @@ TagManager:
   - BreakableWall
   - HiddenWall
   - Wall
+  - DepressionMusic
   layers:
   - Default
   - TransparentFX
