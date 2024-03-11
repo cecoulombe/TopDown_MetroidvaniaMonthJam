@@ -176,7 +176,7 @@ public class GameStatus : MonoBehaviour
 
         health = maxHealth;
         ammoCount = maxAmmo;
-        totalPickUps = 24;
+        totalPickUps = 25;
 
         #endregion
     }
