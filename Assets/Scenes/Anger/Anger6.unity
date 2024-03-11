@@ -4156,6 +4156,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FakeWallBot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8157713399401729626, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5586,7 +5590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &753447020
 Transform:
   m_ObjectHideFlags: 0
@@ -5661,6 +5665,18 @@ PrefabInstance:
     - target: {fileID: 4675915702861039649, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
       propertyPath: m_Name
       value: FakeWallBot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157713399401729626, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4501094
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157713399401729626, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.47505468
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157713399401729626, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.061481744
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7344,6 +7360,98 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 146248662414860277, guid: 8554ebd6118894f33a2f7716ea76201b, type: 3}
   m_PrefabInstance: {fileID: 916390450}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &923576817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 923576818}
+  - component: {fileID: 923576820}
+  - component: {fileID: 923576821}
+  - component: {fileID: 923576822}
+  m_Layer: 5
+  m_Name: CompletionPercent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &923576818
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923576817}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1813858625}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 828.9047, y: 440.57587}
+  m_SizeDelta: {x: 201.809, y: 136.848}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &923576820
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923576817}
+  m_CullTransparentMesh: 1
+--- !u!114 &923576821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923576817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c208c4d630974b16b5be953138b71c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &923576822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923576817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 52
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 140
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0 %
 --- !u!1 &931188089
 GameObject:
   m_ObjectHideFlags: 0
@@ -13030,6 +13138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FakeWallBot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8157713399401729626, guid: 83357b2bdcdad4dcaa3f7ab17b6bb664, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14089,6 +14201,7 @@ RectTransform:
   - {fileID: 1182185576}
   - {fileID: 1593941306}
   - {fileID: 1928371844}
+  - {fileID: 923576818}
   m_Father: {fileID: 855234222}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

@@ -129,6 +129,13 @@ public class GameStatus : MonoBehaviour
     protected bool Overwhelm3_4_HiddenOpen;
     #endregion
 
+
+    protected float totalPickUps;
+    public float pickedUpPercent;
+
+    public float completionPercent;
+
+
     #region Player Prefs Variables
     // I think I need to use player prefs to save information between launches of the game? so I might have the prefs save between rooms for the time being and then eventually save when benching and load when launching the game?
 
@@ -169,6 +176,7 @@ public class GameStatus : MonoBehaviour
 
         health = maxHealth;
         ammoCount = maxAmmo;
+        totalPickUps = 24;
 
         #endregion
     }
@@ -177,6 +185,10 @@ public class GameStatus : MonoBehaviour
     {
         string currentRoom = SceneManager.GetActiveScene().name;
         GetGateState(currentRoom);
+        //SetCompletionPercent();
+        completionPercent = Mathf.RoundToInt(pickedUpPercent / totalPickUps * 100);
+        Debug.Log(pickedUpPercent + " divided by" + totalPickUps + " * 100 = " + completionPercent);
+
 
         if (Input.GetKey(KeyCode.Escape))
         {
@@ -320,6 +332,7 @@ public class GameStatus : MonoBehaviour
     public void SetHasDash(bool dash)
     {
         hasDash = dash;
+        pickedUpPercent += 1;
     }
     public bool HasDash()
     {
@@ -329,6 +342,7 @@ public class GameStatus : MonoBehaviour
     public void SetHasInvincibleDash(bool iDash)
     {
         hasInvincibleDash = iDash;
+        pickedUpPercent += 1;
     }
 
     public bool HasInvincibleDash()
@@ -339,6 +353,7 @@ public class GameStatus : MonoBehaviour
     public void SetHasMelee(bool melee)
     {
         hasMelee = melee;
+        pickedUpPercent += 1;
     }
 
     public bool HasMelee()
@@ -349,6 +364,7 @@ public class GameStatus : MonoBehaviour
     public void SetHasRanged(bool ranged)
     {
         hasRanged = ranged;
+        pickedUpPercent += 1;
     }
 
     public bool HasRanged()
@@ -359,6 +375,7 @@ public class GameStatus : MonoBehaviour
     public void SetHasHealing(bool healing)
     {
         hasHealing = healing;
+        pickedUpPercent += 1;
     }
 
     public bool HasHealing()
@@ -550,30 +567,37 @@ public class GameStatus : MonoBehaviour
         if (roomName == "GameStart")
         {
             GameStart_wallOpen = true;
+            pickedUpPercent += 1;
         }
         else if (roomName == "Anger3")
         {
             Anger3_wallOpen = true;
+            pickedUpPercent += 1;
         }
         else if (roomName == "Anger3_1")
         {
             Anger3_1_wallOpen = true;
+            pickedUpPercent += 1;
         }
         else if (roomName == "Words1")
         {
             Words1_wallOpen = true;
+            pickedUpPercent += 1;
         }
         else if (roomName == "Words2")
         {
             Words2_wallOpen = true;
+            pickedUpPercent += 1;
         }
         else if (roomName == "Words5")
         {
             Words5_wallOpen = true;
+            pickedUpPercent += 1;
         }
         else if (roomName == "Overwhelm2")
         {
             Overwhelm2_wallOpen = true;
+            pickedUpPercent += 1;
         }
     }
     #endregion
@@ -613,22 +637,27 @@ public class GameStatus : MonoBehaviour
         if (roomName == "GameStart" || roomName == "Overwhelm1")
         {
             GameStart_Overwhelm1_HiddenOpen = true;
+            pickedUpPercent += 1;
         }
         if (roomName == "Anger2" || roomName == "Anger6")
         {
             Anger2_and6_HiddenOpen = true;
+            pickedUpPercent += 1f;
         }
         if (roomName == "Anger4")
         {
             Anger4_HiddenOpen = true;
+            pickedUpPercent += 1f;
         }
         if (roomName == "Words2")
         {
             Words2_HiddenOpen = true;
+            pickedUpPercent += 1;
         }
         if (roomName == "Overwhelm3" || roomName == "Overwhelm4")
         {
             Overwhelm3_4_HiddenOpen = true;
+            pickedUpPercent += 1;
         }
     }
     #endregion
@@ -756,10 +785,12 @@ public class GameStatus : MonoBehaviour
             if (pickup == "Health")
             {
                 Anger3_1_HealthIncreaseTaken = true;
+                pickedUpPercent += 1;
             }
             else if (pickup == "Ammo")
             {
                 Anger3_1_AmmoIncreaseTaken = true;
+                pickedUpPercent += 1;
             }
         }
         else if (roomName == "Anger4")
@@ -767,6 +798,7 @@ public class GameStatus : MonoBehaviour
             if (pickup == "Health")
             {
                 Anger4_HealthIncreaseTaken = true;
+                pickedUpPercent += 1;
             }
         }
         else if (roomName == "Anger5")
@@ -774,6 +806,7 @@ public class GameStatus : MonoBehaviour
             if (pickup == "Ammo")
             {
                 Anger5_AmmoIncreaseTaken = true;
+                pickedUpPercent += 1;
             }
         }
         else if (roomName == "Anger6_1")
@@ -781,6 +814,7 @@ public class GameStatus : MonoBehaviour
             if (pickup == "Ammo")
             {
                 Anger6_1_AmmoIncreaseTaken = true;
+                pickedUpPercent += 1;
             }
         }
         else if (roomName == "Words2")
@@ -788,6 +822,7 @@ public class GameStatus : MonoBehaviour
             if (pickup == "Health")
             {
                 Words2_HealthIncreaseTaken = true;
+                pickedUpPercent += 1;
             }
         }
         else if (roomName == "Words5")
@@ -795,6 +830,7 @@ public class GameStatus : MonoBehaviour
             if (pickup == "Health")
             {
                 Words5_HealthIncreaseTaken = true;
+                pickedUpPercent += 1;
             }
         }
         else if (roomName == "Overwhelm2")
@@ -802,6 +838,7 @@ public class GameStatus : MonoBehaviour
             if (pickup == "Ammo")
             {
                 Overwhelm2_AmmoIncreaseTaken = true;
+                pickedUpPercent += 1;
             }
         }
         else if (roomName == "Overwhelm4")
@@ -809,10 +846,12 @@ public class GameStatus : MonoBehaviour
             if (pickup == "Health")
             {
                 Overwhelm4_HealthIncreaseTaken = true;
+                pickedUpPercent += 1;
             }
             else if (pickup == "Ammo")
             {
                 Overwhelm4_AmmoIncreaseTaken = true;
+                pickedUpPercent += 1;
             }
         }
 
@@ -853,6 +892,7 @@ public class GameStatus : MonoBehaviour
         maxAmmo = PlayerPrefs.GetFloat("maxAmmo");
         deathCounter = PlayerPrefs.GetInt("deathCounter");
         previousRoom = PlayerPrefs.GetString("saveRoom");
+        pickedUpPercent = PlayerPrefs.GetFloat("pickedUpPercent");
 
         // permanent abilities
         hasDash = PlayerPrefs.GetInt("hasDash") == 1;
@@ -910,6 +950,8 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetFloat("maxHealth", GetMaxHealth());
         PlayerPrefs.SetFloat("maxAmmo", GetMaxAmmo());
         PlayerPrefs.SetInt("deathCounter", deathCounter);
+        PlayerPrefs.SetFloat("pickedUpPercent", pickedUpPercent);
+
 
         // player states
         PlayerPrefs.SetInt("hasDash", HasDash() ? 1 : 0);
@@ -987,6 +1029,8 @@ public class GameStatus : MonoBehaviour
         PlayerPrefs.SetFloat("maxAmmo", 10);
         PlayerPrefs.SetInt("deathCounter", 0);
         PlayerPrefs.SetString("saveRoom", "MainMenu");
+        PlayerPrefs.SetFloat("pickedUpPercent", 0);
+
 
         // player states
         PlayerPrefs.SetInt("hasDash", 0);
@@ -1037,6 +1081,20 @@ public class GameStatus : MonoBehaviour
 
         PlayerPrefs.Save();
     }
+    #endregion
+
+    #region Completion Percent calculator
+    private void SetCompletionPercent()
+    {
+        totalPickUps = 37;
+        completionPercent = Mathf.RoundToInt((pickedUpPercent / totalPickUps) * 100);
+    }
+
+    public float GetCompletionPercent()
+    {
+        return completionPercent;
+    }
+
     #endregion
 
     public static GameStatus GetInstance()
