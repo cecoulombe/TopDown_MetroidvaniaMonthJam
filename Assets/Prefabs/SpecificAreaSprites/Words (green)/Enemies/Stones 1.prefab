@@ -214,8 +214,8 @@ Transform:
   m_GameObject: {fileID: 2323967515501927682}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 9.39, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: -11.74, y: 0.87, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7459591689331611214}
@@ -341,7 +341,6 @@ MonoBehaviour:
   isAwake: 0
   isDamaged: 0
   Aim: {fileID: 7459591689331611214}
-  isAngerBoss: 0
   moveSpeed: 2
   defaultSpeed: 2
   attackCoolDown: 0
@@ -366,6 +365,8 @@ MonoBehaviour:
   knockBackCounter: 0
   knockBackTotalTime: 0.2
   knockFromRight: 0
+  iFrames: 0
+  defaultIFrames: 0.32
 --- !u!60 &8723155225189087621
 PolygonCollider2D:
   m_ObjectHideFlags: 0
