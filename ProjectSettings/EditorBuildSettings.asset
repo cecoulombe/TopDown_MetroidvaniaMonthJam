@@ -60,6 +60,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Words/Words7.unity
     guid: addcba0d0689946d69ea770abb8e678c
   - enabled: 1
+    path: Assets/Scenes/Words/Words8.unity
+    guid: 079974f590b524b41beb1e5ef08c82b8
+  - enabled: 1
     path: Assets/Scenes/Overwhelm/Overwhelm1.unity
     guid: 05f0078a4d2574963b11d6eaf2d9fd6b
   - enabled: 1
