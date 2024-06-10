@@ -14,6 +14,7 @@ public class Drops_Parent : BaseState_Parent
     public override void EnterState(StateManager_Parent stateManager)
     {
         Debug.Log("Drops state entry");
+        // scatter drops (determine what kind of drops and at what drop rate, and scatter within some range of the enemy sprite)
     }
 
     //---------------------------------------------------------------------------
@@ -22,6 +23,7 @@ public class Drops_Parent : BaseState_Parent
     public override void UpdateState(StateManager_Parent stateManager)
     {
         Debug.Log("Drops state update");
+        // no transition out, this is the final state and the enemy stays here becuase it is dead
     }
 
 }

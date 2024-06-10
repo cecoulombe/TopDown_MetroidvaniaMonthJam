@@ -14,6 +14,7 @@ public class Death_Parent : BaseState_Parent
     public override void EnterState(StateManager_Parent stateManager)
     {
         Debug.Log("Death state entry");
+        // death anim and disable enemy hurtbox
     }
 
     //---------------------------------------------------------------------------
@@ -22,6 +23,7 @@ public class Death_Parent : BaseState_Parent
     public override void UpdateState(StateManager_Parent stateManager)
     {
         Debug.Log("Death state update");
+        stateManager.SwitchState(stateManager.dropsState);
     }
 
 }

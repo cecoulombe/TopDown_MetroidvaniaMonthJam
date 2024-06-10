@@ -22,6 +22,8 @@ public class Healing_Parent : BaseState_Parent
     public override void UpdateState(StateManager_Parent stateManager)
     {
         Debug.Log("Healing state update");
+        // healing anim and when that is done (i.e. after a set amount of time or when the health is maxxed)
+        stateManager.SwitchState(stateManager.movementState);
     }
 
 }

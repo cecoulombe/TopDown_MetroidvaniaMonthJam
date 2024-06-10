@@ -14,6 +14,7 @@ public class AttackPunish_Parent : BaseState_Parent
     public override void EnterState(StateManager_Parent stateManager)
     {
         Debug.Log("Punish state entry");
+        // anim and pause for a moment so the player can punish the attack (will probably have a different punish for each anim)
     }
 
     //---------------------------------------------------------------------------
@@ -22,6 +23,7 @@ public class AttackPunish_Parent : BaseState_Parent
     public override void UpdateState(StateManager_Parent stateManager)
     {
         Debug.Log("Punish state update");
+        stateManager.SwitchState(stateManager.movementState);
     }
 
 }
