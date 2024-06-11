@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* Parent state manager which will be used to make more specific state managers for the majority of enemy types.
- * Each state manager will include references to rigid bodies, collisions, and sprite renderers.
- * Controls the frame-by-frame actions through the update method which will depend on what the current state is.
+/* Flame boy is a chaser enemy type in anger. He can either be static or pathwalking when idle
+ * and will simply follow the player when aggrod.
  */
 
 public class StateManager_FlameBoy : MonoBehaviour
@@ -30,8 +29,7 @@ public class StateManager_FlameBoy : MonoBehaviour
     private Collider2D col;
     private SpriteRenderer sprite;  // this may need to change depending on how you set up anims
 
-    private int myHealth;
-    private int maxHealth;
+    private EnemyHealth_Manager healthManager;
 
     //---------------------------------------------------------------------------
     //Start() initialize the variables for the rigidbody, collider, and sprite.
@@ -42,7 +40,7 @@ public class StateManager_FlameBoy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
 
-        myHealth = maxHealth;
+        healthManager = GetComponent<EnemyHealth_Manager>();
 
         currentState = idleState;
         currentState.EnterState(this);
@@ -53,7 +51,7 @@ public class StateManager_FlameBoy : MonoBehaviour
     //---------------------------------------------------------------------------
     void Update()
     {
-        if(myHealth <= 0 && currentState != deathState && currentState != dropsState)
+        if(healthManager.GetCurrentHealth() <= 0 && currentState != deathState && currentState != dropsState)
         {
             SwitchState(deathState);
         }
@@ -76,6 +74,6 @@ public class StateManager_FlameBoy : MonoBehaviour
     //---------------------------------------------------------------------------
     public bool IsHealthFull()
     {
-        return myHealth >= maxHealth;
+        return healthManager.GetCurrentHealth() >= healthManager.GetMaxHealth();
     }
 }
