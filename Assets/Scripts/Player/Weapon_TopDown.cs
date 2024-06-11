@@ -29,7 +29,7 @@ public class Weapon_TopDown : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("hitting something");
-        EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
+        EnemyHealth_Manager enemy = collision.GetComponent<EnemyHealth_Manager>();
         if(enemy != null)
         {
             enemy.knockBackCounter = enemy.knockBackTotalTime;

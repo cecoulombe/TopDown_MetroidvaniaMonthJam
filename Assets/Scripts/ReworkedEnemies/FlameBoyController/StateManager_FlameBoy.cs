@@ -31,6 +31,20 @@ public class StateManager_FlameBoy : MonoBehaviour
 
     private EnemyHealth_Manager healthManager;
 
+    private Transform player;
+
+    // Idle movement type
+    [SerializeField]
+    private bool isStaticIdle;
+
+    // Aggro move variables
+    [SerializeField]
+    private float moveSpeedAggro;
+
+    // Aggro range
+    [SerializeField]
+    private float aggroRange;
+
     //---------------------------------------------------------------------------
     //Start() initialize the variables for the rigidbody, collider, and sprite.
     //Make the first call to the starting state
@@ -39,6 +53,8 @@ public class StateManager_FlameBoy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+
+        player = GameObject.Find("Player").transform;
 
         healthManager = GetComponent<EnemyHealth_Manager>();
 
@@ -68,7 +84,6 @@ public class StateManager_FlameBoy : MonoBehaviour
         currentState.EnterState(this);
     }
 
-
     //---------------------------------------------------------------------------
     // IsHealthFull() returns true if the enemy is at full health
     //---------------------------------------------------------------------------
@@ -76,4 +91,30 @@ public class StateManager_FlameBoy : MonoBehaviour
     {
         return healthManager.GetCurrentHealth() >= healthManager.GetMaxHealth();
     }
+
+    //---------------------------------------------------------------------------
+    // GetIdleMovement() returns if the enemy is static or moving when idle
+    //---------------------------------------------------------------------------
+    public bool GetIdleMovement()
+    {
+        return isStaticIdle;
+    }
+
+    //---------------------------------------------------------------------------
+    // PlayerInRange() returns if the player is within the aggro range or not
+    //---------------------------------------------------------------------------
+    public bool PlayerInRange()
+    {
+        return Vector3.Distance(transform.position, player.position) <= aggroRange;
+    }
+
+    //---------------------------------------------------------------------------
+    // FollowPlayer() has the enemy walk towards the player at a consistent speed
+    //---------------------------------------------------------------------------
+    public void FollowPlayer()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeedAggro * Time.deltaTime);
+    }
+
+
 }

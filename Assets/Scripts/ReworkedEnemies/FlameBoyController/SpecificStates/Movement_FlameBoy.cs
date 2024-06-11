@@ -11,11 +11,6 @@ using UnityEngine;
  */
 public class Movement_FlameBoy : BaseState_FlameBoy
 {
-    bool playerInRange;
-
-    double attackCooldown;
-    double healingCooldown;
-
     //---------------------------------------------------------------------------
     // EnterState(stateManager) provide the first frame instructions for this state
     //---------------------------------------------------------------------------
@@ -31,16 +26,14 @@ public class Movement_FlameBoy : BaseState_FlameBoy
     {
         Debug.Log("Movement state update");
 
-        if(playerInRange || !stateManager.IsHealthFull())
+        if (!stateManager.PlayerInRange() && stateManager.IsHealthFull())
         {
-            Movement();
+            stateManager.SwitchState(stateManager.idleState);
         }
 
-        // if player is not in range and the health is full, return to the idle state
-        stateManager.SwitchState(stateManager.idleState);
+        //no attack pattern so nothing else to switch to
+
+        stateManager.FollowPlayer();
 
     }
-
-    public void Movement() { }
-
 }

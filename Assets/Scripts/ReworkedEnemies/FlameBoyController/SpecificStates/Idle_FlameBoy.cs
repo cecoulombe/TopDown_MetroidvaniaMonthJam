@@ -12,7 +12,6 @@ using UnityEngine;
 //Flame boy can either stand still or walk back and forth. There will be two different movement paths depending on which option is chosen. Starting by implementing static.
 public class Idle_FlameBoy : BaseState_FlameBoy
 {
-    private bool playerInRange;
     //---------------------------------------------------------------------------
     // EnterState(stateManager) provide the first frame instructions for this state
     //---------------------------------------------------------------------------
@@ -30,14 +29,23 @@ public class Idle_FlameBoy : BaseState_FlameBoy
 
         // calculate the range of the player
 
-        if(playerInRange)
+        if(stateManager.PlayerInRange() || !stateManager.IsHealthFull())
         {
             stateManager.SwitchState(stateManager.movementState);
         }
 
-        // idle movements
-        IdleMovement();
+        // idle movements - if they are static when idle, then there is no movement to process
+        if(!stateManager.GetIdleMovement())
+        {
+            IdleMovement();
+        }
     }
 
-    void IdleMovement() { }
+    //---------------------------------------------------------------------------
+    // IdleMovement() the pattern for idle movement
+    //---------------------------------------------------------------------------
+    void IdleMovement()
+    {
+        // Flame Boy is either static or pacing, but starting by impementing static as it is easier for ensuring the state machine works
+    }
 }

@@ -13,12 +13,24 @@ public class EnemyHealth_Manager : MonoBehaviour
     [SerializeField]
     private float maxHealth;
 
+
+
+    private SpriteRenderer sprite;
+
+    // knockback and damage variables
+    [SerializeField]
+    public float knockBackForce;
+
+    public float knockBackCounter;
+
+    public float knockBackTotalTime;
+
+    public bool knockFromRight;
+
     [SerializeField]
     private float defaultIFrames = 0.32f;
 
     private float iFrames;
-
-    private SpriteRenderer sprite;
 
     // set the iFrames counter to equal zero when the enemy first loads into the scene
     private void Start()
@@ -30,6 +42,7 @@ public class EnemyHealth_Manager : MonoBehaviour
     private void Update()
     {
         colourChange();
+        iFrames -= Time.deltaTime;
     }
 
     //--------------------------------------------------------------------------

@@ -649,6 +649,8 @@ GameObject:
   - component: {fileID: 6560969354646297474}
   - component: {fileID: 1484200825191312271}
   - component: {fileID: 2164717435535856881}
+  - component: {fileID: 6560969354646297476}
+  - component: {fileID: 6560969354646297475}
   m_Layer: 0
   m_Name: FlameBoy
   m_TagString: Untagged
@@ -865,6 +867,36 @@ PolygonCollider2D:
       - {x: -0.19510889, y: 0.3129443}
       - {x: -0.28753328, y: 0.12605104}
   m_UseDelaunayMesh: 0
+--- !u!114 &6560969354646297475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930661337193774517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29160b16b8e7a4e22b08eccc23610cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 5
+  maxHealth: 5
+  defaultIFrames: 0.32
+--- !u!114 &6560969354646297476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930661337193774517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a411351c6558c442391edff0fed46852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStaticIdle: 1
+  moveSpeedAggro: 2
+  aggroRange: 5
 --- !u!4 &6769053306728715503
 Transform:
   m_ObjectHideFlags: 0
