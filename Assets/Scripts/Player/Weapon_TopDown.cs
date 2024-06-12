@@ -28,7 +28,7 @@ public class Weapon_TopDown : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hitting something");
+        //Debug.Log("hitting something");
         EnemyHealth_Manager enemy = collision.GetComponent<EnemyHealth_Manager>();
         if(enemy != null)
         {
@@ -43,7 +43,6 @@ public class Weapon_TopDown : MonoBehaviour
             }
 
             enemy.TakeDamage(damage);
-            //col.enabled = false;
 
             if(weaponType == WeaponType.Bullet)
             {
@@ -56,8 +55,6 @@ public class Weapon_TopDown : MonoBehaviour
         {
             OWBoss.TakeDamage(damage);
 
-            //col.enabled = false;
-
             if (weaponType == WeaponType.Bullet)
             {
                 Destroy(gameObject);
@@ -68,8 +65,6 @@ public class Weapon_TopDown : MonoBehaviour
         if (AngerBoss != null)
         {
             AngerBoss.TakeDamage(damage);
-
-            //col.enabled = false;
 
             if (weaponType == WeaponType.Bullet)
             {

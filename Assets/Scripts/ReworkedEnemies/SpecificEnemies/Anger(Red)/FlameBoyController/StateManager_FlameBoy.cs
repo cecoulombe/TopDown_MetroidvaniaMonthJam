@@ -172,7 +172,10 @@ public class StateManager_FlameBoy : MonoBehaviour
     //---------------------------------------------------------------------------
     public void FollowPlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeedAggro * Time.deltaTime);
+        if (healthManager.knockBackCounter <= 0f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeedAggro * Time.deltaTime);
+        }
     }
 
     //---------------------------------------------------------------------------

@@ -17,9 +17,11 @@ public class EnemyHealth_Manager : MonoBehaviour
 
     private SpriteRenderer sprite;
 
+    private Rigidbody2D rb;
+
     // knockback and damage variables
     [SerializeField]
-    public float knockBackForce;
+    private float knockBackForce;
 
     public float knockBackCounter;
 
@@ -37,12 +39,14 @@ public class EnemyHealth_Manager : MonoBehaviour
     {
         iFrames = 0;
         sprite = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         colourChange();
         iFrames -= Time.deltaTime;
+        knockBackCounter -= Time.deltaTime;
     }
 
     //--------------------------------------------------------------------------
@@ -66,10 +70,12 @@ public class EnemyHealth_Manager : MonoBehaviour
     //--------------------------------------------------------------------------
     public void TakeDamage(float damage)
     {
-        if(iFrames <= 0)
+        if (iFrames <= 0)
         {
             currentHealth -= damage;
             iFrames = defaultIFrames;
+            knockBackCounter = knockBackTotalTime;
+            Knockback();
         }
     }
 
@@ -84,5 +90,26 @@ public class EnemyHealth_Manager : MonoBehaviour
         sprite.color = new Color(percentOfMaxHealth, percentOfMaxHealth, percentOfMaxHealth, 1);
     }
 
+    //--------------------------------------------------------------------------
+    // Knockback() prevents the 
+    //--------------------------------------------------------------------------
+    private void Knockback()
+    {
+        if (knockBackCounter >= 0)
+        {
+            //knockBackCounter -= Time.deltaTime;
 
+            if (knockFromRight)
+            {
+                //rb.velocity = new Vector2(-knockBackForce, 0f);
+                rb.AddForce(new Vector2(-knockBackForce, 0f));
+            }
+            if (!knockFromRight)
+            {
+                rb.AddForce(new Vector2(knockBackForce, 0f));
+            }
+        }
+
+        //rb.velocity = new Vector2(0f, 0f);
+    }
 }
