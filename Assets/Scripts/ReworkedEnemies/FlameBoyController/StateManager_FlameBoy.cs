@@ -33,9 +33,38 @@ public class StateManager_FlameBoy : MonoBehaviour
 
     private Transform player;
 
+    // Health and ammo drops
+    [SerializeField]
+    private GameObject bigHealthDrop;
+    [SerializeField]
+    private float bigHealthChance;
+    [SerializeField]
+    private GameObject smallHealthDrop;
+    [SerializeField]
+    private float smallHealthChance;
+
+    [SerializeField]
+    private GameObject bigAmmoDrop;
+    [SerializeField]
+    private float bigAmmoChance;
+    [SerializeField]
+    private GameObject smallAmmoDrop;
+    [SerializeField]
+    private float smallAmmoChance;
+
     // Idle movement type
     [SerializeField]
     private bool isStaticIdle;
+
+    [SerializeField]
+    private Transform pointA;
+    [SerializeField]
+    private Transform pointB;
+    private bool switching = false;
+    private Transform walkTarget;
+
+    [SerializeField]
+    private float moveSpeedIdle;
 
     // Aggro move variables
     [SerializeField]
@@ -67,7 +96,7 @@ public class StateManager_FlameBoy : MonoBehaviour
     //---------------------------------------------------------------------------
     void Update()
     {
-        if(healthManager.GetCurrentHealth() <= 0 && currentState != deathState && currentState != dropsState)
+        if (healthManager.GetCurrentHealth() <= 0 && currentState != deathState && currentState != dropsState)
         {
             SwitchState(deathState);
         }
@@ -99,6 +128,33 @@ public class StateManager_FlameBoy : MonoBehaviour
     {
         return isStaticIdle;
     }
+
+    //---------------------------------------------------------------------------
+    // PathWalking() walks the enemy from point A to point B when idle
+    //---------------------------------------------------------------------------
+    public void PathWalking()
+    {
+        if(!switching)
+        {
+            walkTarget = pointB;
+        }
+        else if(switching)
+        {
+            walkTarget = pointA;
+        }
+
+        if(transform.position == pointB.position)
+        {
+            switching = true;
+        }
+        else if(transform.position == pointA.position)
+        {
+            switching = false;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, walkTarget.position, moveSpeedIdle * Time.deltaTime);
+    }
+    
 
     //---------------------------------------------------------------------------
     // PlayerInRange() returns if the player is within the aggro range or not

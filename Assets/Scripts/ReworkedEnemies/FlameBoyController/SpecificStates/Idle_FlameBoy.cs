@@ -37,15 +37,15 @@ public class Idle_FlameBoy : BaseState_FlameBoy
         // idle movements - if they are static when idle, then there is no movement to process
         if(!stateManager.GetIdleMovement())
         {
-            IdleMovement();
+            IdleMovement(stateManager);
         }
     }
 
     //---------------------------------------------------------------------------
     // IdleMovement() the pattern for idle movement
     //---------------------------------------------------------------------------
-    void IdleMovement()
+    void IdleMovement(StateManager_FlameBoy stateManager)
     {
-        // Flame Boy is either static or pacing, but starting by impementing static as it is easier for ensuring the state machine works
+        stateManager.PathWalking();
     }
 }
