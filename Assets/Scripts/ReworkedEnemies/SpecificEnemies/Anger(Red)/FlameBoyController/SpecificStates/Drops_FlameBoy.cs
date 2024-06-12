@@ -14,7 +14,11 @@ public class Drops_FlameBoy : BaseState_FlameBoy
     public override void EnterState(StateManager_FlameBoy stateManager)
     {
         Debug.Log("Drops state entry");
-        // scatter drops (determine what kind of drops and at what drop rate, and scatter within some range of the enemy sprite)
+        stateManager.HealthDrops();
+        if(GameStatus.GetInstance().HasRanged())
+        {
+            stateManager.AmmoDrops();
+        }
     }
 
     //---------------------------------------------------------------------------

@@ -15,6 +15,7 @@ public class Death_FlameBoy : BaseState_FlameBoy
     {
         Debug.Log("Death state entry");
         // death anim and disable enemy hurtbox
+        stateManager.DisableSprite();
     }
 
     //---------------------------------------------------------------------------

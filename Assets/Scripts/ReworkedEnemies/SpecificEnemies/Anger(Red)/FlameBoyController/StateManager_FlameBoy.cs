@@ -74,6 +74,9 @@ public class StateManager_FlameBoy : MonoBehaviour
     [SerializeField]
     private float aggroRange;
 
+    [SerializeField]
+    private float contactDamage;
+
     //---------------------------------------------------------------------------
     //Start() initialize the variables for the rigidbody, collider, and sprite.
     //Make the first call to the starting state
@@ -172,5 +175,78 @@ public class StateManager_FlameBoy : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeedAggro * Time.deltaTime);
     }
 
+    //---------------------------------------------------------------------------
+    // DisableSprite() turns off the enemy sprite and hit box when they are dead
+    //---------------------------------------------------------------------------
+    public void DisableSprite()
+    {
+        //sprite.enabled = false;
+        //col.enabled = false;
+
+        gameObject.SetActive(false);
+    }
+
+    //---------------------------------------------------------------------------
+    // HealthDrops() spreads the heal drops around where the enemy sprite was
+    //---------------------------------------------------------------------------
+    public void HealthDrops()
+    {
+        float randNum = Random.Range(0f, 10f) / 10f * 100f;
+
+        if(randNum <= bigHealthChance)
+        {
+            Vector3 dropsPos = new Vector3(transform.position.x + Random.Range(-1f, 1f), transform.position.y + Random.Range(-1f, 1f), transform.position.z);
+            Instantiate(bigHealthDrop, dropsPos, transform.rotation);
+        }
+        else if (randNum > bigHealthChance && randNum <= smallHealthChance)
+        {
+            Vector3 dropsPos = new Vector3(transform.position.x + Random.Range(-1f, 1f), transform.position.y + Random.Range(-1f, 1f), transform.position.z);
+            Instantiate(smallHealthDrop, dropsPos, transform.rotation);
+        }
+    }
+
+    //---------------------------------------------------------------------------
+    // AmmoDrops() spreads the ammo drops around where the enemy sprite was
+    //---------------------------------------------------------------------------
+    public void AmmoDrops()
+    {
+        float randNum = Random.Range(0f, 10f) / 10f * 100f;
+
+        if (randNum <= bigAmmoChance)
+        {
+            Vector3 dropsPos = new Vector3(transform.position.x + Random.Range(-1f, 1f), transform.position.y + Random.Range(-1f, 1f), transform.position.z);
+            Instantiate(bigAmmoDrop, dropsPos, transform.rotation);
+        }
+        else if (randNum > bigAmmoChance && randNum <= smallHealthChance)
+        {
+            Vector3 dropsPos = new Vector3(transform.position.x + Random.Range(-1f, 1f), transform.position.y + Random.Range(-1f, 1f), transform.position.z);
+            Instantiate(smallAmmoDrop, dropsPos, transform.rotation);
+        }
+    }
+
+
+    //---------------------------------------------------------------------------
+    // OnCollisionEnter2D() collision box for player to take contact damage
+    //---------------------------------------------------------------------------
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            PlayerController_TopDown player = collision.gameObject.GetComponent<PlayerController_TopDown>();
+
+            player.knockBackCounter = player.knockBackTotalTime;
+
+            if(collision.transform.position.x <= transform.position.x)
+            {
+                player.knockFromRight = true;
+            }
+            if(collision.transform.position.x >= transform.position.x)
+            {
+                player.knockFromRight = false;
+            }
+
+            player.TakeDamage(contactDamage);
+        }
+    }
 
 }
