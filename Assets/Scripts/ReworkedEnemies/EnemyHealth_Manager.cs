@@ -19,15 +19,15 @@ public class EnemyHealth_Manager : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    // knockback and damage variables
-    [SerializeField]
-    private float knockBackForce;
+    //// knockback and damage variables
+    //[SerializeField]
+    //private float knockBackForce;
 
     public float knockBackCounter;
 
     public float knockBackTotalTime;
 
-    public bool knockFromRight;
+    //public bool knockFromRight;
 
     [SerializeField]
     private float defaultIFrames = 0.32f;
@@ -75,7 +75,7 @@ public class EnemyHealth_Manager : MonoBehaviour
             currentHealth -= damage;
             iFrames = defaultIFrames;
             knockBackCounter = knockBackTotalTime;
-            Knockback();
+            //Knockback();
         }
     }
 
@@ -90,26 +90,26 @@ public class EnemyHealth_Manager : MonoBehaviour
         sprite.color = new Color(percentOfMaxHealth, percentOfMaxHealth, percentOfMaxHealth, 1);
     }
 
-    //--------------------------------------------------------------------------
-    // Knockback() prevents the 
-    //--------------------------------------------------------------------------
-    private void Knockback()
-    {
-        if (knockBackCounter >= 0)
-        {
-            //knockBackCounter -= Time.deltaTime;
+    ////--------------------------------------------------------------------------
+    //// Knockback() prevents the 
+    ////--------------------------------------------------------------------------
+    //private void Knockback()
+    //{
+    //    if (knockBackCounter >= 0)
+    //    {
+    //        //knockBackCounter -= Time.deltaTime;
 
-            if (knockFromRight)
-            {
-                //rb.velocity = new Vector2(-knockBackForce, 0f);
-                rb.AddForce(new Vector2(-knockBackForce, 0f));
-            }
-            if (!knockFromRight)
-            {
-                rb.AddForce(new Vector2(knockBackForce, 0f));
-            }
-        }
+    //        if (knockFromRight)
+    //        {
+    //            //rb.velocity = new Vector2(-knockBackForce, 0f);
+    //            rb.AddForce(new Vector2(-knockBackForce, 0f));
+    //        }
+    //        if (!knockFromRight)
+    //        {
+    //            rb.AddForce(new Vector2(knockBackForce, 0f));
+    //        }
+    //    }
 
-        //rb.velocity = new Vector2(0f, 0f);
-    }
+    //    //rb.velocity = new Vector2(0f, 0f);
+    //}
 }

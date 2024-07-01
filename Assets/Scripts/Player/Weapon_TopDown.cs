@@ -33,14 +33,14 @@ public class Weapon_TopDown : MonoBehaviour
         if(enemy != null)
         {
             enemy.knockBackCounter = enemy.knockBackTotalTime;
-            if (collision.transform.position.x <= transform.position.x)
-            {
-                enemy.knockFromRight = true;
-            }
-            if (collision.transform.position.x >= transform.position.x)
-            {
-                enemy.knockFromRight = false;
-            }
+            //if (collision.transform.position.x <= transform.position.x)
+            //{
+            //    enemy.knockFromRight = true;
+            //}
+            //if (collision.transform.position.x >= transform.position.x)
+            //{
+            //    enemy.knockFromRight = false;
+            //}
 
             enemy.TakeDamage(damage);
 

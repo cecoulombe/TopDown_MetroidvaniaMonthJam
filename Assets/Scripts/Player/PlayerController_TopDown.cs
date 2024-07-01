@@ -175,7 +175,7 @@ public class PlayerController_TopDown : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("pausing the game");
+            //Debug.Log("pausing the game");
             GameStatus.GetInstance().SetGamePaused(true);
         }
 
@@ -374,7 +374,7 @@ public class PlayerController_TopDown : MonoBehaviour
                     // add invincibility for the dash if the player has picked up iframes (will allow them to dash through small walls as well)
                     if(GameStatus.GetInstance().HasInvincibleDash() && iDashCoolCounter <= 0)
                     {
-                        Debug.Log("starting the idash");
+                        //Debug.Log("starting the idash");
                         //do the iframe dash
                         col.enabled = false;
                         isInvincibleDashing = true;
@@ -394,7 +394,7 @@ public class PlayerController_TopDown : MonoBehaviour
                     dashCoolCounter = dashCooldown;
                     if(isInvincibleDashing)
                     {
-                        Debug.Log("end of idash, start the cooldown for that, the hit box should be back on now");
+                        //Debug.Log("end of idash, start the cooldown for that, the hit box should be back on now");
                         col.enabled = true;
                         isInvincibleDashing = false;
                         iDashCoolCounter = iDashCooldown;
@@ -412,7 +412,7 @@ public class PlayerController_TopDown : MonoBehaviour
             }
             else
             {
-                Debug.Log("idash has cooled down and can go again");
+                //Debug.Log("idash has cooled down and can go again");
             }
         }
     }
@@ -480,7 +480,7 @@ public class PlayerController_TopDown : MonoBehaviour
         }
         else if(GameStatus.GetInstance().GetAmmo() <= 0)
         {
-            Debug.Log("no ammo left, need to refill");
+            //Debug.Log("no ammo left, need to refill");
         }
     }
     #endregion

@@ -158,7 +158,7 @@ public class GameStatus : MonoBehaviour
     {
         previousRoom = "spawn";
         LoadSettings();
-        Debug.Log("the previous room is: " + previousRoom);
+        //Debug.Log("the previous room is: " + previousRoom);
     }
 
 
@@ -187,12 +187,12 @@ public class GameStatus : MonoBehaviour
         GetGateState(currentRoom);
         //SetCompletionPercent();
         completionPercent = Mathf.RoundToInt(pickedUpPercent / totalPickUps * 100);
-        Debug.Log(pickedUpPercent + " divided by" + totalPickUps + " * 100 = " + completionPercent);
+        //Debug.Log(pickedUpPercent + " divided by" + totalPickUps + " * 100 = " + completionPercent);
 
 
         if (Input.GetKey(KeyCode.Escape))
         {
-            Debug.Log("reseting the player prefs");
+            //Debug.Log("reseting the player prefs");
             ResetPlayerPrefs();
             resetPrefs = true;
         }
@@ -221,14 +221,14 @@ public class GameStatus : MonoBehaviour
     {
         SetSaveRoom();
         PlayerPrefs.Save();
-        Debug.Log("game status destroyed");
+        //Debug.Log("game status destroyed");
     }
 
     #region Pause Menu
     public void SetGamePaused(bool pausedStatus)
     {
         gamePaused = pausedStatus;
-        Debug.Log("game Paused" + gamePaused);
+        //Debug.Log("game Paused" + gamePaused);
     }
 
     public bool GetGamePaused()
@@ -449,7 +449,7 @@ public class GameStatus : MonoBehaviour
         }
         else
         {
-            Debug.Log("cannot find the current room, returning true");
+            //Debug.Log("cannot find the current room, returning true");
             return true;
         }
     }
@@ -505,12 +505,12 @@ public class GameStatus : MonoBehaviour
     {
         if (roomName == "Room2")
         {
-            Debug.Log("from game status" + room2_chestOpen);
+            //Debug.Log("from game status" + room2_chestOpen);
             return room2_chestOpen;
         }
         else
         {
-            Debug.Log("cannot find the current room, returning true");
+            //Debug.Log("cannot find the current room, returning true");
             return true;
         }
     }
@@ -557,7 +557,7 @@ public class GameStatus : MonoBehaviour
         }
         else
         {
-            Debug.Log("cannot find the current room, returning true");
+            //Debug.Log("cannot find the current room, returning true");
             return true;
         }
     }
@@ -627,7 +627,7 @@ public class GameStatus : MonoBehaviour
         }
         else
         {
-            Debug.Log("cannot find the current room, returning true");
+            //Debug.Log("cannot find the current room, returning true");
             return true;
         }
     }
@@ -748,27 +748,27 @@ public class GameStatus : MonoBehaviour
 
         if (pickup == "dash")
         {
-            Debug.Log("player has dash? ");
+            //Debug.Log("player has dash? ");
             return hasDash;
         }
         else if (pickup == "iDash")
         {
-            Debug.Log("player has iDash? ");
+            //Debug.Log("player has iDash? ");
             return hasInvincibleDash;
         }
         else if (pickup == "melee")
         {
-            Debug.Log("player has melee attack? ");
+            //Debug.Log("player has melee attack? ");
             return hasMelee;
         }
         else if (pickup == "ranged")
         {
-            Debug.Log("player has ranged attack? ");
+            //Debug.Log("player has ranged attack? ");
             return hasRanged;
         }
         else if (pickup == "healing")
         {
-            Debug.Log("player has healing ");
+            //Debug.Log("player has healing ");
             return hasHealing;
         }
         else
@@ -857,27 +857,27 @@ public class GameStatus : MonoBehaviour
 
         if (pickup == "dash")
         {
-            Debug.Log("giving the player dash");
+            //Debug.Log("giving the player dash");
             SetHasDash(true);
         }
         else if (pickup == "iDash")
         {
-            Debug.Log("giving the player invincible dash");
+            //Debug.Log("giving the player invincible dash");
             SetHasInvincibleDash(true);
         }
         else if (pickup == "melee")
         {
-            Debug.Log("giving the player melee attack");
+            //Debug.Log("giving the player melee attack");
             SetHasMelee(true);
         }
         else if (pickup == "ranged")
         {
-            Debug.Log("giving the player ranged attack");
+            //Debug.Log("giving the player ranged attack");
             SetHasRanged(true);
         }
         else if (pickup == "healing")
         {
-            Debug.Log("giving the player healing");
+            //Debug.Log("giving the player healing");
             SetHasHealing(true);
         }
     }
@@ -1014,7 +1014,7 @@ public class GameStatus : MonoBehaviour
         }
         PlayerPrefs.Save();
 
-        Debug.Log("save room is " + PlayerPrefs.GetString("saveRoom"));
+        //Debug.Log("save room is " + PlayerPrefs.GetString("saveRoom"));
     }
 
     public string GetSaveRoom()
