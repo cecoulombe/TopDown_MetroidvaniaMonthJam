@@ -79,10 +79,16 @@ public class StateManager_BallOfAnger : MonoBehaviour
 
     // Attack variables
     [SerializeField]
+    public float telegraphDuration;
+
+    [SerializeField]
     private float attackRange;
 
     [SerializeField]
     private GameObject Melee;
+
+    [SerializeField]
+    public float punishDuration;
 
     [SerializeField]
     private float contactDamage;

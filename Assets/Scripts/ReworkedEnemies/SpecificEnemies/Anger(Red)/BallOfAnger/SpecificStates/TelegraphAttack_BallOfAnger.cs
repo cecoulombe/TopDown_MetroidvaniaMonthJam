@@ -9,14 +9,18 @@ using UnityEngine;
  */
 public class TelegraphAttack_BallOfAnger : BaseState_BallOfAnger
 {
+    private IEnumerator coroutine;
+    StateManager_BallOfAnger stateManager;
+
     //---------------------------------------------------------------------------
     // EnterState(stateManager) provide the first frame instructions for this state
     //---------------------------------------------------------------------------
     public override void EnterState(StateManager_BallOfAnger stateManager)
     {
         Debug.Log("Telegraph state entry");
-        // use a coroutine to delay
-        // he'll stop and vibrate for a moment, then the spikes will come out
+        coroutine = TelegraphCoroutine(stateManager.telegraphDuration);
+        this.stateManager = stateManager;
+        stateManager.StartCoroutine(coroutine);
     }
 
     //---------------------------------------------------------------------------
@@ -25,10 +29,14 @@ public class TelegraphAttack_BallOfAnger : BaseState_BallOfAnger
     public override void UpdateState(StateManager_BallOfAnger stateManager)
     {
         Debug.Log("Telegraph state update");
-        stateManager.SwitchState(stateManager.attackState);
-        //stateManager.SwitchState(stateManager.movementState);
     }
 
-    
-
+    //---------------------------------------------------------------------------
+    // TelegraphCoroutine() provides a delay before switching to the attack state
+    //---------------------------------------------------------------------------
+    private IEnumerator TelegraphCoroutine(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        stateManager.SwitchState(stateManager.attackState);
+    }
 }

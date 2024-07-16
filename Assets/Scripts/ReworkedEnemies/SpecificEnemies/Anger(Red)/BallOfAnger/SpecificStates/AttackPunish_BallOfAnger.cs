@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* AttackPunish: gives the player a very short animation to hit the enemy while it "recovers" from the attack
- * Entered from attack
- * Enters movement and death
+
+/* Punish: gives the player a chance to punish the enemy after they attack
+ * Enters attack
  */
 public class AttackPunish_BallOfAnger : BaseState_BallOfAnger
 {
+    private IEnumerator coroutine;
+    StateManager_BallOfAnger stateManager;
+
     //---------------------------------------------------------------------------
     // EnterState(stateManager) provide the first frame instructions for this state
     //---------------------------------------------------------------------------
     public override void EnterState(StateManager_BallOfAnger stateManager)
     {
         Debug.Log("Punish state entry");
-        // anim and pause for a moment so the player can punish the attack (will probably have a different punish for each anim)
-        // use a corourtine again with the anim
-        // he'll get extra small and still for a second 
+        coroutine = PunishCoroutine(stateManager.punishDuration);
+        this.stateManager = stateManager;
+        stateManager.StartCoroutine(coroutine);
     }
 
     //---------------------------------------------------------------------------
@@ -25,6 +28,14 @@ public class AttackPunish_BallOfAnger : BaseState_BallOfAnger
     public override void UpdateState(StateManager_BallOfAnger stateManager)
     {
         Debug.Log("Punish state update");
+    }
+
+    //---------------------------------------------------------------------------
+    // PunishCoroutine() provides a delay before switching to the attack state
+    //---------------------------------------------------------------------------
+    private IEnumerator PunishCoroutine(float timer)
+    {
+        yield return new WaitForSeconds(timer);
         stateManager.SwitchState(stateManager.movementState);
     }
 }
