@@ -6,10 +6,10 @@ using UnityEngine;
  *
  */
 
-public abstract class BaseState_BallOfAnger
+public abstract class BaseState_MagmaBall
 {
-    public abstract void EnterState(StateManager_BallOfAnger stateManager);
+    public abstract void EnterState(StateManager_MagmaBall stateManager);
 
-    public abstract void UpdateState(StateManager_BallOfAnger stateManager);
+    public abstract void UpdateState(StateManager_MagmaBall stateManager);
 
 }

@@ -17057,7 +17057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeDirectionTimer: 2
-  minion: {fileID: 8508236897731443001, guid: b1a835f2e62364016b9148f9c267f343, type: 3}
+  minion: {fileID: 2459068605672493496, guid: 14c5a8f29d9e3491ba52bc36e8b49049, type: 3}
   contactDamage: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
