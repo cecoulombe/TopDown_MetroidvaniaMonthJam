@@ -76,10 +76,10 @@ GameObject:
   - component: {fileID: 659758809859369413}
   - component: {fileID: 2071441722805940764}
   - component: {fileID: 3039349685777309934}
-  - component: {fileID: 5027130579022326678}
-  - component: {fileID: 4020029143717716466}
   - component: {fileID: 5818565947379240700}
   - component: {fileID: 5480074898423580631}
+  - component: {fileID: 7247661973452388817}
+  - component: {fileID: 4882228762554069083}
   m_Layer: 0
   m_Name: Magma Ball
   m_TagString: Untagged
@@ -96,7 +96,7 @@ Transform:
   m_GameObject: {fileID: 3679033657152857832}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.3, y: 3.6, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -183,72 +183,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5027130579022326678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3679033657152857832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20064ab7a8895439f9b64e5148697083, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patternSpeed: 3
-  myHealth: {fileID: 4020029143717716466}
-  pointA: {fileID: 8326201123681186845}
-  pointB: {fileID: 625231418404425981}
-  contactDamage: 1
-  Aim: {fileID: 3893578105799823745}
-  bullet: {fileID: 2609964779410368697, guid: 4fea0e620aa734d80a33b3e9e85f41a8, type: 3}
-  fireForce: 10
-  shootCoolDown: 1
-  shootTimer: 0.5
-  minRangePercent: 0
-  maxRangePercent: 1
---- !u!114 &4020029143717716466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3679033657152857832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3534d29dd97d4375a29cb1a055bf7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDead: 0
-  isAwake: 0
-  isDamaged: 0
-  Aim: {fileID: 3893578105799823745}
-  moveSpeed: 0
-  defaultSpeed: -1
-  attackCoolDown: 0
-  loseAggroRange: 20
-  isWalking: 0
-  inAwakeRange: 0
-  inLoseAggroRange: 0
-  isPatternWalker: 0
-  wakeUpPercent: 0.8
-  health: 5
-  maxHealth: 5
-  takingDamage: 0
-  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
-  bigHealthChance: 15
-  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
-  smallHealthChance: 30
-  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
-  bigAmmoChance: 10
-  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
-  smallAmmoChance: 20
-  knockBackForce: 0
-  knockBackCounter: 0
-  knockBackTotalTime: 0.2
-  knockFromRight: 0
-  iFrames: 0
-  defaultIFrames: 0.32
 --- !u!58 &5818565947379240700
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -305,6 +239,56 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7247661973452388817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3679033657152857832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efcd1d46f2b6e435592464106771a536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bigHealthDrop: {fileID: 1985900085209205504, guid: be84f6289c5ee4de8a057c3d0292598b, type: 3}
+  bigHealthChance: 5
+  smallHealthDrop: {fileID: 1985900085209205504, guid: 35ad01a38d5b54c628b2ebdec979b664, type: 3}
+  smallHealthChance: 17
+  bigAmmoDrop: {fileID: 1985900085209205504, guid: 1894a45260d1544cfa96876a236cafe8, type: 3}
+  bigAmmoChance: 5
+  smallAmmoDrop: {fileID: 1985900085209205504, guid: dfbc133d394fd4fdcb07e5f682765304, type: 3}
+  smallAmmoChance: 17
+  isStaticIdle: 1
+  Aim: {fileID: 3893578105799823745}
+  pointA: {fileID: 8326201123681186845}
+  pointB: {fileID: 625231418404425981}
+  moveSpeedIdle: 1.5
+  moveSpeedAggro: -1.8
+  aggroRange: 20
+  telegraphDuration: 0.2
+  attackRange: 7.5
+  bullet: {fileID: 2609964779410368697, guid: 4fea0e620aa734d80a33b3e9e85f41a8, type: 3}
+  fireForce: 10
+  punishDuration: 0.3
+  contactDamage: 1
+--- !u!114 &4882228762554069083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3679033657152857832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29160b16b8e7a4e22b08eccc23610cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 5
+  maxHealth: 5
+  knockBackCounter: 0
+  knockBackTotalTime: 0.2
+  defaultIFrames: 0.32
 --- !u!1 &3927637793083914514
 GameObject:
   m_ObjectHideFlags: 0

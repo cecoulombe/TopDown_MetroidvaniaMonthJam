@@ -120,6 +120,11 @@ public class StateManager_MagmaBall : MonoBehaviour
     {
         Aim.rotation = Quaternion.LookRotation(Vector3.forward, (transform.position - player.position).normalized);
 
+        // lock the z position of the enemy
+        Vector3 position = transform.position;
+        position.z = 0;
+        transform.position = position;
+
         if (healthManager.GetCurrentHealth() <= 0 && currentState != deathState && currentState != dropsState)
         {
             SwitchState(deathState);

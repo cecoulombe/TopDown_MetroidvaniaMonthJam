@@ -10,8 +10,8 @@ using UnityEngine;
 public class Attack_MagmaBall : BaseState_MagmaBall
 {
     // variables
-    float shotCooldown = 0.25f;
-    float shotTimer = 0.5f;
+    float shotCooldown = 0.5f;
+    float shotTimer = 1.5f;
 
     StateManager_MagmaBall stateManager;
 
@@ -22,7 +22,8 @@ public class Attack_MagmaBall : BaseState_MagmaBall
     {
         Debug.Log("Attack state entry");
         // do the attack and the anim while waiting for the update to run until after the anim has run
-        
+        this.stateManager = stateManager;
+        stateManager.StartCoroutine(RangedAttack());
     }
 
     //---------------------------------------------------------------------------
@@ -31,28 +32,24 @@ public class Attack_MagmaBall : BaseState_MagmaBall
     public override void UpdateState(StateManager_MagmaBall stateManager)
     {
         Debug.Log("Attack state update");
-        this.stateManager = stateManager;
-        RangedAttack();
     }
 
     //---------------------------------------------------------------------------
     // RangedAttack() fires bullets and counts how many shots have been fired
     //---------------------------------------------------------------------------
-    private void RangedAttack()
+    private IEnumerator RangedAttack()
     {
         int count = 0;
+        float shotCooldown = 0.5f; // cooldown between shots
 
-        while(count < 3)
+        while (count < 3)
         {
-            shotTimer += Time.deltaTime;
-
-            if(shotTimer > shotCooldown)
-            {
-                shotTimer = 0;
-                stateManager.FireBullet();
-                count++;
-            }
+            stateManager.FireBullet();
+            count++;
+            Debug.Log("shot fired count: " + count);
+            yield return new WaitForSeconds(shotCooldown); // wait for the cooldown before firing the next shot
         }
-        stateManager.SwitchState(stateManager.punishState);
+
+        stateManager.SwitchState(stateManager.punishState); // switch to punish state after firing 3 shots
     }
 }
